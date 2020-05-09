@@ -1,0 +1,147 @@
+﻿<Page x:Class="PROJET_2CP.Statistiques"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROJET_2CP"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="950"
+      Title="Statistiques" >
+
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="Black" Opacity="0.4"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="185"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <materialDesign:Card Grid.Column="0">
+            <materialDesign:Card.Background>
+                <SolidColorBrush Color="Black" Opacity="0.4"/>
+            </materialDesign:Card.Background>
+            <StackPanel>
+                <Grid Height="59">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="47*"/>
+                        <ColumnDefinition Width="83*"/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Kind="ChartBellCurve" Width="47" Height="50" Foreground="White"/>
+                    <Label Grid.Column="1" Content="Statistiques" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                </Grid>
+
+                <Separator/>
+
+                <TreeView x:Name="stateSelect" SelectedItemChanged="stateSelect_SelectedItemChanged" 
+                          Foreground="White">
+
+                    <TreeViewItem x:Name="niveau1" Header="niveau 1" >
+                        <TreeViewItem x:Name="niv1thm1" Header="Signalisation"/>
+                        <TreeViewItem x:Name="niv1thm2" Header="Intersection et priorité"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem x:Name="niveau2" Header="niveau 2">
+                        <TreeViewItem x:Name="niv2thm1" Header="Signalisation 2"/>
+                        <TreeViewItem x:Name="niv2thm2" Header="Theme2"/>
+                        <TreeViewItem x:Name="niv2thm3" Header="Theme3"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem x:Name="niveau3" Header="niveau 3">
+                        <TreeViewItem Header="Theme1"/>
+                        <TreeViewItem Header="Theme2"/>
+                        <TreeViewItem Header="Theme3"/>
+                    </TreeViewItem>
+                </TreeView>
+            </StackPanel>
+        </materialDesign:Card>
+
+        <Grid Grid.Column="1" VerticalAlignment="Top"
+              Height="50">
+            <StackPanel x:Name="choixChart" Orientation="Horizontal" 
+                        Visibility="Collapsed" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Margin="4">
+                    <RadioButton x:Name="pieCheck" Style="{StaticResource MaterialDesignTabRadioButton}"
+                                 Margin="4" IsChecked="False" BorderBrush="#FF59F940" Checked="pieCheck_Checked">
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="ChartPie" Foreground="White"
+                                                     HorizontalAlignment="Center"/>
+                            <TextBlock Text="ChartArc" Foreground="White" 
+                                       FontSize="5"
+                                       HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    
+                    <Separator  Style="{StaticResource MaterialDesignDarkSeparator}" Width="50" 
+                                RenderTransformOrigin="0.5,0.5" Background="#1FFCFCFC">
+                        <Separator.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Separator.RenderTransform>
+                    </Separator>
+
+                    <RadioButton x:Name="diagCheck" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4"
+                                 IsChecked="False" BorderBrush="Red" Checked="diagCheck_Checked">
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="ChartBar" Foreground="White"
+                                                     HorizontalAlignment="Center"/>
+                            <TextBlock Text="BarChart" Foreground="White" 
+                                       FontSize="5"
+                                       HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <Separator  Style="{StaticResource MaterialDesignDarkSeparator}" Width="50" 
+                                RenderTransformOrigin="0.5,0.5" Background="#1FFCFCFC">
+                        <Separator.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Separator.RenderTransform>
+                    </Separator>
+
+                    <RadioButton x:Name="moyenneCheck" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4"
+                                 IsChecked="False" BorderBrush="#FFF4FF00" Checked="moyenneCheck_Checked">
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="Numbers" Foreground="White"
+                                                     HorizontalAlignment="Center"/>
+                            <TextBlock Text="States" Foreground="White" 
+                                       FontSize="5"
+                                       HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Right"
+              Height="550" Width="765" Grid.ColumnSpan="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="chartsGrid" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                  Background="White" Height="481" Width="765" Margin="0,0,0,69.8" Grid.RowSpan="3"/>
+
+            <Label Grid.Row="2" x:Name="moyenneLbl" Content="Moyenne" Style="{StaticResource MaterialDesignLabel}" 
+                   Height="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                   VerticalAlignment="Center" HorizontalAlignment="Right"
+                   FontSize="13" FontWeight="Bold" Foreground="White"/>
+
+        </Grid>
+
+    </Grid>
+</Page>

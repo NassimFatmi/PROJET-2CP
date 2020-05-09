@@ -1,0 +1,139 @@
+﻿<Page x:Class="PROJET_2CP.SignIN"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROJET_2CP"
+      mc:Ignorable="d" 
+      d:DesignHeight="660" d:DesignWidth="1000"
+      Foreground="White"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="SignIN" >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Grid.Column="1" Margin="0,90,0,0">
+            <Image Width="200" Height="200" HorizontalAlignment="Center"/>
+            <Label Content="EDautoEcole" HorizontalAlignment="Center" 
+                   Foreground="White" FontSize="30" FontWeight="DemiBold"/>
+        </StackPanel>
+
+        <Grid Grid.Column="0" materialDesign:ThemeAssist.Theme="Dark">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.4"/>
+            </Grid.Background>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" 
+                        Orientation="Vertical">
+
+                <Label x:Name="creercmpttxt" Content="Créer compte" 
+                       Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" FontSize="40"/>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <materialDesign:PackIcon Kind="IdCard" Foreground="White"
+                                             Height="20" Width="20" VerticalAlignment="Bottom"
+                                             Margin="0,0,10,3"/>
+                    <TextBox x:Name="userIDtxt"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"                            
+                         Foreground="White"
+                         materialDesign:HintAssist.Hint="utilisateru ID"
+                         Width="250" 
+                         CaretBrush="White"
+                         materialDesign:HintAssist.Foreground="White"
+                         materialDesign:TextFieldAssist.UnderlineBrush="White"
+                         />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <materialDesign:PackIcon Kind="Account" Foreground="White"
+                                             Height="20" Width="20" VerticalAlignment="Bottom"
+                                             Margin="0,0,10,3"/>
+                    <TextBox x:Name="nomtxt"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"                            
+                         Foreground="White"
+                         materialDesign:HintAssist.Hint="Nom"
+                         Width="250" 
+                         CaretBrush="White"
+                         materialDesign:HintAssist.Foreground="White"
+                         materialDesign:TextFieldAssist.UnderlineBrush="White"
+                         />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <materialDesign:PackIcon Kind="Account" Foreground="White"
+                                             Height="20" Width="20" VerticalAlignment="Bottom"
+                                             Margin="0,0,10,3"/>
+                    <TextBox x:Name="prenomtxt"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"                            
+                         Foreground="White"
+                         materialDesign:HintAssist.Hint="Prenom"
+                         Width="250" 
+                         CaretBrush="White"
+                         materialDesign:HintAssist.Foreground="White"
+                         materialDesign:TextFieldAssist.UnderlineBrush="White"
+                         />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <materialDesign:PackIcon Kind="Key" Foreground="White"
+                                             Height="20" Width="20" VerticalAlignment="Bottom"
+                                             Margin="0,0,10,3"/>
+                    <PasswordBox x:Name="passwordtxt"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"                            
+                         Foreground="White"
+                         materialDesign:HintAssist.Hint="Mot de passe"
+                         Width="250" 
+                         CaretBrush="White"
+                         materialDesign:HintAssist.Foreground="White"
+                         materialDesign:TextFieldAssist.UnderlineBrush="White"
+                         />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <materialDesign:PackIcon Kind="Key" Foreground="White"
+                                             Height="20" Width="20" VerticalAlignment="Bottom"
+                                             Margin="0,0,10,3"/>
+                    <PasswordBox x:Name="confirmepasswordtxt"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"                            
+                         Foreground="White"
+                         materialDesign:HintAssist.Hint="Confirmer le Mot de passe"
+                         Width="250" 
+                         CaretBrush="White"
+                         materialDesign:HintAssist.Foreground="White"
+                         materialDesign:TextFieldAssist.UnderlineBrush="White"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="250" 
+                            Margin="10">
+                    <TextBox x:Name="imagepathtxt" Width="170" 
+                             Foreground="White" IsReadOnly="True"/>
+
+                    <Button Click="Browse_Image" Height="30" Width="80"
+                            FontSize="10" VerticalAlignment="Bottom"
+                            Background="{x:Null}" BorderBrush="White" Margin="0,5,0,4.6" >
+                        <StackPanel Orientation="Horizontal" Height="30" Width="70" VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="AttachFile" VerticalAlignment="Center" />
+                            <TextBlock x:Name="imagebtn" Text="image" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <Label x:Name="errLbl" Foreground="#FFFF4545" HorizontalAlignment="Right"
+                       />
+                <Button x:Name="creercompteconfirme" Style="{DynamicResource MaterialDesignFlatButton}"
+                        FontWeight="Bold" Content="Créer compte" 
+                        Width="250" Height="50" FontSize="20" 
+                        Click="Creecpt_Click"
+                        Margin="0,20,0,0"
+                        materialDesign:ButtonAssist.CornerRadius="30" Background="#FF6EC1D1"
+                        Foreground="White" BorderBrush="{x:Null}"/>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Button x:Name="loginbtn" Style="{DynamicResource MaterialDesignFlatButton}" 
+            Grid.Column="1" FontSize="15" FontWeight="Bold" 
+                Content="Se connencter" Click="loginClick" 
+                HorizontalAlignment="Right" VerticalAlignment="Top" Width="150" 
+                Height="35" Margin="0,10,10.4,0" materialDesign:ButtonAssist.CornerRadius="27"
+                Background="White" BorderBrush="{x:Null}" Foreground="#FF2ED2D6"/>
+    </Grid>
+</Page>

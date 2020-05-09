@@ -1,0 +1,56 @@
+﻿<Page x:Class="PROJET_2CP.Niveaux"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROJET_2CP"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="950"
+      Title="Niveaux" >
+
+    <Grid>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="backClick" >
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18" Foreground="White"/>
+                <TextBlock x:Name="back" Text="Retour" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+            </StackPanel>
+        </Button>
+
+        <Grid Width="800" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <Button HorizontalAlignment="Left" x:Name="niv1" Height="300" Width="200" BorderThickness="0" Background="#FF19CAA0" Click="niveau1Click" 
+                    MouseEnter="mouseEnter"
+                    MouseLeave="mouseLeave" Margin="20,0,0,0">
+                <StackPanel>
+                    <Image Height="60" Width="60" Margin="0,0,0,20"/>
+                    <TextBlock x:Name="l0" Text="Niveau I" TextAlignment="Center" FontSize="20"/>
+                </StackPanel>
+            </Button>
+
+            <Button HorizontalAlignment="Center" x:Name="niv2" Height="300" Width="200" BorderThickness="0" Margin="80,0,80,0" 
+                    Background="#FFFFAB12">
+                <StackPanel>
+                    <Image Height="60" Width="60" Margin="0,0,0,20"/>
+                    <TextBlock x:Name="l1" Text="Niveau II" TextAlignment="Center" FontSize="20"/>
+                    <materialDesign:PackIcon x:Name="lvl2lock" Kind="Lock" Width="30" Height="30" HorizontalAlignment="Center" Margin="0,50,0,0"/>
+                </StackPanel>
+            </Button>
+
+            <Button HorizontalAlignment="Right" x:Name="niv3" Height="300" Width="200" BorderThickness="0" 
+                    Background="#FFFF5B5B"
+                    Margin="0,0,20,0">
+                <StackPanel>
+                    <Image Height="60" Width="60" Margin="0,0,0,20"/>
+                    <TextBlock x:Name="l2" Text="Niveau III" TextAlignment="Center" FontSize="20"/>
+                    <materialDesign:PackIcon x:Name="lvl3lock" Kind="Lock" Width="30" Height="30" HorizontalAlignment="Center" Margin="0,50,0,0"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Label x:Name="lockmessage" 
+               VerticalAlignment="Bottom"
+               Foreground="White" FontSize="20"
+               HorizontalAlignment="Center"
+               Margin="0,0,0,80"/>
+    </Grid>
+</Page>

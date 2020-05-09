@@ -1,0 +1,48 @@
+﻿<Window x:Class="PROJET_2CP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROJET_2CP"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1000"
+        ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    
+    <Grid x:Name="backGrid" OpacityMask="Black" MouseDown="Grid_MouseDown">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                <GradientStop Color="#FF0E7386" Offset="0"/>
+                <GradientStop Color="#FF00C8EE" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid VerticalAlignment="Top" Height="18">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="18" Height="18" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="Minimize_Click">
+                    <materialDesign:PackIcon Kind="WindowMinimize" Foreground="White"/>
+                </Button>
+
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="18" Height="18" Background="{x:Null}" BorderBrush="{x:Null}" Click="Exit_Click" Foreground="Red">
+                    <materialDesign:PackIcon Kind="Close"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="grid" Margin="0,20,0,20">
+
+        </Grid>
+
+        <Grid VerticalAlignment="Bottom" Height="20" >
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.02"/>
+            </Grid.Background>
+
+            <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" Width="20" Height="20" Background="{x:Null}" BorderBrush="Transparent" >
+                    <materialDesign:PackIcon Kind="Help" Foreground="White" Width="17" Height="17"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
