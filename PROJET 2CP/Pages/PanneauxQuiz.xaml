@@ -1,0 +1,17 @@
+﻿<Page x:Class="PROJET_2CP.Pages.PanneauxQuiz"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROJET_2CP.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000"
+      Title="PanneauxQuiz"
+      >
+
+    <Grid>
+        <Button x:Name="switch_lang" Margin="26,82,692,558" Click="switch_lang_Click"/>
+        <Button x:Name="btn"  FontSize="20" HorizontalAlignment="Left" Margin="183,263,0,0" VerticalAlignment="Top" Width="232" Height="92" Click="Button_Click"/>
+        <Button x:Name="btn2" FontSize="20" HorizontalAlignment="Left" Margin="501,263,0,0" VerticalAlignment="Top" Width="238" Height="92" Click="btn2_Click"/>
+    </Grid>
+</Page>

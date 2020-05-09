@@ -1,0 +1,21 @@
+﻿<Page x:Class="PROJET_2CP.Niveau2.la_securité"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="950"
+      Title="la_securité">
+
+    <ScrollViewer>
+        <StackPanel>
+            <Image x:Name="img1" />
+            <Image x:Name="img2" />
+            <Image x:Name="img3" />
+            <Image x:Name="img4" />
+            <Image x:Name="img5" />
+            <Image x:Name="img6" />
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using PROJET_2CP.Pages;
+
+namespace PROJET_2CP.Niveau2
+{
+    /// <summary>
+    /// Interaction logic for Niv2Main.xaml
+    /// </summary>
+    public partial class Niv2Main : Page
+    {
+        public Niv2Main()
+        {
+            InitializeComponent();
+        }
+
+        private void niv2cours(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Niveau2.Lesson();
+        }
+
+        private void BackClick(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Niveaux();
+        }
+
+        private void mouseEnter(object sender, MouseEventArgs e)
+        {
+            var button = sender as Button;
+            button.Height = 340;
+            button.Width = 240;
+        }
+
+        private void mouseLeave(object sender, MouseEventArgs e)
+        {
+            var button = sender as Button;
+            button.Height = 300;
+            button.Width = 200;
+        }
+        private void test_niv2(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Tests2();
+        }
+
+    }
+}

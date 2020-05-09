@@ -49,7 +49,7 @@ namespace PROJET_2CP
 
         private void niv2_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Niveau_2.Niv2Main();
+            Home.mainFrame.Content = new Niveau2.Niv2Main();
         }
         private void initialiserLangue()
         {
@@ -95,7 +95,7 @@ namespace PROJET_2CP
 
         private void niv3_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Niveau3.Niv3Main();
+            //Home.mainFrame.Content = new Niveau3.Niv3Main();
         }
 
         private void mouseEnter(object sender, MouseEventArgs e)

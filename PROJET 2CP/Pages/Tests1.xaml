@@ -1,0 +1,92 @@
+﻿<Page x:Class="PROJET_2CP.Pages.Tests1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROJET_2CP.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="699" d:DesignWidth="1000"
+      Title="Tests1" Loaded="choix_Test">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="backClick" >
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18"/>
+                <TextBlock x:Name="back" Text="Retoure" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+            </StackPanel>
+        </Button>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border CornerRadius="15" Margin="30">
+                <Border.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                </Border.Background>
+                <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button x:Name="b1" Content="Test 1" Click="Button_Click"
+                    Width="100" Height="100" Margin="10" BorderBrush="{x:Null}"
+                            MouseEnter="b1_MouseEnter"
+                            MouseLeave="b1_MouseLeave"/>
+                    <Button x:Name="b2" Content="Test 2" Click="Button_Click_1"
+                    Width="100" Height="100" Margin="10" BorderBrush="{x:Null}"
+                            MouseEnter="b1_MouseEnter"
+                            MouseLeave="b1_MouseLeave"/>
+                    <Button x:Name="b3" Content="Test 3" Click="Button_Click_2"
+                    Width="100" Height="100" Margin="10" BorderBrush="{x:Null}"
+                            MouseEnter="b1_MouseEnter"
+                            MouseLeave="b1_MouseLeave"/>
+                    <Button x:Name="b4" Content="Test 4" Click="Button_Click_3"
+                    Width="100" Height="100" Margin="10" BorderBrush="{x:Null}"
+                            MouseEnter="b1_MouseEnter"
+                            MouseLeave="b1_MouseLeave"/>
+                    <Button x:Name="b5" Content="Test 5" Click="Button_Click_4"
+                    Width="100" Height="100" Margin="10" BorderBrush="{x:Null}"
+                            MouseEnter="b1_MouseEnter"
+                            MouseLeave="b1_MouseLeave"/>
+                    <Button x:Name="b6" Content="Test 6" Click="Button_Click_5"
+                    Width="100" Height="100" Margin="10" BorderBrush="{x:Null}"
+                            MouseEnter="b1_MouseEnter"
+                            MouseLeave="b1_MouseLeave"/>
+                    <Button x:Name="b7" Content="Test 7" Click="Button_Click_6"
+                    Width="100" Height="100" Margin="10" BorderBrush="{x:Null}"
+                            MouseEnter="b1_MouseEnter"
+                            MouseLeave="b1_MouseLeave"/>
+                    <Button x:Name="b8" Content="Test 8" Click="Button_Click_7"
+                    Width="100" Height="100" Margin="10" BorderBrush="{x:Null}"
+                            MouseEnter="b1_MouseEnter"
+                            MouseLeave="b1_MouseLeave"/>
+                    <Button x:Name="b9" Content="Test 9" Click="Button_Click_8"
+                    Width="100" Height="100" Margin="10" BorderBrush="{x:Null}"
+                            MouseEnter="b1_MouseEnter"
+                            MouseLeave="b1_MouseLeave"/>
+                    <Button x:Name="b10" Content="Test 10" Click="Button_Click_9"
+                    Width="100" Height="100" Margin="10" BorderBrush="{x:Null}"
+                            MouseEnter="b1_MouseEnter"
+                            MouseLeave="b1_MouseLeave"/>
+                </WrapPanel>
+            </Border>
+            <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Top" HorizontalAlignment="Center"
+                        Margin="0,40,0,0">
+                    <Image Height="150" Width="150"/>
+                    <Label Content="Test Niveau 1" 
+                           FontSize="44" FontWeight="Bold"
+                           Foreground="White"
+                           VerticalAlignment="Center" Margin="20"/>
+                </StackPanel>
+                <Label x:Name="noteShow"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontSize="20" Foreground="White"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

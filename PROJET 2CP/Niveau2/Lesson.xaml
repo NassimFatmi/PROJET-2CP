@@ -1,0 +1,369 @@
+﻿<Page x:Class="PROJET_2CP.Niveau2.Lesson"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROJET_2CP.Niveau2"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="950"
+      Title="Lesson">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <SolidColorBrush Color="Black" Opacity="0.2"/>
+        </Grid.Background>
+        <Label Grid.Row="0" Content="NIVEAU II : Themes"
+                   VerticalAlignment="Center" HorizontalAlignment="Center" 
+                   Foreground="White" FontSize="25" FontWeight="Bold"/>
+
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled"
+                  VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid VerticalAlignment="Center" Margin="0,0,0,0">
+                    <StackPanel>
+                        <Expander HorizontalAlignment="Stretch"
+                              Foreground="White">
+                            <Expander.Header>
+                                <Grid >
+                                    <TextBlock Text="Signalisation 2"
+                                       FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                </Grid>
+                            </Expander.Header>
+                            <Expander.Background>
+                                <SolidColorBrush Color="#FF6DD8FF" Opacity="0.3"/>
+                            </Expander.Background>
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                                </Grid.Background>
+                                <StackPanel Grid.Row="1" Orientation="Vertical"
+                                    VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal"
+                                                Margin="10">
+                                        <Button  x:Name="l1" FontSize="16" Click="l1_Click"
+                                                 Style="{DynamicResource MaterialDesignFlatButton}"
+                                                 Margin="0,0,15,0"
+                                                 Width="250" Height="100" Foreground="White">
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="q1" Click="q1_Click"
+                                                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                                                        Width="100" Height="100" Margin="30,0,0,0" Background="#FFFF3939" BorderBrush="{x:Null}">
+                                            <StackPanel Orientation="Vertical">
+                                                <Image Width="40" Height="40"/>
+                                                <TextBlock x:Name="q1txt" Text="Questions" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                        
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal"
+                                                Margin="10">
+                                        <Button  x:Name="l2" FontSize="16" Click="l2_Click"
+                                                 Style="{DynamicResource MaterialDesignFlatButton}"
+                                                 Margin="0,0,15,0"
+                                                 Width="250" Height="100" Foreground="White">
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="q2" Click="q2_Click"
+                                                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                                                        Width="100" Height="100" Margin="30,0,0,0" Background="#FFEAE42B" BorderBrush="{x:Null}">
+                                            <StackPanel Orientation="Vertical">
+                                                <Image Width="40" Height="40"/>
+                                                <TextBlock x:Name="q2txt" Text="Questions" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal"
+                                                Margin="10">
+                                        <Button  x:Name="l3" FontSize="16" Click="l3_Click"
+                                                 Style="{DynamicResource MaterialDesignFlatButton}"
+                                                 Margin="0,0,15,0"
+                                                 Width="250" Height="100" Foreground="White">
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="q3" Click="q3_Click"
+                                                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                                                        Width="100" Height="100" Margin="30,0,0,0" Background="#FF73D746" BorderBrush="{x:Null}">
+                                            <StackPanel Orientation="Vertical">
+                                                <Image Width="40" Height="40"/>
+                                                <TextBlock x:Name="q3txt" Text="Questions" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal"
+                                                Margin="10">
+                                        <Button  x:Name="l4" FontSize="16" Click="l4_Click"
+                                                 Style="{DynamicResource MaterialDesignFlatButton}"
+                                                 Margin="0,0,15,0"
+                                                 Width="250" Height="100" Foreground="White">
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="q4" Click="q4_Click"
+                                                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                                                        Width="100" Height="100" Margin="30,0,0,0" Background="#FF39C3FF" BorderBrush="{x:Null}">
+                                            <StackPanel Orientation="Vertical">
+                                                <Image Width="40" Height="40"/>
+                                                <TextBlock x:Name="q4txt" Text="Questions" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal"
+                                                Margin="10">
+                                        <Button  x:Name="l5" FontSize="16" Click="l5_Click"
+                                                 Style="{DynamicResource MaterialDesignFlatButton}"
+                                                 Margin="0,0,15,0"
+                                                 Width="250" Height="100" Foreground="White">
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="q5" Click="q5_Click"
+                                                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                                                        Width="100" Height="100" Margin="30,0,0,0" Background="#FFCC39FF" BorderBrush="{x:Null}">
+                                            <StackPanel Orientation="Vertical">
+                                                <Image Width="40" Height="40"/>
+                                                <TextBlock x:Name="q5txt" Text="Questions" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal"
+                                                Margin="10">
+                                        <Button  x:Name="l6" FontSize="16" Click="l6_Click"
+                                                 Style="{DynamicResource MaterialDesignFlatButton}"
+                                                 Margin="0,0,15,0"
+                                                 Width="250" Height="100" Foreground="White">
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="q6" Click="q6_Click"
+                                                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                                                        Width="100" Height="100" Margin="30,0,0,0" Background="#FFCAAF4D" BorderBrush="{x:Null}">
+                                            <StackPanel Orientation="Vertical">
+                                                <Image Width="40" Height="40"/>
+                                                <TextBlock x:Name="q6txt" Text="Questions" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Expander>
+                        <Border Background="{DynamicResource MaterialDesignDivider}"
+                        Height="1" HorizontalAlignment="Stretch"
+                        SnapsToDevicePixels="True" />
+                        <Expander HorizontalAlignment="Stretch"
+                              Foreground="White">
+                            <Expander.Header>
+                                <!-- هنا العنوان-->
+                                <Grid >
+                                    <TextBlock x:Name="txt1" Text="Theme 2"
+                                       FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                </Grid>
+                            </Expander.Header>
+                            <Expander.Background>
+                                <SolidColorBrush Color="#FFDE03" Opacity="0.3"/>
+                            </Expander.Background>
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                                </Grid.Background>
+                                <Label Name="lbl2" Content="Cours :" FontSize="25" Foreground="White" FontWeight="Bold" Margin="15,15,15,0" />
+                                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40,0,40">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Button x:Name="def" Style="{ StaticResource MaterialDesignFlatButton}" Click="defailance_Click"  FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"   />
+                                            </Button.Background>
+
+                                        </Button>
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00" Click="quiz_defailance_Click"   Height="100" Width="100" Margin="30,0,0,0">
+                                            <StackPanel >
+                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_defailance" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0"  >
+                                        <Button x:Name="dist" Style="{ StaticResource MaterialDesignFlatButton}" Click="distance_Click"  FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"   />
+                                            </Button.Background>
+
+                                        </Button>
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00"  Click="quiz_distance_Click"   Height="100" Width="100" Margin="30,0,0,0">
+                                            <StackPanel >
+                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_distance" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+
+
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+                                        <Button x:Name="vit" Click="vitesse_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"   />
+                                            </Button.Background>
+
+                                        </Button>
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00" Click="quiz_vitesse_Click"   Height="100" Width="100" Margin="30,0,0,0">
+                                            <StackPanel >
+                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_vitesse" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+
+                                    </StackPanel>
+                                </StackPanel>
+
+
+                            </Grid>
+                        </Expander>
+
+                        <!-- هادي لبوردر بش تفصل بيناتهم-->
+                        <Border Background="{DynamicResource MaterialDesignDivider}"
+                        Height="1" HorizontalAlignment="Stretch"
+                        SnapsToDevicePixels="True" />
+
+                        <!-- هدا لكتحب دير وحدة اخرى-->
+                        <Expander HorizontalAlignment="Stretch"
+                          Foreground="White" FontWeight="Bold">
+                            <Expander.Header>
+                                <!--  كيف كيف هنا العنوان-->
+                                <TextBlock x:Name="txt2" Text="Theme 4"
+                                       FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            </Expander.Header>
+                            <Expander.Background>
+                                <SolidColorBrush Color="#0336FF" Opacity="0.3"/>
+                            </Expander.Background>
+                            <Grid>
+
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                                </Grid.Background>
+                                <Label Name="lbl1" Content="Cours :" FontSize="25" Foreground="White" FontWeight="Bold" Margin="15,15,15,0" Grid.ColumnSpan="2" />
+                                <StackPanel HorizontalAlignment="Center"  Margin="0,40">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Button x:Name="les_feux"  Click="les_feux_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"   />
+                                            </Button.Background>
+
+                                        </Button>
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}"  Click="quiz_les_feux_Click"   Height="100" Width="100" Margin="30,0,0,0">
+                                            <StackPanel >
+                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_les_feux" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0"  >
+                                        <Button x:Name="securite"   Click="securité_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"   />
+                                            </Button.Background>
+
+                                        </Button>
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}"  Click="quiz_securite_Click"   Height="100" Width="100" Margin="30,0,0,0">
+                                            <StackPanel >
+                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_securite" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Expander>
+
+                        <!-- هادي لبوردر بش تفصل بيناتهم-->
+                        <Border Background="{DynamicResource MaterialDesignDivider}"
+                        Height="1"
+                        HorizontalAlignment="Stretch"
+                        SnapsToDevicePixels="True" />
+                        <Expander HorizontalAlignment="Stretch"
+                              Foreground="White">
+                            <Expander.Header>
+                                <!-- هنا العنوان-->
+                                <Grid >
+                                    <TextBlock x:Name="txt3" Text="Theme 5"
+                                       FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                </Grid>
+                            </Expander.Header>
+                            <Expander.Background>
+                                <SolidColorBrush Color="#FF0266" Opacity="0.3"/>
+                            </Expander.Background>
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                                </Grid.Background>
+                                <Label Name="lbl" Content="Cours :" FontSize="25" Foreground="White" FontWeight="Bold" Margin="15,15,15,0" Grid.ColumnSpan="2" />
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Button x:Name="risque"   Click="risque_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"   />
+                                            </Button.Background>
+
+                                        </Button>
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#F50057" Click="quiz_risque_Click"   Height="100" Width="100" Margin="30,0,0,0">
+                                            <StackPanel >
+                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_risque" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+
+
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0"  >
+                                        <Button x:Name="utilisation"   Click="utilisation_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"   />
+                                            </Button.Background>
+
+                                        </Button>
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#F50057" Click="quiz_utilisation_Click"   Height="100" Width="100" Margin="30,0,0,0">
+                                            <StackPanel >
+                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_utilisation" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+
+
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </Expander>
+                        <Border Background="{DynamicResource MaterialDesignDivider}"
+                        Height="1"
+                        HorizontalAlignment="Stretch"
+                        SnapsToDevicePixels="True" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+        <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="BackClick" >
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18"/>
+                <TextBlock Text="Retour" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>

@@ -87,11 +87,126 @@
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Niveau1\Niv1Main.xaml.cs">
+      <DependentUpon>Niv1Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\defailance.xaml.cs">
+      <DependentUpon>defailance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\distance.xaml.cs">
+      <DependentUpon>distance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\la_securité.xaml.cs">
+      <DependentUpon>la_securité.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\Lesson.xaml.cs">
+      <DependentUpon>Lesson.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\LessonContent.xaml.cs">
+      <DependentUpon>LessonContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\les_feux.xaml.cs">
+      <DependentUpon>les_feux.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\MarquageAuSol.xaml.cs">
+      <DependentUpon>MarquageAuSol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\Niv2Main.xaml.cs">
+      <DependentUpon>Niv2Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\Quiz.xaml.cs">
+      <DependentUpon>Quiz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\risque.xaml.cs">
+      <DependentUpon>risque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\utilisation.xaml.cs">
+      <DependentUpon>utilisation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau2\vitesse.xaml.cs">
+      <DependentUpon>vitesse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau3\connaitre.xaml.cs">
+      <DependentUpon>connaitre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau3\demarrer.xaml.cs">
+      <DependentUpon>demarrer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau3\document.xaml.cs">
+      <DependentUpon>document.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau3\les_ponints.xaml.cs">
+      <DependentUpon>les_ponints.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau3\monter.xaml.cs">
+      <DependentUpon>monter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau3\Niv3Main.xaml.cs">
+      <DependentUpon>Niv3Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau3\Niveau3.xaml.cs">
+      <DependentUpon>Niveau3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau3\principe.xaml.cs">
+      <DependentUpon>principe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Niveau3\Quiz.xaml.cs">
+      <DependentUpon>Quiz.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Niveaux.xaml.cs">
       <DependentUpon>Niveaux.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Noyau\NLeçon.cs" />
     <Compile Include="PagePrincipale.xaml.cs">
       <DependentUpon>PagePrincipale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Bilan.xaml.cs">
+      <DependentUpon>Bilan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Bilan2.xaml.cs">
+      <DependentUpon>Bilan2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DecrirePanneau.xaml.cs">
+      <DependentUpon>DecrirePanneau.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Leçons.xaml.cs">
+      <DependentUpon>Leçons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Panneaux.xaml.cs">
+      <DependentUpon>Panneaux.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PanneauxInterdiction.xaml.cs">
+      <DependentUpon>PanneauxInterdiction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PanneauxObligation.xaml.cs">
+      <DependentUpon>PanneauxObligation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PanneauxQuiz.xaml.cs">
+      <DependentUpon>PanneauxQuiz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Quiz.xaml.cs">
+      <DependentUpon>Quiz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Signalisation.xaml.cs">
+      <DependentUpon>Signalisation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SignalisationAr.xaml.cs">
+      <DependentUpon>SignalisationAr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestNiveau1.xaml.cs">
+      <DependentUpon>TestNiveau1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestNiveau1p2.xaml.cs">
+      <DependentUpon>TestNiveau1p2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestNiveau2.xaml.cs">
+      <DependentUpon>TestNiveau2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tests1.xaml.cs">
+      <DependentUpon>Tests1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tests2.xaml.cs">
+      <DependentUpon>Tests2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -128,11 +243,163 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Niveau1\Niv1Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\defailance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\distance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\la_securité.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\Lesson.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\LessonContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\les_feux.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\MarquageAuSol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\Niv2Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\Quiz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\risque.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\utilisation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau2\vitesse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau3\connaitre.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau3\demarrer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau3\document.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau3\les_ponints.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau3\monter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau3\Niv3Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau3\Niveau3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau3\principe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Niveau3\Quiz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Niveaux.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PagePrincipale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Bilan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Bilan2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DecrirePanneau.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Leçons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Panneaux.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PanneauxInterdiction.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PanneauxObligation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PanneauxQuiz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Quiz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Signalisation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SignalisationAr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TestNiveau1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TestNiveau1p2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TestNiveau2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Tests1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Tests2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -177,6 +444,579 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="bin\Debug\icons\Arabic.png" />
+    <Resource Include="bin\Debug\icons\audio-book.png" />
+    <Resource Include="bin\Debug\icons\back2.png" />
+    <Resource Include="bin\Debug\icons\Background.png" />
+    <Resource Include="bin\Debug\icons\Booksicon.png" />
+    <Resource Include="bin\Debug\icons\chartback.png" />
+    <Resource Include="bin\Debug\icons\Default.png" />
+    <Resource Include="bin\Debug\icons\default1.png" />
+    <Resource Include="bin\Debug\icons\default2.png" />
+    <Resource Include="bin\Debug\icons\default3.png" />
+    <Resource Include="bin\Debug\icons\double-left.png" />
+    <Resource Include="bin\Debug\icons\double-right.png" />
+    <Resource Include="bin\Debug\icons\EDautoEcole.png" />
+    <Resource Include="bin\Debug\icons\Francais.png" />
+    <Resource Include="bin\Debug\icons\happy.png" />
+    <Resource Include="bin\Debug\icons\icons8_delete_96px_1.png" />
+    <Resource Include="bin\Debug\icons\Lvl1icon.png" />
+    <Resource Include="bin\Debug\icons\Lvl2icon.png" />
+    <Resource Include="bin\Debug\icons\Lvl3icon.png" />
+    <Resource Include="bin\Debug\icons\quiz.png" />
+    <Resource Include="bin\Debug\icons\quiz1.png" />
+    <Resource Include="bin\Debug\icons\quiz2.png" />
+    <Resource Include="bin\Debug\icons\quizicon.png" />
+    <Resource Include="bin\Debug\icons\sad.png" />
+    <Resource Include="bin\Debug\icons\signinback.png" />
+    <Resource Include="bin\Debug\icons\StopSignicon.png" />
+    <Resource Include="bin\Debug\icons\test1.png" />
+    <Resource Include="bin\Debug\icons\test2.png" />
+    <Resource Include="bin\Debug\icons\theme1quiz14.png" />
+    <Resource Include="bin\Debug\Images\100_off.png" />
+    <Resource Include="bin\Debug\Images\101_off.png" />
+    <Resource Include="bin\Debug\Images\102_off.png" />
+    <Resource Include="bin\Debug\Images\103_off.png" />
+    <Resource Include="bin\Debug\Images\104_off.png" />
+    <Resource Include="bin\Debug\Images\105_off.png" />
+    <Resource Include="bin\Debug\Images\106_off.png" />
+    <Resource Include="bin\Debug\Images\107_off.png" />
+    <Resource Include="bin\Debug\Images\108_off.png" />
+    <Resource Include="bin\Debug\Images\109_off.png" />
+    <Resource Include="bin\Debug\Images\10_2.png" />
+    <Resource Include="bin\Debug\Images\10_off.png" />
+    <Resource Include="bin\Debug\Images\10_on.png" />
+    <Resource Include="bin\Debug\Images\110_off.png" />
+    <Resource Include="bin\Debug\Images\111_off.png" />
+    <Resource Include="bin\Debug\Images\112_off.png" />
+    <Resource Include="bin\Debug\Images\113_off.png" />
+    <Resource Include="bin\Debug\Images\114_off.png" />
+    <Resource Include="bin\Debug\Images\115_off.png" />
+    <Resource Include="bin\Debug\Images\116_off.png" />
+    <Resource Include="bin\Debug\Images\117_off.png" />
+    <Resource Include="bin\Debug\Images\118_off.png" />
+    <Resource Include="bin\Debug\Images\119_off.png" />
+    <Resource Include="bin\Debug\Images\11_2.png" />
+    <Resource Include="bin\Debug\Images\11_off.png" />
+    <Resource Include="bin\Debug\Images\11_on.png" />
+    <Resource Include="bin\Debug\Images\120_off.png" />
+    <Resource Include="bin\Debug\Images\121_off.png" />
+    <Resource Include="bin\Debug\Images\122_off.png" />
+    <Resource Include="bin\Debug\Images\123_off.png" />
+    <Resource Include="bin\Debug\Images\124_off.png" />
+    <Resource Include="bin\Debug\Images\125_off.png" />
+    <Resource Include="bin\Debug\Images\126_off.png" />
+    <Resource Include="bin\Debug\Images\127_off.png" />
+    <Resource Include="bin\Debug\Images\128_off.png" />
+    <Resource Include="bin\Debug\Images\129_off.png" />
+    <Resource Include="bin\Debug\Images\12_2.png" />
+    <Resource Include="bin\Debug\Images\12_off.png" />
+    <Resource Include="bin\Debug\Images\12_on.png" />
+    <Resource Include="bin\Debug\Images\130_off.png" />
+    <Resource Include="bin\Debug\Images\131_off.png" />
+    <Resource Include="bin\Debug\Images\132_off.png" />
+    <Resource Include="bin\Debug\Images\133_off.png" />
+    <Resource Include="bin\Debug\Images\134_off.png" />
+    <Resource Include="bin\Debug\Images\135_off.png" />
+    <Resource Include="bin\Debug\Images\136_off.png" />
+    <Resource Include="bin\Debug\Images\137_off.png" />
+    <Resource Include="bin\Debug\Images\138_off.png" />
+    <Resource Include="bin\Debug\Images\139_off.png" />
+    <Resource Include="bin\Debug\Images\13_2.png" />
+    <Resource Include="bin\Debug\Images\13_off.png" />
+    <Resource Include="bin\Debug\Images\13_on.png" />
+    <Resource Include="bin\Debug\Images\140_off.png" />
+    <Resource Include="bin\Debug\Images\141_off.png" />
+    <Resource Include="bin\Debug\Images\142_off.png" />
+    <Resource Include="bin\Debug\Images\143_off.png" />
+    <Resource Include="bin\Debug\Images\144_off.png" />
+    <Resource Include="bin\Debug\Images\145_off.png" />
+    <Resource Include="bin\Debug\Images\146_off.png" />
+    <Resource Include="bin\Debug\Images\147_off.png" />
+    <Resource Include="bin\Debug\Images\148_off.png" />
+    <Resource Include="bin\Debug\Images\149_off.png" />
+    <Resource Include="bin\Debug\Images\14_2.png" />
+    <Resource Include="bin\Debug\Images\14_off.png" />
+    <Resource Include="bin\Debug\Images\14_on.png" />
+    <Resource Include="bin\Debug\Images\150_off.png" />
+    <Resource Include="bin\Debug\Images\151_off.png" />
+    <Resource Include="bin\Debug\Images\152_off.png" />
+    <Resource Include="bin\Debug\Images\153_off.png" />
+    <Resource Include="bin\Debug\Images\154_off.png" />
+    <Resource Include="bin\Debug\Images\155_off.png" />
+    <Resource Include="bin\Debug\Images\156_off.png" />
+    <Resource Include="bin\Debug\Images\157_off.png" />
+    <Resource Include="bin\Debug\Images\158_off.png" />
+    <Resource Include="bin\Debug\Images\159_off.png" />
+    <Resource Include="bin\Debug\Images\15_2.png" />
+    <Resource Include="bin\Debug\Images\15_off.png" />
+    <Resource Include="bin\Debug\Images\15_on.png" />
+    <Resource Include="bin\Debug\Images\160_off.png" />
+    <Resource Include="bin\Debug\Images\161_off.png" />
+    <Resource Include="bin\Debug\Images\162_off.png" />
+    <Resource Include="bin\Debug\Images\163_off.png" />
+    <Resource Include="bin\Debug\Images\164_off.png" />
+    <Resource Include="bin\Debug\Images\165_off.png" />
+    <Resource Include="bin\Debug\Images\166_off.png" />
+    <Resource Include="bin\Debug\Images\167_off.png" />
+    <Resource Include="bin\Debug\Images\168_off.png" />
+    <Resource Include="bin\Debug\Images\169_off.png" />
+    <Resource Include="bin\Debug\Images\16_2.png" />
+    <Resource Include="bin\Debug\Images\16_off.png" />
+    <Resource Include="bin\Debug\Images\16_on.png" />
+    <Resource Include="bin\Debug\Images\170_off.png" />
+    <Resource Include="bin\Debug\Images\171_off.png" />
+    <Resource Include="bin\Debug\Images\172_off.png" />
+    <Resource Include="bin\Debug\Images\173_off.png" />
+    <Resource Include="bin\Debug\Images\174_off.png" />
+    <Resource Include="bin\Debug\Images\175_off.png" />
+    <Resource Include="bin\Debug\Images\176_off.png" />
+    <Resource Include="bin\Debug\Images\177_off.png" />
+    <Resource Include="bin\Debug\Images\178_off.png" />
+    <Resource Include="bin\Debug\Images\179_off.png" />
+    <Resource Include="bin\Debug\Images\17_2.png" />
+    <Resource Include="bin\Debug\Images\17_off.png" />
+    <Resource Include="bin\Debug\Images\17_on.png" />
+    <Resource Include="bin\Debug\Images\180_off.png" />
+    <Resource Include="bin\Debug\Images\181_off.png" />
+    <Resource Include="bin\Debug\Images\182_off.png" />
+    <Resource Include="bin\Debug\Images\183_off.png" />
+    <Resource Include="bin\Debug\Images\184_off.png" />
+    <Resource Include="bin\Debug\Images\18_2.png" />
+    <Resource Include="bin\Debug\Images\18_off.png" />
+    <Resource Include="bin\Debug\Images\18_on.png" />
+    <Resource Include="bin\Debug\Images\19_2.png" />
+    <Resource Include="bin\Debug\Images\19_off.png" />
+    <Resource Include="bin\Debug\Images\19_on.png" />
+    <Resource Include="bin\Debug\Images\1_2.png" />
+    <Resource Include="bin\Debug\Images\1_off.png" />
+    <Resource Include="bin\Debug\Images\1_on.png" />
+    <Resource Include="bin\Debug\Images\20_2.png" />
+    <Resource Include="bin\Debug\Images\20_off.png" />
+    <Resource Include="bin\Debug\Images\20_on.png" />
+    <Resource Include="bin\Debug\Images\213_off.png" />
+    <Resource Include="bin\Debug\Images\214_off.png" />
+    <Resource Include="bin\Debug\Images\215_off.png" />
+    <Resource Include="bin\Debug\Images\216_off.png" />
+    <Resource Include="bin\Debug\Images\217_off.png" />
+    <Resource Include="bin\Debug\Images\218_off.png" />
+    <Resource Include="bin\Debug\Images\219_off.png" />
+    <Resource Include="bin\Debug\Images\21_2.png" />
+    <Resource Include="bin\Debug\Images\21_off.png" />
+    <Resource Include="bin\Debug\Images\21_on.png" />
+    <Resource Include="bin\Debug\Images\220_off.png" />
+    <Resource Include="bin\Debug\Images\221_off.png" />
+    <Resource Include="bin\Debug\Images\222_off.png" />
+    <Resource Include="bin\Debug\Images\223_off.png" />
+    <Resource Include="bin\Debug\Images\224_off.png" />
+    <Resource Include="bin\Debug\Images\225_off.png" />
+    <Resource Include="bin\Debug\Images\226_off.png" />
+    <Resource Include="bin\Debug\Images\227_off.png" />
+    <Resource Include="bin\Debug\Images\228_off.png" />
+    <Resource Include="bin\Debug\Images\229_off.png" />
+    <Resource Include="bin\Debug\Images\22_2.png" />
+    <Resource Include="bin\Debug\Images\22_off.png" />
+    <Resource Include="bin\Debug\Images\22_on.png" />
+    <Resource Include="bin\Debug\Images\230_off.png" />
+    <Resource Include="bin\Debug\Images\231_off.png" />
+    <Resource Include="bin\Debug\Images\232_off.png" />
+    <Resource Include="bin\Debug\Images\233_off.png" />
+    <Resource Include="bin\Debug\Images\234_off.png" />
+    <Resource Include="bin\Debug\Images\235_off.png" />
+    <Resource Include="bin\Debug\Images\236_off.png" />
+    <Resource Include="bin\Debug\Images\237_off.png" />
+    <Resource Include="bin\Debug\Images\238_off.png" />
+    <Resource Include="bin\Debug\Images\239_off.png" />
+    <Resource Include="bin\Debug\Images\23_off.png" />
+    <Resource Include="bin\Debug\Images\23_on.png" />
+    <Resource Include="bin\Debug\Images\240_off.png" />
+    <Resource Include="bin\Debug\Images\241_off.png" />
+    <Resource Include="bin\Debug\Images\242_off.png" />
+    <Resource Include="bin\Debug\Images\243_off.png" />
+    <Resource Include="bin\Debug\Images\244_off.png" />
+    <Resource Include="bin\Debug\Images\245_off.png" />
+    <Resource Include="bin\Debug\Images\246_off.png" />
+    <Resource Include="bin\Debug\Images\247_off.png" />
+    <Resource Include="bin\Debug\Images\248_off.png" />
+    <Resource Include="bin\Debug\Images\249_off.png" />
+    <Resource Include="bin\Debug\Images\24_off.png" />
+    <Resource Include="bin\Debug\Images\24_on.png" />
+    <Resource Include="bin\Debug\Images\250_off.png" />
+    <Resource Include="bin\Debug\Images\251_off.png" />
+    <Resource Include="bin\Debug\Images\252_off.png" />
+    <Resource Include="bin\Debug\Images\253_off.png" />
+    <Resource Include="bin\Debug\Images\254_off.png" />
+    <Resource Include="bin\Debug\Images\25_off.png" />
+    <Resource Include="bin\Debug\Images\25_on.png" />
+    <Resource Include="bin\Debug\Images\26_off.png" />
+    <Resource Include="bin\Debug\Images\26_on.png" />
+    <Resource Include="bin\Debug\Images\27_off.png" />
+    <Resource Include="bin\Debug\Images\27_on.png" />
+    <Resource Include="bin\Debug\Images\28_off.png" />
+    <Resource Include="bin\Debug\Images\28_on.png" />
+    <Resource Include="bin\Debug\Images\29_off.png" />
+    <Resource Include="bin\Debug\Images\29_on.png" />
+    <Resource Include="bin\Debug\Images\2_2.png" />
+    <Resource Include="bin\Debug\Images\2_off.png" />
+    <Resource Include="bin\Debug\Images\2_on.png" />
+    <Resource Include="bin\Debug\Images\30_off.png" />
+    <Resource Include="bin\Debug\Images\30_on.png" />
+    <Resource Include="bin\Debug\Images\31_off.png" />
+    <Resource Include="bin\Debug\Images\31_on.png" />
+    <Resource Include="bin\Debug\Images\32_off.png" />
+    <Resource Include="bin\Debug\Images\32_on.png" />
+    <Resource Include="bin\Debug\Images\33_off.png" />
+    <Resource Include="bin\Debug\Images\33_on.png" />
+    <Resource Include="bin\Debug\Images\34_off.png" />
+    <Resource Include="bin\Debug\Images\34_on.png" />
+    <Resource Include="bin\Debug\Images\35_off.png" />
+    <Resource Include="bin\Debug\Images\35_on.png" />
+    <Resource Include="bin\Debug\Images\36_off.png" />
+    <Resource Include="bin\Debug\Images\36_on.png" />
+    <Resource Include="bin\Debug\Images\37_off.png" />
+    <Resource Include="bin\Debug\Images\37_on.png" />
+    <Resource Include="bin\Debug\Images\38_off.png" />
+    <Resource Include="bin\Debug\Images\38_on.png" />
+    <Resource Include="bin\Debug\Images\39_off.png" />
+    <Resource Include="bin\Debug\Images\39_on.png" />
+    <Resource Include="bin\Debug\Images\3_2.png" />
+    <Resource Include="bin\Debug\Images\3_off.png" />
+    <Resource Include="bin\Debug\Images\3_on.png" />
+    <Resource Include="bin\Debug\Images\40_off.png" />
+    <Resource Include="bin\Debug\Images\40_on.png" />
+    <Resource Include="bin\Debug\Images\41_off.png" />
+    <Resource Include="bin\Debug\Images\41_on.png" />
+    <Resource Include="bin\Debug\Images\42_off.png" />
+    <Resource Include="bin\Debug\Images\42_on.png" />
+    <Resource Include="bin\Debug\Images\43_off.png" />
+    <Resource Include="bin\Debug\Images\43_on.png" />
+    <Resource Include="bin\Debug\Images\44_off.png" />
+    <Resource Include="bin\Debug\Images\44_on.png" />
+    <Resource Include="bin\Debug\Images\45_off.png" />
+    <Resource Include="bin\Debug\Images\45_on.png" />
+    <Resource Include="bin\Debug\Images\46_off.png" />
+    <Resource Include="bin\Debug\Images\46_on.png" />
+    <Resource Include="bin\Debug\Images\47_off.png" />
+    <Resource Include="bin\Debug\Images\47_on.png" />
+    <Resource Include="bin\Debug\Images\48_off.png" />
+    <Resource Include="bin\Debug\Images\48_on.png" />
+    <Resource Include="bin\Debug\Images\49_off.png" />
+    <Resource Include="bin\Debug\Images\49_on.png" />
+    <Resource Include="bin\Debug\Images\4_2.png" />
+    <Resource Include="bin\Debug\Images\4_off.png" />
+    <Resource Include="bin\Debug\Images\4_on.png" />
+    <Resource Include="bin\Debug\Images\50_off.png" />
+    <Resource Include="bin\Debug\Images\50_on.png" />
+    <Resource Include="bin\Debug\Images\51_off.png" />
+    <Resource Include="bin\Debug\Images\51_on.png" />
+    <Resource Include="bin\Debug\Images\52_off.png" />
+    <Resource Include="bin\Debug\Images\52_on.png" />
+    <Resource Include="bin\Debug\Images\53_off.png" />
+    <Resource Include="bin\Debug\Images\53_on.png" />
+    <Resource Include="bin\Debug\Images\54_off.png" />
+    <Resource Include="bin\Debug\Images\54_on.png" />
+    <Resource Include="bin\Debug\Images\55_off.png" />
+    <Resource Include="bin\Debug\Images\55_on.png" />
+    <Resource Include="bin\Debug\Images\56_off.png" />
+    <Resource Include="bin\Debug\Images\56_on.png" />
+    <Resource Include="bin\Debug\Images\57_off.png" />
+    <Resource Include="bin\Debug\Images\57_on.png" />
+    <Resource Include="bin\Debug\Images\58_off.png" />
+    <Resource Include="bin\Debug\Images\58_on.png" />
+    <Resource Include="bin\Debug\Images\59_off.png" />
+    <Resource Include="bin\Debug\Images\5_2.png" />
+    <Resource Include="bin\Debug\Images\5_off.png" />
+    <Resource Include="bin\Debug\Images\5_on.png" />
+    <Resource Include="bin\Debug\Images\60_off.png" />
+    <Resource Include="bin\Debug\Images\61_off.png" />
+    <Resource Include="bin\Debug\Images\62_off.png" />
+    <Resource Include="bin\Debug\Images\63_off.png" />
+    <Resource Include="bin\Debug\Images\64_off.png" />
+    <Resource Include="bin\Debug\Images\65_off.png" />
+    <Resource Include="bin\Debug\Images\66_off.png" />
+    <Resource Include="bin\Debug\Images\67_off.png" />
+    <Resource Include="bin\Debug\Images\68_off.png" />
+    <Resource Include="bin\Debug\Images\69_off.png" />
+    <Resource Include="bin\Debug\Images\6_2.png" />
+    <Resource Include="bin\Debug\Images\6_off.png" />
+    <Resource Include="bin\Debug\Images\6_on.png" />
+    <Resource Include="bin\Debug\Images\70_off.png" />
+    <Resource Include="bin\Debug\Images\71_off.png" />
+    <Resource Include="bin\Debug\Images\72_off.png" />
+    <Resource Include="bin\Debug\Images\73_off.png" />
+    <Resource Include="bin\Debug\Images\74_off.png" />
+    <Resource Include="bin\Debug\Images\75_off.png" />
+    <Resource Include="bin\Debug\Images\76_off.png" />
+    <Resource Include="bin\Debug\Images\77_off.png" />
+    <Resource Include="bin\Debug\Images\78_off.png" />
+    <Resource Include="bin\Debug\Images\79_off.png" />
+    <Resource Include="bin\Debug\Images\7_2.png" />
+    <Resource Include="bin\Debug\Images\7_off.png" />
+    <Resource Include="bin\Debug\Images\7_on.png" />
+    <Resource Include="bin\Debug\Images\80_off.png" />
+    <Resource Include="bin\Debug\Images\81_off.png" />
+    <Resource Include="bin\Debug\Images\82_off.png" />
+    <Resource Include="bin\Debug\Images\83_off.png" />
+    <Resource Include="bin\Debug\Images\84_off.png" />
+    <Resource Include="bin\Debug\Images\85_off.png" />
+    <Resource Include="bin\Debug\Images\86_off.png" />
+    <Resource Include="bin\Debug\Images\87_off.png" />
+    <Resource Include="bin\Debug\Images\88_off.png" />
+    <Resource Include="bin\Debug\Images\89_off.png" />
+    <Resource Include="bin\Debug\Images\8_2.png" />
+    <Resource Include="bin\Debug\Images\8_off.png" />
+    <Resource Include="bin\Debug\Images\8_on.png" />
+    <Resource Include="bin\Debug\Images\90_off.png" />
+    <Resource Include="bin\Debug\Images\91_off.png" />
+    <Resource Include="bin\Debug\Images\92_off.png" />
+    <Resource Include="bin\Debug\Images\93_off.png" />
+    <Resource Include="bin\Debug\Images\94_off.png" />
+    <Resource Include="bin\Debug\Images\95_off.png" />
+    <Resource Include="bin\Debug\Images\96_off.png" />
+    <Resource Include="bin\Debug\Images\97_off.png" />
+    <Resource Include="bin\Debug\Images\98_off.png" />
+    <Resource Include="bin\Debug\Images\99_off.png" />
+    <Resource Include="bin\Debug\Images\9_2.png" />
+    <Resource Include="bin\Debug\Images\9_off.png" />
+    <Resource Include="bin\Debug\Images\9_on.png" />
+    <Resource Include="bin\Debug\Images\b1.png" />
+    <Resource Include="bin\Debug\Images\c1.png" />
+    <Resource Include="bin\Debug\Images\c2.png" />
+    <Resource Include="bin\Debug\Images\cedez_off.png" />
+    <Resource Include="bin\Debug\Images\f1.jpg" />
+    <Resource Include="bin\Debug\Images\f2.jpg" />
+    <Resource Include="bin\Debug\Images\f3.jpg" />
+    <Resource Include="bin\Debug\Images\pdroite_off.png" />
+    <Resource Include="bin\Debug\Images\piet_off.png" />
+    <Resource Include="bin\Debug\Images\princ_off.png" />
+    <Resource Include="bin\Debug\Images\prio_off.png" />
+    <Resource Include="bin\Debug\Images\r1.jpg" />
+    <Resource Include="bin\Debug\Images\r2.jpg" />
+    <Resource Include="bin\Debug\Images\stop_off.png" />
+    <Resource Include="bin\Debug\Images\tmp.jpg" />
+    <Resource Include="bin\Debug\img\circ1.png" />
+    <Resource Include="bin\Debug\img\circ2.png" />
+    <Resource Include="bin\Debug\img\circ3.png" />
+    <Resource Include="bin\Debug\img\circ4.png" />
+    <Resource Include="bin\Debug\img\circ5.png" />
+    <Resource Include="bin\Debug\img\circ6.png" />
+    <Resource Include="bin\Debug\img\circ7.png" />
+    <Resource Include="bin\Debug\img\circ8.png" />
+    <Resource Include="bin\Debug\img\circ9.png" />
+    <Resource Include="bin\Debug\img\con1.png" />
+    <Resource Include="bin\Debug\img\con2.png" />
+    <Resource Include="bin\Debug\img\con3.png" />
+    <Resource Include="bin\Debug\img\con4.png" />
+    <Resource Include="bin\Debug\img\con5.png" />
+    <Resource Include="bin\Debug\img\con6.png" />
+    <Resource Include="bin\Debug\img\con7.png" />
+    <Resource Include="bin\Debug\img\conAR1.png" />
+    <Resource Include="bin\Debug\img\conAR2.png" />
+    <Resource Include="bin\Debug\img\conAR3.png" />
+    <Resource Include="bin\Debug\img\conAR4.png" />
+    <Resource Include="bin\Debug\img\conAR5.png" />
+    <Resource Include="bin\Debug\img\conAR6.png" />
+    <Resource Include="bin\Debug\img\def1.png" />
+    <Resource Include="bin\Debug\img\def2.png" />
+    <Resource Include="bin\Debug\img\def3.png" />
+    <Resource Include="bin\Debug\img\def4.png" />
+    <Resource Include="bin\Debug\img\def5.png" />
+    <Resource Include="bin\Debug\img\defAR1.png" />
+    <Resource Include="bin\Debug\img\defAR2.png" />
+    <Resource Include="bin\Debug\img\defAR3.png" />
+    <Resource Include="bin\Debug\img\defAR4.png" />
+    <Resource Include="bin\Debug\img\defAR5.png" />
+    <Resource Include="bin\Debug\img\dem1.png" />
+    <Resource Include="bin\Debug\img\dem2.png" />
+    <Resource Include="bin\Debug\img\demAR1.png" />
+    <Resource Include="bin\Debug\img\demAR2.png" />
+    <Resource Include="bin\Debug\img\dist1.png" />
+    <Resource Include="bin\Debug\img\dist2.png" />
+    <Resource Include="bin\Debug\img\dist3.png" />
+    <Resource Include="bin\Debug\img\distAR1.png" />
+    <Resource Include="bin\Debug\img\distAR2.png" />
+    <Resource Include="bin\Debug\img\distAR3.png" />
+    <Resource Include="bin\Debug\img\distAR4.png" />
+    <Resource Include="bin\Debug\img\doc1.png" />
+    <Resource Include="bin\Debug\img\doc2.png" />
+    <Resource Include="bin\Debug\img\doc3.png" />
+    <Resource Include="bin\Debug\img\doc4.png" />
+    <Resource Include="bin\Debug\img\doc5.png" />
+    <Resource Include="bin\Debug\img\docAR1.png" />
+    <Resource Include="bin\Debug\img\docAR2.png" />
+    <Resource Include="bin\Debug\img\docAR3.png" />
+    <Resource Include="bin\Debug\img\docAR4.png" />
+    <Resource Include="bin\Debug\img\docAR5.png" />
+    <Resource Include="bin\Debug\img\feux1.png" />
+    <Resource Include="bin\Debug\img\feux2.png" />
+    <Resource Include="bin\Debug\img\feux3.png" />
+    <Resource Include="bin\Debug\img\feux4.png" />
+    <Resource Include="bin\Debug\img\feux5.png" />
+    <Resource Include="bin\Debug\img\feux6.png" />
+    <Resource Include="bin\Debug\img\feux7.png" />
+    <Resource Include="bin\Debug\img\feuxAR1.png" />
+    <Resource Include="bin\Debug\img\feuxAR2.png" />
+    <Resource Include="bin\Debug\img\feuxAR3.png" />
+    <Resource Include="bin\Debug\img\feuxAR4.png" />
+    <Resource Include="bin\Debug\img\feuxAR5.png" />
+    <Resource Include="bin\Debug\img\mont1.png" />
+    <Resource Include="bin\Debug\img\mont2.png" />
+    <Resource Include="bin\Debug\img\mont3.png" />
+    <Resource Include="bin\Debug\img\mont4.png" />
+    <Resource Include="bin\Debug\img\montAR1.png" />
+    <Resource Include="bin\Debug\img\montAR2.png" />
+    <Resource Include="bin\Debug\img\montAR3.png" />
+    <Resource Include="bin\Debug\img\montAR4.png" />
+    <Resource Include="bin\Debug\img\per1.png" />
+    <Resource Include="bin\Debug\img\per2.png" />
+    <Resource Include="bin\Debug\img\per3.png" />
+    <Resource Include="bin\Debug\img\per4.png" />
+    <Resource Include="bin\Debug\img\perAR1.png" />
+    <Resource Include="bin\Debug\img\perAR2.png" />
+    <Resource Include="bin\Debug\img\perAR3.png" />
+    <Resource Include="bin\Debug\img\perAR4.png" />
+    <Resource Include="bin\Debug\img\perAR5.png" />
+    <Resource Include="bin\Debug\img\perAR6.png" />
+    <Resource Include="bin\Debug\img\prin1.png" />
+    <Resource Include="bin\Debug\img\prin2.png" />
+    <Resource Include="bin\Debug\img\prin3.png" />
+    <Resource Include="bin\Debug\img\prin4.png" />
+    <Resource Include="bin\Debug\img\prinAR1.png" />
+    <Resource Include="bin\Debug\img\prinAR2.png" />
+    <Resource Include="bin\Debug\img\prinAR3.png" />
+    <Resource Include="bin\Debug\img\prinAR4.png" />
+    <Resource Include="bin\Debug\img\risq1.png" />
+    <Resource Include="bin\Debug\img\risq2.png" />
+    <Resource Include="bin\Debug\img\risq3.png" />
+    <Resource Include="bin\Debug\img\risq4.png" />
+    <Resource Include="bin\Debug\img\risq5.png" />
+    <Resource Include="bin\Debug\img\risq6.png" />
+    <Resource Include="bin\Debug\img\risqAR1.png" />
+    <Resource Include="bin\Debug\img\risqAR2.png" />
+    <Resource Include="bin\Debug\img\risqAR3.png" />
+    <Resource Include="bin\Debug\img\risqAR4.png" />
+    <Resource Include="bin\Debug\img\sec1.png" />
+    <Resource Include="bin\Debug\img\sec2.png" />
+    <Resource Include="bin\Debug\img\sec3.png" />
+    <Resource Include="bin\Debug\img\sec4.png" />
+    <Resource Include="bin\Debug\img\sec5.png" />
+    <Resource Include="bin\Debug\img\sec6.png" />
+    <Resource Include="bin\Debug\img\secAR1.png" />
+    <Resource Include="bin\Debug\img\secAR2.png" />
+    <Resource Include="bin\Debug\img\secAR3.png" />
+    <Resource Include="bin\Debug\img\secAR4.png" />
+    <Resource Include="bin\Debug\img\ut1.png" />
+    <Resource Include="bin\Debug\img\ut2.png" />
+    <Resource Include="bin\Debug\img\ut3.png" />
+    <Resource Include="bin\Debug\img\ut4.png" />
+    <Resource Include="bin\Debug\img\utAR1.png" />
+    <Resource Include="bin\Debug\img\utAR2.png" />
+    <Resource Include="bin\Debug\img\utAR3.png" />
+    <Resource Include="bin\Debug\img\utAR4.png" />
+    <Resource Include="bin\Debug\img\vit1.png" />
+    <Resource Include="bin\Debug\img\vit2.png" />
+    <Resource Include="bin\Debug\img\vit3.png" />
+    <Resource Include="bin\Debug\img\vit4.png" />
+    <Resource Include="bin\Debug\img\vitAR1.png" />
+    <Resource Include="bin\Debug\img\vitAR2.png" />
+    <Resource Include="bin\Debug\img\vitAR3.png" />
+    <Resource Include="bin\Debug\img\vitAR4.png" />
+    <Content Include="bin\Debug\sounds\1.wav" />
+    <Content Include="bin\Debug\sounds\10.wav" />
+    <Content Include="bin\Debug\sounds\11.wav" />
+    <Content Include="bin\Debug\sounds\12.wav" />
+    <Content Include="bin\Debug\sounds\13.wav" />
+    <Content Include="bin\Debug\sounds\14.wav" />
+    <Content Include="bin\Debug\sounds\15.wav" />
+    <Content Include="bin\Debug\sounds\16.wav" />
+    <Content Include="bin\Debug\sounds\17.wav" />
+    <Content Include="bin\Debug\sounds\18.wav" />
+    <Content Include="bin\Debug\sounds\19.wav" />
+    <Content Include="bin\Debug\sounds\1ar.wav" />
+    <Content Include="bin\Debug\sounds\2.wav" />
+    <Content Include="bin\Debug\sounds\20.wav" />
+    <Content Include="bin\Debug\sounds\21.wav" />
+    <Content Include="bin\Debug\sounds\22.wav" />
+    <Content Include="bin\Debug\sounds\23.wav" />
+    <Content Include="bin\Debug\sounds\24.wav" />
+    <Content Include="bin\Debug\sounds\25.wav" />
+    <Content Include="bin\Debug\sounds\26.wav" />
+    <Content Include="bin\Debug\sounds\27.wav" />
+    <Content Include="bin\Debug\sounds\28.wav" />
+    <Content Include="bin\Debug\sounds\29.wav" />
+    <Content Include="bin\Debug\sounds\2ar.wav" />
+    <Content Include="bin\Debug\sounds\3.wav" />
+    <Content Include="bin\Debug\sounds\30.wav" />
+    <Content Include="bin\Debug\sounds\31.wav" />
+    <Content Include="bin\Debug\sounds\32.wav" />
+    <Content Include="bin\Debug\sounds\33.wav" />
+    <Content Include="bin\Debug\sounds\34.wav" />
+    <Content Include="bin\Debug\sounds\35.wav" />
+    <Content Include="bin\Debug\sounds\36.wav" />
+    <Content Include="bin\Debug\sounds\37.wav" />
+    <Content Include="bin\Debug\sounds\38.wav" />
+    <Content Include="bin\Debug\sounds\39.wav" />
+    <Content Include="bin\Debug\sounds\4.wav" />
+    <Content Include="bin\Debug\sounds\40.wav" />
+    <Content Include="bin\Debug\sounds\41.wav" />
+    <Content Include="bin\Debug\sounds\42.wav" />
+    <Content Include="bin\Debug\sounds\43.wav" />
+    <Content Include="bin\Debug\sounds\44.wav" />
+    <Content Include="bin\Debug\sounds\45.wav" />
+    <Content Include="bin\Debug\sounds\46.wav" />
+    <Content Include="bin\Debug\sounds\47.wav" />
+    <Content Include="bin\Debug\sounds\48.wav" />
+    <Content Include="bin\Debug\sounds\49.wav" />
+    <Content Include="bin\Debug\sounds\5.wav" />
+    <Content Include="bin\Debug\sounds\50.wav" />
+    <Content Include="bin\Debug\sounds\51.wav" />
+    <Content Include="bin\Debug\sounds\52.wav" />
+    <Content Include="bin\Debug\sounds\53.wav" />
+    <Content Include="bin\Debug\sounds\54.wav" />
+    <Content Include="bin\Debug\sounds\55.wav" />
+    <Content Include="bin\Debug\sounds\56.wav" />
+    <Content Include="bin\Debug\sounds\57.wav" />
+    <Content Include="bin\Debug\sounds\58.wav" />
+    <Content Include="bin\Debug\sounds\59.wav" />
+    <Content Include="bin\Debug\sounds\6.wav" />
+    <Content Include="bin\Debug\sounds\60.wav" />
+    <Content Include="bin\Debug\sounds\61.wav" />
+    <Content Include="bin\Debug\sounds\62.wav" />
+    <Content Include="bin\Debug\sounds\63.wav" />
+    <Content Include="bin\Debug\sounds\64.wav" />
+    <Content Include="bin\Debug\sounds\65.wav" />
+    <Content Include="bin\Debug\sounds\66.wav" />
+    <Content Include="bin\Debug\sounds\67.wav" />
+    <Content Include="bin\Debug\sounds\68.wav" />
+    <Content Include="bin\Debug\sounds\69.wav" />
+    <Content Include="bin\Debug\sounds\7.wav" />
+    <Content Include="bin\Debug\sounds\70.wav" />
+    <Content Include="bin\Debug\sounds\71.wav" />
+    <Content Include="bin\Debug\sounds\72.wav" />
+    <Content Include="bin\Debug\sounds\73.wav" />
+    <Content Include="bin\Debug\sounds\74.wav" />
+    <Content Include="bin\Debug\sounds\75.wav" />
+    <Content Include="bin\Debug\sounds\76.wav" />
+    <Content Include="bin\Debug\sounds\77.wav" />
+    <Content Include="bin\Debug\sounds\78.wav" />
+    <Content Include="bin\Debug\sounds\79.wav" />
+    <Content Include="bin\Debug\sounds\8.wav" />
+    <Content Include="bin\Debug\sounds\80.wav" />
+    <Content Include="bin\Debug\sounds\81.wav" />
+    <Content Include="bin\Debug\sounds\82.wav" />
+    <Content Include="bin\Debug\sounds\83.wav" />
+    <Content Include="bin\Debug\sounds\84.wav" />
+    <Content Include="bin\Debug\sounds\85.wav" />
+    <Content Include="bin\Debug\sounds\86.wav" />
+    <Content Include="bin\Debug\sounds\87.wav" />
+    <Content Include="bin\Debug\sounds\88.wav" />
+    <Content Include="bin\Debug\sounds\89.wav" />
+    <Content Include="bin\Debug\sounds\9.wav" />
+    <Content Include="bin\Debug\sounds\90.wav" />
+    <Content Include="bin\Debug\sounds\91.wav" />
+    <Content Include="bin\Debug\sounds\92.wav" />
+    <Content Include="bin\Debug\sounds\93.wav" />
+    <Content Include="bin\Debug\sounds\94.wav" />
     <Content Include="Panneaux.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -210,6 +1050,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.1.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.1\build\MaterialDesignThemes.targets')" />

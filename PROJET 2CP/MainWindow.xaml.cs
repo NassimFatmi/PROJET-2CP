@@ -45,7 +45,7 @@ namespace PROJET_2CP
             backgroundImage.Height = 640;
             backgroundImage.Opacity = 0.7;
 
-            backgroundImage.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\icons\Background.png")));
+            backgroundImage.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\Background.png")));
             grid.Children.Add(backgroundImage);
 
             quizFrame = new Frame();
@@ -54,7 +54,7 @@ namespace PROJET_2CP
             quizFrame.VerticalAlignment = VerticalAlignment.Center;
             quizFrame.HorizontalAlignment = HorizontalAlignment.Center;
             quizFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
-            //quizFrame.Content = new LogIN();
+            quizFrame.Content = new LogIN();
 
             quizFrame.Navigating += new NavigatingCancelEventHandler(this.frame_Navigating);
             grid.Children.Add(quizFrame);
