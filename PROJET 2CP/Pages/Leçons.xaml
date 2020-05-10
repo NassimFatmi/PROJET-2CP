@@ -77,7 +77,7 @@
                                                     <Button.Background>
                                                         <SolidColorBrush Color="Black" Opacity="0.2"/>
                                                     </Button.Background>
-                                                    <Image />
+                                                    <Image x:Name="lecon1" Width="80" Height="80"/>
                                                 </Button>
                                                 <Button x:Name="q1" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                                                 Click="Button_Click_5"
@@ -97,7 +97,7 @@
                                                     <Button.Background>
                                                         <SolidColorBrush Color="Black" Opacity="0.2"/>
                                                     </Button.Background>
-                                                    <Image/>
+                                                    <Image x:Name="lecon2" Width="80" Height="80"/>
                                                 </Button>
                                                 <Button x:Name="q2" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                                                 Click="Button_Click_6"
@@ -117,7 +117,7 @@
                                                     <Button.Background>
                                                         <SolidColorBrush Color="Black" Opacity="0.2"/>
                                                     </Button.Background>
-                                                    <Image  Width="80" Height="80"/>
+                                                    <Image x:Name="lecon3" Width="80" Height="80"/>
                                                 </Button>
                                                 <Button x:Name="q3" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                                                 Click="Button_Click_7"
