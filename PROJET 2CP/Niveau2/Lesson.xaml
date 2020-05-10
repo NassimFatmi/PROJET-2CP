@@ -101,7 +101,7 @@
                                         </Button>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal"
-                                                Margin="10">
+                                                Margin="10" Visibility="Collapsed">
                                         <Button  x:Name="l4" FontSize="16" Click="l4_Click"
                                                  Style="{DynamicResource MaterialDesignFlatButton}"
                                                  Margin="0,0,15,0"

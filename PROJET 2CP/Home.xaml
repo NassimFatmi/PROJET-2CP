@@ -133,6 +133,14 @@
                                 </StackPanel>
                             </ListViewItem>
 
+                            <ListViewItem x:Name="bonusLV" Height="60" Background="{x:Null}">
+                                <StackPanel Orientation="Horizontal" >
+                                    <materialDesign:PackIcon Kind="QuestionAnswer" Foreground="White" Height="30" Width="30" Margin="2"/>
+                                    <TextBlock x:Name="lvitem4" Text="Question Reponse  " Foreground="White" FontSize="16" Margin="10,0,0,0"
+                                               VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </ListViewItem>
+                            
                             <ListViewItem x:Name="helpLV" Height="60" Background="{x:Null}">
                                 <StackPanel Orientation="Horizontal" >
                                     <materialDesign:PackIcon Kind="Help" Foreground="White" Height="30" Width="30" Margin="2"/>
