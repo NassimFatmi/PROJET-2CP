@@ -7,7 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
       mc:Ignorable="d" 
       d:DesignHeight="610" d:DesignWidth="950"
-      Title="Niveaux" >
+      Title="Niveaux">
 
     <Grid>
         <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="backClick" >
