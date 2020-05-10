@@ -339,7 +339,8 @@ namespace PROJET_2CP.Pages
                 nbBonneReponse++;
                 saveAnswer(true,1,_codeQst,_themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
-                _soundEffect.Play();
+                try { _soundEffect.Play(); }
+                catch (Exception) { }
             }
             else
             {
@@ -348,7 +349,9 @@ namespace PROJET_2CP.Pages
                 p1.BorderBrush = Brushes.Red;
                 saveAnswer(false, 1, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
-                _soundEffect.Play();
+                try { _soundEffect.Play(); }
+                catch (Exception) { }
+               
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;
@@ -384,7 +387,8 @@ namespace PROJET_2CP.Pages
                 nbBonneReponse++;
                 saveAnswer(true, 1, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
-                _soundEffect.Play();
+                try { _soundEffect.Play(); }
+                catch (Exception) { }
             }
             else
             {
@@ -393,7 +397,8 @@ namespace PROJET_2CP.Pages
                 p2.BorderBrush = Brushes.Red;
                 saveAnswer(false, 1, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
-                _soundEffect.Play();
+                try { _soundEffect.Play(); }
+                catch (Exception) { }
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;
@@ -429,7 +434,8 @@ namespace PROJET_2CP.Pages
                 nbBonneReponse++;
                 saveAnswer(true, 1, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
-                _soundEffect.Play();
+                try { _soundEffect.Play(); }
+                catch (Exception) { }
 
             }
             else
@@ -439,7 +445,8 @@ namespace PROJET_2CP.Pages
                 p4.BorderBrush = Brushes.Red;
                 saveAnswer(false, 1, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
-                _soundEffect.Play();
+                try { _soundEffect.Play(); }
+                catch (Exception) { }
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;
@@ -476,7 +483,8 @@ namespace PROJET_2CP.Pages
                 nbBonneReponse++;
                 saveAnswer(true, 1, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
-                _soundEffect.Play();
+                try { _soundEffect.Play(); }
+                catch (Exception) { }
             }
             else
             {
@@ -485,7 +493,8 @@ namespace PROJET_2CP.Pages
                 p3.BorderBrush = Brushes.Red;
                 saveAnswer(false, 1, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
-                _soundEffect.Play();
+                try { _soundEffect.Play(); }
+                catch (Exception) { }
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;

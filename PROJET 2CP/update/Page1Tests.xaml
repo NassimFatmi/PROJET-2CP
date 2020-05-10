@@ -1,0 +1,34 @@
+﻿<Page x:Class="PROJET_2CP.update.Page1Tests"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROJET_2CP.update"
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="950"
+      Title="Page1Tests">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
+            <Button  Name="p1" FontSize="18" Background="Transparent" BorderBrush="Transparent"    Height="52" Click="p1_Click" Margin="0 10"/>
+            <Button  Name="p2" FontSize="18" Background="Transparent" BorderBrush="Transparent"    Height="52" Click="p2_Click"  Margin="0 10" />
+            <Button  Name="p3" FontSize="18" Background="Transparent" BorderBrush="Transparent"    Height="52" Click="p3_Click"  Margin="0 10" />
+            <Button  Name="p4" FontSize="18" Background="Transparent" BorderBrush="Transparent"    Height="52" Click="p4_Click"  Margin="0 10" />
+            <Button x:Name="next" Width="112" Height="52" Click="Button_Click"/>
+        </StackPanel>
+        <TextBlock x:Name="qst"  Grid.Row="1" Grid.ColumnSpan="3" Foreground="Blue" FontSize="20" TextWrapping="Wrap"/>
+        <Label  Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="timer" FontSize="40" Width="157" Height="112"/>
+        <Image Grid.Row="0" Grid.Column="1" x:Name="panneau"/>
+        <Image x:Name="reaction" Grid.Row="0" Grid.Column="0" Height="100" Width="100"/>
+    </Grid>
+</Page>

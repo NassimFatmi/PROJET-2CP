@@ -229,6 +229,9 @@
     <Compile Include="Statistiques.xaml.cs">
       <DependentUpon>Statistiques.xaml</DependentUpon>
     </Compile>
+    <Compile Include="update\Page1Tests.xaml.cs" />
+    <Compile Include="update\Page2Test1.xaml.cs" />
+    <Compile Include="update\TestNiveau1p2.xaml.cs" />
     <Page Include="Home.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -440,6 +443,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Statistiques.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="update\Page1Tests.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="update\Page2Test1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="update\TestNiveau1p2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
