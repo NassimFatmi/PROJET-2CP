@@ -169,5 +169,26 @@ namespace PROJET_2CP.Pages
                 }
             }
         }
+        private void Intersection_Click(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new intersections();
+        }
+
+        private void Depassement_Click(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new depassement();
+        }
+        private void Pdf_Click(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new pdf();
+        }
+        private void quiz_intersection(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new test(130, 139);
+        }
+        private void quiz_depassement(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new test(75, 84);
+        }
     }
 }
