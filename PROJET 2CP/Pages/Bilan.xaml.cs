@@ -25,9 +25,9 @@ namespace PROJET_2CP.Pages
         public Bilan( int bonne,int mauvaise)
         {
             InitializeComponent();
-            Lbl1.Content = "Bonnes reponses : " + (bonne + TestNiveau1.nbBonneReponse).ToString();
-            lbl2.Content = "Mauvaises reponses : " +( mauvaise + 5-TestNiveau1.nbBonneReponse).ToString();
-            saveNote((bonne + TestNiveau1.nbBonneReponse),1,Tests1._testChoisi,"Test 1");
+           // Lbl1.Content = "Bonnes reponses : " + (bonne + TestNiveau1.nbBonneReponse).ToString();
+            //lbl2.Content = "Mauvaises reponses : " +( mauvaise + 5-TestNiveau1.nbBonneReponse).ToString();
+            //saveNote((bonne + TestNiveau1.nbBonneReponse),1,Tests1._testChoisi,"Test 1");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

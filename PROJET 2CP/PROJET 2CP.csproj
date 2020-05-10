@@ -198,12 +198,6 @@
     <Compile Include="Pages\SignalisationAr.xaml.cs">
       <DependentUpon>SignalisationAr.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TestNiveau1.xaml.cs">
-      <DependentUpon>TestNiveau1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\TestNiveau1p2.xaml.cs">
-      <DependentUpon>TestNiveau1p2.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\TestNiveau2.xaml.cs">
       <DependentUpon>TestNiveau2.xaml</DependentUpon>
     </Compile>
@@ -401,14 +395,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\SignalisationAr.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\TestNiveau1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\TestNiveau1p2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
