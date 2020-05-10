@@ -4,22 +4,115 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PROJET_2CP.update"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
       mc:Ignorable="d" 
       d:DesignHeight="610" d:DesignWidth="950"
       Title="TestNiveau1p2">
-    <ScrollViewer>
         <Grid>
-            <Image x:Name="img" HorizontalAlignment="Left" Height="421" Margin="32,144,0,0" VerticalAlignment="Top" Width="1026"/>
-            <TextBlock x:Name="q1" FontSize="19" FontWeight="Medium" Foreground="Black" HorizontalAlignment="Left" Margin="10,592,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="93" Width="1048"/>
-            <TextBlock x:Name="q2" FontSize="19" FontWeight="Medium" Foreground="Black" HorizontalAlignment="Left" Margin="25,933,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="93" Width="1033"/>
-            <Button x:Name="b1" FontSize="19" FontWeight="Medium" Background="Aqua" Foreground="Black" HorizontalAlignment="Left" Margin="50,719,0,0" VerticalAlignment="Top" Width="987" Height="69" Click="b1_Click" RenderTransformOrigin="0.815,0.486"/>
-            <Button x:Name="b2" FontSize="19" FontWeight="Medium" Background="Aqua" Foreground="Black" HorizontalAlignment="Left" Margin="50,825,0,0" VerticalAlignment="Top" Width="987" Height="69" Click="b2_Click"/>
-            <Button x:Name="b3" FontSize="19" FontWeight="Medium" Background="Aqua" Foreground="Black" HorizontalAlignment="Left" Margin="50,1076,0,0" VerticalAlignment="Top" Width="987" Height="69" Click="b3_Click"/>
-            <Button x:Name="b4" FontSize="19" FontWeight="Medium" Background="Aqua" Foreground="Black" HorizontalAlignment="Left" Margin="50,1190,0,0" VerticalAlignment="Top" Width="987" Height="69" Click="b4_Click"/>
-            <TextBlock x:Name="correction" FontSize="19" FontWeight="Medium" Foreground="Black" HorizontalAlignment="Left" Margin="25,1339,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="123" Width="1048"/>
-            <Button x:Name="next" FontSize="19" FontWeight="Medium" Background="Aqua" Foreground="Black"  HorizontalAlignment="Left" Margin="356,1509,0,0" VerticalAlignment="Top" Width="362" RenderTransformOrigin="0.512,2.074" Height="81" Click="next_Click"/>
-            <Label x:Name="timer" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="916,10,0,0" VerticalAlignment="Top" Width="157" Height="112"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="350"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.4"/>
+            </Grid.Background>
 
+            <Grid Grid.Row="0">
+                <StackPanel  
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image x:Name="img"              
+                       Width="560" Height="210"/>
+                    <Border CornerRadius="25"
+                            Margin="0,20,0,0">
+                        <Border.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Border.Background>
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                                Orientation="Vertical">
+                            <TextBlock x:Name="q1" TextWrapping="Wrap"
+                                   FontSize="19" Foreground="White"
+                                   Height="105" TextAlignment="Center"/>
+                            <TextBlock x:Name="q2" TextWrapping="Wrap"
+                                   FontSize="19" Foreground="White"
+                                   Height="105" Visibility="Collapsed"
+                                   TextAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border Visibility="Collapsed" CornerRadius="27" x:Name="correctionborder">
+                    <Border.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.4"/>
+                    </Border.Background>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" Width="900" HorizontalAlignment="Center">
+                        <Grid>
+                            <TextBlock Text="Explication" Foreground="White"
+                                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                                   FontSize="14" Margin="10"/>
+                            <TextBlock Margin="10,30,20,20" x:Name="correction" TextWrapping="Wrap"
+                       Foreground="White" FontSize="19"
+                       VerticalAlignment="Top"
+                       Width="560"/>
+                        </Grid>
+                    </ScrollViewer>
+                </Border>
+
+                <StackPanel Orientation="Vertical" x:Name="buttonsstack" 
+                            VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                    <Button x:Name="b1" Click="b1_Click"
+                            Width="600" Height="50" Margin="10"
+                            BorderBrush="{x:Null}"
+                            materialDesign:ButtonAssist.CornerRadius="20">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="b2" Click="b2_Click"
+                            Width="600" Height="50" Margin="10"
+                            BorderBrush="{x:Null}"
+                        materialDesign:ButtonAssist.CornerRadius="20">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="b3" Click="b3_Click"
+                            Width="600" Height="50" Margin="10"
+                            Visibility="Collapsed"
+                            BorderBrush="{x:Null}"
+                        materialDesign:ButtonAssist.CornerRadius="20">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="b4" Click="b4_Click"
+                            Width="600" Height="50" Margin="10"
+                            Visibility="Collapsed"
+                            BorderBrush="{x:Null}"
+                        materialDesign:ButtonAssist.CornerRadius="20">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Button.Background>
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+
+            <Button Grid.Row="0" x:Name="next" Click="next_Click"
+                     VerticalAlignment="Center" HorizontalAlignment="Right"
+                    Height="70"/>
+            <Border Grid.Row="1" CornerRadius="30"
+                    Height="80" Width="60"
+                    VerticalAlignment="Center" HorizontalAlignment="Right" Background="#FFE9F37A"
+                    Margin="0,0,30,0">
+                <StackPanel 
+                        VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <Label Grid.Column="0" Name="timer" FontSize="33" Height="50" Width="50"
+                   FontWeight="Bold" Content="12"
+                   HorizontalAlignment="Center"/>
+                    <Label Content="Clock" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
         </Grid>
-    </ScrollViewer>
 </Page>

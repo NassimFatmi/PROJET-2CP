@@ -4,31 +4,94 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PROJET_2CP.update"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="610" d:DesignWidth="950"
       Title="Page1Tests">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="3*"/>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
-            <Button  Name="p1" FontSize="18" Background="Transparent" BorderBrush="Transparent"    Height="52" Click="p1_Click" Margin="0 10"/>
-            <Button  Name="p2" FontSize="18" Background="Transparent" BorderBrush="Transparent"    Height="52" Click="p2_Click"  Margin="0 10" />
-            <Button  Name="p3" FontSize="18" Background="Transparent" BorderBrush="Transparent"    Height="52" Click="p3_Click"  Margin="0 10" />
-            <Button  Name="p4" FontSize="18" Background="Transparent" BorderBrush="Transparent"    Height="52" Click="p4_Click"  Margin="0 10" />
-            <Button x:Name="next" Width="112" Height="52" Click="Button_Click"/>
+        <Grid.Background>
+            <SolidColorBrush Color="Black" Opacity="0.2"/>
+        </Grid.Background>
+        
+        <StackPanel x:Name="propWrap" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                           Height="290" Width="820">
+            <Button Name="p1" FontSize="15" Click="p1_Click"
+                            Height="60" Width="800" Foreground="White"
+                            materialDesign:ButtonAssist.CornerRadius="20"
+                            BorderBrush="{x:Null}" Margin="5">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                </Button.Background>
+            </Button>
+            <Button Name="p2" FontSize="15" Click="p2_Click"
+                            Height="60" Width="800" Foreground="White"
+                            materialDesign:ButtonAssist.CornerRadius="20"
+                            BorderBrush="{x:Null}" Margin="5">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                </Button.Background>
+            </Button>
+            <Button Name="p3" FontSize="15" Click="p3_Click"
+                            Height="60" Width="800" Foreground="White"
+                            materialDesign:ButtonAssist.CornerRadius="20"
+                            BorderBrush="{x:Null}" Margin="5">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                </Button.Background>
+            </Button>
+            <Button Name="p4" FontSize="15" Click="p4_Click"
+                            Height="60" Width="800" Foreground="White"
+                            materialDesign:ButtonAssist.CornerRadius="20"
+                            BorderBrush="{x:Null}" Margin="5">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                </Button.Background>
+            </Button>
         </StackPanel>
-        <TextBlock x:Name="qst"  Grid.Row="1" Grid.ColumnSpan="3" Foreground="Blue" FontSize="20" TextWrapping="Wrap"/>
-        <Label  Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="timer" FontSize="40" Width="157" Height="112"/>
-        <Image Grid.Row="0" Grid.Column="1" x:Name="panneau"/>
-        <Image x:Name="reaction" Grid.Row="0" Grid.Column="0" Height="100" Width="100"/>
+        
+        <Border CornerRadius="25"
+                        Height="80" Width="750" Margin="50"
+                        VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Border.Background>
+                <SolidColorBrush Color="Black" Opacity="0.4"/>
+            </Border.Background>
+            <TextBlock x:Name="qst"  Foreground="White" FontSize="20" TextWrapping="Wrap"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+        
+        <Border CornerRadius="30"
+                    Height="80" Width="60"
+                    VerticalAlignment="Top" HorizontalAlignment="Right" Background="#FFE9F37A"
+                    Margin="0,50,10,0">
+            <StackPanel 
+                        VerticalAlignment="Top" HorizontalAlignment="Center">
+                <Label Grid.Column="0" Name="timer" FontSize="33" Height="50" Width="50"
+                   FontWeight="Bold" Content="12"
+                   HorizontalAlignment="Center"/>
+                <Label Content="Clock" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+        <Image x:Name="panneau" VerticalAlignment="Top"
+               HorizontalAlignment="Center" Height="150" Width="150"
+               Margin="0,150,0,0"/>
+
+        <Button Grid.Column="1" x:Name="next" Click="Button_Click"
+                    materialDesign:ButtonAssist.CornerRadius="25" BorderBrush="{x:Null}" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Height="150" Width="400" Visibility="Collapsed">
+            <Button.Background>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Button.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="reaction" Height="100" Width="100"/>
+                <StackPanel VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="40" Height="40"
+                                             HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="Suivant" Text="Suivant" HorizontalAlignment="Center"
+                               FontSize="15"/>
+                </StackPanel>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>

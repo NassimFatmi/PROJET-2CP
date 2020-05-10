@@ -57,46 +57,46 @@
                     </Grid>
                 </ScrollViewer>
             </Border>
+            <ScrollViewer VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" x:Name="buttonsstack">
 
-            <StackPanel Orientation="Vertical" x:Name="buttonsstack" 
-                            VerticalAlignment="Center" HorizontalAlignment="Center">
-                
-                <Button x:Name="b1" Click="b1_Click"
+                    <Button x:Name="b1" Click="b1_Click"
                             Width="600" Height="50" Margin="10"
                             BorderBrush="{x:Null}"
                             materialDesign:ButtonAssist.CornerRadius="20">
-                    <Button.Background>
-                        <SolidColorBrush Color="Black" Opacity="0.4"/>
-                    </Button.Background>
-                </Button>
-                <Button x:Name="b2" Click="b2_Click"
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="b2" Click="b2_Click"
                             Width="600" Height="50" Margin="10"
                             BorderBrush="{x:Null}"
                         materialDesign:ButtonAssist.CornerRadius="20">
-                    <Button.Background>
-                        <SolidColorBrush Color="Black" Opacity="0.4"/>
-                    </Button.Background>
-                </Button>
-                <Button x:Name="b3" Click="b3_Click"
-                            Width="600" Height="50" Margin="10"
-                            Visibility="Collapsed"
-                            BorderBrush="{x:Null}"
-                        materialDesign:ButtonAssist.CornerRadius="20">
-                    <Button.Background>
-                        <SolidColorBrush Color="Black" Opacity="0.4"/>
-                    </Button.Background>
-                </Button>
-                <Button x:Name="b4" Click="b4_Click"
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="b3" Click="b3_Click"
                             Width="600" Height="50" Margin="10"
                             Visibility="Collapsed"
                             BorderBrush="{x:Null}"
                         materialDesign:ButtonAssist.CornerRadius="20">
-                    <Button.Background>
-                        <SolidColorBrush Color="Black" Opacity="0.4"/>
-                    </Button.Background>
-                </Button>
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="b4" Click="b4_Click"
+                            Width="600" Height="50" Margin="10"
+                            Visibility="Collapsed"
+                            BorderBrush="{x:Null}"
+                        materialDesign:ButtonAssist.CornerRadius="20">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Button.Background>
+                    </Button>
 
-            </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
 
         <Button Grid.Row="0" x:Name="next" Click="next_Click"

@@ -39,10 +39,15 @@ namespace PROJET_2CP.update
         {
             InitializeComponent();
             tagMax = b - a;
+            b1.Visibility = Visibility.Visible;
+            b2.Visibility = Visibility.Visible;
             b3.Visibility = Visibility.Collapsed;
             b4.Visibility = Visibility.Collapsed;
             next.Visibility = Visibility.Collapsed;
             q2.Text = "";
+            q2.Visibility = Visibility.Collapsed;
+            q1.Visibility = Visibility.Visible;
+
             tab = Tests1.reorder(a, b);
             creerQuestion();
             afficherQuestion();
@@ -141,6 +146,14 @@ namespace PROJET_2CP.update
             {
                 nbBonneReponse--;
                 q2.Text = quest2;
+                q2.Visibility = Visibility.Visible;
+                q1.Visibility = Visibility.Collapsed;
+
+                b1.Visibility = Visibility.Collapsed;
+
+                b1.Visibility = Visibility.Collapsed;
+                b2.Visibility = Visibility.Collapsed;
+
                 b3.Visibility = Visibility.Visible;
                 b4.Visibility = Visibility.Visible;
                 q2.Text = quest2;
@@ -156,9 +169,14 @@ namespace PROJET_2CP.update
                     {
                         next.Content = "Voir le Bilan";
                     }
+                    else
+                    {
+                        next.Content = "تفحص النتائج";
+                    }
                 }
                 next.Visibility = Visibility.Visible;
                 timer.Visibility = Visibility.Collapsed;
+                correctionborder.Visibility = Visibility.Visible;
                 correction.Text = correct;
             }
           
@@ -182,10 +200,13 @@ namespace PROJET_2CP.update
             if (quest2 != "")
             {
                 nbBonneReponse--;
-                q2.Text = quest2;
+                b1.Visibility = Visibility.Collapsed;
+                b2.Visibility = Visibility.Collapsed;
                 b3.Visibility = Visibility.Visible;
                 b4.Visibility = Visibility.Visible;
                 q2.Text = quest2;
+                q2.Visibility = Visibility.Visible;
+                q1.Visibility = Visibility.Collapsed;
                 b3.Content = propC;
                 b4.Content = propD;
             }
@@ -198,8 +219,13 @@ namespace PROJET_2CP.update
                     {
                         next.Content = "Voir le Bilan";
                     }
+                    else
+                    {
+                        next.Content = "تفحص النتائج";
+                    }
                 }
                 next.Visibility = Visibility.Visible;
+                correctionborder.Visibility = Visibility.Visible;
                 correction.Text = correct;
                 timer.Visibility = Visibility.Collapsed;
             }
@@ -221,6 +247,7 @@ namespace PROJET_2CP.update
             }
             b3.IsEnabled = false;
             b4.IsEnabled = false;
+            correctionborder.Visibility = Visibility.Visible;
             correction.Text = correct;
             next.Visibility = Visibility.Visible;
             timer.Visibility = Visibility.Collapsed;
@@ -230,6 +257,10 @@ namespace PROJET_2CP.update
                 if (langue == 0)
                 {
                     next.Content = "Voir le Bilan";
+                }
+                else
+                {
+                    next.Content = "تفحص النتائج";
                 }
             }
         }
@@ -249,6 +280,7 @@ namespace PROJET_2CP.update
             }
             b3.IsEnabled = false;
             b4.IsEnabled = false;
+            correctionborder.Visibility = Visibility.Visible;
             correction.Text = correct;
             next.Visibility = Visibility.Visible;
             timer.Visibility = Visibility.Collapsed;
@@ -259,6 +291,10 @@ namespace PROJET_2CP.update
                 {
                     next.Content = "Voir le Bilan";
                 }
+                else
+                {
+                    next.Content = "تفحص النتائج";
+                }
             }
         }
 
@@ -266,6 +302,7 @@ namespace PROJET_2CP.update
         {
             tag++;
             tempEcoulé = true;
+            correctionborder.Visibility = Visibility.Collapsed;
             correction.Text = "";
            // reaction.Visibility = Visibility.Collapsed;
             if (tag <= tagMax)
@@ -275,10 +312,17 @@ namespace PROJET_2CP.update
                 b2.IsEnabled = true;
                 b3.IsEnabled = true;
                 b4.IsEnabled = true;
-                b1.Foreground = Brushes.Black;
-                b2.Foreground = Brushes.Black;
-                b3.Foreground = Brushes.Black;
-                b4.Foreground = Brushes.Black;
+                b1.Foreground = Brushes.White;
+                b2.Foreground = Brushes.White;
+                b3.Foreground = Brushes.White;
+                b4.Foreground = Brushes.White;
+
+                b1.Visibility = Visibility.Visible;
+                b2.Visibility = Visibility.Visible;
+
+                q1.Visibility = Visibility.Visible;
+                q2.Visibility = Visibility.Collapsed;
+
                 b3.Visibility = Visibility.Collapsed;
                 b4.Visibility = Visibility.Collapsed;
                 creerQuestion();
@@ -338,6 +382,9 @@ namespace PROJET_2CP.update
                     b3.Visibility = Visibility.Visible;
                     b4.Visibility = Visibility.Visible;
                     q2.Text = quest2;
+                    q2.Visibility = Visibility.Visible;
+                    q1.Visibility = Visibility.Collapsed;
+
                     b3.Content = propC;
                     b4.Content = propD;
                     if (propC==bonnRep2)
@@ -356,6 +403,7 @@ namespace PROJET_2CP.update
                 b4.IsEnabled = false;
                 next.Visibility = Visibility.Visible;
                 timer.Visibility = Visibility.Collapsed;
+                correctionborder.Visibility = Visibility.Visible;
                 correction.Text = correct;
                 tempEcoulé = false;
                 if (tag == tagMax)
@@ -363,6 +411,10 @@ namespace PROJET_2CP.update
                     if (langue == 0)
                     {
                         next.Content = "Voir le Bilan";
+                    }
+                    else
+                    {
+                        next.Content = "تفحص النتائج";
                     }
                 }
             }

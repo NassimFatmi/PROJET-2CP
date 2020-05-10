@@ -58,6 +58,7 @@ namespace PROJET_2CP.Pages
             b4.Visibility = Visibility.Collapsed;
             next.Visibility = Visibility.Collapsed;
             q2.Text = "";
+            q2.Visibility = Visibility.Collapsed;
             creerQuestion();
             afficherQuestion();
             Distimer();
@@ -155,7 +156,9 @@ namespace PROJET_2CP.Pages
             if (quest2 != "")
             {
                 nbBonneReponse--;
-                q2.Text = quest2;
+
+                q1.Visibility = Visibility.Collapsed;
+
                 b3.Visibility = Visibility.Visible;
                 b4.Visibility = Visibility.Visible;
 
