@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Media;
 using PROJET_2CP.Niveau1;
+using PROJET_2CP.update;
 using System.Windows.Media.Imaging;
 
 namespace PROJET_2CP.Pages
@@ -36,17 +37,15 @@ namespace PROJET_2CP.Pages
             b9.Tag = 9;
             b10.Tag = 10;
             getLastTest();
-            tab1 = reorder(47);
-            tab2 = reorder(22);
         }
-        static int[] reorder(int a)
+        public static int[] reorder(int a, int b)
         {
-            int[] tab = new int[a];
+            int[] tab = new int[b - a + 1];
             int size = 0, i;
             Random rd = new Random();
-            while (size <a)
+            while (size < b - a + 1)
             {
-                i = rd.Next(1, a+1);
+                i = rd.Next(a, b + 1);
                 if (!exist(i, tab))
                 {
                     tab[size] = i;
@@ -71,61 +70,61 @@ namespace PROJET_2CP.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new TestNiveau1(0,4,tab1,tab2);
+            Home.mainFrame.Content = new Page1Tests(1, 3, 25, 28, 1, 3);
             _testChoisi = 1;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new TestNiveau1(5, 9, tab1,tab2);
+            Home.mainFrame.Content = new Page1Tests(4, 6, 29, 32, 4, 6);
             _testChoisi =2;
 
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new TestNiveau1(10, 14, tab1, tab2);
+            Home.mainFrame.Content = new Page1Tests(7, 9, 33, 36, 7, 9);
             _testChoisi = 3;
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new TestNiveau1(15, 19, tab1, tab2);
+            Home.mainFrame.Content = new Page1Tests(10, 12, 37, 40, 10, 12);
             _testChoisi = 4;
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new TestNiveau1(20, 24, tab1, tab2);
+            Home.mainFrame.Content = new Page1Tests(13, 15, 41, 44, 13, 15);
             _testChoisi = 5;
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new TestNiveau1(25, 29, tab1, tab2);
+            Home.mainFrame.Content = new Page1Tests(16, 18, 45, 47, 16, 19);
             _testChoisi = 6;
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new TestNiveau1(30, 34, tab1, tab2);
+            Home.mainFrame.Content = new Page1Tests(19, 22, 39, 41, 20, 22);
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new TestNiveau1(35, 39, tab1, tab2);
+            Home.mainFrame.Content = new Page1Tests(23, 24, 32, 34, 3, 7);
             _testChoisi = 7;
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new TestNiveau1(40, 44, tab1, tab2);
+            Home.mainFrame.Content = new Page1Tests(14, 17, 27, 30, 13, 14);
             _testChoisi = 8;
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new TestNiveau1(45, 46, tab1, tab2);
+            Home.mainFrame.Content = new Page1Tests(8, 11, 42, 44, 18, 20);
             _testChoisi = 9;
         }
         

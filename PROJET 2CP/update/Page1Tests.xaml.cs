@@ -69,7 +69,7 @@ namespace PROJET_2CP.update
 
                     if (langue == 0)
                     {
-                        next.Content = "Passer à la question suivante";
+                        Suivant.Text = "Passer à la question suivante";
                         quest = dr["questionFr"].ToString();
                         propA = dr["propAFr"].ToString();
                         propB = dr["propBFr"].ToString();
@@ -79,7 +79,7 @@ namespace PROJET_2CP.update
                     }
                     if (langue == 1)
                     {
-                        next.Content = "السؤال التالي";
+                        Suivant.Text = "السؤال التالي";
                         quest = dr["questionAr"].ToString();
                         propA = dr["propAAr"].ToString();
                         propB = dr["propBAr"].ToString();
@@ -352,10 +352,10 @@ namespace PROJET_2CP.update
                 p2.BorderBrush = Brushes.Transparent;
                 p3.BorderBrush = Brushes.Transparent;
                 p4.BorderBrush = Brushes.Transparent;
-                p1.Foreground = Brushes.Black;
-                p2.Foreground = Brushes.Black;
-                p3.Foreground = Brushes.Black;
-                p4.Foreground = Brushes.Black;
+                p1.Foreground = Brushes.White;
+                p2.Foreground = Brushes.White;
+                p3.Foreground = Brushes.White;
+                p4.Foreground = Brushes.White;
                 creerQuestion();
                 afficherQuestion();
                 increment = 20;

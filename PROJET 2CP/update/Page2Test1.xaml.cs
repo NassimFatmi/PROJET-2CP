@@ -55,13 +55,13 @@ namespace PROJET_2CP.update
                 {
                     if (langue == 0)
                     {
-                        next.Content = "Passer à la question suivante";
+                        Suivant.Text = "Passer à la question suivante";
                         quest = dr["questionFr"].ToString();
                      
                     }
                     if (langue == 1)
                     {
-                        next.Content = "السؤال التالي";
+                        Suivant.Text = "السؤال التالي";
                         quest = dr["questionAr"].ToString();
                        
                     }
