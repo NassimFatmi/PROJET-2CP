@@ -129,6 +129,15 @@ namespace PROJET_2CP.Pages
         
         private void choix_Test(object sender, RoutedEventArgs e)
         {
+            if (getnote(1, 1) > 5)
+                b2.Background = Brushes.GreenYellow;
+            else if (getnote(1, 1) == 5)
+                b2.Background = Brushes.Orange;
+            else if (getnote(1, 1) == -1)
+                b2.Background = Brushes.BlueViolet;
+            else if (getnote(1, 1) < 5)
+                b2.Background = Brushes.Red;
+
             if (getnote(1, 2) > 5)
                 b2.Background = Brushes.GreenYellow;
             else if (getnote(1, 2) == 5)
