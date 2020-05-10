@@ -21,9 +21,13 @@ namespace PROJET_2CP.Pages
             quiz2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
             quiz3.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
             quiz4.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
-            b1.Content = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/1_off.png", UriKind.RelativeOrAbsolute));
-            b2.Content = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/40_off.png", UriKind.RelativeOrAbsolute));
-            b3.Content = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/theme1quiz14.png", UriKind.RelativeOrAbsolute));
+            Image img = new Image();
+            img.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/1_off.png", UriKind.RelativeOrAbsolute));
+            b1.Content = img;
+            img.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/40_off.png", UriKind.RelativeOrAbsolute));
+            b2.Content = img;
+            img.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/theme1quiz14.png", UriKind.RelativeOrAbsolute));
+            b3.Content = img;
             initialiserLangue();
             configurerLaLangue();
             guestMode();

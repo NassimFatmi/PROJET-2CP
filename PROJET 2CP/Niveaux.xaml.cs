@@ -28,7 +28,8 @@ namespace PROJET_2CP
             lvl1icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl1icon.png", UriKind.RelativeOrAbsolute));
             lvl2icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl2icon.png", UriKind.RelativeOrAbsolute));
             lvl3icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl3icon.png", UriKind.RelativeOrAbsolute));
-            progressLevels();
+            if (!LogIN.LoggedUser.UtilisateurID.Equals("Guest"))
+                //progressLevels();
             initialiserLangue();
             guestMode();
         }
@@ -94,7 +95,7 @@ namespace PROJET_2CP
 
         private void niv3_Click(object sender, RoutedEventArgs e)
         {
-            //Home.mainFrame.Content = new Niveau3.Niv3Main();
+            Home.mainFrame.Content = new Niveau3.Niv3Main();
         }
 
         private void mouseEnter(object sender, MouseEventArgs e)
