@@ -166,6 +166,9 @@
     <Compile Include="Pages\Bilan2.xaml.cs">
       <DependentUpon>Bilan2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Bilan3.xaml.cs">
+      <DependentUpon>Bilan3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DecrirePanneau.xaml.cs">
       <DependentUpon>DecrirePanneau.xaml</DependentUpon>
     </Compile>
@@ -202,11 +205,17 @@
     <Compile Include="Pages\TestNiveau2.xaml.cs">
       <DependentUpon>TestNiveau2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TestNiveau3.xaml.cs">
+      <DependentUpon>TestNiveau3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Tests1.xaml.cs">
       <DependentUpon>Tests1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Tests2.xaml.cs">
       <DependentUpon>Tests2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tests3.xaml.cs">
+      <DependentUpon>Tests3.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -347,6 +356,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\Bilan3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DecrirePanneau.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -395,6 +408,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\TestNiveau3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Tests1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -402,6 +419,10 @@
     <Page Include="Pages\Tests2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Tests3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Settings.xaml">
       <Generator>MSBuild:Compile</Generator>

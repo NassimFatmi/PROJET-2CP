@@ -96,7 +96,8 @@ namespace PROJET_2CP.Niveau2
                 //ajouter un tag pour le boutton
                 b.Tag = i;
                 // ajout du panneau au boutton
-                b.Content = lesson.ajouterImage(";component/Images/" + Convert.ToString(i) + "_off");
+                b.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString(i) + "_off");
+
                 // ajout du boutton au stack panel
                 s.Children.Add(b);
                 // si nous avons ajouté 9 boutton horizontal  on ajoute le stack panel s au stack panel vertical sp
@@ -127,13 +128,15 @@ namespace PROJET_2CP.Niveau2
         {
             var button = sender as Button;
             var index = (int)button.Tag;
-            button.Content = lesson.ajouterImage(";component/Images/" + Convert.ToString((int)button.Tag) + "_on");
+            button.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString((int)button.Tag) + "_on");
+
         }
         private void button_MouseLeave(object sender, MouseEventArgs e)
         {
             var button = sender as Button;
             var index = (int)button.Tag;
-            button.Content = lesson.ajouterImage(";component/Images/" + Convert.ToString((int)button.Tag) + "_off");
+            button.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString((int)button.Tag) + "_off");
+
         }
 
         private void BackClick(object sender, RoutedEventArgs e)
