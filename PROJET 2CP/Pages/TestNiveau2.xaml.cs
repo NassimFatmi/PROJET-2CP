@@ -33,7 +33,7 @@ namespace PROJET_2CP.Pages
             private string propD;
             private string bonnRep;
             private int tmp = 0;
-            private int[] tab;
+            private int[] tab = new int[6];
             private int increment = 20;
             private DispatcherTimer dt;
             public static int nbBonneReponse = 0;          

@@ -122,7 +122,16 @@ namespace PROJET_2CP.Pages
 
             private void choix_Test(object sender, RoutedEventArgs e)
             {
-                if (getnote(1, 2) > 5)
+                if (getnote(1, 1) > 5)
+                    b2.Background = Brushes.GreenYellow;
+                else if (getnote(1, 1) == 5)
+                     b2.Background = Brushes.Orange;
+                else if (getnote(1, 1) == -1)
+                    b2.Background = Brushes.BlueViolet;
+                else if (getnote(1, 1) < 5)
+                    b2.Background = Brushes.Red;
+
+            if (getnote(1, 2) > 5)
                     b2.Background = Brushes.GreenYellow;
                 else if (getnote(1, 2) == 5)
                     b2.Background = Brushes.Orange;
@@ -266,7 +275,7 @@ namespace PROJET_2CP.Pages
             private void getLastTest()
             {
                 // Code == ID //
-                string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\UtilisateurBDD.mdf;Integrated Security=True";
+                string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\UtilisateurBDD.mdf;Integrated Security=True";
                 DataTable savedData = new DataTable();
                 SqlConnection connectToUtilisateur = new SqlConnection(connString);
 
@@ -310,7 +319,7 @@ namespace PROJET_2CP.Pages
             private void saveLastTest(int testCode)
             {
                 // Code == ID //
-                string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\UtilisateurBDD.mdf;Integrated Security=True";
+                string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\UtilisateurBDD.mdf;Integrated Security=True";
                 string query = "UPDATE Utilisateur SET Test2='" + testCode.ToString() + "' WHERE UtilisateurID = '" + LogIN.LoggedUser.UtilisateurID + "'";
 
                 SqlConnection connecttoUsers = new SqlConnection(connString);
@@ -340,7 +349,7 @@ namespace PROJET_2CP.Pages
             private int getnote(int niveau, int test)
             {
                 // Code == ID //
-                string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\Trace\Save.mdf;Integrated Security=True";
+                string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
                 DataTable savedData = new DataTable();
                 SqlConnection connectToUtilisateur = new SqlConnection(connString);
 
