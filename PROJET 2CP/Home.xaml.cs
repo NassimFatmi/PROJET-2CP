@@ -153,6 +153,7 @@ namespace PROJET_2CP
                     statesLV.Background = Brushes.Red;
                     settingsLV.Background = null;
                     helpLV.Background = null;
+                    bonusLV.Background = null;
                     break;
 
                 case 2:
@@ -160,12 +161,22 @@ namespace PROJET_2CP
                     statesLV.Background = null;
                     settingsLV.Background = Brushes.MediumPurple;
                     helpLV.Background = null;
+                    bonusLV.Background = null;
                     break;
 
                 case 3:
+                    mainFrame.Content = new QuRe();
+                    statesLV.Background = null;
+                    settingsLV.Background = null;
+                    helpLV.Background = null;
+                    bonusLV.Background = Brushes.DeepSkyBlue;
+                    break;
+                case 4:
+                    mainFrame.Content = new QuRe();
                     statesLV.Background = null;
                     settingsLV.Background = null;
                     helpLV.Background = Brushes.LightGreen;
+                    bonusLV.Background = null;
                     break;
             }
         }

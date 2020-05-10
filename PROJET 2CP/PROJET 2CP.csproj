@@ -208,6 +208,9 @@
     <Compile Include="Pages\Tests2.xaml.cs">
       <DependentUpon>Tests2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="QuRe.xaml.cs">
+      <DependentUpon>QuRe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -400,6 +403,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Tests2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="QuRe.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
