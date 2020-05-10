@@ -41,10 +41,22 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <TextBlock x:Name="correction" TextWrapping="Wrap"
-                       Foreground="#FF6AF12D" FontSize="19"
+            <Border Visibility="Collapsed" CornerRadius="27" x:Name="correctionborder">
+                <Border.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                </Border.Background>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Width="900" HorizontalAlignment="Center">
+                    <Grid>
+                        <TextBlock Text="Explication" Foreground="White"
+                                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                                   FontSize="14" Margin="10"/>
+                        <TextBlock Margin="10,30,20,20" x:Name="correction" TextWrapping="Wrap"
+                       Foreground="White" FontSize="19"
                        VerticalAlignment="Top"
                        Width="560"/>
+                    </Grid>
+                </ScrollViewer>
+            </Border>
 
             <StackPanel Orientation="Vertical" x:Name="buttonsstack" 
                             VerticalAlignment="Center" HorizontalAlignment="Center">

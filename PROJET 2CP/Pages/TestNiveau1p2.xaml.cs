@@ -125,7 +125,7 @@ namespace PROJET_2CP.Pages
         {
             if (hasImage == 1)
             {
-                BitmapImage btm = new BitmapImage(new Uri(";component/Images/" + Convert.ToString(idImage) + "_2.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString(idImage) + "_2.png", UriKind.RelativeOrAbsolute));
                 img.Source = btm;
             }
             // definir la question
@@ -183,6 +183,8 @@ namespace PROJET_2CP.Pages
                 }
                 next.Visibility = Visibility.Visible;
                 timer.Visibility = Visibility.Collapsed;
+
+                correctionborder.Visibility = Visibility.Visible;
                 correction.Text = correct;
             }
           
@@ -233,6 +235,7 @@ namespace PROJET_2CP.Pages
                     }
                 }
                 next.Visibility = Visibility.Visible;
+                correctionborder.Visibility = Visibility.Visible;
                 correction.Text = correct;
                 timer.Visibility = Visibility.Collapsed;
             }
@@ -258,6 +261,7 @@ namespace PROJET_2CP.Pages
             }
             b3.IsEnabled = false;
             b4.IsEnabled = false;
+            correctionborder.Visibility = Visibility.Visible;
             correction.Text = correct;
             next.Visibility = Visibility.Visible;
             timer.Visibility = Visibility.Collapsed;
@@ -290,6 +294,7 @@ namespace PROJET_2CP.Pages
             }
             b3.IsEnabled = false;
             b4.IsEnabled = false;
+            correctionborder.Visibility = Visibility.Visible;
             correction.Text = correct;
             next.Visibility = Visibility.Visible;
             timer.Visibility = Visibility.Collapsed;
@@ -307,6 +312,7 @@ namespace PROJET_2CP.Pages
         {
             tag++;
             tempEcoulé = true;
+            correctionborder.Visibility = Visibility.Collapsed;
             correction.Text = "";
            // reaction.Visibility = Visibility.Collapsed;
             if (tag <= tagMax)
@@ -404,6 +410,7 @@ namespace PROJET_2CP.Pages
                 b4.IsEnabled = false;
                 next.Visibility = Visibility.Visible;
                 timer.Visibility = Visibility.Collapsed;
+                correctionborder.Visibility = Visibility.Visible;
                 correction.Text = correct;
                 tempEcoulé = false;
                 if (tag == tagMax)
