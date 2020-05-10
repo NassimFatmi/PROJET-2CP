@@ -29,6 +29,9 @@ namespace PROJET_2CP
         public SignIN()
         {
             InitializeComponent();
+            logoimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/EDautoEcole.png", UriKind.RelativeOrAbsolute));
+            franceicon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Francais.png", UriKind.RelativeOrAbsolute));
+            arabicon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Arabic.png", UriKind.RelativeOrAbsolute));
             initialiserLangue();
             _connectBDD = new DBAccess(_connString);
         }
@@ -222,6 +225,19 @@ namespace PROJET_2CP
                 imagebtn.Text = "صورة";
                 creercompteconfirme.Content = "انشئ الحساب";
 
+            }
+        }
+        private void langueCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (langueCmb.SelectedIndex == 0 && MainWindow.langue == 1)
+            {
+                MainWindow.langue = 0;
+                MainWindow.quizFrame.Content = new SignIN();
+            }
+            else if (langueCmb.SelectedIndex == 1 && MainWindow.langue == 0)
+            {
+                MainWindow.langue = 1;
+                MainWindow.quizFrame.Content = new SignIN();
             }
         }
     }

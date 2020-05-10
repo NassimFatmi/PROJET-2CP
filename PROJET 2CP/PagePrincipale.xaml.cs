@@ -23,6 +23,7 @@ namespace PROJET_2CP
         public PagePrincipale()
         {
             InitializeComponent();
+            back2image.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/back2.png", UriKind.RelativeOrAbsolute)));
             guestMode();
             initialiserLangue();
             

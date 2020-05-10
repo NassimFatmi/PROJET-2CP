@@ -1,6 +1,8 @@
 ﻿
+using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using PROJET_2CP.Noyau;
 
 namespace PROJET_2CP.Pages
@@ -15,6 +17,13 @@ namespace PROJET_2CP.Pages
         {
             NLeçon lesson = new NLeçon();
             InitializeComponent();
+            quiz1.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
+            quiz2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
+            quiz3.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
+            quiz4.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
+            b1.Content = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/1_off.png", UriKind.RelativeOrAbsolute));
+            b2.Content = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/40_off.png", UriKind.RelativeOrAbsolute));
+            b3.Content = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/theme1quiz14.png", UriKind.RelativeOrAbsolute));
             initialiserLangue();
             configurerLaLangue();
             guestMode();

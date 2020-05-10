@@ -56,7 +56,7 @@
                             </Button>
                             <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00"  Click="quiz_principe_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                 <StackPanel >
-                                    <Image Source="/icons/quizicon.png" Width="40" Height="40" HorizontalAlignment="Center"/>
+                                    <Image x:Name="quiz0" Width="40" Height="40" HorizontalAlignment="Center"/>
                                     <Label x:Name="quiz_principe" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
@@ -97,7 +97,7 @@
                                 </Button>
                                 <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}"  Click="quiz_document_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                     <StackPanel >
-                                        <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                        <Image x:Name="quiz1" Width="40" Height="40" HorizontalAlignment="Center"/>
                                         <Label x:Name="quiz_document" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                     </StackPanel>
                                 </Button>
@@ -113,7 +113,7 @@
                                 </Button>
                                 <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}"  Click="quiz_les_points_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                     <StackPanel >
-                                        <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                        <Image x:Name="quiz2" Width="40" Height="40" HorizontalAlignment="Center"/>
                                         <Label x:Name="quiz_les_points" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                     </StackPanel>
                                 </Button>
@@ -155,7 +155,7 @@
                                 </Button>
                                 <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}"  Background="#F50057" Click="quiz_connaitre_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                     <StackPanel >
-                                        <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                        <Image x:Name="quiz3" Width="40" Height="40" HorizontalAlignment="Center"/>
                                         <Label x:Name="quiz_connaitre" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                     </StackPanel>
                                 </Button>
@@ -172,7 +172,7 @@
                                 </Button>
                                 <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#F50057" Click="quiz_demarrer_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                     <StackPanel >
-                                        <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                        <Image x:Name="quiz4" Width="40" Height="40" HorizontalAlignment="Center"/>
                                         <Label x:Name="quiz_demarrer" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                     </StackPanel>
                                 </Button>
@@ -187,7 +187,7 @@
                                 </Button>
                                 <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#F50057" Click="quiz_monter_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                     <StackPanel >
-                                        <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                        <Image x:Name="quiz5" Width="40" Height="40" HorizontalAlignment="Center"/>
                                         <Label x:Name="quiz_monter" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                     </StackPanel>
                                 </Button>

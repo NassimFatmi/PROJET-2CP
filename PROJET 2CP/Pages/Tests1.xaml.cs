@@ -425,6 +425,8 @@ namespace PROJET_2CP.Pages
 
                 da.Fill(savedData);
                 da.Dispose();
+                if (connectToUtilisateur.State == ConnectionState.Open)
+                    connectToUtilisateur.Close();
 
                 if (savedData.Rows.Count == 1)
                 {
@@ -432,9 +434,6 @@ namespace PROJET_2CP.Pages
                         return -1;
                     else
                         return Int32.Parse(savedData.Rows[0]["Note"].ToString());
-
-                    if (connectToUtilisateur.State == ConnectionState.Open)
-                        connectToUtilisateur.Close();
                 }
                 else
                 {
@@ -459,16 +458,16 @@ namespace PROJET_2CP.Pages
         private void b1_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             var button = sender as Button;
-            button.Height = 110;
-            button.Width = 110;
-            noteShow.Content ="Test Note : " + getnote(1, ((int)button.Tag)).ToString();
+            button.BorderThickness = new Thickness(8);
+            button.BorderBrush = Brushes.Azure;
+            noteShow.Content = "Test Note : " + getnote(1, ((int)button.Tag)).ToString();
         }
 
         private void b1_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             var button = sender as Button;
-            button.Height = 100;
-            button.Width = 100; 
+            button.BorderThickness = new Thickness(0);
+            button.BorderBrush = null;
             noteShow.Content = "";
         }
     }

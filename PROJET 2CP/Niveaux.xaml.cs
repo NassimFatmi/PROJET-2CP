@@ -22,13 +22,12 @@ namespace PROJET_2CP
     /// </summary>
     public partial class Niveaux : Page
     {
-        private int _test1;
-        private int _test2;
-        private int _test3;
-
         public Niveaux()
         {
             InitializeComponent();
+            lvl1icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl1icon.png", UriKind.RelativeOrAbsolute));
+            lvl2icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl2icon.png", UriKind.RelativeOrAbsolute));
+            lvl3icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl3icon.png", UriKind.RelativeOrAbsolute));
             progressLevels();
             initialiserLangue();
             guestMode();

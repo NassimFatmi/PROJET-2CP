@@ -24,6 +24,8 @@ namespace PROJET_2CP.Niveau2
         public Niv2Main()
         {
             InitializeComponent();
+            coursimg.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Booksicon.png", UriKind.RelativeOrAbsolute));
+            testimg.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/StopSignicon.png", UriKind.RelativeOrAbsolute));
         }
 
         private void niv2cours(object sender, RoutedEventArgs e)

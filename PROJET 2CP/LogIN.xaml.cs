@@ -41,6 +41,10 @@ namespace PROJET_2CP
             //pour le mode invité
             guestMode.Tag = new Apprenant(0, "Guest", "", "", "", "");
             ((Apprenant)guestMode.Tag).Theme = true;
+            guestimage.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Default.png", UriKind.RelativeOrAbsolute)));
+            logoimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/EDautoEcole.png", UriKind.RelativeOrAbsolute));
+            franceicon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Francais.png", UriKind.RelativeOrAbsolute));
+            arabicon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Arabic.png", UriKind.RelativeOrAbsolute));
             loadUsers();
         }
 

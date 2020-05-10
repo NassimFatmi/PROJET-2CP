@@ -15,14 +15,38 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"
-                    Grid.Column="1" Margin="0,90,0,0">
-            <Image Width="200" Height="200" HorizontalAlignment="Center"/>
-            <Label Content="EDautoEcole" HorizontalAlignment="Center" 
+        <Grid Grid.Column="1" >
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Margin="0,90,0,0">
+                <Image x:Name="logoimage" Width="200" Height="200" HorizontalAlignment="Center"/>
+                <Label Content="EDautoEcole" HorizontalAlignment="Center" 
                    Foreground="White" FontSize="30" FontWeight="DemiBold"/>
-        </StackPanel>
-
+            </StackPanel>
+            <ComboBox Margin="0,0,5,0" x:Name="langueCmb" Style="{StaticResource MaterialDesignFilledComboBox}" 
+                              SelectionChanged="langueCmb_SelectionChanged"
+                              Height="40" Width="100"
+                              VerticalAlignment="Bottom" HorizontalAlignment="Right" 
+                              Foreground="White" BorderBrush="White">
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Language" Margin="2" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="langueComboText" Text="langue" Margin="2" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+                <ComboBoxItem Foreground="Black">
+                    <StackPanel Orientation="Horizontal">
+                        <Image x:Name="franceicon" Width="15" Height="15"/>
+                        <TextBlock Text="Français" Margin="2" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem Foreground="Black">
+                    <StackPanel Orientation="Horizontal">
+                        <Image x:Name="arabicon" Width="15" Height="15"/>
+                        <TextBlock Text="عربية" Margin="2" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
         <Grid Grid.Column="0" materialDesign:ThemeAssist.Theme="Dark">
             <Grid.Background>
                 <SolidColorBrush Color="Black" Opacity="0.4"/>

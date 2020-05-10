@@ -10,7 +10,7 @@
       Title="PagePrincipale">
 
     <Grid>
-        <Rectangle Width="950" Height="400" VerticalAlignment="Bottom">
+        <Rectangle x:Name="back2image" Width="950" Height="400" VerticalAlignment="Bottom">
             <Rectangle.Fill>
                 <ImageBrush /><!-- Background 2 -->
             </Rectangle.Fill>

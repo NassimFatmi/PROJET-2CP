@@ -26,7 +26,7 @@
                     MouseEnter="mouseEnter"
                     MouseLeave="mouseLeave">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="/icons/Booksicon.png" Width="60" Height="60" Margin="0,0,0,20"/>
+                    <Image x:Name="coursimg" Width="60" Height="60" Margin="0,0,0,20"/>
                     <TextBlock x:Name="coursbtn" Text="Cours" TextAlignment="Center" FontSize="25"/>
                 </StackPanel>
             </Button>
@@ -35,7 +35,7 @@
                     MouseEnter="mouseEnter"
                     MouseLeave="mouseLeave">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="/icons/StopSignicon.png" Height="60" Width="60" Margin="0,0,0,20"/>
+                    <Image x:Name="testimg" Height="60" Width="60" Margin="0,0,0,20"/>
                     <TextBlock x:Name="testnv" Text="Test de Niveau" FontSize="25" TextAlignment="Center"/>
                 </StackPanel>
             </Button>

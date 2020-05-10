@@ -56,7 +56,7 @@
                                                 Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                                                         Width="100" Height="100" Margin="30,0,0,0" Background="#FFFF3939" BorderBrush="{x:Null}">
                                             <StackPanel Orientation="Vertical">
-                                                <Image Width="40" Height="40"/>
+                                                <Image x:Name="quiz0" Width="40" Height="40"/>
                                                 <TextBlock x:Name="q1txt" Text="Questions" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -76,7 +76,7 @@
                                                 Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                                                         Width="100" Height="100" Margin="30,0,0,0" Background="#FFEAE42B" BorderBrush="{x:Null}">
                                             <StackPanel Orientation="Vertical">
-                                                <Image Width="40" Height="40"/>
+                                                <Image x:Name="quiz1" Width="40" Height="40"/>
                                                 <TextBlock x:Name="q2txt" Text="Questions" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -95,7 +95,7 @@
                                                 Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                                                         Width="100" Height="100" Margin="30,0,0,0" Background="#FF73D746" BorderBrush="{x:Null}">
                                             <StackPanel Orientation="Vertical">
-                                                <Image Width="40" Height="40"/>
+                                                <Image  x:Name="quiz2" Width="40" Height="40"/>
                                                 <TextBlock x:Name="q3txt" Text="Questions" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -114,7 +114,7 @@
                                                 Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                                                         Width="100" Height="100" Margin="30,0,0,0" Background="#FF39C3FF" BorderBrush="{x:Null}">
                                             <StackPanel Orientation="Vertical">
-                                                <Image Width="40" Height="40"/>
+                                                <Image x:Name="quiz3" Width="40" Height="40"/>
                                                 <TextBlock x:Name="q4txt" Text="Questions" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -133,7 +133,7 @@
                                                 Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                                                         Width="100" Height="100" Margin="30,0,0,0" Background="#FFCC39FF" BorderBrush="{x:Null}">
                                             <StackPanel Orientation="Vertical">
-                                                <Image Width="40" Height="40"/>
+                                                <Image x:Name="quiz4" Width="40" Height="40"/>
                                                 <TextBlock x:Name="q5txt" Text="Questions" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -152,7 +152,7 @@
                                                 Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                                                         Width="100" Height="100" Margin="30,0,0,0" Background="#FFCAAF4D" BorderBrush="{x:Null}">
                                             <StackPanel Orientation="Vertical">
-                                                <Image Width="40" Height="40"/>
+                                                <Image x:Name="quiz5" Width="40" Height="40"/>
                                                 <TextBlock x:Name="q6txt" Text="Questions" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -190,7 +190,7 @@
                                         </Button>
                                         <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00" Click="quiz_defailance_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                             <StackPanel >
-                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Image x:Name="quiz6" Width="40" Height="40" HorizontalAlignment="Center"/>
                                                 <Label x:Name="quiz_defailance" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -206,7 +206,7 @@
                                         </Button>
                                         <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00"  Click="quiz_distance_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                             <StackPanel >
-                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Image x:Name="quiz7" Width="40" Height="40" HorizontalAlignment="Center"/>
                                                 <Label x:Name="quiz_distance" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -222,7 +222,7 @@
                                         </Button>
                                         <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00" Click="quiz_vitesse_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                             <StackPanel >
-                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Image x:Name="quiz8" Width="40" Height="40" HorizontalAlignment="Center"/>
                                                 <Label x:Name="quiz_vitesse" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -266,7 +266,7 @@
                                         </Button>
                                         <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}"  Click="quiz_les_feux_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                             <StackPanel >
-                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Image x:Name="quiz9" Width="40" Height="40" HorizontalAlignment="Center"/>
                                                 <Label x:Name="quiz_les_feux" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -282,7 +282,7 @@
                                         </Button>
                                         <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}"  Click="quiz_securite_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                             <StackPanel >
-                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Image x:Name="quiz10" Width="40" Height="40" HorizontalAlignment="Center"/>
                                                 <Label x:Name="quiz_securite" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -323,7 +323,7 @@
                                         </Button>
                                         <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#F50057" Click="quiz_risque_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                             <StackPanel >
-                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Image x:Name="quiz11" Width="40" Height="40" HorizontalAlignment="Center"/>
                                                 <Label x:Name="quiz_risque" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
@@ -340,7 +340,7 @@
                                         </Button>
                                         <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#F50057" Click="quiz_utilisation_Click"   Height="100" Width="100" Margin="30,0,0,0">
                                             <StackPanel >
-                                                <Image Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Image x:Name="quiz12" Width="40" Height="40" HorizontalAlignment="Center"/>
                                                 <Label x:Name="quiz_utilisation" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>

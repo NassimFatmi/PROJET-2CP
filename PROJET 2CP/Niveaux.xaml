@@ -23,7 +23,7 @@
                     MouseEnter="mouseEnter"
                     MouseLeave="mouseLeave" Margin="20,0,0,0">
                 <StackPanel>
-                    <Image Height="60" Width="60" Margin="0,0,0,20"/>
+                    <Image x:Name="lvl1icon" Height="60" Width="60" Margin="0,0,0,20"/>
                     <TextBlock x:Name="l0" Text="Niveau I" TextAlignment="Center" FontSize="20"/>
                 </StackPanel>
             </Button>
@@ -31,7 +31,7 @@
             <Button HorizontalAlignment="Center" x:Name="niv2" Height="300" Width="200" BorderThickness="0" Margin="80,0,80,0" 
                     Background="#FFFFAB12">
                 <StackPanel>
-                    <Image Height="60" Width="60" Margin="0,0,0,20"/>
+                    <Image x:Name="lvl2icon" Height="60" Width="60" Margin="0,0,0,20"/>
                     <TextBlock x:Name="l1" Text="Niveau II" TextAlignment="Center" FontSize="20"/>
                     <materialDesign:PackIcon x:Name="lvl2lock" Kind="Lock" Width="30" Height="30" HorizontalAlignment="Center" Margin="0,50,0,0"/>
                 </StackPanel>
@@ -41,7 +41,7 @@
                     Background="#FFFF5B5B"
                     Margin="0,0,20,0">
                 <StackPanel>
-                    <Image Height="60" Width="60" Margin="0,0,0,20"/>
+                    <Image x:Name="lvl3icon" Height="60" Width="60" Margin="0,0,0,20"/>
                     <TextBlock x:Name="l2" Text="Niveau III" TextAlignment="Center" FontSize="20"/>
                     <materialDesign:PackIcon x:Name="lvl3lock" Kind="Lock" Width="30" Height="30" HorizontalAlignment="Center" Margin="0,50,0,0"/>
                 </StackPanel>

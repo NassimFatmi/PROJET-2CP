@@ -65,8 +65,7 @@
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center" HorizontalAlignment="Left"
                                 Margin="60,0,0,0">
-                        <Image 
-                               Height="25" Width="25"/>
+                        <Image x:Name="logoimage" Height="25" Width="25"/>
                         <TextBlock Text="EDautoEcole" VerticalAlignment="Center"
                                    Margin="5"/>
                     </StackPanel>
@@ -89,7 +88,6 @@
                             </StackPanel>
                         </materialDesign:PopupBox>
                     </StackPanel>
-                    <Label Content="Beta" Foreground="White" Background="#FFC22828" Margin="171,13,797,14"/>
 
                 </Grid>
 

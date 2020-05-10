@@ -54,7 +54,7 @@
                     </Grid.ColumnDefinitions>
                     <Grid>
 
-                        <Image VerticalAlignment="Center" HorizontalAlignment="Left"
+                        <Image x:Name="logoimage" VerticalAlignment="Center" HorizontalAlignment="Left"
                                Width="80" Height="80" Margin="20"/>
 
                         <StackPanel Orientation="Vertical"
@@ -66,16 +66,6 @@
                             <Label x:Name="slogantxt" Content="qui révolutionne le permis !" 
                    Foreground="#FFF3F1F1" FontSize="15"/>
                         </StackPanel>
-                        <Label Content="Beta" Foreground="White" Background="#FFC22828" Margin="317,53,148,73.4" RenderTransformOrigin="0.5,0.5">
-                            <Label.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform AngleX="1.79"/>
-                                    <RotateTransform/>
-                                    <TranslateTransform X="0.469"/>
-                                </TransformGroup>
-                            </Label.RenderTransform>
-                        </Label>
                     </Grid>
                     <StackPanel Grid.Column="1" Orientation="Vertical" 
                         HorizontalAlignment="Right" VerticalAlignment="Top"
@@ -122,7 +112,7 @@
                             <StackPanel x:Name="stackUsers" HorizontalAlignment="Center" Orientation="Horizontal" Opacity="1" Margin="20,10,20,10">
                                 <StackPanel VerticalAlignment="Center"
                                 Margin="10,0,20,0">
-                                    <Ellipse Height="180" Width="180"
+                                    <Ellipse x:Name="guestimage" Height="180" Width="180"
                                  HorizontalAlignment="Center"
                                  Margin="0,0,0,10">
                                         <Ellipse.Fill>
@@ -151,13 +141,13 @@
                         </materialDesign:HintAssist.Hint>
                         <ComboBoxItem Foreground="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Image Width="15" Height="15"/>
+                                <Image x:Name="franceicon" Width="15" Height="15"/>
                                 <TextBlock Text="Français" Margin="2" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ComboBoxItem>
                         <ComboBoxItem Foreground="Black">
                             <StackPanel Orientation="Horizontal">
-                                <Image Width="15" Height="15"/>
+                                <Image x:Name="arabicon" Width="15" Height="15"/>
                                 <TextBlock Text="عربية" Margin="2" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ComboBoxItem>

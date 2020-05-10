@@ -24,6 +24,19 @@ namespace PROJET_2CP.Niveau2
         public Lesson()
         {
             InitializeComponent();
+            quiz0.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz1.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz3.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz4.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz5.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz6.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz7.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz8.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz9.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz10.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz11.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz12.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
             configurerLaLangue();
         }
         private void configurerLaLangue()

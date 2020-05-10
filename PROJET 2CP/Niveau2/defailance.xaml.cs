@@ -29,30 +29,30 @@ namespace PROJET_2CP.Niveau2
         {
             if (MainWindow.langue == 0)
             {
-                BitmapImage btm = new BitmapImage(new Uri(";component/img/def1.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/def1.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/def2.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory+"/img/def2.png", UriKind.RelativeOrAbsolute));
                 img2.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/def3.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/def3.png", UriKind.RelativeOrAbsolute));
                 img3.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/def4.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory+"/img/def4.png", UriKind.RelativeOrAbsolute));
                 img4.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/def5.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/def5.png", UriKind.RelativeOrAbsolute));
                 img5.Source = btm;
 
             }
             if (MainWindow.langue == 1)
             {
 
-                BitmapImage btm = new BitmapImage(new Uri(";component/img/defAR1.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/defAR1.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/defAR2.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/defAR2.png", UriKind.RelativeOrAbsolute));
                 img2.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/defAR3.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/defAR3.png", UriKind.RelativeOrAbsolute));
                 img3.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/defAR4.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/defAR4.png", UriKind.RelativeOrAbsolute));
                 img4.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/defAR5.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/defAR5.png", UriKind.RelativeOrAbsolute));
                 img5.Source = btm;
             }
         }

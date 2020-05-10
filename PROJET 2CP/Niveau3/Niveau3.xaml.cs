@@ -23,28 +23,15 @@ namespace PROJET_2CP.Niveau3
         public Niveau3()
         {
             InitializeComponent();
+            quiz0.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz1.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz3.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz4.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
+            quiz5.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizcion.png", UriKind.RelativeOrAbsolute));
             language();
         }
 
-       
-       
-       /* private void  language()
-        {
-            if(Theme2Page.lang==0)
-            {
-                Theme2.Content = "Theme2";
-                Theme4.Content = "Theme4";
-                Theme5.Content = "Theme5";
-
-            }
-            if (Theme2Page.lang == 1)
-            {
-                Theme2.Content = "الموضوع 2";
-                Theme4.Content = "الموضوع 4";
-                Theme5.Content = "الموضوع 5";
-            }
-
-        }*/
         private void principe_Click(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new principe();

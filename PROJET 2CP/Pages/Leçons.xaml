@@ -63,7 +63,7 @@
                                                 <Button x:Name="q0" Style="{StaticResource MaterialDesignFlatDarkBgButton}" Click="Button_Click_4"
                                                         Width="100" Height="100" Margin="30,0,0,0" Background="#FFFF3939" BorderBrush="{x:Null}">
                                                     <StackPanel Orientation="Vertical">
-                                                        <Image Width="40" Height="40"/>
+                                                        <Image x:Name="quiz1" Width="40" Height="40"/>
                                                         <TextBlock Text="Questions" HorizontalAlignment="Center"/>
                                                     </StackPanel>
                                                 </Button>
@@ -83,7 +83,7 @@
                                                 Click="Button_Click_5"
                                                 Height="100" Width="100" Margin="30,0,0,0" BorderBrush="{x:Null}">
                                                     <StackPanel Orientation="Vertical">
-                                                        <Image Width="40" Height="40"/>
+                                                        <Image x:Name="quiz2" Width="40" Height="40"/>
                                                         <TextBlock Text="Questions" HorizontalAlignment="Center"/>
                                                     </StackPanel>
                                                 </Button>
@@ -103,7 +103,7 @@
                                                 Click="Button_Click_6"
                                                 Width="100" Height="100" Margin="30,0,0,0" Background="#FF19D27F" BorderBrush="{x:Null}">
                                                     <StackPanel Orientation="Vertical">
-                                                        <Image Width="40" Height="40"/>
+                                                        <Image x:Name="quiz3" Width="40" Height="40"/>
                                                         <TextBlock Text="Questions" HorizontalAlignment="Center"/>
                                                     </StackPanel>
                                                 </Button>
@@ -123,7 +123,7 @@
                                                 Click="Button_Click_7"
                                                 Width="100" Height="100" Margin="30,0,0,0" BorderBrush="{x:Null}" Background="#FFDFE559">
                                                     <StackPanel Orientation="Vertical">
-                                                        <Image Width="40" Height="40"/>
+                                                        <Image x:Name="quiz4" Width="40" Height="40"/>
                                                         <TextBlock Text="Questions" HorizontalAlignment="Center"/>
                                                     </StackPanel>
                                                 </Button>

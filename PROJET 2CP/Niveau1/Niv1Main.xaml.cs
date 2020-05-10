@@ -23,6 +23,8 @@ namespace PROJET_2CP.Niveau1
         public Niv1Main()
         {
             InitializeComponent();
+            coursimgs.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Booksicon.png", UriKind.RelativeOrAbsolute));
+            testimg.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/StopSignicon.png", UriKind.RelativeOrAbsolute));
             initialiserLangue();
             guestMode();
         }

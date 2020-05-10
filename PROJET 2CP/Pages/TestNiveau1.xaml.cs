@@ -146,7 +146,7 @@ namespace PROJET_2CP.Pages
                 else
                 {
                     p1.Visibility = Visibility.Visible;
-                    BitmapImage btm = new BitmapImage(new Uri(";component/Images/" + propA + "_off.png", UriKind.Relative));
+                    BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + propA + "_off.png", UriKind.Relative));
                     Image p = new Image();
                     p.Source = btm;
                     p.Stretch = Stretch.Fill;
@@ -162,7 +162,7 @@ namespace PROJET_2CP.Pages
                 else
                 {
                     p2.Visibility = Visibility.Visible;
-                    BitmapImage btm = new BitmapImage(new Uri(";component/Images/" + propB + "_off.png", UriKind.Relative));
+                    BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + propB + "_off.png", UriKind.Relative));
                     Image p = new Image();
                     p.Source = btm;
                     p.Stretch = Stretch.Fill;
@@ -178,7 +178,7 @@ namespace PROJET_2CP.Pages
                 else
                 {
                     p3.Visibility = Visibility.Visible;
-                    BitmapImage btm = new BitmapImage(new Uri(";component/Images/" + propC + "_off.png", UriKind.Relative));
+                    BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + propC + "_off.png", UriKind.Relative));
                     Image p = new Image();
                     p.Source = btm;
                     p.Stretch = Stretch.Fill;
@@ -193,7 +193,7 @@ namespace PROJET_2CP.Pages
                 else
                 {
                     p4.Visibility = Visibility.Visible;
-                    BitmapImage btm = new BitmapImage(new Uri(";component/Images/" + propD + "_off.png", UriKind.Relative));
+                    BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + propD + "_off.png", UriKind.Relative));
                     Image p = new Image();
                     p.Source = btm;
                     p.Stretch = Stretch.Fill;
@@ -213,7 +213,7 @@ namespace PROJET_2CP.Pages
             //Afficher l'image du panneau
             if (hasImage == 1)
             {
-                BitmapImage btm = new BitmapImage(new Uri(";component/Images/" + Convert.ToString(idImage) + "_off.png", UriKind.Relative));             
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString(idImage) + "_off.png", UriKind.Relative));             
                 panneau.Source = btm;
                 panneau.Stretch = Stretch.Fill;
                 panneau.Visibility = Visibility.Visible;
@@ -547,7 +547,7 @@ namespace PROJET_2CP.Pages
         private void quitter(object sender, RoutedEventArgs e)
         {
             Tests1.testActuel++;
-            Home.mainFrame.Navigate(new Uri(";component/Pages/Tests1.xaml", UriKind.Relative));
+            Home.mainFrame.Navigate(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Pages/Tests1.xaml", UriKind.Relative));
         }
 
         private void Distimer()

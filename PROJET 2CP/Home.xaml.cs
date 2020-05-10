@@ -28,6 +28,7 @@ namespace PROJET_2CP
         public Home()
         {
             InitializeComponent();
+            logoimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/EDautoEcole.png", UriKind.RelativeOrAbsolute));
             _tutogrid = tutogrid;
             initialiserLangue();
             guestMode();

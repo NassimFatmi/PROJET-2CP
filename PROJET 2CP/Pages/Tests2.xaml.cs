@@ -351,39 +351,38 @@ namespace PROJET_2CP.Pages
                 if (connectToUtilisateur.State == ConnectionState.Closed)
                     connectToUtilisateur.Open();
 
-                try
+            try
+            {
+                cmd = new SqlCommand(query, connectToUtilisateur);
+
+                // create data adapter
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(savedData);
+                da.Dispose();
+                if (connectToUtilisateur.State == ConnectionState.Open)
+                    connectToUtilisateur.Close();
+
+                if (savedData.Rows.Count == 1)
                 {
-                    cmd = new SqlCommand(query, connectToUtilisateur);
-
-                    // create data adapter
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                    da.Fill(savedData);
-                    da.Dispose();
-
-                    if (savedData.Rows.Count == 1)
-                    {
-                        if (savedData.Rows[0]["Note"].ToString().Equals(""))
-                            return -1;
-                        else
-                            return Int32.Parse(savedData.Rows[0]["Note"].ToString());
-
-                        if (connectToUtilisateur.State == ConnectionState.Open)
-                            connectToUtilisateur.Close();
-                    }
-                    else
-                    {
+                    if (savedData.Rows[0]["Note"].ToString().Equals(""))
                         return -1;
-                    }
+                    else
+                        return Int32.Parse(savedData.Rows[0]["Note"].ToString());
                 }
-                catch (Exception)
+                else
                 {
-                    if (connectToUtilisateur.State == ConnectionState.Open)
-                        connectToUtilisateur.Close();
-
-                    MessageBox.Show("error Get note Testniveau 2 ");
                     return -1;
                 }
+            }
+            catch (Exception)
+            {
+                if (connectToUtilisateur.State == ConnectionState.Open)
+                    connectToUtilisateur.Close();
+
+                MessageBox.Show("error Get note Testniveau 2 ");
+                return -1;
+            }
             }
 
             private void backClick(object sender, RoutedEventArgs e)

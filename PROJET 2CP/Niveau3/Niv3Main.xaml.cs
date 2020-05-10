@@ -23,6 +23,8 @@ namespace PROJET_2CP.Niveau3
         public Niv3Main()
         {
             InitializeComponent();
+            coursimg.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Booksicon.png", UriKind.RelativeOrAbsolute));
+            testimg.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/StopSignicon.png", UriKind.RelativeOrAbsolute));
             language();
         }
 
