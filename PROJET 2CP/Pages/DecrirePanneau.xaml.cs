@@ -58,7 +58,7 @@ namespace PROJET_2CP.Pages
             }
 
             //Afficher l'image du panneau
-            BitmapImage btm = new BitmapImage(new Uri("/WpfApp1;component/Images/" + Convert.ToString(i) + "_off.png", UriKind.Relative));
+            BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + Convert.ToString(i) + "_off.png", UriKind.RelativeOrAbsolute));
             pano.Source = btm;
             pano.Stretch = Stretch.Fill;
             //recuperation de la description du panneau à partir de la base de donnée 
@@ -153,7 +153,7 @@ namespace PROJET_2CP.Pages
             {
                 i--;
                 //Afficher l'image du panneau
-                BitmapImage btm = new BitmapImage(new Uri("/WpfApp1;component/Images/" + Convert.ToString(i) + "_off.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + Convert.ToString(i) + "_off.png", UriKind.RelativeOrAbsolute));
                 pano.Source = btm;
                 pano.Stretch = Stretch.Fill;
                 //recuperation de la description du panneau à partir de la base de donnée 
@@ -198,7 +198,7 @@ namespace PROJET_2CP.Pages
             {
                 i++;
                 //Afficher l'image du panneau
-                BitmapImage btm = new BitmapImage(new Uri("/WpfApp1;component/Images/" + Convert.ToString(i) + "_off.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + Convert.ToString(i) + "_off.png", UriKind.RelativeOrAbsolute));
                 pano.Source = btm;
                 pano.Stretch = Stretch.Fill;
                 //recuperation de la description du panneau à partir de la base de donnée 

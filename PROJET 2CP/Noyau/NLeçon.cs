@@ -13,7 +13,7 @@ namespace PROJET_2CP.Noyau
         // ajouter un panneaux ou une intersection ...
      public Image ajouterImage(string url)
         {   
-            BitmapImage btm = new BitmapImage(new Uri(url+".png", UriKind.Relative));
+            BitmapImage btm = new BitmapImage(new Uri(url+".png", UriKind.RelativeOrAbsolute));
             Image img = new Image();
             img.Source = btm;
             img.Stretch = Stretch.Fill;
