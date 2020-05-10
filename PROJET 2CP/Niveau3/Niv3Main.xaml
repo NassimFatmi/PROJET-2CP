@@ -33,7 +33,7 @@
 
             <Button HorizontalAlignment="Right" Height="300" Width="200" Margin="40,0,0,0" Background="#FF34323D" BorderBrush="{x:Null}"
                     MouseEnter="mouseEnter"
-                    MouseLeave="mouseLeave">
+                    MouseLeave="mouseLeave" Click="Button_Click">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image x:Name="testimg" Height="60" Width="60" Margin="0,0,0,20"/>
                     <TextBlock x:Name="testnv" Text="Test de Niveau" FontSize="25" TextAlignment="Center"/>

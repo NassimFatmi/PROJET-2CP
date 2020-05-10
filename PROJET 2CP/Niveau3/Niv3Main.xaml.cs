@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROJET_2CP.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -67,6 +68,11 @@ namespace PROJET_2CP.Niveau3
             var button = sender as Button;
             button.Height = 300;
             button.Width = 200;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Tests3();
         }
     }
 }
