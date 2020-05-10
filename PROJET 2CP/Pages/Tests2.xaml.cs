@@ -34,6 +34,7 @@ namespace PROJET_2CP.Pages
             public Tests2()
             {
                 InitializeComponent();
+                logoimg.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/EDautoEcole.png", UriKind.RelativeOrAbsolute));
                 b1.Tag = 1;
                 b2.Tag = 2;
                 b3.Tag = 3;
@@ -122,82 +123,60 @@ namespace PROJET_2CP.Pages
 
             private void choix_Test(object sender, RoutedEventArgs e)
             {
-                if (getnote(1, 1) > 5)
-                    b2.Background = Brushes.GreenYellow;
-                else if (getnote(1, 1) == 5)
-                     b2.Background = Brushes.Orange;
-                else if (getnote(1, 1) == -1)
-                    b2.Background = Brushes.BlueViolet;
-                else if (getnote(1, 1) < 5)
-                    b2.Background = Brushes.Red;
-
-            if (getnote(1, 2) > 5)
-                    b2.Background = Brushes.GreenYellow;
-                else if (getnote(1, 2) == 5)
-                    b2.Background = Brushes.Orange;
-                else if (getnote(1, 2) == -1)
-                    b2.Background = Brushes.BlueViolet;
-                else if (getnote(1, 2) < 5)
-                    b2.Background = Brushes.Red;
-
-
-                if (getnote(1, 3) > 5)
-                    b3.Background = Brushes.GreenYellow;
-                else if (getnote(1, 3) == 5)
-                    b3.Background = Brushes.Orange;
-                else if (getnote(1, 3) == -1)
-                    b3.Background = Brushes.BlueViolet;
-                else if (getnote(1, 3) < 5)
-                    b3.Background = Brushes.Red;
-
-
-                if (getnote(1, 1) > 5)
-                    b1.Background = Brushes.GreenYellow;
-                else if (getnote(1, 1) == 5)
+                if (getnote(2, 1) > 5)
+                b1.Background = Brushes.GreenYellow;
+                else if (getnote(2, 1) == 5)
                     b1.Background = Brushes.Orange;
-                else if (getnote(1, 1) == -1)
+                else if (getnote(2, 1) == -1)
                     b1.Background = Brushes.BlueViolet;
-                else if (getnote(1, 1) < 5)
+                else if (getnote(2, 1) < 5)
                     b1.Background = Brushes.Red;
 
+                if (getnote(2, 2) > 5)
+                    b2.Background = Brushes.GreenYellow;
+                else if (getnote(2, 2) == 5)
+                    b2.Background = Brushes.Orange;
+                else if (getnote(2, 2) == -1)
+                    b2.Background = Brushes.BlueViolet;
+                else if (getnote(2, 2) < 5)
+                    b2.Background = Brushes.Red;
 
-                if (getnote(1, 4) > 5)
+
+                if (getnote(2, 3) > 5)
+                    b3.Background = Brushes.GreenYellow;
+                else if (getnote(2, 3) == 5)
+                    b3.Background = Brushes.Orange;
+                else if (getnote(2, 3) == -1)
+                    b3.Background = Brushes.BlueViolet;
+                else if (getnote(2, 3) < 5)
+                    b3.Background = Brushes.Red;
+
+                if (getnote(2, 5) > 5)
                     b4.Background = Brushes.GreenYellow;
-                else if (getnote(1, 4) == 5)
+                else if (getnote(2, 5) == 5)
                     b4.Background = Brushes.Orange;
-                else if (getnote(1, 4) == -1)
+                else if (getnote(2, 6) == -1)
                     b4.Background = Brushes.BlueViolet;
-                else if (getnote(1, 4) < 5)
+                else if (getnote(2, 6) < 5)
                     b4.Background = Brushes.Red;
 
 
-                if (getnote(1, 5) > 5)
+                if (getnote(2, 6) > 5)
                     b5.Background = Brushes.GreenYellow;
-                else if (getnote(1, 5) == 5)
+                else if (getnote(2, 6) == 5)
                     b5.Background = Brushes.Orange;
-                else if (getnote(1, 5) == -1)
+                else if (getnote(2, 6) == -1)
                     b5.Background = Brushes.BlueViolet;
-                else if (getnote(1, 5) < 5)
+                else if (getnote(2, 6) < 5)
                     b5.Background = Brushes.Red;
 
-
-                if (getnote(1, 6) > 5)
-                    b6.Background = Brushes.GreenYellow;
-                else if (getnote(1, 6) == 5)
-                    b6.Background = Brushes.Orange;
-                else if (getnote(1, 6) == -1)
-                    b6.Background = Brushes.BlueViolet;
-                else if (getnote(1, 6) < 5)
-                    b6.Background = Brushes.Red;
-
-
-                if (getnote(1, 7) > 5)
+                if (getnote(2, 7) > 5)
                     b7.Background = Brushes.GreenYellow;
-                else if (getnote(1, 7) == 5)
+                else if (getnote(2, 7) == 5)
                     b7.Background = Brushes.Orange;
-                else if (getnote(1, 7) == -1)
+                else if (getnote(2, 7) == -1)
                     b7.Background = Brushes.BlueViolet;
-                else if (getnote(1, 7) < 5)
+                else if (getnote(2, 7) < 5)
                     b7.Background = Brushes.Red;
 
 

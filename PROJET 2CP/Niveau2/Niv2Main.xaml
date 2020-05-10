@@ -13,7 +13,7 @@
         <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="BackClick">
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18"/>
-                <TextBlock Text="Retoure" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                <TextBlock x:Name="backtxt" Text="Retour" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
             </StackPanel>
         </Button>
 
@@ -27,7 +27,7 @@
                     MouseLeave="mouseLeave">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image x:Name="coursimg" Width="60" Height="60" Margin="0,0,0,20"/>
-                    <TextBlock Text="Cours" TextAlignment="Center" FontSize="25"/>
+                    <TextBlock x:Name="l0" Text="Cours" TextAlignment="Center" FontSize="25"/>
                 </StackPanel>
             </Button>
 
@@ -36,7 +36,7 @@
                     MouseLeave="mouseLeave">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image x:Name="testimg" Height="60" Width="60" Margin="0,0,0,20"/>
-                    <TextBlock Text="Test de Niveau" FontSize="25" TextAlignment="Center"/>
+                    <TextBlock x:Name="l1" Text="Test de Niveau" FontSize="25" TextAlignment="Center"/>
                 </StackPanel>
             </Button>
 

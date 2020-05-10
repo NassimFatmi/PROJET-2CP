@@ -949,6 +949,11 @@
     <Resource Include="bin\Debug\img\vitAR2.png" />
     <Resource Include="bin\Debug\img\vitAR3.png" />
     <Resource Include="bin\Debug\img\vitAR4.png" />
+    <Content Include="bin\Debug\SoundsEffects\Clock.wav" />
+    <Content Include="bin\Debug\SoundsEffects\Correct.wav" />
+    <Content Include="bin\Debug\SoundsEffects\correct_effect.wav" />
+    <Resource Include="bin\Debug\SoundsEffects\incorrect.gif" />
+    <Content Include="bin\Debug\SoundsEffects\WIN.wav" />
     <Content Include="bin\Debug\sounds\1.wav" />
     <Content Include="bin\Debug\sounds\10.wav" />
     <Content Include="bin\Debug\sounds\11.wav" />

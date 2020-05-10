@@ -32,7 +32,6 @@
                   VerticalAlignment="Bottom" HorizontalAlignment="Center"
                   Height="540" Width="810">
                 <Image x:Name="panneau"
-                       Source="/icons/StopSignicon.png"
                        VerticalAlignment="Top" HorizontalAlignment="Center"
                        Height="150" Width="150" Margin="0,120,0,30" 
                        Visibility="Visible"/>

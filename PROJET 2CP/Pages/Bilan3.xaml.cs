@@ -47,7 +47,7 @@ namespace PROJET_2CP.Pages
         private void saveNote(int note, int niveau, int code, string theme)
         {
             // Code == ID //
-            string connString = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\Trace\Save.mdf; Integrated Security = True";
+            string connString = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf; Integrated Security = True";
 
             DataTable savedData = new DataTable();
 

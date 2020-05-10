@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Media;
 using PROJET_2CP.Niveau1;
+using System.Windows.Media.Imaging;
 
 namespace PROJET_2CP.Pages
 {
@@ -23,6 +24,7 @@ namespace PROJET_2CP.Pages
         public Tests1()
         {
             InitializeComponent();
+            logoimg.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/EDautoEcole.png", UriKind.RelativeOrAbsolute));
             b1.Tag = 1;
             b2.Tag = 2; 
             b3.Tag = 3;

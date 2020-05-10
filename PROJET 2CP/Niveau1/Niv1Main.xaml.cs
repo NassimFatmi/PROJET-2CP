@@ -51,12 +51,14 @@ namespace PROJET_2CP.Niveau1
             {   //la langue français
                 l0.Text = "Cours";
                 l1.Text = "Test de niveau";
+                backtxt.Text = "Retour";
             }
             else
             {
                 //la langue arabe
                 l0.Text = "الدروس";
                 l1.Text = "امتحان المستوى";
+                backtxt.Text = "عودة";
             }
         }
         /*<<

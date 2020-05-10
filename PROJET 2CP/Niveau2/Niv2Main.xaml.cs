@@ -24,6 +24,7 @@ namespace PROJET_2CP.Niveau2
         public Niv2Main()
         {
             InitializeComponent();
+            initialiserLangue();
             coursimg.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Booksicon.png", UriKind.RelativeOrAbsolute));
             testimg.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/StopSignicon.png", UriKind.RelativeOrAbsolute));
         }
@@ -55,6 +56,21 @@ namespace PROJET_2CP.Niveau2
         {
             Home.mainFrame.Content = new Tests2();
         }
-
+        private void initialiserLangue()
+        {
+            if (MainWindow.langue == 0)
+            {   //la langue français
+                l0.Text = "Cours";
+                l1.Text = "Test de niveau";
+                backtxt.Text = "Retour";
+            }
+            else
+            {
+                //la langue arabe
+                l0.Text = "الدروس";
+                l1.Text = "امتحان المستوى";
+                backtxt.Text = "عودة";
+            }
+        }
     }
 }

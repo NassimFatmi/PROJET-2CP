@@ -106,7 +106,7 @@ namespace PROJET_2CP.Pages
         }
         public void creerQuestion()
         {
-            SqlConnection connection = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\Panneaux.mdf;Integrated Security=True");
+            SqlConnection connection = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf;Integrated Security=True");
 
             SqlCommand cmd = new SqlCommand("select * from [Question] where Id='" + Convert.ToString(tab[tmp]) + "'", connection);
             SqlDataReader dr;
@@ -242,22 +242,22 @@ namespace PROJET_2CP.Pages
         {
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\icons\happy.png")));
+                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png")));
                 p1.Foreground = Brushes.Green;
                 p1.BorderBrush = Brushes.Green;
                 nbBonneReponse++;
                 saveAnswer(true, 3, _codeQst, _themeQst);
 
-                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\SoundsEffects\correct_effect.wav");
+                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
             else
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\icons\sad.png")));
+                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png")));
                 p1.Foreground = Brushes.Red;
                 p1.BorderBrush = Brushes.Red;
                 saveAnswer(false, 3, _codeQst, _themeQst);
-                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\SoundsEffects\correct_effect.wav");
+                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
             p1.IsEnabled = false;
@@ -274,21 +274,21 @@ namespace PROJET_2CP.Pages
         {
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\icons\happy.png")));
+                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png")));
                 p2.Foreground = Brushes.Green;
                 p2.BorderBrush = Brushes.Green;
                 nbBonneReponse++;
                 saveAnswer(true, 3, _codeQst, _themeQst);
-                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\SoundsEffects\correct_effect.wav");
+                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
             else
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\icons\sad.png")));
+                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png")));
                 p2.Foreground = Brushes.Red;
                 p2.BorderBrush = Brushes.Red;
                 saveAnswer(false, 3, _codeQst, _themeQst);
-                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\SoundsEffects\correct_effect.wav");
+                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
             p1.IsEnabled = false;
@@ -305,22 +305,22 @@ namespace PROJET_2CP.Pages
         {
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\icons\happy.png")));
+                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png")));
                 p4.Foreground = Brushes.Green;
                 p4.BorderBrush = Brushes.Green;
                 nbBonneReponse++;
                 saveAnswer(true, 3, _codeQst, _themeQst);
-                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\SoundsEffects\correct_effect.wav");
+                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
 
             }
             else
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\icons\sad.png")));
+                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png")));
                 p4.Foreground = Brushes.Red;
                 p4.BorderBrush = Brushes.Red;
                 saveAnswer(false, 3, _codeQst, _themeQst);
-                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\SoundsEffects\correct_effect.wav");
+                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
             p1.IsEnabled = false;
@@ -337,21 +337,21 @@ namespace PROJET_2CP.Pages
         {
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\icons\happy.png")));
+                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png")));
                 p3.Foreground = Brushes.Green;
                 p3.BorderBrush = Brushes.Green;
                 nbBonneReponse++;
                 saveAnswer(true, 3, _codeQst, _themeQst);
-                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\SoundsEffects\correct_effect.wav");
+                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
             else
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\icons\sad.png")));
+                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png")));
                 p3.Foreground = Brushes.Red;
                 p3.BorderBrush = Brushes.Red;
                 saveAnswer(false, 3, _codeQst, _themeQst);
-                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\SoundsEffects\correct_effect.wav");
+                _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
             p1.IsEnabled = false;
@@ -401,7 +401,7 @@ namespace PROJET_2CP.Pages
         private void quitter(object sender, RoutedEventArgs e)
         {
             Tests3.testActuel++;
-            Home.mainFrame.Navigate(new Uri("/WpfApp1;component/Pages/Tests3.xaml", UriKind.Relative));
+            Home.mainFrame.Navigate(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Pages/Tests3.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void Distimer()
@@ -468,7 +468,7 @@ namespace PROJET_2CP.Pages
         private void saveAnswer(bool reponse, int niveau, int code, string theme)
         {
             // Code == ID //
-            string connString = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\Trace\Save.mdf; Integrated Security = True";
+            string connString = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf; Integrated Security = True";
 
             DataTable savedData = new DataTable();
 

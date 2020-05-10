@@ -66,8 +66,8 @@
                 <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Top" HorizontalAlignment="Center"
                         Margin="0,40,0,0">
-                    <Image Height="150" Width="150"/>
-                    <Label Content="Test Niveau 1" 
+                    <Image x:Name="logoimg" Height="150" Width="150"/>
+                    <Label Content="Test Niveau 2" 
                            FontSize="44" FontWeight="Bold"
                            Foreground="White"
                            VerticalAlignment="Center" Margin="20"/>

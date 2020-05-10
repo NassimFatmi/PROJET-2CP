@@ -34,6 +34,7 @@ namespace PROJET_2CP.Pages
         public Tests3()
         {
             InitializeComponent();
+            logoimg.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/EDautoEcole.png", UriKind.RelativeOrAbsolute));
             b1.Tag = 1;
             b2.Tag = 2;
             b3.Tag = 3;
@@ -239,7 +240,7 @@ namespace PROJET_2CP.Pages
         private void getLastTest()
         {
             // Code == ID //
-            string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\UtilisateurBDD.mdf;Integrated Security=True";
+            string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\UtilisateurBDD.mdf;Integrated Security=True";
             DataTable savedData = new DataTable();
             SqlConnection connectToUtilisateur = new SqlConnection(connString);
 
@@ -283,7 +284,7 @@ namespace PROJET_2CP.Pages
         private void saveLastTest(int testCode)
         {
             // Code == ID //
-            string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\UtilisateurBDD.mdf;Integrated Security=True";
+            string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\UtilisateurBDD.mdf;Integrated Security=True";
             string query = "UPDATE Utilisateur SET Test3='" + testCode.ToString() + "' WHERE UtilisateurID = '" + LogIN.LoggedUser.UtilisateurID + "'";
 
             SqlConnection connecttoUsers = new SqlConnection(connString);
@@ -313,7 +314,7 @@ namespace PROJET_2CP.Pages
         private int getnote(int niveau, int test)
         {
             // Code == ID //
-            string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\Trace\Save.mdf;Integrated Security=True";
+            string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
             DataTable savedData = new DataTable();
             SqlConnection connectToUtilisateur = new SqlConnection(connString);
 
@@ -333,16 +334,14 @@ namespace PROJET_2CP.Pages
 
                 da.Fill(savedData);
                 da.Dispose();
-
+                if (connectToUtilisateur.State == ConnectionState.Open)
+                    connectToUtilisateur.Close();
                 if (savedData.Rows.Count == 1)
                 {
                     if (savedData.Rows[0]["Note"].ToString().Equals(""))
                         return -1;
                     else
                         return Int32.Parse(savedData.Rows[0]["Note"].ToString());
-
-                    if (connectToUtilisateur.State == ConnectionState.Open)
-                        connectToUtilisateur.Close();
                 }
                 else
                 {
