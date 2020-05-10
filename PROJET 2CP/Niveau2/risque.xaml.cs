@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
@@ -44,6 +45,10 @@ namespace PROJET_2CP.Niveau2
                 img4.Source = btm;
                 
             }
+        }
+        private void backClick(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Lesson();
         }
     }
 }

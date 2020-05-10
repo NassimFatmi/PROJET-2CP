@@ -9,12 +9,7 @@
       d:DesignHeight="610" d:DesignWidth="950"
       Title="defailance">
     <Grid>
-        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="red" BorderBrush="{x:Null}" Click="backClick"  Margin="10,10,0,0"  >
-            <StackPanel Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18" Foreground="White"/>
-                <TextBlock x:Name="back" Text="Retour" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
-            </StackPanel>
-        </Button>
+        
         <ScrollViewer>
         <StackPanel>
             <Image x:Name="img1"  />
@@ -24,5 +19,11 @@
             <Image x:Name="img5"  />
         </StackPanel>
     </ScrollViewer>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="red" BorderBrush="{x:Null}" Click="backClick"  Margin="10,10,0,0"  >
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18" Foreground="White"/>
+                <TextBlock x:Name="back" Text="Retour" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>

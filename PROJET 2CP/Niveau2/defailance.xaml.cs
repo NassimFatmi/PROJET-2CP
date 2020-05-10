@@ -56,6 +56,9 @@ namespace PROJET_2CP.Niveau2
                 img5.Source = btm;
             }
         }
-
+        private void backClick(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Lesson();
+        }
     }
 }

@@ -52,5 +52,9 @@ namespace PROJET_2CP.Niveau2
 
             }
         }
+        private void backClick(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Lesson();
+        }
     }
 }
