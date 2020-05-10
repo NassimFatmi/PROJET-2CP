@@ -73,9 +73,9 @@ namespace PROJET_2CP.Niveau2
         {
             //int tag = aleaInt();
             //recuperation de la description du panneau à partir de la base de donnée 
-            SqlConnection connection = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\questionBasset.mdf;Integrated Security=True");
+            SqlConnection connection = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\Panneaux.mdf;Integrated Security=True");
 
-            SqlCommand cmd = new SqlCommand("select * from [question] where Id='" + Convert.ToString(tab[tmp]+tag-1) + "'", connection);
+            SqlCommand cmd = new SqlCommand("select * from [Question] where Id='" + Convert.ToString(tab[tmp]+tag-1) + "'", connection);
             SqlDataReader dr;
             try
             {
@@ -248,11 +248,13 @@ namespace PROJET_2CP.Niveau2
                 nbBonneReponse++;
                 reponseNext.Text = "Bonne reponse";
                 reponseNext.Foreground = Brushes.GreenYellow;
-                nextimage.Source = new BitmapImage(new Uri(";component/icons/happy.png", UriKind.Relative));
+                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/happy.png", UriKind.RelativeOrAbsolute));
+
             }
             else
             {
-                nextimage.Source = new BitmapImage(new Uri(";component/icons/sad.png", UriKind.Relative));
+                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/sad.png", UriKind.RelativeOrAbsolute));
+
 
                 reponseNext.Text = "Mauvaise reponse";
                 reponseNext.Foreground = Brushes.Red;
@@ -290,13 +292,13 @@ namespace PROJET_2CP.Niveau2
                 nbBonneReponse++;
                 repB.Foreground = Brushes.Green;
 
-                nextimage.Source = new BitmapImage(new Uri(";component/icons/happy.png", UriKind.Relative));
+                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/happy.png", UriKind.RelativeOrAbsolute));
             }
             else
             {
                 reponseNext.Text = "Mauvaise reponse";
                 reponseNext.Foreground = Brushes.Red;
-                nextimage.Source = new BitmapImage(new Uri(";component/icons/sad.png", UriKind.Relative));
+                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/sad.png", UriKind.RelativeOrAbsolute));
                 repB.Foreground = Brushes.Red;
                 if (propA == bonnRep)
                 {
@@ -331,11 +333,11 @@ namespace PROJET_2CP.Niveau2
                 nbBonneReponse++;
                 repC.Foreground = Brushes.Green;
 
-                nextimage.Source = new BitmapImage(new Uri(";component/icons/happy.png", UriKind.Relative));
+                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/happy.png", UriKind.RelativeOrAbsolute));
             }
             else
             {
-                nextimage.Source = new BitmapImage(new Uri(";component/icons/sad.png", UriKind.Relative));
+                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/sad.png", UriKind.RelativeOrAbsolute));
 
                 reponseNext.Text = "Mauvaise reponse";
                 reponseNext.Foreground = Brushes.Red;
@@ -373,11 +375,11 @@ namespace PROJET_2CP.Niveau2
                 nbBonneReponse++;
                 repD.Foreground = Brushes.Green;
 
-                nextimage.Source = new BitmapImage(new Uri(";component/icons/happy.png", UriKind.Relative));
+                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/happy.png", UriKind.RelativeOrAbsolute));
             }
             else
             {
-                nextimage.Source = new BitmapImage(new Uri(";component/icons/sad.png", UriKind.Relative));
+                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/sad.png", UriKind.RelativeOrAbsolute));
                 reponseNext.Text = "Mauvaise reponse";
                 reponseNext.Foreground = Brushes.Red;
 

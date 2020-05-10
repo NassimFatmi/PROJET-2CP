@@ -41,7 +41,8 @@ namespace PROJET_2CP.Niveau2
         }
         private void configurerLangue()
         {
-            BitmapImage btm = new BitmapImage(new Uri(";component/Images/229_off.png", UriKind.Relative));
+            BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/229_off.png", UriKind.RelativeOrAbsolute));
+
             marquage.Source = btm;
             if (langue==1)
             {
@@ -73,7 +74,8 @@ namespace PROJET_2CP.Niveau2
                 b.BorderBrush = null;
                 b.Tag = i;
                 b.Click += Button_Click;
-                b.Content = lesson.ajouterImage(";component/Images/" + Convert.ToString(i) + "_off");
+                b.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString(i) + "_off");
+
                 sp.Children.Add(b);
                 b = new Button();
             }
@@ -82,7 +84,7 @@ namespace PROJET_2CP.Niveau2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             index = (int)((Button)sender).Tag;
-            BitmapImage btm = new BitmapImage( new Uri(";component/Images/" + Convert.ToString(index)+ "_off.png", UriKind.Relative));
+            BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString(index) + "_off.png", UriKind.RelativeOrAbsolute));
             marquage.Source = btm;
 
             System.Data.SqlClient.SqlConnection connection = new SqlConnection($@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True");
@@ -148,7 +150,7 @@ namespace PROJET_2CP.Niveau2
             if (index >= 230)
             {
                 index--;
-                BitmapImage btm = new BitmapImage(new Uri(";component/Images/" + Convert.ToString(index) + "_off.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString(index) + "_off.png", UriKind.RelativeOrAbsolute));
                 marquage.Source = btm;
 
                 System.Data.SqlClient.SqlConnection connection = new SqlConnection($@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True");
@@ -189,7 +191,7 @@ namespace PROJET_2CP.Niveau2
             if(index < 254)
             {
                 index++;
-                BitmapImage btm = new BitmapImage(new Uri(";component/Images/" + Convert.ToString(index) + "_off.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString(index) + "_off.png", UriKind.RelativeOrAbsolute));
                 marquage.Source = btm;
 
                 System.Data.SqlClient.SqlConnection connection = new SqlConnection($@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True");
