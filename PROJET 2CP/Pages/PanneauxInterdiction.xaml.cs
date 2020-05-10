@@ -85,7 +85,14 @@ namespace PROJET_2CP.Pages
         {
             var button = sender as Button;
             var index = (int)button.Tag;
-            button.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + Convert.ToString((int)button.Tag) + "_on");
+            try
+            {
+                button.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + Convert.ToString((int)button.Tag) + "_on");
+            }
+            catch (Exception)
+            {
+
+            }
         }
         private void button_MouseLeave(object sender, MouseEventArgs e)
         {

@@ -125,7 +125,7 @@ namespace PROJET_2CP.Pages
             if (hasImage == 1)
             {
                 panneau.Visibility = Visibility.Visible;
-                BitmapImage btm = new BitmapImage(new Uri(";component/Images/" + Convert.ToString(idImage) + "_off.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + Convert.ToString(idImage) + "_off.png", UriKind.RelativeOrAbsolute));
                 panneau.Source = btm;
                 panneau.Stretch = Stretch.Fill; 
             }
