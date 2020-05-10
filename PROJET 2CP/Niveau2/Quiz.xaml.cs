@@ -114,9 +114,6 @@ namespace PROJET_2CP.Niveau2
                         quest = dr["contenuar"].ToString();
                         bonnRep = dr["reponse1ar"].ToString();
                     }
-                    
-                    
-                  
                 }
                 dr.Close();
             }
