@@ -29,24 +29,25 @@ namespace PROJET_2CP.Niveau2
         {
             if (MainWindow.langue == 0)
             {
-                BitmapImage btm = new BitmapImage(new Uri(";component/img/dist1.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/dist1.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/dist2.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/dist2.png", UriKind.RelativeOrAbsolute));
                 img2.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/dist3.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/dist3.png", UriKind.RelativeOrAbsolute));
                 img3.Source = btm;
 
             }
             if (MainWindow.langue == 1)
             {
-                BitmapImage btm = new BitmapImage(new Uri(";component/img/distAR1.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/distAR1.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/distAR2.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/distAR2.png", UriKind.RelativeOrAbsolute));
                 img2.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/distAR3.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/distAR3.png", UriKind.RelativeOrAbsolute));
                 img3.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/distAR4.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/distAR4.png", UriKind.RelativeOrAbsolute));
                 img4.Source = btm;
+              
             }
         }
 

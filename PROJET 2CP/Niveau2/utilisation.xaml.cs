@@ -29,26 +29,27 @@ namespace PROJET_2CP.Niveau2
         {
             if (MainWindow.langue == 0)
             {
-                BitmapImage btm = new BitmapImage(new Uri(";component/img/ut1.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/ut1.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/ut2.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/ut2.png", UriKind.RelativeOrAbsolute));
                 img2.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/ut3.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/ut3.png", UriKind.RelativeOrAbsolute));
                 img3.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/ut4.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/ut4.png", UriKind.RelativeOrAbsolute));
                 img4.Source = btm;
 
             }
             if (MainWindow.langue == 1)
             {
-                BitmapImage btm = new BitmapImage(new Uri(";component/img/utAR1.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/utAR1.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/utAR2.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/utAR2.png", UriKind.RelativeOrAbsolute));
                 img2.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/utAR3.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/utAR3.png", UriKind.RelativeOrAbsolute));
                 img3.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/utAR4.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/utAR4.png", UriKind.RelativeOrAbsolute));
                 img4.Source = btm;
+
             }
         }
     }

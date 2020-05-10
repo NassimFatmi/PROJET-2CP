@@ -29,19 +29,23 @@ namespace PROJET_2CP.Niveau3
         {
             if (MainWindow.langue == 0)
             {
-                BitmapImage btm = new BitmapImage(new Uri(";component/img/dem1.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/dem1.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/dem2.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/dem2.png", UriKind.RelativeOrAbsolute));
                 img2.Source = btm;
+
+                
 
             }
             if (MainWindow.langue == 1)
             {
 
-                BitmapImage btm = new BitmapImage(new Uri(";component/img/demAR1.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/demAR1.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/demAR2.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/demAR2.png", UriKind.RelativeOrAbsolute));
                 img2.Source = btm;
+
+                
              
             }
         }

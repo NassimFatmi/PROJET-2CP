@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PROJET_2CP.Niveau2
 {
@@ -29,31 +18,31 @@ namespace PROJET_2CP.Niveau2
         {
             if (MainWindow.langue == 0)
             {
-                BitmapImage btm = new BitmapImage(new Uri(";component/img/risq1.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/risq1.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/risq2.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/risq2.png", UriKind.RelativeOrAbsolute));
                 img2.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/risq3.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/risq3.png", UriKind.RelativeOrAbsolute));
                 img3.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/risq4.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/risq4.png", UriKind.RelativeOrAbsolute));
                 img4.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/risq5.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/risq5.png", UriKind.RelativeOrAbsolute));
                 img5.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/risq6.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/risq6.png", UriKind.RelativeOrAbsolute));
                 img6.Source = btm;
 
             }
             if (MainWindow.langue == 1)
             {
-
-                BitmapImage btm = new BitmapImage(new Uri(";component/img/risqAR1.png", UriKind.Relative));
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/risqAR1.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/risqAR2.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/risqAR2.png", UriKind.RelativeOrAbsolute));
                 img2.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/risqAR3.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/risqAR3.png", UriKind.RelativeOrAbsolute));
                 img3.Source = btm;
-                btm = new BitmapImage(new Uri(";component/img/risqAR4.png", UriKind.Relative));
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/risqAR4.png", UriKind.RelativeOrAbsolute));
                 img4.Source = btm;
+                
             }
         }
     }
