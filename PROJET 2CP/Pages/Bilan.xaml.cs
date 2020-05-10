@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
+using PROJET_2CP.update;
 
 namespace PROJET_2CP.Pages
 {
@@ -25,9 +26,9 @@ namespace PROJET_2CP.Pages
         public Bilan( int bonne,int mauvaise)
         {
             InitializeComponent();
-           // Lbl1.Content = "Bonnes reponses : " + (bonne + TestNiveau1.nbBonneReponse).ToString();
-            //lbl2.Content = "Mauvaises reponses : " +( mauvaise + 5-TestNiveau1.nbBonneReponse).ToString();
-            //saveNote((bonne + TestNiveau1.nbBonneReponse),1,Tests1._testChoisi,"Test 1");
+            Lbl1.Content = "Bonnes reponses : " + (bonne + Page1Tests.nbBonneReponse + Page2Test1.nbBonneReponse).ToString();
+            lbl2.Content = "Mauvaises reponses : " + (mauvaise + Page1Tests.tagMax + 1 - Page1Tests.nbBonneReponse + Page2Test1.tagMax + 1 - Page2Test1.nbBonneReponse).ToString();
+           // saveNote((bonne + TestNiveau1.nbBonneReponse),1,Tests1._testChoisi,"Test 1");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
