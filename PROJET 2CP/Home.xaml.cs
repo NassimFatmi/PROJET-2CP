@@ -172,7 +172,7 @@ namespace PROJET_2CP
                     bonusLV.Background = Brushes.DeepSkyBlue;
                     break;
                 case 4:
-                    mainFrame.Content = new QuRe();
+                    mainFrame.Content = new Aide();
                     statesLV.Background = null;
                     settingsLV.Background = null;
                     helpLV.Background = Brushes.LightGreen;

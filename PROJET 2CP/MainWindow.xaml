@@ -40,7 +40,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" Width="20" Height="Auto" Background="{x:Null}" BorderBrush="Transparent" Click="APRP_Click" >
-                    <materialDesign:PackIcon Kind="Help" Foreground="White" Width="17" Height="17"/>
+                    <materialDesign:PackIcon Kind="About" Foreground="White" Width="17" Height="17"/>
                 </Button>
             </StackPanel>
         </Grid>
