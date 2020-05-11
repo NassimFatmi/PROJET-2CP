@@ -30,7 +30,7 @@ namespace PROJET_2CP.Pages
             Lbl1.Content = "Bonnes reponses : " + (nb_bonne).ToString();
             lbl2.Content = "Mauvaises reponses : " + (10 - nb_bonne).ToString();
             //lbl2.Content = "Mauvaises reponses : " + (mauvaise + Page1Tests.tagMax + 1 - Page1Tests.nbBonneReponse + Page2Test1.tagMax + 1 - Page2Test1.nbBonneReponse).ToString();
-           // saveNote((bonne + TestNiveau1.nbBonneReponse),1,Tests1._testChoisi,"Test 1");
+            saveNote((nb_bonne),1,Tests1._testChoisi,"Test 1");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

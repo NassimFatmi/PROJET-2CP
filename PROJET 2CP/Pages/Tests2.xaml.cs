@@ -43,10 +43,21 @@ namespace PROJET_2CP.Pages
                 b6.Tag = 6;
                 b7.Tag = 7;
                 getLastTest();
-                
+            langue();
                 
             }
-            static int[] reorder(int a)
+        private void langue()
+        {
+            if (MainWindow.langue == 0)
+            {
+                back.Text = "Retour";
+            }
+            else
+            {
+                back.Text = "عودة";
+            }
+        }
+        static int[] reorder(int a)
             {
                 int[] tab = new int[a];
                 int size = 0, i;
@@ -383,8 +394,30 @@ namespace PROJET_2CP.Pages
                 var button = sender as Button;
                 button.BorderThickness = new Thickness(8);
                 button.BorderBrush = Brushes.Azure;
-                noteShow.Content = "Test Note : " + getnote(1, ((int)button.Tag)).ToString();
+
+            if (getnote(2, ((int)button.Tag)) == -1)
+            {
+                if (MainWindow.langue == 0)
+                {
+                    noteShow.Content = "Vous n'avez pas fait se test !";
+                }
+                else
+                {
+                    noteShow.Content = "انت لم تجتز هدا الامتحان";
+                }
             }
+            else
+            {
+                if (MainWindow.langue == 0)
+                {
+                    noteShow.Content = "Test Note : " + getnote(1, ((int)button.Tag)).ToString();
+                }
+                else
+                {
+                    noteShow.Content = "نقطة الامتحان " + getnote(1, ((int)button.Tag)).ToString();
+                }
+            }
+        }
 
             private void b1_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
             {
