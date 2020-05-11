@@ -45,7 +45,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid x:Name="AproposArab" Visibility="Visible">
+        <Grid x:Name="AproposArab" Visibility="Collapsed">
             <Grid.Background>
                 <SolidColorBrush Color="Black" Opacity="0.9"></SolidColorBrush>
             </Grid.Background>
