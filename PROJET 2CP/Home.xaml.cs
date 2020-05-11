@@ -361,5 +361,10 @@ namespace PROJET_2CP
             b4_Copy.Visibility = Visibility.Collapsed;
             b5.Visibility = Visibility.Visible;
         }
+
+        private void Aide_Click(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Aide();
+        }
     }
 }

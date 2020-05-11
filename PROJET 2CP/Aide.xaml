@@ -1,0 +1,30 @@
+﻿<Page x:Class="PROJET_2CP.Aide"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROJET_2CP"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1000"
+      Title="Aide">
+    <ScrollViewer>
+    <StackPanel>
+            <Expander x:Name="e1" Width="700" FontSize="20" HorizontalAlignment="Center" Margin="0 10">
+                <Expander.Background>
+                    <SolidColorBrush Color="DeepSkyBlue" Opacity="0.4"/>
+                </Expander.Background>
+                <Expander.Header>
+                    <TextBlock x:Name="ex1" TextWrapping="Wrap" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"
+                                   Margin="10"/>
+                </Expander.Header>
+                <Grid>
+                    <Grid.Background>
+                        <SolidColorBrush Color="SkyBlue" Opacity="0.2"/>
+                    </Grid.Background>
+                    <TextBlock x:Name="tb1" TextWrapping="Wrap" FontSize=" 16" Foreground="White"
+                                   Margin="10" HorizontalAlignment="Center"/>
+                </Grid>
+            </Expander>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

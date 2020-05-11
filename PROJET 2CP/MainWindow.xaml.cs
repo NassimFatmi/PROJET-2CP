@@ -28,17 +28,22 @@ namespace PROJET_2CP
         public static Rectangle backgroundImage;
         public static int langue { get; set; }
         public static Grid _backGrid { get; set; }
+        public static Grid apArb { get; set; }
+        public static Grid apfran { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             langue = 0;
             initialize();
+            apArb = AproposArab;
+            apfran = aproposFranc;
             _backGrid = backGrid;
         }
         private void initialize()
         {
+          
 
-            backgroundImage = new Rectangle();
+               backgroundImage = new Rectangle();
             backgroundImage.HorizontalAlignment = HorizontalAlignment.Center;
             backgroundImage.VerticalAlignment = VerticalAlignment.Bottom;
             backgroundImage.Width = 970;
@@ -143,6 +148,36 @@ namespace PROJET_2CP
         public static Grid getInstance()
         {
             return _backGrid;
+        }
+        public static Grid getAproposArab()
+        {
+            return apArb;
+        }
+        public static Grid getAproposfrançais()
+        {
+            return apfran;
+        }
+
+        private void retour_Click(object sender, RoutedEventArgs e)
+        {
+            getAproposfrançais().Visibility = Visibility.Collapsed;
+        }
+
+        private void retourAR_Click(object sender, RoutedEventArgs e)
+        {
+            getAproposArab().Visibility = Visibility.Collapsed;
+        }
+
+        private void APRP_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainWindow.langue == 0)
+            {
+                MainWindow.getAproposfrançais().Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MainWindow.getAproposArab().Visibility = Visibility.Visible;
+            }
         }
     }
 }

@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1000"
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    
+
     <Grid x:Name="backGrid" OpacityMask="Black" MouseDown="Grid_MouseDown">
         <Grid.Background>
             <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
@@ -39,10 +39,67 @@
             </Grid.Background>
 
             <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" Width="20" Height="20" Background="{x:Null}" BorderBrush="Transparent" >
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" Width="20" Height="Auto" Background="{x:Null}" BorderBrush="Transparent" Click="APRP_Click" >
                     <materialDesign:PackIcon Kind="Help" Foreground="White" Width="17" Height="17"/>
                 </Button>
             </StackPanel>
+        </Grid>
+
+        <Grid x:Name="AproposArab" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.9"></SolidColorBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="600"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <Button x:Name="عودة" Content="Retour" Width="100" Margin="10" Click="retourAR_Click" HorizontalAlignment="Right"></Button>
+                <TextBlock FontSize="30" Foreground="White" Margin="10" HorizontalAlignment="Right">التعريف بالتطبيق</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">يتيح لك هذا التطبيق تدريب واجتياز اختبار حركة المرور على الطرق ، فهو مقتبس من كتاب المرور المروري الرسمي ولكن</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">مع طريقة تعلم أكثر فعالية</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">دائما في خدمتكم  EDcodeDeLaRoute، يمكنك الاستفادة من تطبيق مجاني تمامًا مع دروس مقدمة بطرق متعددة</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">هذا التطبيق متاح باللغتين الفرنسية والعربية</TextBlock>
+                <TextBlock FontSize="30" Foreground="White" Margin="10" HorizontalAlignment="Right">محتوى التطبيق</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">ينقسم التطبيق إلى ثلاثة مستويات ، كل مستوى يتكون من: مواضيع ، اختبارات ، كل موضوع يتكون من: دروس ، اختبار</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right"> لكل درس</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">هناك أيضًا قسم سؤال / جواب وهو مكافأة لإعداد المتعلم بشكل صحيح للاختبار الرسمي</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" Margin=" 20 30 0 0" HorizontalAlignment="Right">تم تصميم هذا المنتج من قبل</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Sarah Laouedj</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Liticia Ouhaioune</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Mouheb Khaoula</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Abdelbassit Abed-meraim</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Fatmi Nassim</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Yalaoui Akli</TextBlock>
+            </StackPanel>
+            <TextBlock Grid.Row="1" FontSize="18" Foreground="White" TextWrapping="Wrap" Margin="10 0" HorizontalAlignment="Right">يحظر استخدام المحتوى أو تعديله جزئيًا أو كليًا وفقًا لقواعد حقوق النشر</TextBlock>
+        </Grid>
+        <Grid x:Name="aproposFranc" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.9"></SolidColorBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="600"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <Button x:Name="retour" Content="Retour" Width="100" HorizontalAlignment="Left" Margin="10" Click="retour_Click"></Button>
+                <TextBlock FontSize="30" Foreground="White" Margin="10">Définition de l'application :</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0">Cette application vous permet de s'entraîner et réussir l'examen du code de la route, elle est adaptée du livre officel du code de la route mais avec une méthode d'apprentissage plus éfficace .</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0">Avec EDcodeDeLaRoute, vous bénéficiez d'une application complétement gratuite avec des cours multimédias .</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0">Cette application est disponible en français et en arabe</TextBlock>
+                <TextBlock FontSize="30" Foreground="White" Margin="10">Contenu de l'application :</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0"> EDcodeDeLaRoute est divisée en trois niveaux , chaque niveau est composé de : thémes,tests, chque théme est composé de : leçons,test par leçon.</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0">Il y a aussi une section de Question/Réponse qui est un bonus pour bien préparer l'apprenant au test officiel</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" Margin=" 20 30 0 0">Ce produit est conçue par :</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0">Sarah Laouedj</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0">Liticia Ouhaioune</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0">Mouheb Khaoula</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0">Abdelbassit Abed-meraim</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0">Fatmi Nassim</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0">Yalaoui Akli</TextBlock>
+            </StackPanel>
+            <TextBlock Grid.Row="1" FontSize="18" Foreground="White" TextWrapping="Wrap" Margin="10 0">Il est interdit d'utiliser  ou de modifier le contenu partiellement ou totalement selon les règle des droits d'auteurs</TextBlock>
         </Grid>
     </Grid>
 </Window>

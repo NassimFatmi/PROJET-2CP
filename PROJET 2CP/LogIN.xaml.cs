@@ -277,5 +277,17 @@ namespace PROJET_2CP
                 MainWindow.quizFrame.Content = new LogIN();
             }
         }
+
+        private void apropos_click(object sender, RoutedEventArgs e)
+        {
+            if (MainWindow.langue == 0)
+            {
+                MainWindow.getAproposfrançais().Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MainWindow.getAproposArab().Visibility = Visibility.Visible;
+            } 
+        }
     }
 }

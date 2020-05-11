@@ -82,7 +82,7 @@
                         <materialDesign:PopupBox Width="50" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="White" >
                             <StackPanel Width="150">
                                 <Button x:Name="popup1" Content="Parramettre" Click="profile"/>
-                                <Button x:Name="popup2" Content="Aide"/>
+                                <Button x:Name="popup2" Content="Aide" Click="Aide_Click"/>
                                 <Separator/>
                                 <Button x:Name="popup3" Content="Déconencter" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"/>
                             </StackPanel>

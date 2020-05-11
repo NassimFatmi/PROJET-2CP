@@ -86,7 +86,7 @@
                         <Button Style="{DynamicResource MaterialDesignFlatDarkBgButton}" FontSize="15" 
                 HorizontalAlignment="Right" VerticalAlignment="Top" 
                 Width="153" Height="34" FontWeight="Bold" 
-                Click="signINclick" Margin="10" Foreground="#FF30AEDC"
+                Click="apropos_click" Margin="10" Foreground="#FF30AEDC"
                 materialDesign:ButtonAssist.CornerRadius="25" BorderBrush="{x:Null}" Background="White"
                                 MouseEnter="Button_MouseEnter_1"
                                 MouseLeave="Button_MouseLeave_1">
