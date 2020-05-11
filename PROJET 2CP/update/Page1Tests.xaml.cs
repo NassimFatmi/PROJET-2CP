@@ -27,6 +27,7 @@ namespace PROJET_2CP.update
         private int increment = 20;
         private DispatcherTimer dt;
         public static int nbBonneReponse { get; set; } = 0;
+        public static int total { get; set; } = 0;
         private int hasImage;
         private int idImage;
         private bool tempEcoulé = true;
@@ -38,7 +39,9 @@ namespace PROJET_2CP.update
 
         public Page1Tests(int bi1,int bs1,int bi2,int bs2,int bi3,int bs3)
         {
-             tagMax = bs1 - bi1;
+              nbBonneReponse = 0;
+            total = 0;
+                tagMax = bs1 - bi1;
              this.bi2 = bi2;
              this.bs2 = bs2;
              this.bi3 = bi3;
@@ -168,6 +171,7 @@ namespace PROJET_2CP.update
         private void p1_Click(object sender, RoutedEventArgs e)
         {
             reaction.Visibility = Visibility.Visible;
+            total++;
             if ((string)((Button)sender).Tag == bonnRep)
             {
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory +"/Icons/happy.png", UriKind.RelativeOrAbsolute));
@@ -196,6 +200,7 @@ namespace PROJET_2CP.update
 
         private void p2_Click(object sender, RoutedEventArgs e)
         {
+            total++;
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
@@ -224,6 +229,7 @@ namespace PROJET_2CP.update
         }
         private void p3_Click(object sender, RoutedEventArgs e)
         {
+            total++;
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
@@ -252,6 +258,7 @@ namespace PROJET_2CP.update
         }
         private void p4_Click(object sender, RoutedEventArgs e)
         {
+            total++;
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {

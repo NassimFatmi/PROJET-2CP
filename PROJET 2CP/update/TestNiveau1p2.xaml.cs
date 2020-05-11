@@ -29,7 +29,7 @@ namespace PROJET_2CP.update
         private int[] tab;
         private int increment = 20;
         private DispatcherTimer dt;
-        private int nbBonneReponse = 0;
+       // private int nbBonneReponse = 0;
         private int questionRep = 1;
         private int hasImage;
         private int idImage;
@@ -128,10 +128,11 @@ namespace PROJET_2CP.update
 
         private void b1_Click(object sender, RoutedEventArgs e)
         {
+            Page1Tests.total++;
             if ((string) ((Button)sender).Content==bonnRep)
             {
                 b1.Foreground = Brushes.Green;
-                nbBonneReponse++;
+                Page1Tests.nbBonneReponse++;
             }
             else
             {
@@ -144,7 +145,6 @@ namespace PROJET_2CP.update
 
             if (quest2 != "")
             {
-                nbBonneReponse--;
                 q2.Text = quest2;
                 q2.Visibility = Visibility.Visible;
                 q1.Visibility = Visibility.Collapsed;
@@ -184,11 +184,11 @@ namespace PROJET_2CP.update
 
         private void b2_Click(object sender, RoutedEventArgs e)
         {
-
+            Page1Tests.total++;
             if ((string)((Button)sender).Content == bonnRep)
             {
                 b2.Foreground = Brushes.Green;
-                nbBonneReponse++;
+                Page1Tests.nbBonneReponse++;
             }
             else
             {
@@ -199,7 +199,6 @@ namespace PROJET_2CP.update
             b2.IsEnabled = false;
             if (quest2 != "")
             {
-                nbBonneReponse--;
                 b1.Visibility = Visibility.Collapsed;
                 b2.Visibility = Visibility.Collapsed;
                 b3.Visibility = Visibility.Visible;
@@ -234,11 +233,12 @@ namespace PROJET_2CP.update
 
         private void b3_Click(object sender, RoutedEventArgs e)
         {
+            Page1Tests.total++;
 
             if ((string)((Button)sender).Content == bonnRep2)
             {
                 b3.Foreground = Brushes.Green;
-                nbBonneReponse++;
+                Page1Tests.nbBonneReponse++;
             }
             else
             {
@@ -267,11 +267,12 @@ namespace PROJET_2CP.update
 
         private void b4_Click(object sender, RoutedEventArgs e)
         {
+            Page1Tests.total++;
 
             if ((string)((Button)sender).Content == bonnRep2)
             {
                 b4.Foreground = Brushes.Green;
-                nbBonneReponse++;
+                Page1Tests.nbBonneReponse++;
             }
             else
             {
@@ -333,7 +334,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                Home.mainFrame.Content = new Bilan(this.nbBonneReponse,this.tagMax + 1 - this.nbBonneReponse);
+                Home.mainFrame.Content = new Bilan();
             }
             next.Visibility = Visibility.Collapsed;
         }

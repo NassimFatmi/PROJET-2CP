@@ -22,15 +22,18 @@ namespace PROJET_2CP.Pages
     /// Logique d'interaction pour Bilan.xaml
     /// </summary>
     public partial class Bilan : Page
-    {   private int nb_bonne = 0;
-        public Bilan( int bonne,int mauvaise)
+    {   //private int nb_bonne = 0;
+        public Bilan()
         {
-            nb_bonne = bonne + Page1Tests.nbBonneReponse + Page2Test1.nbBonneReponse;
+          //  nb_bonne = bonne + Page1Tests.nbBonneReponse + Page2Test1.nbBonneReponse;
+            
             InitializeComponent();
-            Lbl1.Content = "Bonnes reponses : " + (nb_bonne).ToString();
-            lbl2.Content = "Mauvaises reponses : " + (10 - nb_bonne).ToString();
+            Lbl1.Content = "Bonnes reponses : " + (Page1Tests.nbBonneReponse).ToString();
+            lbl2.Content = "Mauvaises reponses : " + (Page1Tests.total - Page1Tests.nbBonneReponse).ToString();
             //lbl2.Content = "Mauvaises reponses : " + (mauvaise + Page1Tests.tagMax + 1 - Page1Tests.nbBonneReponse + Page2Test1.tagMax + 1 - Page2Test1.nbBonneReponse).ToString();
-            saveNote((nb_bonne),1,Tests1._testChoisi,"Test 1");
+            saveNote((Page1Tests.nbBonneReponse),1,Tests1._testChoisi,"Test 1");
+            Page1Tests.nbBonneReponse = 0;
+            Page1Tests.total = 0;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

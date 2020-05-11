@@ -25,7 +25,7 @@ namespace PROJET_2CP.update
         public static int tagMax { get; set; }
         private int increment = 20;
         private DispatcherTimer dt;
-        public static int nbBonneReponse { get; set; } = 0;
+       // public static int nbBonneReponse { get; set; } = 0;
         private bool tempEcoulé = true;
         private int bi3;
         private int bs3;
@@ -151,6 +151,7 @@ namespace PROJET_2CP.update
         }
         private void p1_Click(object sender, RoutedEventArgs e)
         {
+            Page1Tests.total++;
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
@@ -159,7 +160,7 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p1.Foreground = Brushes.Green;
                 p1.BorderBrush = Brushes.Green;
-                nbBonneReponse++;
+                Page1Tests.nbBonneReponse++;
             }
             else
             {
@@ -180,6 +181,7 @@ namespace PROJET_2CP.update
 
         private void p2_Click(object sender, RoutedEventArgs e)
         {
+            Page1Tests.total++;
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
@@ -188,7 +190,7 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p2.Foreground = Brushes.Green;
                 p2.BorderBrush = Brushes.Green;
-                nbBonneReponse++;
+                Page1Tests.nbBonneReponse++;
             }
             else
             {
@@ -208,6 +210,7 @@ namespace PROJET_2CP.update
         }
         private void p3_Click(object sender, RoutedEventArgs e)
         {
+            Page1Tests.total++;
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
@@ -216,7 +219,7 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p3.Foreground = Brushes.Green;
                 p3.BorderBrush = Brushes.Green;
-                nbBonneReponse++;
+                Page1Tests.nbBonneReponse++;
             }
             else
             {
@@ -236,6 +239,7 @@ namespace PROJET_2CP.update
         }
         private void p4_Click(object sender, RoutedEventArgs e)
         {
+            Page1Tests.total++;
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
@@ -244,7 +248,7 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p4.Foreground = Brushes.Green;
                 p4.BorderBrush = Brushes.Green;
-                nbBonneReponse++;
+                Page1Tests.nbBonneReponse++;
             }
             else
             {
