@@ -140,32 +140,33 @@ namespace PROJET_2CP.Niveau2
 
         private void q1_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Pages.Quiz(50, 56);
+            Home.mainFrame.Content = new Quiz(50, 56);
         }
 
         private void q2_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Pages.Quiz(56, 62);
+            Home.mainFrame.Content = new Quiz(56, 62);
         }
 
         private void q3_Click(object sender, RoutedEventArgs e)
         {
-
+            Home.mainFrame.Content = new Quiz(62, 68);
         }
 
         private void q4_Click(object sender, RoutedEventArgs e)
         {
+            Home.mainFrame.Content = new Quiz(68, 74);
 
         }
 
         private void q5_Click(object sender, RoutedEventArgs e)
         {
-
+            Home.mainFrame.Content = new Quiz(74, 80);
         }
 
         private void q6_Click(object sender, RoutedEventArgs e)
         {
-
+            Home.mainFrame.Content = new Quiz(80, 86);
         }
 
         private void BackClick(object sender, RoutedEventArgs e)

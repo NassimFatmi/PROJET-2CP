@@ -45,10 +45,10 @@
                 </Grid.RowDefinitions>
 
                 <Button  VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}"
-                        Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}">
+                        Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Click="Back_Click">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18" Foreground="White"/>
-                        <TextBlock  Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                        <TextBlock Text="Retour" x:Name="back" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Button>
 

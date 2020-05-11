@@ -188,9 +188,8 @@ namespace PROJET_2CP.Niveau3
         
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            
             tmp++;
-           
+            SoundPlayer soundPlayer;
             //tag++;
             tempEcoulé = true;
             //if (tag >= tagMax)
@@ -217,7 +216,9 @@ namespace PROJET_2CP.Niveau3
                         quizMessage.Content = "اعد مراجعة الدرس ";
                     try
                     {
-                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute)); ;
+                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute));
+                        soundPlayer = new SoundPlayer(@"SoundsEffects\disappointment.wav");
+                        soundPlayer.Play();
                     }
                     catch (Exception)
                     {
@@ -238,6 +239,9 @@ namespace PROJET_2CP.Niveau3
                             reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/200iq.jpg", UriKind.RelativeOrAbsolute));
                         else
                             reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/brain.png", UriKind.RelativeOrAbsolute));
+
+                        soundPlayer = new SoundPlayer(@"SoundsEffects\clap.wav");
+                        soundPlayer.Play();
                     }
                     catch (Exception)
                     {

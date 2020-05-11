@@ -960,6 +960,7 @@
     <Content Include="bin\Debug\SoundsEffects\Correct.wav" />
     <Content Include="bin\Debug\SoundsEffects\correct_effect.wav" />
     <Resource Include="bin\Debug\SoundsEffects\incorrect.gif" />
+    <Content Include="bin\Debug\SoundsEffects\disappointment.wav" />
     <Content Include="bin\Debug\SoundsEffects\WIN.wav" />
     <Content Include="bin\Debug\sounds\1.wav" />
     <Content Include="bin\Debug\sounds\10.wav" />

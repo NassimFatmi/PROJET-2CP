@@ -247,6 +247,7 @@ namespace PROJET_2CP.Pages
         }
         private void next_Click(object sender, RoutedEventArgs e)
         {
+            SoundPlayer soundPlayer;
             tag++;
             tempEcoulé = true;
             if (tag >= tagMax)
@@ -267,13 +268,15 @@ namespace PROJET_2CP.Pages
 
                 if (nbBonneReponse < 3)
                 {
-                    if(MainWindow.langue == 0)
+                    if (MainWindow.langue == 0)
                         quizMessage.Content = "Revoir le cour";
                     else
                         quizMessage.Content = "اعد مراجعة الدرس ";
                     try
                     {
-                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute)); ;
+                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute));
+                        soundPlayer = new SoundPlayer(@"SoundsEffects\disappointment.wav");
+                        soundPlayer.Play();
                     }
                     catch (Exception)
                     {
@@ -294,6 +297,9 @@ namespace PROJET_2CP.Pages
                             reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/200iq.jpg", UriKind.RelativeOrAbsolute));
                         else
                             reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/brain.png", UriKind.RelativeOrAbsolute));
+
+                        soundPlayer = new SoundPlayer(@"SoundsEffects\clap.wav");
+                        soundPlayer.Play();
                     }
                     catch(Exception)
                     {
