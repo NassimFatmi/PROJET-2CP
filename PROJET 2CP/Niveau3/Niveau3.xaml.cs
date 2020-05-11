@@ -60,6 +60,10 @@ namespace PROJET_2CP.Niveau3
                 quiz_connaitre.Content = "Quiz1";
                 quiz_demarrer.Content = "Quiz2";
                 quiz_monter.Content = "Quiz3";
+
+                thm1.Content = "Désignation";
+                thm2.Content = "Désignation";
+                thm3.Content = "Désignation";
             }
             if (MainWindow.langue == 1)
             {
@@ -80,6 +84,10 @@ namespace PROJET_2CP.Niveau3
                 quiz_connaitre.Content = "إمتحان 1";
                 quiz_demarrer.Content = "إمتحان 2";
                 quiz_monter.Content = "إمتحان 3";
+
+                thm1.Content = "حول الدرس";
+                thm2.Content = "حول الدرس";
+                thm3.Content = "حول الدرس";
             }
         }
         private void document_Click(object sender, RoutedEventArgs e)

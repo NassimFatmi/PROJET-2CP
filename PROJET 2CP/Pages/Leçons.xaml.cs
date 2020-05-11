@@ -41,6 +41,9 @@ namespace PROJET_2CP.Pages
                 qst1.Text = "Questions";
                 qst2.Text = "Questions";
                 qst3.Text = "Questions";
+
+                thm1.Content = "Désignation";
+                thm2.Content = "Désignation";
             }
             if (langue == 1)
             {
@@ -51,6 +54,9 @@ namespace PROJET_2CP.Pages
                 qst1.Text = "أسئلة";
                 qst2.Text = "أسئلة";
                 qst3.Text = "أسئلة";
+
+                thm1.Content = "حول الدرس";
+                thm2.Content = "حول الدرس";
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)

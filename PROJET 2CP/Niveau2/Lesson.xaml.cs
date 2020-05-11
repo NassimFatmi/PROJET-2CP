@@ -70,6 +70,12 @@ namespace PROJET_2CP.Niveau2
                 risque.Content = "Risques de la conduite sous \n        les intempéries";
                 quiz_utilisation.Content = "Quiz1";
                 quiz_risque.Content = "Quiz2";
+
+                thm1.Content = "Désignation";
+                thm2.Content = "Désignation";
+                thm3.Content = "Désignation";
+                thm4.Content = "Désignation";
+
             }
             if (langue == 1)
             {
@@ -106,6 +112,11 @@ namespace PROJET_2CP.Niveau2
                 risque.Content = "مخاطر القيادة في الأحوال  \n      الجوية السيئة";
                 quiz_utilisation.Content = "إمتحان 1";
                 quiz_risque.Content = "إمتحان 2";
+
+                thm1.Content = "حول الدرس";
+                thm2.Content = "حول الدرس";
+                thm3.Content = "حول الدرس";
+                thm4.Content = "حول الدرس";
             }
         }
         private void l1_Click(object sender, RoutedEventArgs e)
