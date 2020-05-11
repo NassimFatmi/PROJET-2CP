@@ -49,6 +49,18 @@ namespace PROJET_2CP.Pages
             afficherQuestion();
             Distimer();
         }
+        private void initialiserLangue()
+        {
+            if (MainWindow.langue == 0)
+            {   //la langue français
+                back.Text = "Retour";
+            }
+            else
+            {
+                //la langue arabe
+                back.Text = "عودة";
+            }
+        }
         public void creerQuestion()
         {
             //int tag = aleaInt();
@@ -245,15 +257,8 @@ namespace PROJET_2CP.Pages
                 repD.Visibility = Visibility.Collapsed;
                 question.Visibility = Visibility.Collapsed;
                 panneau.Visibility = Visibility.Collapsed;
-                Label lbl = new Label();
-                lbl.HorizontalAlignment = HorizontalAlignment.Center;
-                lbl.VerticalAlignment = VerticalAlignment.Center;
-                lbl.Foreground = Brushes.White;
-                lbl.HorizontalContentAlignment = HorizontalAlignment.Center;
-                lbl.VerticalContentAlignment = VerticalAlignment.Center;
-                lbl.FontSize = 60;
-                lbl.Content = nbBonneReponse.ToString()+" / 6";
-                gd.Children.Add(lbl);
+                bilanQuiz.Visibility = Visibility.Visible;
+                lbl.Content = "Note : " + nbBonneReponse.ToString()+" / 6";
                 dt.Stop();
                 timer.Visibility = Visibility.Collapsed;
             }
@@ -588,6 +593,11 @@ namespace PROJET_2CP.Pages
                 conn.Close();
                 MessageBox.Show("error save Db quiz Testniveau 1 ");
             }
+        }
+
+        private void lbl_Click(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Leçons();
         }
     }
 }
