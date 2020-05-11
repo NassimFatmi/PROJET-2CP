@@ -267,6 +267,17 @@ namespace PROJET_2CP
                 popup2.Content = "Aide";
                 popup3.Content = "Déconnecter";
                 profilebtn.ToolTip = "Voir profile";
+
+                //tutorial partie
+                moreInfo.Content = "Pour plus d'information voir le guide d'utilisation !";
+                greating.Content = "Bienvenu dans EDautoEcole tutoriel";
+                hometuto.Text = "Home , raccourci vers le menu principale";
+                viewstates.Text = "Voir votre statistiques";
+                settingstuto.Text = "Régler vos information et changer les themes";
+                qstreptuto.Text = "tester vos connaissances";
+                helptuto.Text = "Ouvrire le guide d'utilisation";
+                moreshortcuts.Text = "Plus de raccourci";
+                commencertuto.Text = "Commencer a apprendre";
             }
             else
             {
@@ -281,6 +292,18 @@ namespace PROJET_2CP
                 popup2.Content = "مساعدة";
                 popup3.Content = "تسجيل الخروج";
                 profilebtn.ToolTip = "حسابي";
+
+                //tutorial partie
+                //tutorial partie
+                moreInfo.Content = "لمزيد من المعلومات انظر دليل الاستعمال";
+                greating.Content = "مرحبا بك في دليل استعمال السريع";
+                hometuto.Text = "المنزل , اختصار للعودة للصفحة الرئيسية";
+                viewstates.Text = "راقب احصائياتك";
+                settingstuto.Text = "عدل في معلوماتك الشخصية";
+                qstreptuto.Text = "اختبر معلوماتك";
+                helptuto.Text = "افتح دليل الاستعمال";
+                moreshortcuts.Text = "المزيد من الاختصارات";
+                commencertuto.Text = "ابدأ التعلم الان";
             }
         }
 
@@ -315,7 +338,7 @@ namespace PROJET_2CP
         private void b4_Click(object sender, RoutedEventArgs e)
         {
             b4.Visibility = Visibility.Collapsed;
-            b5.Visibility = Visibility.Visible;
+            b4_Copy.Visibility = Visibility.Visible;
         }
 
         private void b5_Click(object sender, RoutedEventArgs e)
@@ -331,6 +354,12 @@ namespace PROJET_2CP
         private void b6_Click(object sender, RoutedEventArgs e)
         {
             tutogrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void b4_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            b4_Copy.Visibility = Visibility.Collapsed;
+            b5.Visibility = Visibility.Visible;
         }
     }
 }
