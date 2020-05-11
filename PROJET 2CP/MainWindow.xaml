@@ -54,9 +54,9 @@
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
-                <Button x:Name="عودة" Content="Retour" Width="100" Margin="10" Click="retourAR_Click" HorizontalAlignment="Right"></Button>
+                <Button x:Name="عودة" Content="عودة" Width="100" Margin="10" Click="retourAR_Click" HorizontalAlignment="Right"></Button>
                 <TextBlock FontSize="30" Foreground="White" Margin="10" HorizontalAlignment="Right">التعريف بالتطبيق</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">يتيح لك هذا التطبيق تدريب واجتياز اختبار حركة المرور على الطرق ، فهو مقتبس من كتاب المرور المروري الرسمي ولكن</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">يتيح لك هذا التطبيق تدريب واجتياز اختبار حركة المرور على الطرق ، فهو مقتبس من كتاب المرور الرسمي ولكن</TextBlock>
                 <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">مع طريقة تعلم أكثر فعالية</TextBlock>
                 <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">دائما في خدمتكم  EDcodeDeLaRoute، يمكنك الاستفادة من تطبيق مجاني تمامًا مع دروس مقدمة بطرق متعددة</TextBlock>
                 <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">هذا التطبيق متاح باللغتين الفرنسية والعربية</TextBlock>
@@ -64,7 +64,7 @@
                 <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">ينقسم التطبيق إلى ثلاثة مستويات ، كل مستوى يتكون من: مواضيع ، اختبارات ، كل موضوع يتكون من: دروس ، اختبار</TextBlock>
                 <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right"> لكل درس</TextBlock>
                 <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">هناك أيضًا قسم سؤال / جواب وهو مكافأة لإعداد المتعلم بشكل صحيح للاختبار الرسمي</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" Margin=" 20 30 0 0" HorizontalAlignment="Right">تم تصميم هذا المنتج من قبل</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" Margin=" 20 20 " HorizontalAlignment="Right">تم تصميم هذا المنتج من قبل</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Sarah Laouedj</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Liticia Ouhaioune</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Mouheb Khaoula</TextBlock>
