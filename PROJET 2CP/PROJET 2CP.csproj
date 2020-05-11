@@ -955,6 +955,7 @@
     <Resource Include="bin\Debug\icons\bad.png" />
     <Resource Include="bin\Debug\icons\200iq.jpg" />
     <Resource Include="bin\Debug\icons\brain.png" />
+    <Content Include="bin\Debug\SoundsEffects\clap.wav" />
     <Content Include="bin\Debug\SoundsEffects\Clock.wav" />
     <Content Include="bin\Debug\SoundsEffects\Correct.wav" />
     <Content Include="bin\Debug\SoundsEffects\correct_effect.wav" />

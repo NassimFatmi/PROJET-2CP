@@ -90,7 +90,7 @@ namespace PROJET_2CP.Niveau3
                     arr = initArray(4,5);
                     if (MainWindow.langue == 0)
                     {
-                        next.Content = "Passer à la question suivante";
+                        suivant.Text = "Passer à la question suivante";
                         propA = dr["reponse" + Convert.ToString(arr[0])].ToString();
 
                         propB = dr["reponse" + Convert.ToString(arr[1])].ToString();
@@ -103,7 +103,7 @@ namespace PROJET_2CP.Niveau3
                     }
                     if(MainWindow.langue ==1)
                     {
-                        next.Content = "المرور الى السؤال الموالي";
+                        suivant.Text = "المرور الى السؤال الموالي";
                         propA = dr["reponse" + Convert.ToString(arr[0])+"ar"].ToString();
 
                         propB = dr["reponse" + Convert.ToString(arr[1]) + "ar"].ToString();
@@ -114,9 +114,6 @@ namespace PROJET_2CP.Niveau3
                         quest = dr["contenuar"].ToString();
                         bonnRep = dr["reponse1ar"].ToString();
                     }
-                    
-                    
-                  
                 }
                 dr.Close();
             }
@@ -204,22 +201,49 @@ namespace PROJET_2CP.Niveau3
                 repC.Visibility = Visibility.Collapsed;
                 repD.Visibility = Visibility.Collapsed;
                 question.Visibility = Visibility.Collapsed;
-                Label lbl = new Label();
-                lbl.HorizontalAlignment = HorizontalAlignment.Center;
-                lbl.VerticalAlignment = VerticalAlignment.Center;
-                lbl.Foreground = Brushes.Black;
-                lbl.HorizontalContentAlignment = HorizontalAlignment.Center;
-                lbl.VerticalContentAlignment = VerticalAlignment.Center;
-                lbl.FontSize = 24;
+                bilanQuiz.Visibility = Visibility.Visible;
+                lbl.Content = nbBonneReponse.ToString() + " / 6";
+
                 if (MainWindow.langue == 0)
+                    remarque.Content = "Remarques";
+                else
+                    remarque.Content = "ملاحظات ";
+
+                if (nbBonneReponse < 3)
                 {
-                    lbl.Content = "Le nombre de bonne reponse est " + nbBonneReponse.ToString() + " / 6";
+                    if (MainWindow.langue == 0)
+                        quizMessage.Content = "Revoir le cour";
+                    else
+                        quizMessage.Content = "اعد مراجعة الدرس ";
+                    try
+                    {
+                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute)); ;
+                    }
+                    catch (Exception)
+                    {
+
+                    }
                 }
-                if(MainWindow.langue == 1)
+                else
                 {
-                    lbl.Content = nbBonneReponse.ToString() + " / 6  "+"عدد الاجوبة الصحيحة هو";
+                    if (MainWindow.langue == 0)
+                        quizMessage.Content = "Bravo !";
+                    else
+                        quizMessage.Content = "احسنت";
+                    Random random = new Random();
+                    int rnd = random.Next(2);
+                    try
+                    {
+                        if (rnd == 0)
+                            reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/200iq.jpg", UriKind.RelativeOrAbsolute));
+                        else
+                            reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/brain.png", UriKind.RelativeOrAbsolute));
+                    }
+                    catch (Exception)
+                    {
+
+                    }
                 }
-                gd.Children.Add(lbl);
                 dt.Stop();
                 timer.Visibility = Visibility.Collapsed;
             }
@@ -470,9 +494,12 @@ namespace PROJET_2CP.Niveau3
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
+            Home.mainFrame.Content = new Niveau3();
         }
-
-
+        private void lbl_Click(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Niveau3();
+        }
     }
 }
 
