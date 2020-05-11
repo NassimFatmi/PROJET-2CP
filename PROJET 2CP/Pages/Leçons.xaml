@@ -45,10 +45,6 @@
                                     Visibility="Collapsed" Height="0" Width="0"/>
 
                                     <Grid>
-                                        <Label Content="Cours" Foreground="White" 
-                                       FontSize="25" FontWeight="Bold"
-                                       Height="50" Width="90" Margin="30,30,0,0"
-                                       VerticalAlignment="Top" HorizontalAlignment="Left"/>
                                         <StackPanel Margin="0,30,0,0" Orientation="Vertical"
                                             VerticalAlignment="Center" HorizontalAlignment="Center">
                                             <StackPanel Orientation="Horizontal" Margin="10">
@@ -64,7 +60,7 @@
                                                         Width="100" Height="100" Margin="30,0,0,0" Background="#FFFF3939" BorderBrush="{x:Null}">
                                                     <StackPanel Orientation="Vertical">
                                                         <Image x:Name="quiz1" Width="40" Height="40"/>
-                                                        <TextBlock Text="Questions" HorizontalAlignment="Center"/>
+                                                        <TextBlock x:Name="qst0" Text="Questions" HorizontalAlignment="Center"/>
                                                     </StackPanel>
                                                 </Button>
                                             </StackPanel>
@@ -84,7 +80,7 @@
                                                 Height="100" Width="100" Margin="30,0,0,0" BorderBrush="{x:Null}">
                                                     <StackPanel Orientation="Vertical">
                                                         <Image x:Name="quiz2" Width="40" Height="40"/>
-                                                        <TextBlock Text="Questions" HorizontalAlignment="Center"/>
+                                                        <TextBlock x:Name="qst1" Text="Questions" HorizontalAlignment="Center"/>
                                                     </StackPanel>
                                                 </Button>
                                             </StackPanel>
@@ -104,7 +100,7 @@
                                                 Width="100" Height="100" Margin="30,0,0,0" Background="#FF19D27F" BorderBrush="{x:Null}">
                                                     <StackPanel Orientation="Vertical">
                                                         <Image x:Name="quiz3" Width="40" Height="40"/>
-                                                        <TextBlock Text="Questions" HorizontalAlignment="Center"/>
+                                                        <TextBlock x:Name="qst2" Text="Questions" HorizontalAlignment="Center"/>
                                                     </StackPanel>
                                                 </Button>
                                             </StackPanel>
@@ -124,7 +120,7 @@
                                                 Width="100" Height="100" Margin="30,0,0,0" BorderBrush="{x:Null}" Background="#FFDFE559">
                                                     <StackPanel Orientation="Vertical">
                                                         <Image x:Name="quiz4" Width="40" Height="40"/>
-                                                        <TextBlock Text="Questions" HorizontalAlignment="Center"/>
+                                                        <TextBlock x:Name="qst3" Text="Questions" HorizontalAlignment="Center"/>
                                                     </StackPanel>
                                                 </Button>
                                             </StackPanel>

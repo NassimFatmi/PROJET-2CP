@@ -50,7 +50,7 @@ namespace PROJET_2CP
             {
                 //la langue français
                 title.Content = "Paramètre";
-                back.Text = "Retoure";
+                back.Text = "Retour";
                 userid.Text = "Utilisateur ID";
                 nom.Text = "Nom";
                 prenom.Text = "Prénom";
@@ -65,6 +65,7 @@ namespace PROJET_2CP
                 refresh.ToolTip = "تحديث";
                 refreshlbl.Content = "حدث التطبيق لتغيير اللغة";
                 themebtn.Text = "theme";
+                deleteAcc.Text = "Supprimer le compte";
                 if (toggleTheme.IsChecked == true)
                     toggleTheme.ToolTip = "Theme blue";
                 else
@@ -89,6 +90,7 @@ namespace PROJET_2CP
                 refresh.ToolTip = "Actualiser la page";
                 refreshlbl.Content = "Actualiser l'application pour changer la langue";
                 themebtn.Text = "التصميم";
+                deleteAcc.Text = "حدف الحساب";
                 if (toggleTheme.IsChecked == true)
                     toggleTheme.ToolTip = "التصميم الأزرق";
                 else                        
@@ -673,6 +675,11 @@ namespace PROJET_2CP
                         userConn.Close();
                 }
             }
+        }
+
+        private void backclick(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new PagePrincipale();
         }
     }
 }

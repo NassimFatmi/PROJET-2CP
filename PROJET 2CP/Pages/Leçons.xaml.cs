@@ -37,12 +37,20 @@ namespace PROJET_2CP.Pages
                 b0.Content = "regles generales";
                 switch_lang.Content = "changer la langue en arabe";
                 switch_lang.Margin = new Thickness(26, 82, 692, 558);
+                qst0.Text = "Questions";
+                qst1.Text = "Questions";
+                qst2.Text = "Questions";
+                qst3.Text = "Questions";
             }
             if (langue == 1)
             {
                 switch_lang.Content = "تغيير اللغة الى الفرنسية";
                 switch_lang.Margin = new Thickness(692, 82, 26, 558);
-                b0.Content = "قواعد عامة";
+                b0.Content = "قواعد عامة"; 
+                qst0.Text = "أسئلة";
+                qst1.Text = "أسئلة";
+                qst2.Text = "أسئلة";
+                qst3.Text = "أسئلة";
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -115,7 +123,7 @@ namespace PROJET_2CP.Pages
             if (langue == 1 && !changed)
             {
                 MainWindow.langue = 0;
-                b0.Content = "regles generales";
+                b0.Content = "Règle générale";
                 switch_lang.Content = "changer la langue en arabe";
                 switch_lang.Margin = new Thickness(26, 82, 692, 558);
                 langue = 0;
@@ -131,7 +139,7 @@ namespace PROJET_2CP.Pages
         {
             if (MainWindow.langue == 0)
             {   //la langue français
-                h0.Content = "Niveau 1";
+                h0.Content = "Niveau 1 : themes";
                 singtxt.Text = "Signalisation";
                 intertxt.Text = "Intersection et priorité";
                 back.Text = "Retoure";
@@ -139,7 +147,7 @@ namespace PROJET_2CP.Pages
             else
             {
                 //la langue arabe
-                h0.Content = "المستوى 1";
+                h0.Content = "المستوى 1 : المواضيع";
                 singtxt.Text = "الاشارات";
                 intertxt.Text = "التقاطعات والأولوية";
                 back.Text = "عودة";

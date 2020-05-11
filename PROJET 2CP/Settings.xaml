@@ -102,7 +102,7 @@
                         </StackPanel>
                     </StackPanel>
                         <Button Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" 
-                            Background="{x:Null}" BorderBrush="{x:Null}" Width="105">
+                            Background="{x:Null}" BorderBrush="{x:Null}" Width="105" Click="backclick">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18"/>
                             <TextBlock x:Name="back" Text="Retoure" Foreground="White" FontSize="12" Margin="10,0,0,0"/>

@@ -35,8 +35,32 @@ namespace PROJET_2CP
         public Statistiques()
         {
             InitializeComponent();
+            langue();
         }
 
+        private void langue()
+        {
+            if(MainWindow.langue == 0)
+            {
+                Stateslbl.Content = "Statistiques";
+                niveau1.Header = "Niveau 1";
+                niv1thm1.Header = "Signalisation";
+                niv1thm2.Header = "intersection et priorité";
+                niveau2.Header = "Niveau 2";
+                niveau3.Header = "Niveau 3";
+                moyenneLbl.Content = "Moyenne";
+            }
+            else
+            {
+                Stateslbl.Content = "احصائيات";
+                niveau1.Header = "المستوى 1";
+                niv1thm1.Header = "الاشارات";
+                niv1thm2.Header = "التقاطعات و الأولوية";
+                niveau2.Header = "المستوى 2";
+                niveau3.Header = "المستوى 3";
+                moyenneLbl.Content = "المعدلات";
+            }
+        }
         private void creeStates()
         {
             string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
@@ -129,18 +153,34 @@ namespace PROJET_2CP
 
         private void stateSelect_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
+            pieCheck.IsChecked = false;
+            diagCheck.IsChecked = false;
+            moyenneCheck.IsChecked = false;
             creeStates();
 
             if (_nbReponses == 0)
             {
-                MessageBox.Show(" vous n'avez pas fait des testes ! ");
+                if (MainWindow.langue == 0)
+                    MessageBox.Show(" vous n'avez pas fait des testes ! ");
+                else
+                    MessageBox.Show(" انت لم تقم بأي امتحان  ");
             }
             else
             {
                 choixChart.Visibility = Visibility.Visible;
-                moyenneLbl.Content = "Moyenne : " + float.Parse(caluclerMoyenne().ToString()) +
-                "\nnombre des tests :" + _NbTests.ToString() +
-                "\nnombre des questions : " + _nbReponses.ToString();
+                if(MainWindow.langue == 0)
+                {
+                    moyenneLbl.Content = "Moyenne : " + float.Parse(caluclerMoyenne().ToString()) +
+                                         "\nnombre des tests :" + _NbTests.ToString() +
+                                         "\nnombre des questions : " + _nbReponses.ToString();
+                }
+                else
+                {
+                    moyenneLbl.Content = "المعدل : " + float.Parse(caluclerMoyenne().ToString()) +
+                                         "\nعدد الامنحانات المجتازة :" + _NbTests.ToString() +
+                                         "\nعدد الأسئلة : " + _nbReponses.ToString();
+                }
+                
 
                 pieCheck.IsChecked = true;
             }
@@ -232,11 +272,20 @@ namespace PROJET_2CP
             cartStates.LegendLocation = LegendLocation.Right;
 
             Axis axisx = new Axis();
-            axisx.Title = "Reponse";
             axisx.Separator.Visibility = Visibility.Hidden;
             Axis axisy = new Axis();
 
-            axisy.Title = "Nombre des reponses";
+            if (MainWindow.langue == 0)
+            {
+                axisy.Title = "Nombre des reponses";
+                axisx.Title = "Reponse";
+            }
+
+            else
+            {
+                axisy.Title = "عدد الأسئلة";
+                axisx.Title = "الاجوبة";
+            }
             axisy.Separator.Step = 1;
             cartStates.AxisX.Add(axisx);
             cartStates.AxisY.Add(axisy);
@@ -274,11 +323,19 @@ namespace PROJET_2CP
 
             Label moyenne = new Label();
 
-            moyenne.Content = "nombre des tests :" + _NbTests.ToString() +
+            if (MainWindow.langue == 0)
+                moyenne.Content = "nombre des tests :" + _NbTests.ToString() +
                               "\nnombre des questions : " + _nbReponses.ToString() +
                               "\nnombre des reponses vrais : " + _nbRepTrue.ToString() +
                               "\nnombre des reponses fausses : " + _nbRepFalse.ToString() +
-                              "\nMoyenne : " + float.Parse(caluclerMoyenne().ToString());
+                              "\nMoyenne des tests : " + float.Parse(caluclerMoyenne().ToString());
+            else
+                moyenne.Content = "عدد الامتحانات :" + _NbTests.ToString() +
+                                              "\nعدد الأسئلة : " + _nbReponses.ToString() +
+                                              "\nالاجابات الصحيحة : " + _nbRepTrue.ToString() +
+                                              "\nالاجابات الخاطئة : " + _nbRepFalse.ToString() +
+                                              "\n المعدل الامتحانات: " + float.Parse(caluclerMoyenne().ToString());
+
 
             moyenne.FontSize = 22;
 

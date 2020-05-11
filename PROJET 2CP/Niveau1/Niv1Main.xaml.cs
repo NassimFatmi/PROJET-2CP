@@ -52,6 +52,7 @@ namespace PROJET_2CP.Niveau1
                 l0.Text = "Cours";
                 l1.Text = "Test de niveau";
                 backtxt.Text = "Retour";
+                niveauLbl.Content = "Niveau 1";
             }
             else
             {
@@ -59,6 +60,7 @@ namespace PROJET_2CP.Niveau1
                 l0.Text = "الدروس";
                 l1.Text = "امتحان المستوى";
                 backtxt.Text = "عودة";
+                niveauLbl.Content = "المستوى 1";
             }
         }
         /*<<

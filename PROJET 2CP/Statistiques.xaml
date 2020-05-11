@@ -30,7 +30,7 @@
                         <ColumnDefinition Width="83*"/>
                     </Grid.ColumnDefinitions>
                     <materialDesign:PackIcon Kind="ChartBellCurve" Width="47" Height="50" Foreground="White"/>
-                    <Label Grid.Column="1" Content="Statistiques" 
+                    <Label x:Name="Stateslbl" Grid.Column="1" Content="Statistiques" 
                            VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
                 </Grid>
 
