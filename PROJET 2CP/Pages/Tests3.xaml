@@ -67,9 +67,15 @@
                            Foreground="White"
                            VerticalAlignment="Center" Margin="20"/>
                 </StackPanel>
-                <Label x:Name="noteShow"
+                <Border VerticalAlignment="Center" HorizontalAlignment="Center"
+                        CornerRadius="25">
+                    <Border.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.4"/>
+                    </Border.Background>
+                    <Label x:Name="noteShow" Margin="15"
                        VerticalAlignment="Center" HorizontalAlignment="Center"
                        FontSize="20" Foreground="White"/>
+                </Border>
             </Grid>
         </Grid>
     </Grid>
