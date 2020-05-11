@@ -105,7 +105,7 @@ namespace PROJET_2CP.Pages
                     {
                         //  repInteractive = " أحسنت";
                         switch_lang.Content = "تغيير اللغة الى الفرنسية";
-                        next.Content = "السؤال التالي";
+                        suivant.Text = "السؤال التالي";
                        propA = dr["propAAr"].ToString();
                         propB = dr["propBAr"].ToString();
                         propC = dr["propCAr"].ToString();
@@ -258,7 +258,48 @@ namespace PROJET_2CP.Pages
                 question.Visibility = Visibility.Collapsed;
                 panneau.Visibility = Visibility.Collapsed;
                 bilanQuiz.Visibility = Visibility.Visible;
-                lbl.Content = "Note : " + nbBonneReponse.ToString()+" / 6";
+                lbl.Content = nbBonneReponse.ToString()+" / 6";
+
+                if (MainWindow.langue == 0)
+                    remarque.Content = "Remarques";
+                else
+                    remarque.Content = "ملاحظات ";
+
+                if (nbBonneReponse < 3)
+                {
+                    if(MainWindow.langue == 0)
+                        quizMessage.Content = "Revoir le cour";
+                    else
+                        quizMessage.Content = "اعد مراجعة الدرس ";
+                    try
+                    {
+                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute)); ;
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                else
+                {
+                    if (MainWindow.langue == 0)
+                        quizMessage.Content = "Bravo !";
+                    else
+                        quizMessage.Content = "احسنت";
+                    Random random = new Random();
+                    int rnd = random.Next(2);
+                    try
+                    {
+                        if (rnd == 0)
+                            reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/200iq.jpg", UriKind.RelativeOrAbsolute));
+                        else
+                            reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/brain.png", UriKind.RelativeOrAbsolute));
+                    }
+                    catch(Exception)
+                    {
+                       
+                    } 
+                }
                 dt.Stop();
                 timer.Visibility = Visibility.Collapsed;
             }
@@ -290,7 +331,12 @@ namespace PROJET_2CP.Pages
                 saveAnswer(true,_niveau,_codeQst,_themeQst);
                 repA.Foreground = Brushes.Green;
                 nbBonneReponse++;
-                reponseNext.Text = "Bonne reponse";
+
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Bonne reponse";
+                else
+                    reponseNext.Text = "اجابة صحيحة";
+
                 reponseNext.Foreground = Brushes.GreenYellow;
 
                 nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
@@ -301,7 +347,11 @@ namespace PROJET_2CP.Pages
 
                 nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
-                reponseNext.Text = "Mauvaise reponse";
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Mauvaise reponse";
+                else
+                    reponseNext.Text = "اجابة خاطئة";
+
                 reponseNext.Foreground = Brushes.Red;
 
                 repA.Foreground = Brushes.Red;
@@ -335,7 +385,11 @@ namespace PROJET_2CP.Pages
             {
                 saveAnswer(true, _niveau, _codeQst, _themeQst);
 
-                reponseNext.Text = "Bonne reponse";
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Bonne reponse";
+                else
+                    reponseNext.Text = "اجابة صحيحة";
+                
                 reponseNext.Foreground = Brushes.GreenYellow;
 
                 nbBonneReponse++;
@@ -349,7 +403,11 @@ namespace PROJET_2CP.Pages
             {
                 saveAnswer(false, _niveau, _codeQst, _themeQst);
 
-                reponseNext.Text = "Mauvaise reponse";
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Mauvaise reponse";
+                else
+                    reponseNext.Text = "اجابة خاطئة";
+
                 reponseNext.Foreground = Brushes.Red;
                 nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
@@ -384,7 +442,11 @@ namespace PROJET_2CP.Pages
             {
                 saveAnswer(true, _niveau, _codeQst, _themeQst);
 
-                reponseNext.Text = "Bonne reponse";
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Bonne reponse";
+                else
+                    reponseNext.Text = "اجابة صحيحة";
+                
                 reponseNext.Foreground = Brushes.GreenYellow;
 
                 nbBonneReponse++;
@@ -434,7 +496,11 @@ namespace PROJET_2CP.Pages
             {
                 saveAnswer(true, _niveau, _codeQst, _themeQst);
 
-                reponseNext.Text = "Bonne reponse";
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Bonne reponse";
+                else
+                    reponseNext.Text = "اجابة صحيحة";
+
                 reponseNext.Foreground = Brushes.GreenYellow;
                 nbBonneReponse++;
                 repD.Foreground = Brushes.Green;
@@ -448,7 +514,10 @@ namespace PROJET_2CP.Pages
                 saveAnswer(false, _niveau, _codeQst, _themeQst);
 
                 nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
-                reponseNext.Text = "Mauvaise reponse";
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Mauvaise reponse";
+                else
+                    reponseNext.Text = "اجابة خاطئة";
                 reponseNext.Foreground = Brushes.Red;
 
                 repD.Foreground = Brushes.Red;
