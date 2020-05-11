@@ -333,7 +333,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                Home.mainFrame.Content = new Bilan(nbBonneReponse,tagMax + 1 - nbBonneReponse);
+                Home.mainFrame.Content = new Bilan(this.nbBonneReponse,this.tagMax + 1 - this.nbBonneReponse);
             }
             next.Visibility = Visibility.Collapsed;
         }

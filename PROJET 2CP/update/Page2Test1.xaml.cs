@@ -22,10 +22,10 @@ namespace PROJET_2CP.update
         private string propD;
         private string bonnRep;
         private int tag = 0;
-        public static int tagMax;
+        public static int tagMax { get; set; }
         private int increment = 20;
         private DispatcherTimer dt;
-        public static int nbBonneReponse = 0;
+        public static int nbBonneReponse { get; set; } = 0;
         private bool tempEcoulé = true;
         private int bi3;
         private int bs3;

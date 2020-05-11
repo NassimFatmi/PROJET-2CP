@@ -23,10 +23,10 @@ namespace PROJET_2CP.update
         private string propD;
         private string bonnRep;
         private int tag=0;
-        public static int tagMax;
+        public static int tagMax { get; set;}
         private int increment = 20;
         private DispatcherTimer dt;
-        public static int nbBonneReponse = 0;
+        public static int nbBonneReponse { get; set; } = 0;
         private int hasImage;
         private int idImage;
         private bool tempEcoulé = true;
@@ -38,16 +38,16 @@ namespace PROJET_2CP.update
 
         public Page1Tests(int bi1,int bs1,int bi2,int bs2,int bi3,int bs3)
         {
-            tagMax = bs1 - bi1;
+             tagMax = bs1 - bi1;
              this.bi2 = bi2;
              this.bs2 = bs2;
              this.bi3 = bi3;
              this.bs3 = bs3;
              InitializeComponent();
              tab = Tests1.reorder(bi1,bs1);
-            creerQuestion();
-            afficherQuestion();
-            Distimer();
+             creerQuestion();
+             afficherQuestion();
+             Distimer();
         }
        
         public void creerQuestion()
