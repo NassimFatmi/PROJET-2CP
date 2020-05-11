@@ -183,5 +183,10 @@ namespace PROJET_2CP.Pages
                 }
             }
         }
+
+        private void quitdesignationClick(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Collapsed;
+        }
     }
 }

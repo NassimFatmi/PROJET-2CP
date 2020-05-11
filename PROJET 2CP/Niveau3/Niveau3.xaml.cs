@@ -139,5 +139,10 @@ namespace PROJET_2CP.Niveau3
         {
             Home.mainFrame.Content = new Niv3Main();
         }
+
+        private void quitdesignationClick(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Collapsed;
+        }
     }
 }
