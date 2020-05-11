@@ -143,112 +143,112 @@ namespace PROJET_2CP.Pages
         
         private void choix_Test(object sender, RoutedEventArgs e)
         {
-            if (getnote(1, 1) > (Page1Tests.total/2))
+            if (getnote(1, 1) > 6)
                 b2.Background = Brushes.GreenYellow;
-            else if (getnote(1, 1) == (Page1Tests.total/ 2))
+            else if (getnote(1, 1) == 6)
                 b2.Background = Brushes.Orange;
             else if (getnote(1, 1) == -1)
                 b2.Background = Brushes.BlueViolet;
-            else if (getnote(1, 1) < (Page1Tests.total / 2))
+            else if (getnote(1, 1) <6)
                 b2.Background = Brushes.Red;
 
-            if (getnote(1, 2) > (Page1Tests.total / 2))
+            if (getnote(1, 2) > 6)
                 b2.Background = Brushes.GreenYellow;
-            else if (getnote(1, 2) == (Page1Tests.total / 2))
+            else if (getnote(1, 2) == 6)
                 b2.Background = Brushes.Orange;
             else if (getnote(1, 2) == -1)
                 b2.Background = Brushes.BlueViolet;
-            else if (getnote(1, 2) < (Page1Tests.total / 2))
+            else if (getnote(1, 2) < 6)
                 b2.Background = Brushes.Red;
 
 
-            if (getnote(1, 3) > (Page1Tests.total / 2))
+            if (getnote(1, 3) > 6)
                 b3.Background = Brushes.GreenYellow;
-            else if (getnote(1, 3) == (Page1Tests.total / 2))
+            else if (getnote(1, 3) == 6)
                 b3.Background = Brushes.Orange;
             else if (getnote(1, 3) == -1)
                 b3.Background = Brushes.BlueViolet;
-            else if (getnote(1, 3) < (Page1Tests.total / 2))
+            else if (getnote(1, 3) < 6)
                 b3.Background = Brushes.Red;
 
 
-            if (getnote(1, 1) > (Page1Tests.total / 2))
+            if (getnote(1, 1) > 6)
                 b1.Background = Brushes.GreenYellow;
-            else if (getnote(1, 1) == (Page1Tests.total / 2))
+            else if (getnote(1, 1) == 6)
                 b1.Background = Brushes.Orange;
             else if (getnote(1, 1) == -1)
                 b1.Background = Brushes.BlueViolet;
-            else if (getnote(1, 1) < (Page1Tests.total / 2))
+            else if (getnote(1, 1) < 6)
                 b1.Background = Brushes.Red;
 
 
-            if (getnote(1, 4) > (Page1Tests.total / 2))
+            if (getnote(1, 4) > 6)
                 b4.Background = Brushes.GreenYellow;
-            else if (getnote(1, 4) == (Page1Tests.total / 2))
+            else if (getnote(1, 4) == 6)
                 b4.Background = Brushes.Orange;
             else if (getnote(1, 4) == -1)
                 b4.Background = Brushes.BlueViolet;
-            else if (getnote(1, 4) < (Page1Tests.total / 2))
+            else if (getnote(1, 4) < 6)
                 b4.Background = Brushes.Red;
 
 
-            if (getnote(1, 5) > (Page1Tests.total / 2))
+            if (getnote(1, 5) > 6)
                 b5.Background = Brushes.GreenYellow;
-            else if (getnote(1, 5) == (Page1Tests.total / 2))
+            else if (getnote(1, 5) == 6)
                 b5.Background = Brushes.Orange;
             else if (getnote(1, 5) == -1)
                 b5.Background = Brushes.BlueViolet;
-            else if (getnote(1, 5) < (Page1Tests.total / 2))
+            else if (getnote(1, 5) < 6)
                 b5.Background = Brushes.Red;
 
 
-            if (getnote(1, 6) > (Page1Tests.total / 2))
+            if (getnote(1, 6) > 6)
                 b6.Background = Brushes.GreenYellow;
-            else if (getnote(1, 6) == (Page1Tests.total / 2))
+            else if (getnote(1, 6) == 6)
                 b6.Background = Brushes.Orange;
             else if (getnote(1, 6) == -1)
                 b6.Background = Brushes.BlueViolet;
-            else if (getnote(1, 6) < (Page1Tests.total / 2))
+            else if (getnote(1, 6) < 6)
                 b6.Background = Brushes.Red;
 
 
-            if (getnote(1, 7) > (Page1Tests.total / 2))
+            if (getnote(1, 7) > 6)
                 b7.Background = Brushes.GreenYellow;
-            else if (getnote(1, 7) == (Page1Tests.total / 2))
+            else if (getnote(1, 7) == 6)
                 b7.Background = Brushes.Orange;
             else if (getnote(1, 7) == -1)
                 b7.Background = Brushes.BlueViolet;
-            else if (getnote(1, 7) < (Page1Tests.total / 2))
+            else if (getnote(1, 7) < 6)
                 b7.Background = Brushes.Red;
 
 
-            if (getnote(1, 8) > (Page1Tests.total / 2))
+            if (getnote(1, 8) > 6)
                 b8.Background = Brushes.GreenYellow;
-            else if (getnote(1, 8) == (Page1Tests.total / 2))
+            else if (getnote(1, 8) == 6)
                 b8.Background = Brushes.Orange;
             else if (getnote(1, 8) == -1)
                 b8.Background = Brushes.BlueViolet;
-            else if (getnote(1, 8) < (Page1Tests.total / 2))
+            else if (getnote(1, 8) < 6)
                 b8.Background = Brushes.Red;
 
 
-            if (getnote(1, 9) > (Page1Tests.total / 2))
+            if (getnote(1, 9) > 6)
                 b9.Background = Brushes.GreenYellow;
-            else if (getnote(1, 9) == (Page1Tests.total / 2))
+            else if (getnote(1, 9) == 6)
                 b9.Background = Brushes.Orange;
             else if (getnote(1, 9) == -1)
                 b9.Background = Brushes.BlueViolet;
-            else if (getnote(1, 9) < (Page1Tests.total / 2))
+            else if (getnote(1, 9) < 6)
                 b9.Background = Brushes.Red;
 
 
-            if (getnote(1, 10) > (Page1Tests.total / 2))
+            if (getnote(1, 10) > 6)
                 b10.Background = Brushes.GreenYellow;
-            else if (getnote(1, 10) == (Page1Tests.total / 2))
+            else if (getnote(1, 10) == 6)
                 b10.Background = Brushes.Orange;
             else if (getnote(1, 10) == -1)
                 b10.Background = Brushes.BlueViolet;
-            else if (getnote(1, 10) < (Page1Tests.total / 2))
+            else if (getnote(1, 10) < 6)
                 b10.Background = Brushes.Red;
 
             if (testActuel == 1)
