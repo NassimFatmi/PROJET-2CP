@@ -139,12 +139,12 @@ namespace PROJET_2CP.Niveau3
             if (MainWindow.langue == 0)
             {
                 SoundPlayer sp = new SoundPlayer(@"Soundsbst\"+Convert.ToString(tab[tmp] + tag - 1) + ".wav");
-                sp.Play();
+                try { sp.Play(); } catch (Exception) { }
             }
             if(MainWindow.langue ==1)
             {
                 SoundPlayer sp = new SoundPlayer(@"Soundsbst\"+Convert.ToString(tab[tmp] + tag - 1) + "AR.wav");
-                sp.Play();
+                try { sp.Play(); } catch (Exception) { }
             }
 
             // definir la question
