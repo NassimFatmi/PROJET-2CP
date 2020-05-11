@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,12 +24,46 @@ namespace PROJET_2CP.Pages
 
     public partial class Bilan3 : Page
     {
+        private SoundPlayer soundPlayer;
         public Bilan3(int bonne, int mauvaise)
         {
             InitializeComponent();
             Lbl1.Content = "Bonnes reponses : " + (TestNiveau3.nbBonneReponse).ToString();
             lbl2.Content = "Mauvaises reponses : " + (6 - TestNiveau3.nbBonneReponse).ToString();
             saveNote((TestNiveau3.nbBonneReponse), 3, Tests3._testChoisi, "Test 3");
+            
+            if (TestNiveau3.nbBonneReponse < 4)
+            {
+                try
+                {
+                    reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute));
+                    soundPlayer = new SoundPlayer(@"SoundsEffects\disappointment.wav");
+                    soundPlayer.Play();
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            else
+            {
+                Random random = new Random();
+                int rnd = random.Next(2);
+                try
+                {
+                    if (rnd == 0)
+                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/200iq.jpg", UriKind.RelativeOrAbsolute));
+                    else
+                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/brain.png", UriKind.RelativeOrAbsolute));
+
+                    soundPlayer = new SoundPlayer(@"SoundsEffects\clap.wav");
+                    soundPlayer.Play();
+                }
+                catch (Exception)
+                {
+
+                }
+            }
             TestNiveau3.nbBonneReponse = 0;
         }
 
