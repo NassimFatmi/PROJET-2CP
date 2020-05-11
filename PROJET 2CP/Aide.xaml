@@ -8,7 +8,7 @@
       d:DesignHeight="650" d:DesignWidth="1000"
       Title="Aide">
     <ScrollViewer>
-    <StackPanel>
+    <StackPanel x:Name="sp" >
             <Expander x:Name="e1" Width="700" FontSize="20" HorizontalAlignment="Center" Margin="0 10">
                 <Expander.Background>
                     <SolidColorBrush Color="DeepSkyBlue" Opacity="0.4"/>
