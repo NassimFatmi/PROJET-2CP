@@ -140,7 +140,7 @@
                                                VerticalAlignment="Center"/>
                                 </StackPanel>
                             </ListViewItem>
-                            
+
                             <ListViewItem x:Name="helpLV" Height="60" Background="{x:Null}">
                                 <StackPanel Orientation="Horizontal" >
                                     <materialDesign:PackIcon Kind="Help" Foreground="White" Height="30" Width="30" Margin="2"/>
@@ -158,57 +158,63 @@
 
         <Grid Visibility="Collapsed" x:Name="tutogrid" Width="1000" Height="680"
               VerticalAlignment="Center" HorizontalAlignment="Center" Background="#4C000000">
-            <Label Content="For more informations see the user guide !" Foreground="White"
-                   FontSize="22" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="288,33,291,0"/>
-            <Label Content="Welcome to app tutorial" Foreground="White"
-                   FontSize="22" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="378,76,378,0"/>
-            <Button Visibility="Visible" x:Name="b1" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,162,489,470" Click="b1_Click" Height="Auto">
+            <Label x:Name="moreInfo" Content="For more informations see the user guide !" Foreground="White"
+                   FontSize="22" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="218,33,179,0" Width="603"/>
+            <Label x:Name="greating" Content="Welcome to app tutorial" Foreground="White"
+                   FontSize="22" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="258,76,279,0" Width="463"/>
+            <Button Visibility="Visible" x:Name="b1" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,165,489,467" Click="b1_Click" Height="Auto">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="ArrowLeft" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
-                    <TextBlock VerticalAlignment="Center" Text="Home , shortcut to go to the main page" FontSize="20"/>
+                    <TextBlock x:Name="hometuto" VerticalAlignment="Center" Text="Home , shortcut to go to the main page" FontSize="20"/>
                 </StackPanel>
             </Button>
 
             <Button Visibility="Collapsed" x:Name="b5" Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto" Margin="821,33,0,505" Click="b5_Click">
                 <StackPanel Orientation="Vertical">
                     <materialDesign:PackIcon HorizontalAlignment="Center" Kind="ArrowUp" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
-                    <TextBlock Text="more shortcuts" FontSize="20"
+                    <TextBlock x:Name="moreshortcuts" Text="more shortcuts" FontSize="20"
                                HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button  Visibility="Collapsed" x:Name="b6" Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto" Margin="112,391,624,94" Click="b6_Click">
+            <Button  Visibility="Collapsed" x:Name="b6" Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto" Margin="112,245,532,94" Click="b6_Click">
                 <StackPanel Orientation="Vertical">
-                    <materialDesign:PackIcon HorizontalAlignment="Center" Kind="ArrowUp" Height="40" Width="40" Margin="0,0,10,0" Background="#FFEE3434"/>
-                    <TextBlock Text="Commencer a apprendre" FontSize="20"
+                    <materialDesign:PackIcon HorizontalAlignment="Center" Kind="ArrowUp" Height="70" Width="98" Margin="0,0,10,0" Background="#FFEE3434"/>
+                    <TextBlock x:Name="commencertuto" Text="Commencer a apprendre" FontSize="20"
                         HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button Visibility="Collapsed" x:Name="b2a" Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto" Margin="410,375,405,110">
+            <Button Visibility="Collapsed" x:Name="b2a" Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto" Margin="410,375,307,110">
                 <StackPanel Orientation="Vertical" Width="53">
-                    <materialDesign:PackIcon Kind="ArrowUp" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
+                    <materialDesign:PackIcon Kind="ArrowUp" Height="88" Width="118" Margin="-25,0,-40.2,0" Background="#FF34EEA8"/>
                 </StackPanel>
             </Button>
-            <Button Visibility="Collapsed" x:Name="b2" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,218,674,414" Click="b2_Click" Height="Auto">
+            <Button Visibility="Collapsed" x:Name="b2" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,229,674,403" Click="b2_Click" Height="Auto">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="ArrowLeft" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
-                    <TextBlock VerticalAlignment="Center" Text="View your statistics" FontSize="20"/>
+                    <TextBlock x:Name="viewstates" VerticalAlignment="Center" Text="View your statistics" FontSize="20"/>
                 </StackPanel>
             </Button>
             <Button Visibility="Collapsed" x:Name="b3" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,277,472,355" Click="b3_Click" Height="Auto">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="ArrowLeft" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
-                    <TextBlock VerticalAlignment="Center" Text="Custmize your profile and change themes" FontSize="20"/>
+                    <TextBlock x:Name="settingstuto" VerticalAlignment="Center" Text="Custmize your profile and change themes" FontSize="20"/>
                 </StackPanel>
             </Button>
             <Button Visibility="Collapsed" x:Name="b4" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,334,664,294" Click="b4_Click" Height="Auto">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="ArrowLeft" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
-                    <TextBlock VerticalAlignment="Center" Text="Open the user guide" FontSize="20"/>
+                    <TextBlock x:Name="qstreptuto" VerticalAlignment="Center" Text="Test your knowledge" FontSize="20"/>
                 </StackPanel>
             </Button>
             <Button Visibility="Collapsed" x:Name="b3a" Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto" Margin="680,375,135,110">
                 <StackPanel Orientation="Vertical" Width="53">
-                    <materialDesign:PackIcon Kind="ArrowUp" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
+                    <materialDesign:PackIcon Kind="ArrowUp" Height="111" Width="117" Margin="0,0,-64.2,0" Background="#FF34EEA8"/>
+                </StackPanel>
+            </Button>
+            <Button Visibility="Collapsed" x:Name="b4_Copy" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,405,636,223" Click="b4_Copy_Click" Height="Auto">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="ArrowLeft" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
+                    <TextBlock x:Name="helptuto" VerticalAlignment="Center" Text="Open the user guide" FontSize="20"/>
                 </StackPanel>
             </Button>
         </Grid>
