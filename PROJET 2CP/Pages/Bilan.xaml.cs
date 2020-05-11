@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
 using PROJET_2CP.update;
+using System.Media;
 
 namespace PROJET_2CP.Pages
 {
@@ -23,6 +24,7 @@ namespace PROJET_2CP.Pages
     /// </summary>
     public partial class Bilan : Page
     {   //private int nb_bonne = 0;
+        private SoundPlayer soundPlayer;
         public Bilan()
         {
           //  nb_bonne = bonne + Page1Tests.nbBonneReponse + Page2Test1.nbBonneReponse;
@@ -30,6 +32,40 @@ namespace PROJET_2CP.Pages
             InitializeComponent();
             Lbl1.Content = "Bonnes reponses : " + (Page1Tests.nbBonneReponse).ToString();
             lbl2.Content = "Mauvaises reponses : " + (Page1Tests.total - Page1Tests.nbBonneReponse).ToString();
+
+            if (Page1Tests.nbBonneReponse < (Page1Tests.total - Page1Tests.nbBonneReponse))
+            {
+               
+                try
+                {
+                    reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute));
+                    soundPlayer = new SoundPlayer(@"SoundsEffects\disappointment.wav");
+                    soundPlayer.Play();
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            else
+            {
+                Random random = new Random();
+                int rnd = random.Next(2);
+                try
+                {
+                    if (rnd == 0)
+                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/200iq.jpg", UriKind.RelativeOrAbsolute));
+                    else
+                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/brain.png", UriKind.RelativeOrAbsolute));
+
+                    soundPlayer = new SoundPlayer(@"SoundsEffects\clap.wav");
+                    soundPlayer.Play();
+                }
+                catch (Exception)
+                {
+
+                }
+            }
             //lbl2.Content = "Mauvaises reponses : " + (mauvaise + Page1Tests.tagMax + 1 - Page1Tests.nbBonneReponse + Page2Test1.tagMax + 1 - Page2Test1.nbBonneReponse).ToString();
             saveNote((Page1Tests.nbBonneReponse),1,Tests1._testChoisi,"Test 1");
             Page1Tests.nbBonneReponse = 0;

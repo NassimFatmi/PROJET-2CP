@@ -8,9 +8,40 @@
     d:DesignHeight="610" d:DesignWidth="950"
       Title="Bilan2">
 
-    <Grid Background="White">
-        <Label x:Name="Lbl1" FontSize="25"  HorizontalAlignment="Left" Margin="221,139,0,0" VerticalAlignment="Top" Width="312" Height="43" RenderTransformOrigin="1.201,0.789"/>
-        <Label Name="lbl2" FontSize="25"  HorizontalAlignment="Left" Margin="221,221,0,0" VerticalAlignment="Top" Width="312" Height="43"/>
-        <Button Content="Quitter" HorizontalAlignment="Left" Margin="296,351,0,0" VerticalAlignment="Top" Width="112" Height="43" Click="Button_Click"/>
+    <Grid x:Name="bilanQuiz">
+        <Grid.Background>
+            <SolidColorBrush Color="DeepSkyBlue" Opacity="0.5"/>
+        </Grid.Background>
+        <Label x:Name="remarque" Content="Remarque :" FontSize="32" FontWeight="Bold"
+                  Height="60" VerticalAlignment="Top" HorizontalAlignment="Center"
+                   Foreground="White" Margin="10,10,0,0"/>
+
+        <Border  VerticalAlignment="Center" HorizontalAlignment="Center"
+                     CornerRadius="27" Height="300" Width="750">
+            <Border.Background>
+                <SolidColorBrush Color="Black" Opacity="0.3"/>
+            </Border.Background>
+            <Grid>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                                Margin="150,0,0,0" Width="350">
+                    <Label x:Name="Lbl1" Content="bonne" FontSize="20" FontWeight="Bold"
+                                Height="90" HorizontalAlignment="Center"
+                                Foreground="White"/>
+                    <Label x:Name="lbl2" Content="mauvaise" Margin="10" FontWeight="Bold"
+                                FontSize="20" HorizontalAlignment="Center"
+                                Foreground="White" />
+                </StackPanel>
+
+                <Image x:Name="reactionBilan" Height="250" Width="250"
+                   VerticalAlignment="Center" HorizontalAlignment="Left"
+                        Margin="20"/>
+            </Grid>
+        </Border>
+
+
+        <Button Content="Quitter" Click="Button_Click"
+                    Width="150" Height="50"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                    Margin="0,0,0,50"/>
     </Grid>
 </Page>
