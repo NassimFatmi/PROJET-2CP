@@ -1,5 +1,6 @@
 ﻿using PROJET_2CP.Pages;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
@@ -155,6 +156,7 @@ namespace PROJET_2CP.update
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
+                saveAnswer(true,1,0,"Test1");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -164,6 +166,7 @@ namespace PROJET_2CP.update
             }
             else
             {
+                saveAnswer(false, 1, 0, "Test1");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -185,6 +188,7 @@ namespace PROJET_2CP.update
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
+                saveAnswer(true, 1, 0, "Test1");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -194,6 +198,7 @@ namespace PROJET_2CP.update
             }
             else
             {
+                saveAnswer(false, 1, 0, "Test1");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -214,6 +219,7 @@ namespace PROJET_2CP.update
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
+                saveAnswer(true, 1, 0, "Test1");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -223,6 +229,7 @@ namespace PROJET_2CP.update
             }
             else
             {
+                saveAnswer(false, 1, 0, "Test1");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -243,6 +250,7 @@ namespace PROJET_2CP.update
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
+                saveAnswer(true, 1, 0, "Test1");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -252,6 +260,7 @@ namespace PROJET_2CP.update
             }
             else
             {
+                saveAnswer(false, 1, 0, "Test1");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -272,7 +281,6 @@ namespace PROJET_2CP.update
             dt.Interval = TimeSpan.FromSeconds(1);
             dt.Tick += thick;
             dt.Start();
-
         }
         private void thick(object sender, EventArgs e)
         {
@@ -355,7 +363,60 @@ namespace PROJET_2CP.update
                Home.mainFrame.Content = new TestNiveau1p2(bi3, bs3);
             }
             next.Visibility = Visibility.Collapsed;
+        }
+        /// <summary>
+        /// partie pour le sauvegrade des reponses pour construire les statistiques 
+        /// </summary>
+        /// <param name="reponse"></param> la reponse de l'apprenant
+        /// <param name="niveau"></param> niveau de la qst
+        /// <param name="code"></param> id ou le code pour la referance
+        /// <param name="theme"></param> le theme que la qst apartient
+        private void saveAnswer(bool reponse, int niveau, int code, string theme)
+        {
+            // Code == ID //
+            string connString = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf; Integrated Security = True";
 
+            DataTable savedData = new DataTable();
+
+            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            try
+            {
+                conn.Open();
+                // create data adapter
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(savedData);
+                da.Dispose();
+
+                if (savedData.Rows.Count == 1)
+                {
+                    // Si l'apprenant a répondu a cette question on fait la maj dans sa Table dans Save BDD
+                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+                    cmd = new SqlCommand(query, conn);
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+
+                    //Si l'apprenant n'a pas répondu a cette question on l'insert sa réponse
+                    query = "INSERT INTO " + LogIN.LoggedUser.UtilisateurID + "Trace(Niveau,Theme,Test,Code,Reponse) VALUES('" + niveau.ToString() + "','" + theme + "', '' ,'" + code.ToString() + "','" + reponse + "')";
+                    cmd = new SqlCommand(query, conn);
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+                MessageBox.Show("error save Db quiz Testniveau 1 ");
+            }
         }
     }
 }

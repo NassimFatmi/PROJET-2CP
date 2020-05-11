@@ -120,24 +120,25 @@ namespace PROJET_2CP.Pages
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new Page1Tests(19, 22, 39, 41, 20, 22);
+            _testChoisi = 7;
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new Page1Tests(23, 24, 32, 34, 3, 7);
-            _testChoisi = 7;
+            _testChoisi = 8;
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new Page1Tests(14, 17, 27, 30, 13, 14);
-            _testChoisi = 8;
+            _testChoisi = 9;
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new Page1Tests(8, 11, 42, 44, 18, 20);
-            _testChoisi = 9;
+            _testChoisi = 10;
         }
         
         private void choix_Test(object sender, RoutedEventArgs e)
