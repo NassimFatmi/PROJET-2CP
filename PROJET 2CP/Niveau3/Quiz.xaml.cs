@@ -35,6 +35,12 @@ namespace PROJET_2CP.Niveau3
         public Quiz(int bi, int bs)
         {
             InitializeComponent();
+            
+            if(MainWindow.langue == 0)
+                Back.Text = "Retour";
+            else
+                Back.Text = "عودة";
+
             tmp = 0;
             tag = bi;
             tagMax = bs;
@@ -503,6 +509,25 @@ namespace PROJET_2CP.Niveau3
         private void lbl_Click(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new Niveau3();
+        }
+        private void langue()
+        {
+            if (MainWindow.langue == 0)
+            {
+                Back.Text = "Retour";
+                dhmsg.Text = " est ce que vous etes sur de quitter le quiz ?";
+                dhoui.Content = "Oui";
+                dhnon.Content = "Non";
+            }
+            else
+            {
+
+                Back.Text = "عودة";
+                dhmsg.Text = " هل انت متأكد من الخروج ؟";
+                dhoui.Content = "نعم";
+                dhnon.Content = "لا";
+            }
+
         }
     }
 }

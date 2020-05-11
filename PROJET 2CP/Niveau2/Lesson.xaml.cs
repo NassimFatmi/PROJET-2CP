@@ -235,5 +235,17 @@ namespace PROJET_2CP.Niveau2
         {
             Home.mainFrame.Content = new Quiz(73, 79);
         }
+
+        private void quitdesignationClick(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void thm1_Click(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Visible;
+            //content of designation !
+            designatiotxt.Text = "designation";
+        }
     }
 }
