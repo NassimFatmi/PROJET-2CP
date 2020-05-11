@@ -178,7 +178,7 @@
                     </StackPanel>
 
                     <Image x:Name="reactionBilan" Height="250" Width="250"
-                   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0"
+                   VerticalAlignment="Center" HorizontalAlignment="Left"
                         Margin="20"/>
                 </Grid>
             </Border>
