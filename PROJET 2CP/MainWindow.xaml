@@ -45,7 +45,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid x:Name="AproposArab" Visibility="Collapsed">
+        <Grid x:Name="AproposArab" Visibility="Visible">
             <Grid.Background>
                 <SolidColorBrush Color="Black" Opacity="0.9"></SolidColorBrush>
             </Grid.Background>
@@ -56,21 +56,25 @@
             <StackPanel Grid.Row="0">
                 <Button x:Name="عودة" Content="عودة" Width="100" Margin="10" Click="retourAR_Click" HorizontalAlignment="Right"></Button>
                 <TextBlock FontSize="30" Foreground="White" Margin="10" HorizontalAlignment="Right">التعريف بالتطبيق</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">يتيح لك هذا التطبيق تدريب واجتياز اختبار حركة المرور على الطرق ، فهو مقتبس من كتاب المرور الرسمي ولكن</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">مع طريقة تعلم أكثر فعالية</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">دائما في خدمتكم  EDcodeDeLaRoute، يمكنك الاستفادة من تطبيق مجاني تمامًا مع دروس مقدمة بطرق متعددة</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">هذا التطبيق متاح باللغتين الفرنسية والعربية</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="0 0 20 0" HorizontalAlignment="Right">يسمح لك هذا التّطبيق بالاطّلاع على قوانين المرور بتفاصيلها الكاملة، كما يتيح لك تدريبا كاملا لاجتياز امتحان قانون المرور  </TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="0 0 20 0" HorizontalAlignment="Right">بنجاح تامّ. محتوى هذا التّطبيق مقتبس من الكتاب الرسمي لقانون المرور بطريقة تمكّن المتعلم من الاستفادة والتّعلم</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="0 0 20 0" HorizontalAlignment="Right">بفعالية أكبر</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="0 0 2 0">يمكنك الاستفادة من المجّانية التّامة لمحتوى التّطبيق الشّامل لدروس متعدّدة متاحة بكلّ من اللّغة  </TextBlock>
+                    <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="10 0 0 0" HorizontalAlignment="Right">EDcodeDeLaRoute مع</TextBlock>
+                </StackPanel>
+                <TextBlock  FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="0 0 20 0"  HorizontalAlignment="Right"> الفرنسية واللّغة العربية</TextBlock>
                 <TextBlock FontSize="30" Foreground="White" Margin="10" HorizontalAlignment="Right">محتوى التطبيق</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">ينقسم التطبيق إلى ثلاثة مستويات ، كل مستوى يتكون من: مواضيع ، اختبارات ، كل موضوع يتكون من: دروس ، اختبار</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right"> لكل درس</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="0 0 20 0" HorizontalAlignment="Right">يوجد ثلاث مستويات، كلّ منها يحتوي على مواضيع واختبارات، و كلّ موضوع يشمل دروسا واختبارا خاص بكل درس على .</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="0 0 20 0" HorizontalAlignment="Right"> حدة</TextBlock>
                 <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0" HorizontalAlignment="Right">هناك أيضًا قسم سؤال / جواب وهو مكافأة لإعداد المتعلم بشكل صحيح للاختبار الرسمي</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" Margin=" 20 20 " HorizontalAlignment="Right">تم تصميم هذا المنتج من قبل</TextBlock>
-                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Sarah Laouedj</TextBlock>
-                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Liticia Ouhaioune</TextBlock>
-                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Mouheb Khaoula</TextBlock>
-                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Abdelbassit Abed-meraim</TextBlock>
-                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Fatmi Nassim</TextBlock>
-                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">Yalaoui Akli</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" Margin=" 0 20 20 0 " HorizontalAlignment="Right">تم تصميم هذا المنتج من قبل</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">لعوج صراح</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">وحيون ليتيسيا</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">موهب خولة</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right"> عبد مرايم عبد الباسط</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">فاطمي نسيم</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">يعلاوي أكلي</TextBlock>
             </StackPanel>
             <TextBlock Grid.Row="1" FontSize="18" Foreground="White" TextWrapping="Wrap" Margin="10 0" HorizontalAlignment="Right">يحظر استخدام المحتوى أو تعديله جزئيًا أو كليًا وفقًا لقواعد حقوق النشر</TextBlock>
         </Grid>
@@ -79,21 +83,22 @@
                 <SolidColorBrush Color="Black" Opacity="0.9"></SolidColorBrush>
             </Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition Height="600"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="620"/>
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
                 <Button x:Name="retour" Content="Retour" Width="100" HorizontalAlignment="Left" Margin="10" Click="retour_Click"></Button>
                 <TextBlock FontSize="30" Foreground="White" Margin="10">Définition de l'application :</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0">Cette application vous permet de s'entraîner et réussir l'examen du code de la route, elle est adaptée du livre officel du code de la route mais avec une méthode d'apprentissage plus éfficace .</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0">Cette application permet de vous entraîner et mieux préparer l'examen du code de la route pour augmenter vos chances de l'avoir.</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0">Elle est adaptée à partir du livre officel du code de la route mais avec une méthode d'apprentissage plus efficace .</TextBlock>
                 <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0">Avec EDcodeDeLaRoute, vous bénéficiez d'une application complétement gratuite avec des cours multimédias .</TextBlock>
                 <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0">Cette application est disponible en français et en arabe</TextBlock>
                 <TextBlock FontSize="30" Foreground="White" Margin="10">Contenu de l'application :</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0"> EDcodeDeLaRoute est divisée en trois niveaux , chaque niveau est composé de : thémes,tests, chque théme est composé de : leçons,test par leçon.</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0"> EDcodeDeLaRoute est divisée en trois niveaux , chaque niveau est composé de : thèmes,tests, chaque thème est composé de : leçons,tests par leçon.</TextBlock>
                 <TextBlock FontSize="20" Foreground="White" TextWrapping="Wrap" Margin="20 0">Il y a aussi une section de Question/Réponse qui est un bonus pour bien préparer l'apprenant au test officiel</TextBlock>
-                <TextBlock FontSize="20" Foreground="White" Margin=" 20 30 0 0">Ce produit est conçue par :</TextBlock>
+                <TextBlock FontSize="20" Foreground="White" Margin=" 20 10 0 0">Ce produit est conçu par :</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0">Sarah Laouedj</TextBlock>
-                <TextBlock FontSize="18" Foreground="White" Margin="60 0">Liticia Ouhaioune</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0">Liticia Ouahioune</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0">Mouheb Khaoula</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0">Abdelbassit Abed-meraim</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0">Fatmi Nassim</TextBlock>
