@@ -383,7 +383,7 @@ namespace PROJET_2CP.Pages
             {
                 if (MainWindow.langue == 0)
                 {
-                    noteShow.Content = "Vous n'avez pas fait se test !";
+                    noteShow.Content = "Vous n'avez pas passé ce test !";
                 }
                 else
                 {
