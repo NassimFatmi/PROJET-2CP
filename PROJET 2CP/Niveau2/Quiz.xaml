@@ -22,16 +22,16 @@
                 <Grid Width="300" Height="150" HorizontalAlignment="Center">
                     <StackPanel Orientation="Horizontal" Margin="15">
                         <materialDesign:PackIcon Kind="CloseOutline" Foreground="Red" Width="50" Height="50"/>
-                        <TextBlock Foreground="Gray" Width="200" Margin="15 5" TextWrapping="Wrap">
+                        <TextBlock x:Name="dhmsg" Foreground="Gray" Width="200" Margin="15 5" TextWrapping="Wrap">
                            est ce que vous etes sur de quitter le quiz ?
                         </TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
-                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
+                        <Button x:Name="dhoui" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
                             Non
                         </Button>
-                        <Button  Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center"
-                                Foreground="Red">
+                        <Button  x:Name="dhnon" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center"
+                                Foreground="Red" Click="Back_Click">
                             Oui
                         </Button>
                     </StackPanel>
@@ -48,7 +48,7 @@
                         Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18" Foreground="White"/>
-                        <TextBlock  Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                        <TextBlock Text="Retour" x:Name="back" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Button>
 

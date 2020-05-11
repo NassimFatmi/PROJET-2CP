@@ -35,6 +35,7 @@ namespace PROJET_2CP.Niveau2
         public Quiz(int bi, int bs)
         {
             InitializeComponent();
+            langue();
             tmp = 0;
             tag = bi;
             tagMax = bs;
@@ -73,7 +74,7 @@ namespace PROJET_2CP.Niveau2
         {
             //int tag = aleaInt();
             //recuperation de la description du panneau à partir de la base de donnée 
-            SqlConnection connection = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName}\Panneaux.mdf;Integrated Security=True");
+            SqlConnection connection = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf;Integrated Security=True");
 
             SqlCommand cmd = new SqlCommand("select * from [Question] where Id='" + Convert.ToString(tab[tmp]+tag-1) + "'", connection);
             SqlDataReader dr;
@@ -189,7 +190,7 @@ namespace PROJET_2CP.Niveau2
         
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            
+            SoundPlayer soundPlayer;
             tmp++;
            
             //tag++;
@@ -218,7 +219,9 @@ namespace PROJET_2CP.Niveau2
                         quizMessage.Content = "اعد مراجعة الدرس ";
                     try
                     {
-                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute)); ;
+                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute));
+                        soundPlayer = new SoundPlayer(@"SoundsEffects\disappointment.wav");
+                        soundPlayer.Play();
                     }
                     catch (Exception)
                     {
@@ -239,6 +242,9 @@ namespace PROJET_2CP.Niveau2
                             reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/200iq.jpg", UriKind.RelativeOrAbsolute));
                         else
                             reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/brain.png", UriKind.RelativeOrAbsolute));
+
+                        soundPlayer = new SoundPlayer(@"SoundsEffects\clap.wav");
+                        soundPlayer.Play();
                     }
                     catch (Exception)
                     {
@@ -502,6 +508,24 @@ namespace PROJET_2CP.Niveau2
         private void lbl_Click(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new Lesson();
+        }
+        private void langue()
+        {
+            if(MainWindow.langue == 0)
+            {
+                back.Text = "Retour";
+                dhmsg.Text = " est ce que vous etes sur de quitter le quiz ?";
+                dhoui.Content = "Oui";
+                dhnon.Content = "Non";
+            }
+            else
+            {
+
+                back.Text = "عودة";
+                dhmsg.Text = " هل انت متأكد من الخروج ؟";
+                dhoui.Content = "نعم";
+                dhnon.Content = "لا";
+            }
         }
     }
 }

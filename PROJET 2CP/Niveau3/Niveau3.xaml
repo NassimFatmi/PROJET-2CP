@@ -37,6 +37,10 @@
                         <Grid >
                             <TextBlock x:Name="txt1" Text="Theme2"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <Button x:Name="thm1" Content="Désignation"
+                                            Background="{x:Null}"
+                                            VerticalAlignment="Center" HorizontalAlignment="Right"
+                                            BorderBrush="{x:Null}"/>
                         </Grid>
                     </Expander.Header>
                     <Expander.Background>
@@ -75,9 +79,14 @@
                 <Expander HorizontalAlignment="Stretch"
                           Foreground="White" FontWeight="Bold">
                     <Expander.Header>
-                        <!--  كيف كيف هنا العنوان-->
-                        <TextBlock x:Name="txt2" Text="Theme 3"
+                        <Grid>
+                            <TextBlock x:Name="txt2" Text="Theme 3"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <Button x:Name="thm2" Content="Désignation"
+                                            Background="{x:Null}"
+                                            VerticalAlignment="Center" HorizontalAlignment="Right"
+                                            BorderBrush="{x:Null}"/>
+                        </Grid>
                     </Expander.Header>
                     <Expander.Background>
                         <SolidColorBrush Color="#0336FF" Opacity="0.3"/>
@@ -135,6 +144,10 @@
                         <Grid >
                             <TextBlock x:Name="txt3" Text="Theme4"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <Button x:Name="thm3" Content="Désignation"
+                                            Background="{x:Null}"
+                                            VerticalAlignment="Center" HorizontalAlignment="Right"
+                                            BorderBrush="{x:Null}"/>
                         </Grid>
                     </Expander.Header>
                     <Expander.Background>
@@ -198,5 +211,32 @@
                 </Expander>
             </StackPanel>
         </ScrollViewer>
+        <Grid Grid.Row="1" x:Name="designationGrid" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.4"/>
+            </Grid.Background>
+            <Label Content="Désignation" x:Name="designationTitle"
+                   Foreground="White" FontSize="45"
+                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                   Margin="20"/>
+            <Border Height="300" Width="650"
+                    CornerRadius="27">
+                <Border.Background>
+                    <SolidColorBrush Color="White" Opacity="0.7"/>
+                </Border.Background>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <Grid Margin="15">
+                        <TextBlock x:Name="designatiotxt" Text="Désignation" FontSize="15"
+                                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                                   FontWeight="DemiBold"/>
+                    </Grid>
+                </ScrollViewer>
+            </Border>
+            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                    VerticalAlignment="Top" HorizontalAlignment="Right"
+                    Margin="0,80,110,0" Click="quitdesignationClick">
+                <materialDesign:PackIcon Foreground="Red" Kind="Close"/>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

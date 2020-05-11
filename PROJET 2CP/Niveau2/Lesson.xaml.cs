@@ -70,6 +70,12 @@ namespace PROJET_2CP.Niveau2
                 risque.Content = "Risques de la conduite sous \n        les intempéries";
                 quiz_utilisation.Content = "Quiz1";
                 quiz_risque.Content = "Quiz2";
+
+                thm1.Content = "Désignation";
+                thm2.Content = "Désignation";
+                thm3.Content = "Désignation";
+                thm4.Content = "Désignation";
+
             }
             if (langue == 1)
             {
@@ -106,6 +112,11 @@ namespace PROJET_2CP.Niveau2
                 risque.Content = "مخاطر القيادة في الأحوال  \n      الجوية السيئة";
                 quiz_utilisation.Content = "إمتحان 1";
                 quiz_risque.Content = "إمتحان 2";
+
+                thm1.Content = "حول الدرس";
+                thm2.Content = "حول الدرس";
+                thm3.Content = "حول الدرس";
+                thm4.Content = "حول الدرس";
             }
         }
         private void l1_Click(object sender, RoutedEventArgs e)
@@ -140,32 +151,33 @@ namespace PROJET_2CP.Niveau2
 
         private void q1_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Pages.Quiz(50, 56);
+            Home.mainFrame.Content = new Quiz(50, 56);
         }
 
         private void q2_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Pages.Quiz(56, 62);
+            Home.mainFrame.Content = new Quiz(56, 62);
         }
 
         private void q3_Click(object sender, RoutedEventArgs e)
         {
-
+            Home.mainFrame.Content = new Quiz(62, 68);
         }
 
         private void q4_Click(object sender, RoutedEventArgs e)
         {
+            Home.mainFrame.Content = new Quiz(68, 74);
 
         }
 
         private void q5_Click(object sender, RoutedEventArgs e)
         {
-
+            Home.mainFrame.Content = new Quiz(74, 80);
         }
 
         private void q6_Click(object sender, RoutedEventArgs e)
         {
-
+            Home.mainFrame.Content = new Quiz(80, 86);
         }
 
         private void BackClick(object sender, RoutedEventArgs e)
@@ -233,6 +245,18 @@ namespace PROJET_2CP.Niveau2
         private void quiz_risque_Click(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new Quiz(73, 79);
+        }
+
+        private void quitdesignationClick(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void thm1_Click(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Visible;
+            //content of designation !
+            designatiotxt.Text = "designation";
         }
     }
 }
