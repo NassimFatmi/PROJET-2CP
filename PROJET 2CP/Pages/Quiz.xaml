@@ -49,7 +49,7 @@
                         Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18" Foreground="White"/>
-                        <TextBlock Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                        <TextBlock x:Name="back" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Button>
                 
@@ -153,5 +153,17 @@
                 <Button x:Name="switch_lang" Visibility="Collapsed" Width="0" Height="0"/>
             </Grid>
         </materialDesign:DialogHost>
+        <Grid x:Name="bilanQuiz" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="SkyBlue" Opacity="0.4"/>
+            </Grid.Background>
+            <Label x:Name="lbl" Content="Note" FontSize="60" FontWeight="Bold"
+                   VerticalContentAlignment="Center" HorizontalAlignment="Center"
+                   Foreground="White"/>
+            <Button Content="Quitter" Click="lbl_Click"
+                    Width="150" Height="50"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                    Margin="0,0,0,100"/>
+        </Grid>
     </Grid>
 </Page>
