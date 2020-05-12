@@ -54,7 +54,7 @@ namespace PROJET_2CP
                 userid.Text = "Utilisateur ID";
                 nom.Text = "Nom";
                 prenom.Text = "Prénom";
-                mdpss.Text = "ajouter/changer mot de pass";
+                mdpss.Text = "ajouter/changer mot de passe";
                 save.Text = "Sauvegarder";
                 dhconfirmer.Content = "Confirmer";
                 dhretoure.Content = "Retoure";

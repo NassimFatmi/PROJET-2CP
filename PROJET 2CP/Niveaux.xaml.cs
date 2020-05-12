@@ -29,7 +29,7 @@ namespace PROJET_2CP
             lvl2icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl2icon.png", UriKind.RelativeOrAbsolute));
             lvl3icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl3icon.png", UriKind.RelativeOrAbsolute));
             if (!LogIN.LoggedUser.UtilisateurID.Equals("Guest"))
-                //progressLevels();
+                progressLevels();
             initialiserLangue();
             guestMode();
         }
@@ -179,7 +179,7 @@ namespace PROJET_2CP
                     }
                     if (!savedData.Rows[0]["Test2"].ToString().Equals(""))
                     {
-                        if (Int32.Parse(savedData.Rows[0]["Test2"].ToString()) == 10)
+                        if (Int32.Parse(savedData.Rows[0]["Test2"].ToString()) == 7)
                         {
                             lvl3lock.Visibility = Visibility.Collapsed;
                             niv3.Click += new RoutedEventHandler(this.niv3_Click);

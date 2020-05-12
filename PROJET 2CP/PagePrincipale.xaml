@@ -43,7 +43,7 @@
 
                 <StackPanel>
                     <materialDesign:PackIcon Kind="Settings" HorizontalAlignment="Center" Height="60" Width="60" Margin="20"/>
-                    <TextBlock x:Name="parametretxt" Text="Paramètre" TextAlignment="Center" FontSize="30"/>
+                    <TextBlock x:Name="parametretxt" Text="Paramètres" TextAlignment="Center" FontSize="30"/>
                 </StackPanel>
             </Button>
         </Grid>

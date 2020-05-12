@@ -106,7 +106,7 @@ namespace PROJET_2CP
             if (MainWindow.langue == 0)
             {   //la langue français
                 h0.Content = "Niveau 1 : Panneaux de danger";
-                h1.Content = "Clicke sur le panneau pour la description ";
+                h1.Content = "Cliquez sur le panneau pour la description ";
                 back.Text = "Retoure";
             }
             else

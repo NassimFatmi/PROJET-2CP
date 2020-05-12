@@ -46,7 +46,7 @@ namespace PROJET_2CP
             {   //la langue français
                 commencertxt.Text = "Commencer";
                 statestxt.Text = "Statistiques";
-                parametretxt.Text = "Paramètre";
+                parametretxt.Text = "Paramètres";
             }
             else
             {

@@ -34,13 +34,14 @@ namespace PROJET_2CP.Pages
 
             if (langue == 0)
             {
-                b0.Content = "regles generales";
+                b0.Content = "règles générales";
                 switch_lang.Content = "changer la langue en arabe";
                 switch_lang.Margin = new Thickness(26, 82, 692, 558);
                 qst0.Text = "Questions";
                 qst1.Text = "Questions";
                 qst2.Text = "Questions";
                 qst3.Text = "Questions";
+                h0.Content = "NIVEAU I : Thèmes";
 
                 thm1.Content = "Désignation";
                 thm2.Content = "Désignation";
@@ -55,6 +56,7 @@ namespace PROJET_2CP.Pages
                 qst2.Text = "أسئلة";
                 qst3.Text = "أسئلة";
 
+                h0.Content = "المستوى الأول: مواضيع";
                 thm1.Content = "حول الدرس";
                 thm2.Content = "حول الدرس";
             }

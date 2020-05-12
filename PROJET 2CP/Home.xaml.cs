@@ -262,6 +262,7 @@ namespace PROJET_2CP
                 lvitem1.Text = "Statistiques";
                 lvitem2.Text = "Paramètre";
                 lvitem3.Text = "Aide";
+                lvitem4.Text = "Questions réponses";
 
                 popup1.Content = "Paramètre";
                 popup2.Content = "Aide";

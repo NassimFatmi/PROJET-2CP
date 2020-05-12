@@ -105,5 +105,16 @@ namespace PROJET_2CP.Pages
         {
             Home.mainFrame.Content = new Leçons();
         }
+        private void langue()
+        {
+            if (MainWindow.langue == 0)
+            {
+                click.Content = "Cliquez sur le panneau pour la description ";
+            }
+            else
+            {
+                click.Content = "انقر على الافتة للشرح";
+            }
+        }
     }
 }
