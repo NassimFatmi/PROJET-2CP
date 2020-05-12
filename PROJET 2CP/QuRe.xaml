@@ -28,14 +28,14 @@
                     <TextBlock x:Name="astuce" Foreground="White" Width="600" FontSize="15" FontWeight="Bold" Margin="0,10,0,0"/>
                 </StackPanel>
                 <Expander x:Name="e1" Width="900" FontSize="20" HorizontalAlignment="Center" Margin="0 10">
-                    <Expander.Background>
+                    <Expander.Background >
                         <SolidColorBrush Color="DeepSkyBlue" Opacity="0.4"/>
                     </Expander.Background>
                     <Expander.Header>
                         <TextBlock x:Name="ex1" TextWrapping="Wrap" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"
                                    Margin="10"/>
                     </Expander.Header>
-                    <Grid>
+                    <Grid x:Name="g1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="83*"/>
                             <ColumnDefinition Width="17*"/>
@@ -55,7 +55,7 @@
                         <TextBlock x:Name="ex2" TextWrapping="Wrap" Foreground="White" FontWeight="Bold"
                                    Margin="10" HorizontalAlignment="Center"/>
                     </Expander.Header>
-                    <Grid>
+                    <Grid x:Name="g2">
                         <Grid.Background>
                             <SolidColorBrush Color="SkyBlue" Opacity="0.2"/>
                         </Grid.Background>
@@ -71,7 +71,7 @@
                         <TextBlock x:Name="ex3" TextWrapping="Wrap" Foreground="White" FontWeight="Bold"
                                    Margin="10" HorizontalAlignment="Center"/>
                     </Expander.Header>
-                    <Grid>
+                    <Grid x:Name="g3">
                         <Grid.Background>
                             <SolidColorBrush Color="SkyBlue" Opacity="0.2"/>
                         </Grid.Background>
@@ -87,7 +87,7 @@
                         <TextBlock x:Name="ex4" TextWrapping="Wrap" Foreground="White" FontWeight="Bold"
                                    Margin="10" HorizontalAlignment="Center"/>
                     </Expander.Header>
-                    <Grid>
+                    <Grid x:Name="g4">
                         <Grid.Background>
                             <SolidColorBrush Color="SkyBlue" Opacity="0.2"/>
                         </Grid.Background>
@@ -103,7 +103,7 @@
                         <TextBlock x:Name="ex5" TextWrapping="Wrap" Foreground="White" FontWeight="Bold"
                                    Margin="10" HorizontalAlignment="Center"/>
                     </Expander.Header>
-                    <Grid>
+                    <Grid x:Name="g5">
                         <Grid.Background>
                             <SolidColorBrush Color="SkyBlue" Opacity="0.2"/>
                         </Grid.Background>
@@ -119,7 +119,7 @@
                         <TextBlock x:Name="ex6" TextWrapping="Wrap" Foreground="White" FontWeight="Bold"
                                    Margin="10" HorizontalAlignment="Center"/>
                     </Expander.Header>
-                    <Grid>
+                    <Grid x:Name="g6">
                         <Grid.Background>
                             <SolidColorBrush Color="SkyBlue" Opacity="0.2"/>
                         </Grid.Background>

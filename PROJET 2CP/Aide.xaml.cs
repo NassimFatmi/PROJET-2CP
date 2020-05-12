@@ -36,7 +36,7 @@ namespace PROJET_2CP
             SolidColorBrush color2 = new SolidColorBrush();
             color.Color = Color.FromArgb(40, 0, 191, 255);
             color2.Color = Color.FromArgb(20, 135, 206, 235);
-            for (int i=1;i<=7;i++)
+            for (int i=1;i<=10;i++)
             {
                  ex = new Expander();
                  t = new TextBlock();
