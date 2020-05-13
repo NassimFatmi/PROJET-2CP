@@ -51,9 +51,23 @@ namespace PROJET_2CP.Pages
             if(MainWindow.langue == 0)
             {
                 back.Text = "Retour";
+                b1.Content = "Test 1";
+                b2.Content = "Test 2";
+                b3.Content = "Test 3";
+                b4.Content = "Test 4";
+                b5.Content = "Test 5";
+                b6.Content = "Test 6";
+                labelTest.Content = "Test Niveau 3";
             }
             else
             {
+                b1.Content = "اختبار 1";
+                b2.Content = "اختبار 2";
+                b3.Content = "اختبار 3";
+                b4.Content = "اختبار 4";
+                b5.Content = "اختبار 5";
+                b6.Content = "اختبار 6";
+                labelTest.Content = "امتحان المستوى 3";
                 back.Text = "عودة";
             }
         }

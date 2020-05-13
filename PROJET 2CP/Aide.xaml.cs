@@ -80,6 +80,7 @@ namespace PROJET_2CP
                 t2.Foreground = Brushes.White;
                 t2.Margin = new Thickness(20);
                 t2.HorizontalAlignment = HorizontalAlignment.Center;
+                t2.TextAlignment = TextAlignment.Center;
                 g.Children.Add(t2);
                 ex.Width = 700;
                 ex.FontSize = 20;

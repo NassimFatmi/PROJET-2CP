@@ -21,6 +21,7 @@ namespace PROJET_2CP.Pages
            lesson = new NLeçon();
             InitializeComponent();
             creerPanneau();
+            langue();
             DecrirePanneau.lastPage = 2;
         }
         // creation dynamic des boutton contenant les panneaux
