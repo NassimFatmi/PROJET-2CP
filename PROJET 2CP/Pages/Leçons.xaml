@@ -137,26 +137,93 @@
                         <Border Background="{DynamicResource MaterialDesignDivider}"
                         Height="1" HorizontalAlignment="Stretch"
                         SnapsToDevicePixels="True" />
-                        <Expander x:Name="themeinterspriot" HorizontalAlignment="Stretch"
-                          Foreground="White" FontWeight="Bold">
+                      
+                        <Expander HorizontalAlignment="Stretch"
+                              Foreground="White"
+                                  Name="themeinterspriot">
                             <Expander.Header>
-                                <Grid>
+                                <!-- هنا العنوان-->
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="551*"/>
+                                        <ColumnDefinition Width="294*"/>
+                                    </Grid.ColumnDefinitions>
                                     <TextBlock x:Name="intertxt" Text="Intersection et priorité"
-                                       FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-
+                                       FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="295,0,1.2,0" Height="32" VerticalAlignment="Top"/>
                                     <Button x:Name="thm2" Content="Désignation"
                                             Background="{x:Null}"
-                                            VerticalAlignment="Center" HorizontalAlignment="Right"
-                                            BorderBrush="{x:Null}"/>
+                                            VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="{x:Null}" Grid.Column="1" Margin="0,0,-0.4,0"/>
                                 </Grid>
                             </Expander.Header>
                             <Expander.Background>
-                                <SolidColorBrush Color="#FF07A52B" Opacity="0.3"/>
+                                <SolidColorBrush Color="#FFDE03" Opacity="0.3"/>
                             </Expander.Background>
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                                </Grid.Background>
+                                <Label Name="lbl2" Content="Cours :" FontSize="25" Foreground="White" FontWeight="Bold" Margin="15,15,15,0" />
+                                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40,0,40">
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Button x:Name="def" Content="Regle de priorité"  Style="{ StaticResource MaterialDesignFlatButton}" Click="Pdf_Click"  FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"   />
+                                            </Button.Background>
 
-                            <StackPanel Orientation="Vertical">
-                            </StackPanel>
+                                        </Button>
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00"    Height="100" Width="100" Margin="30,0,0,0">
+                                            <StackPanel >
+                                                <Image x:Name="quiz6" Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_defailance" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0"  >
+                                        <Button x:Name="dist" Content="Intersection" Click="Intersection_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"   />
+                                            </Button.Background>
+
+                                        </Button>
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00"   Click="quiz_intersection"   Height="100" Width="100" Margin="30,0,0,0">
+                                            <StackPanel >
+                                                <Image x:Name="quiz7" Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_distance" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+
+
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+                                        <Button x:Name="vit" Content="Depassement et Croisement" Click="Depassement_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                            <Button.Background>
+                                                <SolidColorBrush Color="Black" Opacity="0.2"   />
+                                            </Button.Background>
+
+                                        </Button>
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00" Click="quiz_depassement"   Height="100" Width="100" Margin="30,0,0,0">
+                                            <StackPanel >
+                                                <Image x:Name="quiz8" Width="40" Height="40" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_vitesse" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+
+                                    </StackPanel>
+                                </StackPanel>
+
+
+                            </Grid>
                         </Expander>
+
+                        <!-- هادي لبوردر بش تفصل بيناتهم-->
+                        <Border Background="{DynamicResource MaterialDesignDivider}"
+                        Height="1" HorizontalAlignment="Stretch"
+                        SnapsToDevicePixels="True" />
+
+                        <!-- هدا لكتحب دير وحدة اخرى-->
+                       
                         <Border Background="{DynamicResource MaterialDesignDivider}"
                         Height="1"
                         HorizontalAlignment="Stretch"
