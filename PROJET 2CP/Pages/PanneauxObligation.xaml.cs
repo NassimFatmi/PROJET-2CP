@@ -20,6 +20,7 @@ namespace PROJET_2CP.Pages
           lesson = new NLeçon();
             InitializeComponent();
             creerPanneau();
+            langue();
             DecrirePanneau.lastPage = 3;
         }
         // creation dynamic des boutton contenant les panneaux
@@ -96,6 +97,17 @@ namespace PROJET_2CP.Pages
         private void BackClick(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new Leçons();
+        }
+        private void langue()
+        {
+            if (MainWindow.langue == 0)
+            {
+                click.Content = "Cliquez sur le panneau pour la description ";
+            }
+            else
+            {
+                click.Content = "انقر على الافتة للشرح";
+            }
         }
     }
 }
