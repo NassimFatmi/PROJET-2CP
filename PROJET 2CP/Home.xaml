@@ -66,7 +66,7 @@
                                 VerticalAlignment="Center" HorizontalAlignment="Left"
                                 Margin="60,0,0,0">
                         <Image x:Name="logoimage" Height="25" Width="25"/>
-                        <TextBlock Text="EDautoEcole" VerticalAlignment="Center"
+                        <TextBlock Text="EDcodeDeLaRoute" VerticalAlignment="Center"
                                    Margin="5"/>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">

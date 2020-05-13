@@ -72,7 +72,7 @@
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">لعوج صراح</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">وحيون ليتيسيا</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">موهاب خولة</TextBlock>
-                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right"> عبد مرايم عبد الباسط</TextBlock>
+                <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right"> عبد مرايم عابد الباسط</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">فاطمي نسيم</TextBlock>
                 <TextBlock FontSize="18" Foreground="White" Margin="60 0" HorizontalAlignment="Right">يعلاوي أكلي</TextBlock>
             </StackPanel>

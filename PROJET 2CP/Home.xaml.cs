@@ -130,6 +130,7 @@ namespace PROJET_2CP
             color2.Color = Color.FromRgb(0, 200, 238);
             linearGradientBrush.GradientStops.Add(color2);
 
+            SignIN._Commencer = 0;
             MainWindow.getInstance().Background = linearGradientBrush;
             MainWindow.quizFrame.Content = new LogIN();
         }

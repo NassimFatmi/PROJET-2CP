@@ -25,10 +25,12 @@ namespace PROJET_2CP
     public partial class SignIN : Page
     {
         private DBAccess _connectBDD;
+        public static int _Commencer;
         private string _connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\UtilisateurBDD.mdf;Integrated Security = True";
         public SignIN()
         {
             InitializeComponent();
+            _Commencer = 0;
             logoimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/EDautoEcole.png", UriKind.RelativeOrAbsolute));
             franceicon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Francais.png", UriKind.RelativeOrAbsolute));
             arabicon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Arabic.png", UriKind.RelativeOrAbsolute));
@@ -126,6 +128,7 @@ namespace PROJET_2CP
                     {
                         LogIN.LoggedUser = apprenant;
                         LogIN.LoggedUser.Theme = true;
+                        _Commencer = 1;
                         MainWindow.quizFrame.Content = new Home();
                         Home.getinstanceTuto().Visibility = Visibility.Visible;
                     }
@@ -165,15 +168,17 @@ namespace PROJET_2CP
             string creatTableQuery = "CREATE TABLE "+userID+"Trace(" +
                                      "[Id]    INT NOT NULL PRIMARY KEY IDENTITY," +
                                      "[Niveau]    INT  NULL," +
-                                     "[Theme]   VARCHAR(20) NULL," +
+                                     "[Theme]   VARCHAR(MAX) NULL," +
+                                     "[Lecon]   VARCHAR(MAX) NULL," +
                                      "[Test]    INT  NULL," +
-                                     "[Code]    INT  NULL," +
-                                     "[Reponse] bit NULL)";
+                                     "[Code]    INT  NULL," +                // ID 
+                                     "[ReponseText]   NVARCHAR(MAX) NULL," + // Answer content
+                                     "[Reponse] bit NULL)";                  // V.V de la réponse 
 
             string testNoteCreatTableQuery = "CREATE TABLE " + userID + "NoteTest(" +
                                      "[Id]    INT NOT NULL PRIMARY KEY IDENTITY," +
                                      "[Niveau]    INT  NULL," +
-                                     "[Theme]   VARCHAR(20) NULL," +
+                                     "[Theme]   VARCHAR(MAX) NULL," +
                                      "[Test]    INT  NULL," +
                                      "[Note]    INT  NULL,)";
 
@@ -211,6 +216,10 @@ namespace PROJET_2CP
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(confirmepasswordtxt, "Confirmer le mot de passe");
                 imagebtn.Text = "Image";
                 creercompteconfirme.Content = "Créer comtpe";
+                proverbe1.Content = "Respecte le code de la route";
+                proverbe2.Content = "et le code de la route te respectera.";
+                pub1.Content = "Créer votre compte gratuitement et obtenir";
+                pub2.Content = "toutes les fonctionalités";
             }
             else
             {
@@ -224,7 +233,10 @@ namespace PROJET_2CP
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(confirmepasswordtxt, "تأكيد كلمة المرور");
                 imagebtn.Text = "صورة";
                 creercompteconfirme.Content = "انشئ الحساب";
-
+                proverbe1.Content = "احترم قانون المرور";
+                proverbe2.Content = "و هو بدلك سيحترمك ";
+                pub1.Content = "افنح حسابك مجانا";
+                pub2.Content = "واحصل على جميع الميزات";
             }
         }
         private void langueCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -19,17 +19,21 @@
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"
                     Margin="0,90,0,0">
                 <Image x:Name="logoimage" Width="200" Height="200" HorizontalAlignment="Center"/>
-                <Label Content="EDautoEcole" HorizontalAlignment="Center" 
+                <Label Content="EDcodeDeLaRoute" HorizontalAlignment="Center" 
                    Foreground="White" FontSize="30" FontWeight="DemiBold" Margin="0,0,0,50"/>
-                <Border CornerRadius="27">
+              <Border CornerRadius="27" Width="450">
                     <Border.Background>
-                        <SolidColorBrush Color="Black" Opacity="0.2"/>
+                        <SolidColorBrush Color="Black" Opacity="0.4"/>
                     </Border.Background>
                     <StackPanel>
-                        <Label Content="Respecte le code de la route " HorizontalAlignment="Center" 
+                        <Label x:Name="pub1" Content="Créer votre compte gratuitement et obtenir" HorizontalAlignment="Center" 
+                       Foreground="White" FontSize="18" FontWeight="Light" Margin="0,10,0,0"/>
+                        <Label x:Name="pub2" Content="toutes les fonctionalités" HorizontalAlignment="Center" 
+                       Foreground="White" FontSize="18" FontWeight="Light" Margin="0,0,0,20"/>
+                        <Label x:Name="proverbe1" Content="Respecte le code de la route " HorizontalAlignment="Center" 
                             Foreground="White" FontSize="25"
                             Margin="20,20,20,0"/>
-                        <Label Content="et le code de la route te respectera." HorizontalAlignment="Center" 
+                        <Label x:Name="proverbe2" Content="et le code de la route te respectera." HorizontalAlignment="Center" 
                             Foreground="White" FontSize="25"
                             Margin="20,10,20,20"/>
                     </StackPanel>

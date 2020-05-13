@@ -26,6 +26,18 @@ namespace PROJET_2CP
             back2image.Fill = new ImageBrush(new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/back2.png", UriKind.RelativeOrAbsolute)));
             guestMode();
             initialiserLangue();
+
+            if (SignIN._Commencer == 1)
+            {
+                commencertxt.Visibility = Visibility.Visible;
+                Reprendretxt.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                commencertxt.Visibility = Visibility.Collapsed;
+                Reprendretxt.Visibility = Visibility.Visible;
+            }
+            
             
         }
 
@@ -45,6 +57,7 @@ namespace PROJET_2CP
             if (MainWindow.langue == 0)
             {   //la langue français
                 commencertxt.Text = "Commencer";
+                Reprendretxt.Text = "Reprendre";
                 statestxt.Text = "Statistiques";
                 parametretxt.Text = "Paramètres";
             }
@@ -54,6 +67,7 @@ namespace PROJET_2CP
                 commencertxt.Text = "ابدأ";
                 statestxt.Text = "احصائيات";
                 parametretxt.Text = "اعدادات";
+                Reprendretxt.Text = "تابع التعلم";
             }
         }
         /*<<
