@@ -49,7 +49,7 @@ namespace PROJET_2CP
             if (MainWindow.langue == 0)
             {
                 //la langue français
-                title.Content = "Paramètre";
+                title.Content = "Paramètres";
                 back.Text = "Retour";
                 userid.Text = "Utilisateur ID";
                 nom.Text = "Nom";

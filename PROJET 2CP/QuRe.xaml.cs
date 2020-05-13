@@ -15,11 +15,20 @@ namespace PROJET_2CP
     {
         private int langue = MainWindow.langue;
         private int last = 1;
+        private bool couleur = LogIN.LoggedUser.Theme;
+        SolidColorBrush color = new SolidColorBrush();
+        SolidColorBrush color2 = new SolidColorBrush();
+        SolidColorBrush color3 = new SolidColorBrush();
+        SolidColorBrush color4 = new SolidColorBrush();
         public QuRe()
         {
             InitializeComponent();
             creerLesson();
             configurerLangue();
+            color.Color = Color.FromArgb(40, 0, 191, 255);
+            color2.Color = Color.FromArgb(20, 135, 206, 235);
+            color3.Color = Color.FromArgb(60, 255, 0, 0);
+            color4.Color = Color.FromArgb(40, 0, 0, 0);
         }
         private void configurerLangue()
         {
@@ -66,7 +75,38 @@ namespace PROJET_2CP
             b.Height = 60;
             b.Width = 150;
             b.Margin = new Thickness(10, 0, 10, 0);
-            b.Background = Brushes.SkyBlue;
+            if(couleur == true)
+            {
+                b.Background = Brushes.SkyBlue;
+                e1.Background = color;
+                g1.Background = color2;
+                e2.Background = color;
+                g2.Background = color2;
+                e3.Background = color;
+                g3.Background = color2;
+                e4.Background = color;
+                g4.Background = color2;
+                e5.Background = color;
+                g5.Background = color2;
+                e6.Background = color;
+                g6.Background = color2;
+            }
+            else
+            {
+                e1.Background = color3;
+                g1.Background = color4;
+                e2.Background = color3;
+                g2.Background = color4;
+                e3.Background = color3;
+                g3.Background = color4;
+                e4.Background = color3;
+                g4.Background = color4;
+                e5.Background = color3;
+                g5.Background = color4;
+                e6.Background = color3;
+                g6.Background = color4;
+                b.Background = Brushes.DarkRed;
+            }
             b.BorderBrush = null;
             b.Tag = 1;
             b.Click += Button_Click;
@@ -86,7 +126,38 @@ namespace PROJET_2CP
                 b.Height = 60;
                 b.Width = 150;
                 b.Margin = new Thickness(10, 0, 10, 0);
-                b.Background = Brushes.DeepSkyBlue;
+                if (couleur == true)
+                {
+                    b.Background = Brushes.DeepSkyBlue;
+                    e1.Background = color;
+                    g1.Background = color2;
+                    e2.Background = color;
+                    g2.Background = color2;
+                    e3.Background = color;
+                    g3.Background = color2;
+                    e4.Background = color;
+                    g4.Background = color2;
+                    e5.Background = color;
+                    g5.Background = color2;
+                    e6.Background = color;
+                    g6.Background = color2;
+                }
+                else
+                {
+                    e1.Background = color3;
+                    g1.Background = color4;
+                    e2.Background = color3;
+                    g2.Background = color4;
+                    e3.Background = color3;
+                    g3.Background = color4;
+                    e4.Background = color3;
+                    g4.Background = color4;
+                    e5.Background = color3;
+                    g5.Background = color4;
+                    e6.Background = color3;
+                    g6.Background = color4;
+                    b.Background = Brushes.Red;
+                }
                 b.BorderBrush = null;
                 b.Tag = i;
                 b.Click += Button_Click;
@@ -109,11 +180,74 @@ namespace PROJET_2CP
             {
                if((int)((Button)child).Tag==last)
                 {
-                    ((Button)child).Background = Brushes.DeepSkyBlue;
+                    if(couleur== true)
+                    {
+                        ((Button)child).Background = Brushes.DeepSkyBlue;
+                        e1.Background = color;
+                        g1.Background = color2;
+                        e2.Background = color;
+                        g2.Background = color2;
+                        e3.Background = color;
+                        g3.Background = color2;
+                        e4.Background = color;
+                        g4.Background = color2;
+                        e5.Background = color;
+                        g5.Background = color2;
+                        e6.Background = color;
+                        g6.Background = color2;
+                    }
+                    else
+                    {
+                        e1.Background = color3;
+                        g1.Background = color4;
+                        e2.Background = color3;
+                        g2.Background = color4;
+                        e3.Background = color3;
+                        g3.Background = color4;
+                        e4.Background = color3;
+                        g4.Background = color4;
+                        e5.Background = color3;
+                        g5.Background = color4;
+                        e6.Background = color3;
+                        g6.Background = color4;
+                        ((Button)child).Background  = Brushes.Red;
+                    }
+                    
                 }
             }
-            ((Button)sender).Background = Brushes.SkyBlue;
-           
+
+            if (couleur == true)
+            {
+                ((Button)sender).Background = Brushes.SkyBlue;
+                e1.Background = color;
+                g1.Background = color2;
+                e2.Background = color;
+                g2.Background = color2;
+                e3.Background = color;
+                g3.Background = color2;
+                e4.Background = color;
+                g4.Background = color2;
+                e5.Background = color;
+                g5.Background = color2;
+                e6.Background = color;
+                g6.Background = color2;
+            }
+            else
+            {
+                e1.Background = color3;
+                g1.Background = color4;
+                e2.Background = color3;
+                g2.Background = color4;
+                e3.Background = color3;
+                g3.Background = color4;
+                e4.Background = color3;
+                g4.Background = color4;
+                e5.Background = color3;
+                g5.Background = color4;
+                e6.Background = color3;
+                g6.Background = color4;
+                ((Button)sender).Background = Brushes.DarkRed;
+            }
             e1.IsExpanded = false;
             e2.IsExpanded = false;
             e3.IsExpanded = false;

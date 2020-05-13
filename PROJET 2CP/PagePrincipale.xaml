@@ -23,7 +23,8 @@
 
                 <StackPanel>
                     <materialDesign:PackIcon HorizontalAlignment="Center" Kind="Car" Height="60" Width="60" Margin="20"/>
-                    <TextBlock x:Name="commencertxt" Text="Commencer" TextAlignment="Center" FontSize="25"/>
+                    <TextBlock x:Name="commencertxt" Visibility="Collapsed" Text="Commencer" TextAlignment="Center" FontSize="25"/>
+                    <TextBlock x:Name="Reprendretxt" Text="Reprendre" TextAlignment="Center" FontSize="25"/>
                 </StackPanel>
             </Button>
 
