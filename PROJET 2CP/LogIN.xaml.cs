@@ -181,7 +181,9 @@ namespace PROJET_2CP
         {
             _LoggedUser = ((Apprenant)guestMode.Tag);
             _LoggedUser.Theme = true;
+            SignIN._Commencer = 1;
             MainWindow.quizFrame.Content = new Home();
+            
         }
 
         private void connectWithPassword(object sender, RoutedEventArgs e)

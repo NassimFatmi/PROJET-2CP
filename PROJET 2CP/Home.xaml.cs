@@ -25,9 +25,11 @@ namespace PROJET_2CP
     {
         public static Frame mainFrame;
         public static Grid _tutogrid;
+        public static Ellipse profile_pic;
         public Home()
         {
             InitializeComponent();
+            profile_pic = avatarFrame;
             logoimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/EDautoEcole.png", UriKind.RelativeOrAbsolute));
             _tutogrid = tutogrid;
             initialiserLangue();
@@ -250,6 +252,7 @@ namespace PROJET_2CP
             if (LogIN.LoggedUser.ID == 0 && LogIN.LoggedUser.UtilisateurID.Equals("Guest"))
             {
                 settingsLV.IsEnabled = false;
+                profilebtn.IsEnabled=false;
                 statesLV.IsEnabled = false;
                 popup1.IsEnabled = false;
                 popup2.IsEnabled = false;
@@ -288,7 +291,7 @@ namespace PROJET_2CP
                 lvitem1.Text = "احصائيات";
                 lvitem2.Text = "اعدادات";
                 lvitem3.Text = "مساعدة";
-
+                lvitem4.Text = "سؤال جواب";
 
                 popup1.Content = "اعدادات";
                 popup2.Content = "مساعدة";
@@ -367,6 +370,10 @@ namespace PROJET_2CP
         private void Aide_Click(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new Aide();
+        }
+        public static Ellipse getProfilepic()
+        {
+            return profile_pic;
         }
     }
 }
