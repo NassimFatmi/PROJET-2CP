@@ -43,7 +43,7 @@
                     <RowDefinition Height="70"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-
+              
                 <Button  VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}"
                         Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}">
                     <StackPanel Orientation="Horizontal">
@@ -51,7 +51,7 @@
                         <TextBlock  Foreground="White" FontSize="12" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Button>
-
+                
 
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
@@ -62,7 +62,7 @@
 
                     <StackPanel Grid.Row="1" Orientation="Vertical"
                         HorizontalAlignment="Center" VerticalAlignment="Top">
-
+                       
                         <Button x:Name="repA" Click="repA_Click"
                         Width="600" Height="60"
                         Margin="5,50,5,5"
@@ -152,7 +152,7 @@
                     <Border.Background>
                         <SolidColorBrush Color="Black" />
                     </Border.Background>
-                    <Label Content="Explication" HorizontalAlignment="Center" Foreground="White"    />
+            <Label Content="Explication" HorizontalAlignment="Center" Foreground="White"    />
                 </Border>
             </StackPanel>
             <StackPanel  Margin="0,0,0,250" >
@@ -168,5 +168,41 @@
 
             </StackPanel>
         </StackPanel>
+        <Grid x:Name="bilanQuiz" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="DeepSkyBlue" Opacity="0.5"/>
+            </Grid.Background>
+            <Label x:Name="remarque" Content="Remarque :" FontSize="32" FontWeight="Bold"
+                  Height="60" VerticalAlignment="Top" HorizontalAlignment="Center"
+                   Foreground="White" Margin="10,10,0,0"/>
+
+            <Border  VerticalAlignment="Center" HorizontalAlignment="Center"
+                     CornerRadius="27" Height="300" Width="750">
+                <Border.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.3"/>
+                </Border.Background>
+                <Grid>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                                Margin="264,51,136.4,51" Width="350">
+                        <Label x:Name="lbl" Content="Note" FontSize="60" FontWeight="Bold"
+                                Height="90" HorizontalAlignment="Center"
+                                Foreground="White"/>
+                        <Label x:Name="quizMessage" Content="Message" Margin="10"
+                                FontSize="35" HorizontalAlignment="Center"
+                                Foreground="White" />
+                    </StackPanel>
+
+                    <Image x:Name="reactionBilan" Height="250" Width="250"
+                   VerticalAlignment="Center" HorizontalAlignment="Left"
+                        Margin="20"/>
+                </Grid>
+            </Border>
+
+
+            <Button Content="Quitter" Click="lbl_Click"
+                    Width="150" Height="50"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                    Margin="0,0,0,50"/>
+        </Grid>
     </Grid>
 </Page>

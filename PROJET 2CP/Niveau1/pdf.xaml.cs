@@ -53,5 +53,9 @@ namespace PROJET_2CP
             {
             }
         }
+        private void backClick(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Pages.Leçons();
+        }
     }
 }

@@ -28,11 +28,18 @@
                 </StackPanel>
         <ScrollViewer>
 
-            <StackPanel x:Name="stk">
+            <StackPanel x:Name="stk" Height="300">
                 
             </StackPanel>
         </ScrollViewer>
         </StackPanel>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="red" BorderBrush="{x:Null}" Click="backClick"  Margin="10,10,0,0"  >
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18" Foreground="White"/>
+                <TextBlock x:Name="back" Text="Retour" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+            </StackPanel>
+        </Button>
+    
     </Grid>
 
 </Page>

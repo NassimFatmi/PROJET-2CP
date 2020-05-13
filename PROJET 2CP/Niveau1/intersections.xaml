@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PROJET_2CP"
             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="610" d:DesignWidth="950"
       Title="intersections">
 
     <Grid>
@@ -27,13 +27,20 @@
                     <materialDesign:PackIcon Kind="Play" Foreground="Black" Height="40" Width="40"  />
                 </Button>
             </StackPanel>
-            <ScrollViewer>
+            <ScrollViewer Height="300">
 
                 <StackPanel x:Name="stk">
 
                 </StackPanel>
             </ScrollViewer>
         </StackPanel>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="red" BorderBrush="{x:Null}" Click="backClick"  Margin="10,10,0,0"  >
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18" Foreground="White"/>
+                <TextBlock x:Name="back" Text="Retour" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+            </StackPanel>
+        </Button>
+    
     </Grid>
 
 

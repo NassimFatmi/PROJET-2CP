@@ -191,5 +191,9 @@ namespace PROJET_2CP
             SoundPlayer sp = new SoundPlayer(Convert.ToString(num) + ".wav");
             sp.Play();
         }
+        private void backClick(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Pages.Leçons();
+        }
     }
 }

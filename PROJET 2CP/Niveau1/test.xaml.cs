@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PROJET_2CP.Pages;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Media;
@@ -40,6 +42,8 @@ namespace PROJET_2CP
         private DispatcherTimer dt;
         private int nbBonneReponse = 0;
         private bool tempEcoulé = true;
+        private int _codeQst ;
+        private string _themeQst;
         //private  string repInteractive;
 
         public test(int bi, int bs)
@@ -97,7 +101,8 @@ namespace PROJET_2CP
                     Random aleatoire = new Random();
                     arr = initArray(4, 5);
                     idImage = dr["Test"].ToString() + "_" + dr["Code"].ToString() + ".png";
-
+                    _codeQst = Int32.Parse(dr["Id"].ToString());
+                    _themeQst = "";
                     if (MainWindow.langue == 0)
                     {
                         //next.Content = "Passer à la question suivante";
@@ -195,6 +200,7 @@ namespace PROJET_2CP
 
         private void next_Click(object sender, RoutedEventArgs e)
         {
+            SoundPlayer soundPlayer;
 
             tmp++;
 
@@ -207,6 +213,7 @@ namespace PROJET_2CP
                 repB.Visibility = Visibility.Collapsed;
                 repC.Visibility = Visibility.Collapsed;
                 repD.Visibility = Visibility.Collapsed;
+                img.Visibility = Visibility.Collapsed;
 
                 Label lbl = new Label();
                 lbl.HorizontalAlignment = HorizontalAlignment.Center;
@@ -215,15 +222,58 @@ namespace PROJET_2CP
                 lbl.HorizontalContentAlignment = HorizontalAlignment.Center;
                 lbl.VerticalContentAlignment = VerticalAlignment.Center;
                 lbl.FontSize = 24;
-                if (MainWindow.langue == 0)
-                {
-                    lbl.Content = "Le nombre de bonne reponse est " + nbBonneReponse.ToString() + " / 9";
-                }
-                if (MainWindow.langue == 1)
-                {
-                    lbl.Content = nbBonneReponse.ToString() + " / 9  " + "عدد الاجوبة الصحيحة هو";
-                }
+               
                 gd.Children.Add(lbl);
+
+
+                bilanQuiz.Visibility = Visibility.Visible;
+                lbl.Content = nbBonneReponse.ToString() + " / 9";
+
+                if (MainWindow.langue == 0)
+                    remarque.Content = "Remarques";
+                else
+                    remarque.Content = "ملاحظات ";
+
+                if (nbBonneReponse < 5)
+                {
+                    if (MainWindow.langue == 0)
+                        quizMessage.Content = "Revoir le cour";
+                    else
+                        quizMessage.Content = "اعد مراجعة الدرس ";
+                    try
+                    {
+                        reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/bad.png", UriKind.RelativeOrAbsolute));
+                        soundPlayer = new SoundPlayer(@"SoundsEffects\disappointment.wav");
+                        soundPlayer.Play();
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                else
+                {
+                    if (MainWindow.langue == 0)
+                        quizMessage.Content = "Bravo !";
+                    else
+                        quizMessage.Content = "احسنت";
+                    Random random = new Random();
+                    int rnd = random.Next(2);
+                    try
+                    {
+                        if (rnd == 0)
+                            reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/200iq.jpg", UriKind.RelativeOrAbsolute));
+                        else
+                            reactionBilan.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/brain.png", UriKind.RelativeOrAbsolute));
+
+                        soundPlayer = new SoundPlayer(@"SoundsEffects\clap.wav");
+                        soundPlayer.Play();
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
                 dt.Stop();
                 timer.Visibility = Visibility.Collapsed;
             }
@@ -246,27 +296,41 @@ namespace PROJET_2CP
             spp.Visibility = Visibility.Collapsed;
         }
 
+        
         private void repA_Click(object sender, RoutedEventArgs e)
         {
+            
+            txt.Text = quest;
             //Calcul de stats
             //sauvgarder la question et la bonne reponse et la reponse de l'utilisateur
             if (propA == bonnRep)
             {
+                saveAnswer(true, 1, _codeQst, _themeQst);
                 repA.Foreground = Brushes.Green;
                 nbBonneReponse++;
-                txt.Text = quest;
-                reponseNext.Text = "Bonne reponse";
-                reponseNext.Foreground = Brushes.GreenYellow;
-                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/happy.png", UriKind.RelativeOrAbsolute));
 
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Bonne reponse";
+                else
+                    reponseNext.Text = "اجابة صحيحة";
+
+                reponseNext.Foreground = Brushes.GreenYellow;
+
+                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
             }
             else
             {
-                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/sad.png", UriKind.RelativeOrAbsolute));
+                saveAnswer(false,1, _codeQst, _themeQst);
 
-                txt.Text = quest;
-                reponseNext.Text = "Mauvaise reponse";
+                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
+
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Mauvaise reponse";
+                else
+                    reponseNext.Text = "اجابة خاطئة";
+
                 reponseNext.Foreground = Brushes.Red;
+
                 repA.Foreground = Brushes.Red;
                 if (propB == bonnRep)
                 {
@@ -287,30 +351,45 @@ namespace PROJET_2CP
             repD.IsEnabled = false;
             repA.IsEnabled = false;
             next.Visibility = Visibility.Visible;
-            spp.Visibility = Visibility.Visible;
             timer.Visibility = Visibility.Collapsed;
+            spp.Visibility = Visibility.Visible;
             tempEcoulé = false;
         }
 
+        
         private void repB_Click(object sender, RoutedEventArgs e)
         {
+
+            txt.Text = quest;
+            //Calcul de stats
+            //sauvgarder la question et la bonne reponse et la reponse de l'utilisateur
             if (propB == bonnRep)
             {
-                reponseNext.Text = "Bonne reponse";
-                reponseNext.Foreground = Brushes.GreenYellow;
-                txt.Text = quest;
-                nbBonneReponse++;
+                saveAnswer(true, 1, _codeQst, _themeQst);
                 repB.Foreground = Brushes.Green;
+                nbBonneReponse++;
 
-                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/happy.png", UriKind.RelativeOrAbsolute));
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Bonne reponse";
+                else
+                    reponseNext.Text = "اجابة صحيحة";
 
+                reponseNext.Foreground = Brushes.GreenYellow;
+
+                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
             }
             else
             {
-                txt.Text = quest;
-                reponseNext.Text = "Mauvaise reponse";
+                saveAnswer(false, 1, _codeQst, _themeQst);
+
+                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
+
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Mauvaise reponse";
+                else
+                    reponseNext.Text = "اجابة خاطئة";
+
                 reponseNext.Foreground = Brushes.Red;
-                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/sad.png", UriKind.RelativeOrAbsolute));
 
                 repB.Foreground = Brushes.Red;
                 if (propA == bonnRep)
@@ -325,37 +404,51 @@ namespace PROJET_2CP
                 {
                     repD.Foreground = Brushes.Green;
                 }
-                //Calcul de stats
+
             }
-            repA.IsEnabled = false;
-            repC.IsEnabled = false;
             repB.IsEnabled = false;
+            repC.IsEnabled = false;
             repD.IsEnabled = false;
+            repA.IsEnabled = false;
             next.Visibility = Visibility.Visible;
-            spp.Visibility = Visibility.Visible;
             timer.Visibility = Visibility.Collapsed;
+            spp.Visibility = Visibility.Visible;
             tempEcoulé = false;
         }
 
+
         private void repC_Click(object sender, RoutedEventArgs e)
         {
+
+            txt.Text = quest;
+            //Calcul de stats
+            //sauvgarder la question et la bonne reponse et la reponse de l'utilisateur
             if (propC == bonnRep)
             {
-                reponseNext.Text = "Bonne reponse";
-                reponseNext.Foreground = Brushes.GreenYellow;
-                txt.Text = quest;
-                nbBonneReponse++;
+                saveAnswer(true, 1, _codeQst, _themeQst);
                 repC.Foreground = Brushes.Green;
+                nbBonneReponse++;
 
-                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/happy.png", UriKind.RelativeOrAbsolute));
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Bonne reponse";
+                else
+                    reponseNext.Text = "اجابة صحيحة";
 
+                reponseNext.Foreground = Brushes.GreenYellow;
+
+                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
             }
             else
             {
-                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/sad.png", UriKind.RelativeOrAbsolute));
+                saveAnswer(false, 1, _codeQst, _themeQst);
 
-                txt.Text = quest;
-                reponseNext.Text = "Mauvaise reponse";
+                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
+
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Mauvaise reponse";
+                else
+                    reponseNext.Text = "اجابة خاطئة";
+
                 reponseNext.Foreground = Brushes.Red;
 
                 repC.Foreground = Brushes.Red;
@@ -371,39 +464,59 @@ namespace PROJET_2CP
                 {
                     repD.Foreground = Brushes.Green;
                 }
-                //Calcul de stats
+
             }
             repB.IsEnabled = false;
-            repA.IsEnabled = false;
-            repD.IsEnabled = false;
             repC.IsEnabled = false;
+            repD.IsEnabled = false;
+            repA.IsEnabled = false;
             next.Visibility = Visibility.Visible;
-            spp.Visibility = Visibility.Visible;
             timer.Visibility = Visibility.Collapsed;
+            spp.Visibility = Visibility.Visible;
             tempEcoulé = false;
         }
 
+
+
         private void repD_Click(object sender, RoutedEventArgs e)
         {
+
+            txt.Text = quest;
+            //Calcul de stats
+            //sauvgarder la question et la bonne reponse et la reponse de l'utilisateur
             if (propD == bonnRep)
             {
-                reponseNext.Text = "Bonne reponse";
-                reponseNext.Foreground = Brushes.GreenYellow;
-                nbBonneReponse++;
-                txt.Text = quest;
+                saveAnswer(true, 1, _codeQst, _themeQst);
                 repD.Foreground = Brushes.Green;
+                nbBonneReponse++;
 
-                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/happy.png", UriKind.RelativeOrAbsolute));
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Bonne reponse";
+                else
+                    reponseNext.Text = "اجابة صحيحة";
 
+                reponseNext.Foreground = Brushes.GreenYellow;
+
+                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
             }
             else
             {
-                nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/sad.png", UriKind.RelativeOrAbsolute));
+                saveAnswer(false, 1, _codeQst, _themeQst);
 
-                reponseNext.Text = "Mauvaise reponse";
+                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
+
+                if (MainWindow.langue == 0)
+                    reponseNext.Text = "Mauvaise reponse";
+                else
+                    reponseNext.Text = "اجابة خاطئة";
+
                 reponseNext.Foreground = Brushes.Red;
-                txt.Text = quest;
+
                 repD.Foreground = Brushes.Red;
+                if (propA == bonnRep)
+                {
+                    repA.Foreground = Brushes.Green;
+                }
                 if (propB == bonnRep)
                 {
                     repB.Foreground = Brushes.Green;
@@ -412,21 +525,18 @@ namespace PROJET_2CP
                 {
                     repC.Foreground = Brushes.Green;
                 }
-                if (propA == bonnRep)
-                {
-                    repA.Foreground = Brushes.Green;
-                }
-                //Calcul de stats
+
             }
             repB.IsEnabled = false;
             repC.IsEnabled = false;
-            repA.IsEnabled = false;
             repD.IsEnabled = false;
+            repA.IsEnabled = false;
             next.Visibility = Visibility.Visible;
-            spp.Visibility = Visibility.Visible;
             timer.Visibility = Visibility.Collapsed;
+            spp.Visibility = Visibility.Visible;
             tempEcoulé = false;
         }
+
         private void Distimer()
         {
             dt = new DispatcherTimer();
@@ -490,7 +600,58 @@ namespace PROJET_2CP
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            //MainWindow.getInstance().Content = new NiveauPage();
+            Home.mainFrame.Content = new Pages.Leçons();
+        }
+        private void lbl_Click(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Leçons();
+        }
+        private void saveAnswer(bool reponse, int niveau, int code, string theme)
+        {
+            // Code == ID //
+            string connString = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf; Integrated Security = True";
+
+            DataTable savedData = new DataTable();
+
+            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            try
+            {
+                conn.Open();
+                // create data adapter
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(savedData);
+                da.Dispose();
+
+                if (savedData.Rows.Count == 1)
+                {
+                    // Si l'apprenant a répondu a cette question on fait la maj dans sa Table dans Save BDD
+                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+                    cmd = new SqlCommand(query, conn);
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+
+                    //Si l'apprenant n'a pas répondu a cette question on l'insert sa réponse
+                    query = "INSERT INTO " + LogIN.LoggedUser.UtilisateurID + "Trace(Niveau,Theme,Test,Code,Reponse) VALUES('" + niveau.ToString() + "','" + theme + "', '' ,'" + code.ToString() + "','" + reponse + "')";
+                    cmd = new SqlCommand(query, conn);
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+                MessageBox.Show("error save Db quiz Testniveau 1 ");
+            }
         }
     }
 }
