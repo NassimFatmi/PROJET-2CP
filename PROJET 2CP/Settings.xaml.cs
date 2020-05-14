@@ -333,6 +333,12 @@ namespace PROJET_2CP
                 }
 
                 LogIN.LoggedUser.Image = imagepathtxt.Text;
+                try
+                {
+                    Home.getProfilepic().Fill = new ImageBrush(new BitmapImage(new Uri(LogIN.LoggedUser.Image)));
+                }
+                catch (Exception) { }
+             
             }
         }
 
