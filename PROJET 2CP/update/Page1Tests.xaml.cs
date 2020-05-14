@@ -173,6 +173,14 @@ namespace PROJET_2CP.update
         {
             reaction.Visibility = Visibility.Visible;
             total++;
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             if ((string)((Button)sender).Tag == bonnRep)
             {
                 saveAnswer(true,1,0,"Test1");
@@ -182,6 +190,15 @@ namespace PROJET_2CP.update
                 p1.Foreground = Brushes.Green;
                 p1.BorderBrush = Brushes.Green;
                 nbBonneReponse++;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : "+ bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
             }
             else
             {
@@ -191,6 +208,15 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p1.Foreground = Brushes.Red;
                 p1.BorderBrush = Brushes.Red;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Tag;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + (string)((Button)sender).Tag;
+                }
+                votre_reponse.Foreground = Brushes.Red;
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;
@@ -204,6 +230,14 @@ namespace PROJET_2CP.update
         private void p2_Click(object sender, RoutedEventArgs e)
         {
             total++;
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
@@ -214,6 +248,15 @@ namespace PROJET_2CP.update
                 p2.Foreground = Brushes.Green;
                 p2.BorderBrush = Brushes.Green;
                 nbBonneReponse++;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                };
+                votre_reponse.Foreground = Brushes.Green;
             }
             else
             {
@@ -223,6 +266,15 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p2.Foreground = Brushes.Red;
                 p2.BorderBrush = Brushes.Red;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Tag;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + (string)((Button)sender).Tag;
+                }
+                votre_reponse.Foreground = Brushes.Red;
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;
@@ -235,6 +287,14 @@ namespace PROJET_2CP.update
         private void p3_Click(object sender, RoutedEventArgs e)
         {
             total++;
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
@@ -245,6 +305,15 @@ namespace PROJET_2CP.update
                 p3.Foreground = Brushes.Green;
                 p3.BorderBrush = Brushes.Green;
                 nbBonneReponse++;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
             }
             else
             {
@@ -254,6 +323,15 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p3.Foreground = Brushes.Red;
                 p3.BorderBrush = Brushes.Red;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Tag;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + (string)((Button)sender).Tag;
+                }
+                votre_reponse.Foreground = Brushes.Red;
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;
@@ -266,6 +344,14 @@ namespace PROJET_2CP.update
         private void p4_Click(object sender, RoutedEventArgs e)
         {
             total++;
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
@@ -276,6 +362,15 @@ namespace PROJET_2CP.update
                 p4.Foreground = Brushes.Green;
                 p4.BorderBrush = Brushes.Green;
                 nbBonneReponse++;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
             }
             else
             {
@@ -285,6 +380,15 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p4.Foreground = Brushes.Red;
                 p4.BorderBrush = Brushes.Red;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Tag;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + (string)((Button)sender).Tag;
+                }
+                votre_reponse.Foreground = Brushes.Red;
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;

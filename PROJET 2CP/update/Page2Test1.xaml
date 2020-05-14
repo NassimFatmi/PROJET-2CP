@@ -68,11 +68,39 @@
                 </Button.Background>
             </Button>
         </WrapPanel>
-
         <Button Grid.Column="1" x:Name="next" Click="Button_Click"
                     materialDesign:ButtonAssist.CornerRadius="25" BorderBrush="{x:Null}" 
                     VerticalAlignment="Center" HorizontalAlignment="Center"
-                    Height="150" Width="400" Visibility="Collapsed">
+                    Height="300" Width="700" Visibility="Collapsed">
+            <Button.Background>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Button.Background>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="votre_reponse" Height="50" Width="200" FontSize="20" TextAlignment="Center"/>
+                     <Image x:Name="votre_panneau" Height="120" Width="120"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                        <TextBlock x:Name="bonne_reponse" Height="50" Width="200" FontSize="20" TextAlignment="Center" />
+                    <Image x:Name="bon_panneau" Height="120" Width="120"/>
+                </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image x:Name="reaction" Height="100" Width="100"/>
+                    <StackPanel VerticalAlignment="Center" >
+                        <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="40" Height="40"
+                                             HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="Suivant" Text="Suivant" HorizontalAlignment="Center"
+                               FontSize="15"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Button>
+        <!-- <Button Grid.Column="1" x:Name="next" Click="Button_Click"
+                    materialDesign:ButtonAssist.CornerRadius="25" BorderBrush="{x:Null}" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Height="150" Width="400" Visibility="Visible">
             <Button.Background>
                 <SolidColorBrush Color="Black" Opacity="0.6"/>
             </Button.Background>
@@ -85,6 +113,6 @@
                                FontSize="14"/>
                 </StackPanel>
             </StackPanel>
-        </Button>
+        </Button>-->
     </Grid>
 </Page>

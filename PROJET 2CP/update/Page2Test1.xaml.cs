@@ -42,9 +42,20 @@ namespace PROJET_2CP.update
             creerQuestion();
             afficherQuestion();
             Distimer();
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : ";
+                votre_reponse.Text = "Votre réponse : ";
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة  ";
+                votre_reponse.Text = "إجابتك";
+            }
         }
         public void creerQuestion()
         {
+
             SqlConnection connection = new SqlConnection($@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True");
             SqlCommand cmd = new SqlCommand("select * from [Quiz] where Id='" + Convert.ToString(tab[tag]) + "'", connection);
             SqlDataReader dr;
@@ -152,8 +163,10 @@ namespace PROJET_2CP.update
         }
         private void p1_Click(object sender, RoutedEventArgs e)
         {
+            bon_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + bonnRep + "_off.png", UriKind.RelativeOrAbsolute));
             Page1Tests.total++;
             reaction.Visibility = Visibility.Visible;
+           
             if ((string)((Button)sender).Tag == bonnRep)
             {
                 saveAnswer(true,1,0,"Test1");
@@ -163,6 +176,8 @@ namespace PROJET_2CP.update
                 p1.Foreground = Brushes.Green;
                 p1.BorderBrush = Brushes.Green;
                 Page1Tests.nbBonneReponse++;
+                votre_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + bonnRep + "_off.png", UriKind.RelativeOrAbsolute));
+                votre_reponse.Foreground = Brushes.Green;
             }
             else
             {
@@ -172,6 +187,8 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p1.Foreground = Brushes.Red;
                 p1.BorderBrush = Brushes.Red;
+                votre_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + (string)((Button)sender).Tag + "_off.png", UriKind.RelativeOrAbsolute));
+                votre_reponse.Foreground = Brushes.Red;
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;
@@ -184,6 +201,7 @@ namespace PROJET_2CP.update
 
         private void p2_Click(object sender, RoutedEventArgs e)
         {
+            bon_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + bonnRep + "_off.png", UriKind.RelativeOrAbsolute));
             Page1Tests.total++;
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
@@ -195,6 +213,8 @@ namespace PROJET_2CP.update
                 p2.Foreground = Brushes.Green;
                 p2.BorderBrush = Brushes.Green;
                 Page1Tests.nbBonneReponse++;
+              votre_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + bonnRep + "_off.png", UriKind.RelativeOrAbsolute));
+                votre_reponse.Foreground = Brushes.Green;
             }
             else
             {
@@ -204,6 +224,8 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p2.Foreground = Brushes.Red;
                 p2.BorderBrush = Brushes.Red;
+                votre_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + (string)((Button)sender).Tag + "_off.png", UriKind.RelativeOrAbsolute));
+                votre_reponse.Foreground = Brushes.Red;
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;
@@ -215,6 +237,7 @@ namespace PROJET_2CP.update
         }
         private void p3_Click(object sender, RoutedEventArgs e)
         {
+            bon_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + bonnRep + "_off.png", UriKind.RelativeOrAbsolute));
             Page1Tests.total++;
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
@@ -226,6 +249,8 @@ namespace PROJET_2CP.update
                 p3.Foreground = Brushes.Green;
                 p3.BorderBrush = Brushes.Green;
                 Page1Tests.nbBonneReponse++;
+              votre_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + bonnRep + "_off.png", UriKind.RelativeOrAbsolute));
+                votre_reponse.Foreground = Brushes.Green;
             }
             else
             {
@@ -235,6 +260,8 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p3.Foreground = Brushes.Red;
                 p3.BorderBrush = Brushes.Red;
+               votre_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + (string)((Button)sender).Tag + "_off.png", UriKind.RelativeOrAbsolute));
+                votre_reponse.Foreground = Brushes.Red;
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;
@@ -246,6 +273,7 @@ namespace PROJET_2CP.update
         }
         private void p4_Click(object sender, RoutedEventArgs e)
         {
+            bon_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + bonnRep + "_off.png", UriKind.RelativeOrAbsolute));
             Page1Tests.total++;
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
@@ -257,6 +285,8 @@ namespace PROJET_2CP.update
                 p4.Foreground = Brushes.Green;
                 p4.BorderBrush = Brushes.Green;
                 Page1Tests.nbBonneReponse++;
+              votre_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + bonnRep + "_off.png", UriKind.RelativeOrAbsolute));
+                votre_reponse.Foreground = Brushes.Green;
             }
             else
             {
@@ -266,6 +296,8 @@ namespace PROJET_2CP.update
                 reaction.Stretch = Stretch.Fill;
                 p4.Foreground = Brushes.Red;
                 p4.BorderBrush = Brushes.Red;
+               votre_panneau.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + (string)((Button)sender).Tag + "_off.png", UriKind.RelativeOrAbsolute));
+                votre_reponse.Foreground = Brushes.Red;
             }
             p1.IsEnabled = false;
             p2.IsEnabled = false;

@@ -34,7 +34,7 @@ namespace PROJET_2CP.update
         private int hasImage;
         private int idImage;
         private bool tempEcoulé = true;
-
+        private bool CanGoToNextQuestion = true;
         public TestNiveau1p2(int a,int b)
         {
             InitializeComponent();
@@ -43,7 +43,6 @@ namespace PROJET_2CP.update
             b2.Visibility = Visibility.Visible;
             b3.Visibility = Visibility.Collapsed;
             b4.Visibility = Visibility.Collapsed;
-            next.Visibility = Visibility.Collapsed;
             q2.Text = "";
             q2.Visibility = Visibility.Collapsed;
             q1.Visibility = Visibility.Visible;
@@ -51,6 +50,14 @@ namespace PROJET_2CP.update
             tab = Tests1.reorder(a, b);
             creerQuestion();
             afficherQuestion();
+            if(langue==0)
+            {
+                ex1.Text = "Voir explication";
+            }
+            if(langue==1)
+            {
+                ex1.Text = "أنظر للتفسير";
+            }
             Distimer();
         }
         public void creerQuestion()
@@ -73,7 +80,7 @@ namespace PROJET_2CP.update
 
                     if (langue == 0)
                     {
-                         next.Content = "Passer à la question suivante";
+                         next.Content = "suivant";
                         //switch_lang.Content = "changer la langue en arabe";
                         quest = dr["qst1Fr"].ToString();
                         quest2 = dr["qst2Fr"].ToString();
@@ -84,11 +91,11 @@ namespace PROJET_2CP.update
                         correct = dr["CorrectionFr"].ToString();
                         bonnRep = dr["bonneRep1Fr"].ToString();
                         bonnRep2 = dr["bonneRep2Fr"].ToString();
-                        next.Content = "Passer à la question suivante";
+                       
                     }
                     if (langue == 1)
                     {
-                        next.Content = "السؤال التالي";
+                        next.Content = "التالي";
                         //  switch_lang.Content = "تغيير اللغة الى الفرنسية";
                         quest = dr["qst1Ar"].ToString();
                         quest2 = dr["qst2Ar"].ToString();
@@ -129,20 +136,48 @@ namespace PROJET_2CP.update
         private void b1_Click(object sender, RoutedEventArgs e)
         {
             Page1Tests.total++;
-            if ((string) ((Button)sender).Content==bonnRep)
+            if (langue == 0)
             {
-                b1.Foreground = Brushes.Green;
-                Page1Tests.nbBonneReponse++;
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
             }
             else
             {
-
-                b1.Foreground = Brushes.Red;
-                b2.Foreground = Brushes.Green;
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
+            if ((string) ((Button)sender).Content==bonnRep)
+            {
+                Page1Tests.nbBonneReponse++;
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
+                reaction.Source = btm;
+                reaction.Stretch = Stretch.Fill;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
+            }
+            else
+            {
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
+                reaction.Source = btm;
+                reaction.Stretch = Stretch.Fill;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Content;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + (string)((Button)sender).Content;
+                }
+                votre_reponse.Foreground = Brushes.Red;
             }
             b1.IsEnabled = false;
             b2.IsEnabled = false;
-
+            
             if (quest2 != "")
             {
                 q2.Text = quest2;
@@ -153,12 +188,13 @@ namespace PROJET_2CP.update
 
                 b1.Visibility = Visibility.Collapsed;
                 b2.Visibility = Visibility.Collapsed;
-
+                e1.Visibility = Visibility.Collapsed;
                 b3.Visibility = Visibility.Visible;
                 b4.Visibility = Visibility.Visible;
                 q2.Text = quest2;
                 b3.Content = propC;
                 b4.Content = propD;
+                CanGoToNextQuestion = false;
             }
             else
             {
@@ -174,26 +210,56 @@ namespace PROJET_2CP.update
                         next.Content = "تفحص النتائج";
                     }
                 }
-                next.Visibility = Visibility.Visible;
+              //  next_grid.Visibility = Visibility.Visible;
                 timer.Visibility = Visibility.Collapsed;
-                correctionborder.Visibility = Visibility.Visible;
-                correction.Text = correct;
+              //  correctionborder.Visibility = Visibility.Visible;
+                tb1.Text = correct;
+                CanGoToNextQuestion = true;
             }
-          
+            next_grid.Visibility = Visibility.Visible;
         }
 
         private void b2_Click(object sender, RoutedEventArgs e)
         {
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             Page1Tests.total++;
             if ((string)((Button)sender).Content == bonnRep)
             {
-                b2.Foreground = Brushes.Green;
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
+                reaction.Source = btm;
+                reaction.Stretch = Stretch.Fill;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
                 Page1Tests.nbBonneReponse++;
             }
             else
             {
-                b2.Foreground = Brushes.Red;
-                b1.Foreground = Brushes.Green;
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
+                reaction.Source = btm;
+                reaction.Stretch = Stretch.Fill;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Content;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + (string)((Button)sender).Content;
+                }
+                votre_reponse.Foreground = Brushes.Red;
             }
             b1.IsEnabled = false;
             b2.IsEnabled = false;
@@ -208,6 +274,8 @@ namespace PROJET_2CP.update
                 q1.Visibility = Visibility.Collapsed;
                 b3.Content = propC;
                 b4.Content = propD;
+                CanGoToNextQuestion = false;
+                e1.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -223,33 +291,63 @@ namespace PROJET_2CP.update
                         next.Content = "تفحص النتائج";
                     }
                 }
-                next.Visibility = Visibility.Visible;
-                correctionborder.Visibility = Visibility.Visible;
-                correction.Text = correct;
+              //  next_grid.Visibility = Visibility.Visible;
+                //correctionborder.Visibility = Visibility.Visible;
+                tb1.Text = correct;
+                CanGoToNextQuestion = true;
                 timer.Visibility = Visibility.Collapsed;
             }
-           
+            next_grid.Visibility = Visibility.Visible;
         }
 
         private void b3_Click(object sender, RoutedEventArgs e)
         {
+            CanGoToNextQuestion = true;
             Page1Tests.total++;
-
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             if ((string)((Button)sender).Content == bonnRep2)
             {
-                b3.Foreground = Brushes.Green;
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
+                reaction.Source = btm;
+                reaction.Stretch = Stretch.Fill;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
                 Page1Tests.nbBonneReponse++;
             }
             else
             {
-                b3.Foreground = Brushes.Red;
-                b4.Foreground = Brushes.Green;
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
+                reaction.Source = btm;
+                reaction.Stretch = Stretch.Fill;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Content;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + (string)((Button)sender).Content;
+                }
+                votre_reponse.Foreground = Brushes.Red;
             }
             b3.IsEnabled = false;
             b4.IsEnabled = false;
-            correctionborder.Visibility = Visibility.Visible;
-            correction.Text = correct;
-            next.Visibility = Visibility.Visible;
+            //correctionborder.Visibility = Visibility.Visible;
+            tb1.Text = correct;
+            next_grid.Visibility = Visibility.Visible;
             timer.Visibility = Visibility.Collapsed;
             tempEcoulé = false;
             if (tag == tagMax)
@@ -267,23 +365,53 @@ namespace PROJET_2CP.update
 
         private void b4_Click(object sender, RoutedEventArgs e)
         {
+            CanGoToNextQuestion = true;
             Page1Tests.total++;
-
+          
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             if ((string)((Button)sender).Content == bonnRep2)
             {
-                b4.Foreground = Brushes.Green;
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
+                reaction.Source = btm;
+                reaction.Stretch = Stretch.Fill;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
                 Page1Tests.nbBonneReponse++;
             }
             else
             {
-                b4.Foreground = Brushes.Red;
-                b3.Foreground = Brushes.Green;
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
+                reaction.Source = btm;
+                reaction.Stretch = Stretch.Fill;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Content;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + (string)((Button)sender).Content;
+                }
+                votre_reponse.Foreground = Brushes.Red;
             }
             b3.IsEnabled = false;
             b4.IsEnabled = false;
-            correctionborder.Visibility = Visibility.Visible;
-            correction.Text = correct;
-            next.Visibility = Visibility.Visible;
+           // correctionborder.Visibility = Visibility.Visible;
+            tb1.Text = correct;
+            next_grid.Visibility = Visibility.Visible;
             timer.Visibility = Visibility.Collapsed;
             tempEcoulé = false;
             if (tag == tagMax)
@@ -301,42 +429,70 @@ namespace PROJET_2CP.update
 
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            tag++;
-            tempEcoulé = true;
-            correctionborder.Visibility = Visibility.Collapsed;
-            correction.Text = "";
-           // reaction.Visibility = Visibility.Collapsed;
-            if (tag <= tagMax)
+            e1.Visibility = Visibility.Visible;
+            if (CanGoToNextQuestion)
             {
-                questionRep++;
-                b1.IsEnabled = true;
-                b2.IsEnabled = true;
-                b3.IsEnabled = true;
-                b4.IsEnabled = true;
-                b1.Foreground = Brushes.White;
-                b2.Foreground = Brushes.White;
-                b3.Foreground = Brushes.White;
-                b4.Foreground = Brushes.White;
+                tag++;
+                tempEcoulé = true;
+                // correctionborder.Visibility = Visibility.Collapsed;
+                tb1.Text = "";
+                // reaction.Visibility = Visibility.Collapsed;
+                if (tag <= tagMax)
+                {
+                    questionRep++;
+                    b1.IsEnabled = true;
+                    b2.IsEnabled = true;
+                    b3.IsEnabled = true;
+                    b4.IsEnabled = true;
+                    b1.Foreground = Brushes.White;
+                    b2.Foreground = Brushes.White;
+                    b3.Foreground = Brushes.White;
+                    b4.Foreground = Brushes.White;
 
-                b1.Visibility = Visibility.Visible;
-                b2.Visibility = Visibility.Visible;
+                    b1.Visibility = Visibility.Visible;
+                    b2.Visibility = Visibility.Visible;
 
-                q1.Visibility = Visibility.Visible;
-                q2.Visibility = Visibility.Collapsed;
+                    q1.Visibility = Visibility.Visible;
+                    q2.Visibility = Visibility.Collapsed;
 
-                b3.Visibility = Visibility.Collapsed;
-                b4.Visibility = Visibility.Collapsed;
-                creerQuestion();
-                afficherQuestion();
-                q2.Text = "";
-                timer.Visibility = Visibility.Visible;
-                increment = 20;
+                    b3.Visibility = Visibility.Collapsed;
+                    b4.Visibility = Visibility.Collapsed;
+                    creerQuestion();
+                    afficherQuestion();
+                    q2.Text = "";
+                    timer.Visibility = Visibility.Visible;
+                    increment = 20;
+                }
+                else
+                {
+                    Home.mainFrame.Content = new Bilan();
+                }
             }
             else
             {
-                Home.mainFrame.Content = new Bilan();
+                if (tag <= tagMax)
+                {
+                    questionRep++;
+                    b1.IsEnabled = true;
+                    b2.IsEnabled = true;
+                    b3.IsEnabled = true;
+                    b4.IsEnabled = true;
+                    b1.Foreground = Brushes.White;
+                    b2.Foreground = Brushes.White;
+                    b3.Foreground = Brushes.White;
+                    b4.Foreground = Brushes.White;
+                    q2.Visibility = Visibility.Visible;
+                    timer.Visibility = Visibility.Visible;
+                    increment = 20;
+                }
+                else
+                {
+                    Home.mainFrame.Content = new Bilan();
+                }
             }
-            next.Visibility = Visibility.Collapsed;
+            
+
+            next_grid.Visibility = Visibility.Collapsed;
         }
         private void Distimer()
         {
@@ -402,10 +558,10 @@ namespace PROJET_2CP.update
                 b2.IsEnabled = false;
                 b3.IsEnabled = false;
                 b4.IsEnabled = false;
-                next.Visibility = Visibility.Visible;
+                next_grid.Visibility = Visibility.Visible;
                 timer.Visibility = Visibility.Collapsed;
-                correctionborder.Visibility = Visibility.Visible;
-                correction.Text = correct;
+               // correctionborder.Visibility = Visibility.Visible;
+                tb1.Text = correct;
                 tempEcoulé = false;
                 if (tag == tagMax)
                 {
