@@ -36,8 +36,19 @@ namespace PROJET_2CP.Pages
 
         // partie pour sauvegarde 
         private int _codeQst;
-        private string _themeQst;
         private int _niveau = 1;
+        private string _reponseContent;
+
+        private string propAar;
+        private string propBar;
+        private string propCar;
+        private string propDar;
+
+        private string propAfr;
+        private string propBfr;
+        private string propCfr;
+        private string propDfr;
+
 
         public Quiz(int bi,int bs)
         {
@@ -73,8 +84,8 @@ namespace PROJET_2CP.Pages
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    _codeQst = Int32.Parse(dr["Id"].ToString());
-                    _themeQst = dr["leçon"].ToString();
+                    _codeQst = Int32.Parse(dr["Id"].ToString());;
+
                     //si bi < 50 niveau = 1
                     if (_codeQst <= 50)
                     {
@@ -95,9 +106,13 @@ namespace PROJET_2CP.Pages
                         // repInteractive =" bravo";
                         switch_lang.Content = "changer la langue en arabe";
                         propA = dr["propAFr"].ToString();
+                        propAfr = propA;
                         propB = dr["propBFr"].ToString();
+                        propBfr = propB;
                         propC = dr["propCFr"].ToString();
+                        propCfr = propC;
                         propD = dr["propDFr"].ToString();
+                        propDfr = propD;
                         quest = dr["questionFr"].ToString();
                         bonnRep= dr["bonneRepFr"].ToString();
                     }
@@ -106,13 +121,26 @@ namespace PROJET_2CP.Pages
                         //  repInteractive = " أحسنت";
                         switch_lang.Content = "تغيير اللغة الى الفرنسية";
                         suivant.Text = "السؤال التالي";
-                       propA = dr["propAAr"].ToString();
+                        propA = dr["propAAr"].ToString();
+                        propAar = propA;
                         propB = dr["propBAr"].ToString();
+                        propBar = propB;
                         propC = dr["propCAr"].ToString();
+                        propCar = propC;
                         propD = dr["propDAr"].ToString();
+                        propDar = propD;
                         quest = dr["questionAr"].ToString();
                         bonnRep = dr["bonneRepAr"].ToString();
                     }
+                    propAfr = "propAFr";
+                    propBfr = "propBFr";
+                    propCfr = "propCFr";
+                    propDfr = "propDFr";
+
+                    propAar = "propAAr";
+                    propBar = "propBAr";
+                    propCar = "propCAr";
+                    propDar = "propDAr";
                 }
                 dr.Close();
             }
@@ -334,7 +362,7 @@ namespace PROJET_2CP.Pages
                 //sauvgarder la question et la bonne reponse et la reponse de l'utilisateur
             if (propA==bonnRep)
             {
-                saveAnswer(true,_niveau,_codeQst,_themeQst);
+                saveAnswer(true,_niveau,1,_codeQst, propAfr,propAar); // theme 1
                 repA.Foreground = Brushes.Green;
                 nbBonneReponse++;
 
@@ -349,7 +377,7 @@ namespace PROJET_2CP.Pages
             }
             else
             {
-                saveAnswer(false, _niveau, _codeQst, _themeQst);
+                saveAnswer(false, _niveau,1, _codeQst, propAfr, propAar);
 
                 nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
@@ -389,7 +417,7 @@ namespace PROJET_2CP.Pages
             sp.Stop();
             if (propB == bonnRep)
             {
-                saveAnswer(true, _niveau, _codeQst, _themeQst);
+                saveAnswer(true, _niveau, 1, _codeQst, propBfr, propBar) ;
 
                 if (MainWindow.langue == 0)
                     reponseNext.Text = "Bonne reponse";
@@ -407,7 +435,7 @@ namespace PROJET_2CP.Pages
             }
             else
             {
-                saveAnswer(false, _niveau, _codeQst, _themeQst);
+                saveAnswer(false, _niveau,1, _codeQst, propBfr, propBar);
 
                 if (MainWindow.langue == 0)
                     reponseNext.Text = "Mauvaise reponse";
@@ -446,7 +474,7 @@ namespace PROJET_2CP.Pages
             sp.Stop();
             if (propC == bonnRep)
             {
-                saveAnswer(true, _niveau, _codeQst, _themeQst);
+                saveAnswer(true, _niveau,1, _codeQst, propCfr, propCar);
 
                 if (MainWindow.langue == 0)
                     reponseNext.Text = "Bonne reponse";
@@ -464,7 +492,7 @@ namespace PROJET_2CP.Pages
             }
             else
             {
-                saveAnswer(false, _niveau, _codeQst, _themeQst);
+                saveAnswer(false, _niveau,1, _codeQst, propCfr, propCar);
 
                 nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
@@ -500,7 +528,7 @@ namespace PROJET_2CP.Pages
             sp.Stop();
             if (propD == bonnRep)
             {
-                saveAnswer(true, _niveau, _codeQst, _themeQst);
+                saveAnswer(true, _niveau,1, _codeQst, propDfr, propDar);
 
                 if (MainWindow.langue == 0)
                     reponseNext.Text = "Bonne reponse";
@@ -517,7 +545,7 @@ namespace PROJET_2CP.Pages
             }
             else
             {
-                saveAnswer(false, _niveau, _codeQst, _themeQst);
+                saveAnswer(false, _niveau,1, _codeQst, propDfr, propDar);
 
                 nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
                 if (MainWindow.langue == 0)
@@ -616,20 +644,23 @@ namespace PROJET_2CP.Pages
         }
 
         /// <summary>
-        /// partie pour le sauvegrade des reponses pour construire les statistiques 
+        /// Save the answer in the DATABASE Save.mdf
         /// </summary>
-        /// <param name="reponse"></param> la reponse de l'apprenant
-        /// <param name="niveau"></param> niveau de la qst
-        /// <param name="code"></param> id ou le code pour la referance
-        /// <param name="theme"></param> le theme que la qst apartient
-        private void saveAnswer(bool reponse, int niveau, int code, string theme)
+        /// <param name="reponse"></param> is the answer true ?
+        /// <param name="niveau"></param> level 
+        /// <param name="theme"></param> numero de theme dans la bdd theme == test
+        /// <param name="code"></param> Code  == Id
+        /// <param name="reponseText"></param> Answer in frensh
+        /// <param name="reponseTextAr"></param> answer in arabic
+        private void saveAnswer(bool reponse, int niveau ,int theme, int code, string reponseText ,string reponseTextAr)
         {
+            //pour les question des leçons
             // Code == ID //
             string connString = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf; Integrated Security = True";
 
             DataTable savedData = new DataTable();
 
-            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "' AND Test = '" + theme.ToString() + "'";
 
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -645,7 +676,7 @@ namespace PROJET_2CP.Pages
                 if (savedData.Rows.Count == 1)
                 {
                     // Si l'apprenant a répondu a cette question on fait la maj dans sa Table dans Save BDD
-                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' , ReponseText = '"+ reponseText + "' , ReponseTextAr ='" + reponseTextAr + "'  WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
                     cmd = new SqlCommand(query, conn);
 
                     cmd.CommandType = CommandType.Text;
@@ -653,9 +684,8 @@ namespace PROJET_2CP.Pages
                 }
                 else
                 {
-
                     //Si l'apprenant n'a pas répondu a cette question on l'insert sa réponse
-                    query = "INSERT INTO " + LogIN.LoggedUser.UtilisateurID + "Trace(Niveau,Theme,Test,Code,Reponse) VALUES('" + niveau.ToString() + "','" + theme + "', '' ,'" + code.ToString() + "','" + reponse + "')";
+                    query = "INSERT INTO " + LogIN.LoggedUser.UtilisateurID + "Trace(Niveau,Test,Code,ReponseText,ReponseTextAr,Reponse) VALUES('" + niveau.ToString() + "', '" + theme.ToString() + "' ,'" + code.ToString() + "','" + reponseText + "','" + reponseTextAr + "','" + reponse + "')";
                     cmd = new SqlCommand(query, conn);
 
                     cmd.CommandType = CommandType.Text;

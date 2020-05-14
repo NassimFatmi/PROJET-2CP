@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Media;
 using System.Windows;
@@ -31,6 +32,20 @@ namespace PROJET_2CP.Niveau2
         private int nbBonneReponse = 0;
         private bool tempEcoulé = true;
         //private  string repInteractive;
+
+        private int _Code;//ID
+        private string _Reponse;
+        private string _ReponseAR;
+
+        private string _Reponse1;
+        private string _Reponse2;
+        private string _Reponse3;
+        private string _Reponse4;
+
+        private string _Reponse1AR;
+        private string _Reponse2AR;
+        private string _Reponse3AR;
+        private string _Reponse4AR;
 
         public Quiz(int bi, int bs)
         {
@@ -85,6 +100,8 @@ namespace PROJET_2CP.Niveau2
                 if (dr.Read())
                 {
                     int[] arr = new int[4];
+                    
+                    _Code = Int32.Parse(dr["Id"].ToString());
 
                     // repInteractive =" bravo";
                     Random aleatoire = new Random();
@@ -115,6 +132,16 @@ namespace PROJET_2CP.Niveau2
                         quest = dr["contenuar"].ToString();
                         bonnRep = dr["reponse1ar"].ToString();
                     }
+
+                    _Reponse1 = "reponse" + Convert.ToString(arr[0]);
+                    _Reponse2 = "reponse" + Convert.ToString(arr[1]);
+                    _Reponse3 = "reponse" + Convert.ToString(arr[2]);
+                    _Reponse4 = "reponse" + Convert.ToString(arr[3]);
+
+                    _Reponse1AR = "reponse" + Convert.ToString(arr[0]) + "ar";
+                    _Reponse2AR = "reponse" + Convert.ToString(arr[1]) + "ar";
+                    _Reponse3AR = "reponse" + Convert.ToString(arr[2]) + "ar";
+                    _Reponse4AR = "reponse" + Convert.ToString(arr[3]) + "ar";
                 }
                 dr.Close();
             }
@@ -278,6 +305,7 @@ namespace PROJET_2CP.Niveau2
             //sauvgarder la question et la bonne reponse et la reponse de l'utilisateur
             if (propA == bonnRep)
             {
+                saveAnswer(true,2,Lesson.niveau2ThemeSelected,_Code,_Reponse1,_Reponse1AR);
                 repA.Foreground = Brushes.Green;
                 nbBonneReponse++;
                 reponseNext.Text = "Bonne reponse";
@@ -288,7 +316,7 @@ namespace PROJET_2CP.Niveau2
             else
             {
                 nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/sad.png", UriKind.RelativeOrAbsolute));
-
+                saveAnswer(false, 2, Lesson.niveau2ThemeSelected, _Code, _Reponse1, _Reponse1AR);
 
                 reponseNext.Text = "Mauvaise reponse";
                 reponseNext.Foreground = Brushes.Red;
@@ -320,6 +348,8 @@ namespace PROJET_2CP.Niveau2
         {
             if (propB == bonnRep)
             {
+                saveAnswer(true, 2, Lesson.niveau2ThemeSelected, _Code, _Reponse2, _Reponse2AR);
+
                 reponseNext.Text = "Bonne reponse";
                 reponseNext.Foreground = Brushes.GreenYellow;
 
@@ -330,6 +360,8 @@ namespace PROJET_2CP.Niveau2
             }
             else
             {
+                saveAnswer(false, 2, Lesson.niveau2ThemeSelected, _Code, _Reponse2, _Reponse2AR);
+
                 reponseNext.Text = "Mauvaise reponse";
                 reponseNext.Foreground = Brushes.Red;
                 nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/sad.png", UriKind.RelativeOrAbsolute));
@@ -361,6 +393,8 @@ namespace PROJET_2CP.Niveau2
         {
             if (propC == bonnRep)
             {
+                saveAnswer(true, 2, Lesson.niveau2ThemeSelected, _Code, _Reponse3, _Reponse3AR);
+
                 reponseNext.Text = "Bonne reponse";
                 reponseNext.Foreground = Brushes.GreenYellow;
 
@@ -371,6 +405,8 @@ namespace PROJET_2CP.Niveau2
             }
             else
             {
+                saveAnswer(false, 2, Lesson.niveau2ThemeSelected, _Code, _Reponse3, _Reponse3AR);
+
                 nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/sad.png", UriKind.RelativeOrAbsolute));
 
                 reponseNext.Text = "Mauvaise reponse";
@@ -404,6 +440,8 @@ namespace PROJET_2CP.Niveau2
         {
             if (propD == bonnRep)
             {
+                saveAnswer(true, 2, Lesson.niveau2ThemeSelected, _Code, _Reponse4, _Reponse4AR);
+
                 reponseNext.Text = "Bonne reponse";
                 reponseNext.Foreground = Brushes.GreenYellow;
                 nbBonneReponse++;
@@ -413,6 +451,8 @@ namespace PROJET_2CP.Niveau2
             }
             else
             {
+                saveAnswer(false, 2, Lesson.niveau2ThemeSelected, _Code, _Reponse4, _Reponse4AR);
+
                 nextimage.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/sad.png", UriKind.RelativeOrAbsolute));
                 reponseNext.Text = "Mauvaise reponse";
                 reponseNext.Foreground = Brushes.Red;
@@ -525,6 +565,63 @@ namespace PROJET_2CP.Niveau2
                 dhmsg.Text = " هل انت متأكد من الخروج ؟";
                 dhoui.Content = "نعم";
                 dhnon.Content = "لا";
+            }
+        }
+
+        /// <summary>
+        /// Save the answer in the DATABASE Save.mdf
+        /// </summary>
+        /// <param name="reponse"></param> is the answer true ?
+        /// <param name="niveau"></param> level 
+        /// <param name="theme"></param> numero de theme dans la bdd theme == test
+        /// <param name="code"></param> Code  == Id
+        /// <param name="reponseText"></param> Answer in frensh
+        /// <param name="reponseTextAr"></param> answer in arabic
+        private void saveAnswer(bool reponse, int niveau, int theme, int code, string reponseText, string reponseTextAr)
+        {
+            //pour les question des leçons
+            // Code == ID //
+            string connString = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf; Integrated Security = True";
+
+            DataTable savedData = new DataTable();
+
+            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "' AND Test = '" + theme.ToString() + "'";
+
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            try
+            {
+                conn.Open();
+                // create data adapter
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(savedData);
+                da.Dispose();
+
+                if (savedData.Rows.Count == 1)
+                {
+                    // Si l'apprenant a répondu a cette question on fait la maj dans sa Table dans Save BDD
+                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' , ReponseText = '" + reponseText + "' , ReponseTextAr ='" + reponseTextAr + "'  WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+                    cmd = new SqlCommand(query, conn);
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    //Si l'apprenant n'a pas répondu a cette question on l'insert sa réponse
+                    query = "INSERT INTO " + LogIN.LoggedUser.UtilisateurID + "Trace(Niveau,Test,Code,ReponseText,ReponseTextAr,Reponse) VALUES('" + niveau.ToString() + "', '" + theme.ToString() + "' ,'" + code.ToString() + "','" + reponseText + "','" + reponseTextAr + "','" + reponse + "')";
+                    cmd = new SqlCommand(query, conn);
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+                MessageBox.Show("error save Db quiz Testniveau 1 ");
             }
         }
     }

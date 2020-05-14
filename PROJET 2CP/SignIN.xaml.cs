@@ -168,11 +168,10 @@ namespace PROJET_2CP
             string creatTableQuery = "CREATE TABLE "+userID+"Trace(" +
                                      "[Id]    INT NOT NULL PRIMARY KEY IDENTITY," +
                                      "[Niveau]    INT  NULL," +
-                                     "[Theme]   VARCHAR(MAX) NULL," +
-                                     "[Lecon]   VARCHAR(MAX) NULL," +
                                      "[Test]    INT  NULL," +
                                      "[Code]    INT  NULL," +                // ID 
                                      "[ReponseText]   NVARCHAR(MAX) NULL," + // Answer content
+                                     "[ReponseTextAr]   NVARCHAR(MAX) NULL," + // Answer content
                                      "[Reponse] bit NULL)";                  // V.V de la réponse 
 
             string testNoteCreatTableQuery = "CREATE TABLE " + userID + "NoteTest(" +

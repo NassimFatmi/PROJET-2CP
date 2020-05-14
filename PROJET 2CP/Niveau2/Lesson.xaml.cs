@@ -21,6 +21,7 @@ namespace PROJET_2CP.Niveau2
     public partial class Lesson : Page
     {
         private int langue = MainWindow.langue;
+        public static int niveau2ThemeSelected;
         public Lesson()
         {
             InitializeComponent();
@@ -151,33 +152,33 @@ namespace PROJET_2CP.Niveau2
 
         private void q1_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(50, 56);
+            Home.mainFrame.Content = new Pages.Quiz(50, 56);
         }
 
         private void q2_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(56, 62);
+            Home.mainFrame.Content = new Pages.Quiz(56, 62);
         }
 
         private void q3_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(62, 68);
+            Home.mainFrame.Content = new Pages.Quiz(62, 68);
         }
 
         private void q4_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(68, 74);
+            Home.mainFrame.Content = new Pages.Quiz(68, 74);
 
         }
 
         private void q5_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(74, 80);
+            Home.mainFrame.Content = new Pages.Quiz(74, 80);
         }
 
         private void q6_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(80, 86);
+            Home.mainFrame.Content = new Pages.Quiz(80, 86);
         }
 
         private void BackClick(object sender, RoutedEventArgs e)
@@ -198,16 +199,22 @@ namespace PROJET_2CP.Niveau2
         }
         private void quiz_defailance_Click(object sender, RoutedEventArgs e)
         {
+            niveau2ThemeSelected = 2;
+
             Home.mainFrame.Content = new Quiz(7, 13);
         }
 
         private void quiz_distance_Click(object sender, RoutedEventArgs e)
         {
+            niveau2ThemeSelected = 2;
+
             Home.mainFrame.Content = new Quiz(19, 25);
         }
 
         private void quiz_vitesse_Click(object sender, RoutedEventArgs e)
         {
+            niveau2ThemeSelected = 2;
+
             Home.mainFrame.Content = new Quiz(1, 7);
         }
         private void les_feux_Click(object sender, RoutedEventArgs e)
@@ -221,11 +228,15 @@ namespace PROJET_2CP.Niveau2
 
         private void quiz_les_feux_Click(object sender, RoutedEventArgs e)
         {
+            niveau2ThemeSelected = 3;
+
             Home.mainFrame.Content = new Quiz(43, 49);
         }
 
         private void quiz_securite_Click(object sender, RoutedEventArgs e)
         {
+            niveau2ThemeSelected = 3;
+
             Home.mainFrame.Content = new Quiz(49, 55);
         }
         private void utilisation_Click(object sender, RoutedEventArgs e)
@@ -239,11 +250,15 @@ namespace PROJET_2CP.Niveau2
 
         private void quiz_utilisation_Click(object sender, RoutedEventArgs e)
         {
+            niveau2ThemeSelected = 4;
+
             Home.mainFrame.Content = new Quiz(79, 85);
         }
 
         private void quiz_risque_Click(object sender, RoutedEventArgs e)
         {
+            niveau2ThemeSelected = 4;
+
             Home.mainFrame.Content = new Quiz(73, 79);
         }
 

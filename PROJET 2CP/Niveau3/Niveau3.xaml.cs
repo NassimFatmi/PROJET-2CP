@@ -20,6 +20,8 @@ namespace PROJET_2CP.Niveau3
     /// </summary>
     public partial class Niveau3 : Page
     {
+        public static int niveau3ThemeSelected;
+
         public Niveau3()
         {
             InitializeComponent();
@@ -40,6 +42,7 @@ namespace PROJET_2CP.Niveau3
 
         private void quiz_principe_Click(object sender, RoutedEventArgs e)
         {
+            niveau3ThemeSelected = 1;
             Home.mainFrame.Content = new Quiz(13, 19);
         }
 
@@ -101,11 +104,15 @@ namespace PROJET_2CP.Niveau3
 
         private void quiz_document_Click(object sender, RoutedEventArgs e)
         {
+            niveau3ThemeSelected = 2;
+
             Home.mainFrame.Content = new Quiz(31, 37);
         }
 
         private void quiz_les_points_Click(object sender, RoutedEventArgs e)
         {
+            niveau3ThemeSelected = 2;
+
             Home.mainFrame.Content = new Quiz(37, 43);
         }
         private void connaitre_Click(object sender, RoutedEventArgs e)
@@ -122,16 +129,22 @@ namespace PROJET_2CP.Niveau3
         }
         private void quiz_connaitre_Click(object sender, RoutedEventArgs e)
         {
+            niveau3ThemeSelected = 3;
+
             Home.mainFrame.Content = new Quiz(55, 61);
         }
 
         private void quiz_demarrer_Click(object sender, RoutedEventArgs e)
         {
+            niveau3ThemeSelected = 3;
+
             Home.mainFrame.Content = new Quiz(67, 73);
         }
 
         private void quiz_monter_Click(object sender, RoutedEventArgs e)
         {
+            niveau3ThemeSelected = 3;
+
             Home.mainFrame.Content = new Quiz(1, 7);
         }
 
