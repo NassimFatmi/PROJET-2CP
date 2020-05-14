@@ -16,6 +16,8 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections;
+using MaterialDesignThemes.Wpf;
 
 namespace PROJET_2CP
 {
@@ -76,9 +78,9 @@ namespace PROJET_2CP
 
             int niveauSelected = 0;
 
-            if (niveau1.IsSelected || niv1thm1.IsSelected || niv1thm2.IsSelected)
+            if (niveau1.IsSelected)
                 niveauSelected = 1;
-            else if (niveau2.IsSelected || niv2thm1.IsSelected || niv2thm2.IsSelected || niv2thm3.IsSelected)
+            else if (niveau2.IsSelected)
                 niveauSelected = 2;
             else if (niveau3.IsSelected)
                 niveauSelected = 3;
@@ -158,7 +160,7 @@ namespace PROJET_2CP
             moyenneCheck.IsChecked = false;
             creeStates();
 
-            if (_nbReponses == 0)
+            if (_nbReponses == 0 && (niveau1.IsSelected || niveau2.IsSelected || niveau3.IsSealed))
             {
                 if (MainWindow.langue == 0)
                     MessageBox.Show(" vous n'avez pas fait des testes ! ");
@@ -167,22 +169,24 @@ namespace PROJET_2CP
             }
             else
             {
-                choixChart.Visibility = Visibility.Visible;
-                if(MainWindow.langue == 0)
+                if (niveau1.IsSelected || niveau2.IsSelected || niveau3.IsSealed)
                 {
-                    moyenneLbl.Content = "Moyenne : " + float.Parse(caluclerMoyenne().ToString()) +
-                                         "\nnombre des tests :" + _NbTests.ToString() +
-                                         "\nnombre des questions : " + _nbReponses.ToString();
-                }
-                else
-                {
-                    moyenneLbl.Content = "المعدل : " + float.Parse(caluclerMoyenne().ToString()) +
-                                         "\nعدد الامنحانات المجتازة :" + _NbTests.ToString() +
-                                         "\nعدد الأسئلة : " + _nbReponses.ToString();
-                }
-                
+                    choixChart.Visibility = Visibility.Visible;
+                    if (MainWindow.langue == 0)
+                    {
+                        moyenneLbl.Content = "Moyenne : " + float.Parse(caluclerMoyenne().ToString()) +
+                                             "\nnombre des tests :" + _NbTests.ToString() +
+                                             "\nnombre des questions : " + _nbReponses.ToString();
+                    }
+                    else
+                    {
+                        moyenneLbl.Content = "المعدل : " + float.Parse(caluclerMoyenne().ToString()) +
+                                             "\nعدد الامنحانات المجتازة :" + _NbTests.ToString() +
+                                             "\nعدد الأسئلة : " + _nbReponses.ToString();
+                    }
 
-                pieCheck.IsChecked = true;
+                    pieCheck.IsChecked = true;
+                }
             }
         }
 
@@ -343,6 +347,341 @@ namespace PROJET_2CP
             moyenne.HorizontalAlignment = HorizontalAlignment.Center;
             chartsGrid.Children.Add(moyenne);
 
+        }
+
+        private void niv1thm1Andniv2thm1_Selected(object sender, RoutedEventArgs e)
+        {
+            string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
+            SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable temp = new DataTable(); ;
+
+            string querySelectTheme1Niv1;
+            int niveauSelected = 1;
+
+            if (niv1thm1.IsSelected)
+                niveauSelected = 1;
+            if (niv2thm1.IsSelected)
+                niveauSelected = 2;
+
+            querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveauSelected.ToString() + "' AND Test = '1' )";
+
+            try
+            {
+                if (saveConn.State == ConnectionState.Closed)
+                    saveConn.Open();
+
+                cmd = new SqlCommand(querySelectTheme1Niv1, saveConn);
+                adapter = new SqlDataAdapter(cmd);
+                _StatesTableReponse = new DataTable();
+                adapter.Fill(temp);
+                adapter.Dispose();
+
+                if (saveConn.State == ConnectionState.Open)
+                    saveConn.Close();
+            }
+            catch (Exception)
+            {
+                if (saveConn.State == ConnectionState.Open)
+                    saveConn.Close();
+                MessageBox.Show("Error states");
+            }
+
+            //Affichage des reponse de l'utilisateur
+            chartsGrid.Children.Clear();
+            StackPanel userReponses = new StackPanel();//pour toutes les questions
+            Border qstreponse; // pour une seul question
+            ScrollViewer scrollViewer = new ScrollViewer();
+            for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
+            {
+                qstreponse = new Border();
+                qstreponse = creatAnswerUser(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString()));
+                userReponses.Children.Add(qstreponse);
+            }
+            scrollViewer.Content = userReponses;
+            chartsGrid.Children.Add(scrollViewer);
+        }
+
+        private Border creatAnswerUser(int id , string reponse, string reponseAr, bool isItTrue) // id == Code
+        {
+            string connStringToPanneauxDB = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True";
+            SqlConnection connectToPanneauxDB = new SqlConnection(connStringToPanneauxDB);
+
+            string querySelect = "SELECT * FROM Quiz WHERE Id = '" + id.ToString() + "'";
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable questionContent = new DataTable();
+
+            if (connectToPanneauxDB.State == ConnectionState.Closed)
+                connectToPanneauxDB.Open();
+            using (connectToPanneauxDB)
+            {
+                try
+                {
+                    cmd = new SqlCommand(querySelect,connectToPanneauxDB);
+                    adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(questionContent);
+                    adapter.Dispose();
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+                catch(Exception)
+                {
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+            }
+
+            Border borderForStackrep = new Border();
+            borderForStackrep.CornerRadius = new CornerRadius(27);
+
+            SolidColorBrush lightBlack = new SolidColorBrush();
+            lightBlack.Color = Color.FromArgb(60,0,0,0);
+
+            borderForStackrep.Background = lightBlack;
+
+            StackPanel qstrep = new StackPanel();
+            qstrep.Margin = new Thickness(3);
+
+            TextBlock questiontxt = new TextBlock();
+            questiontxt.Margin = new Thickness(10);
+            questiontxt.VerticalAlignment = VerticalAlignment.Center;
+
+            TextBlock reponsetxt = new TextBlock();
+            reponsetxt.Margin = new Thickness(10);
+            reponsetxt.VerticalAlignment = VerticalAlignment.Center;
+
+            TextBlock lecon = new TextBlock();
+            lecon.Margin = new Thickness(10);
+            lecon.VerticalAlignment = VerticalAlignment.Center;
+
+            Image imageQst = new Image();
+            imageQst.Height = 60;
+            imageQst.Width = 60;
+
+
+            if (questionContent.Rows.Count == 1)
+            {
+                if(MainWindow.langue == 0)
+                {
+                    questiontxt.Text = "La question : " + questionContent.Rows[0]["questionFr"].ToString();
+                    reponsetxt.Text = "Votre réponse : " + questionContent.Rows[0][reponse].ToString();
+                    lecon.Text = "Voir : " + questionContent.Rows[0]["leçon"].ToString();
+                }
+                else
+                {
+                    questiontxt.Text = questionContent.Rows[0]["questionAr"].ToString() + "السؤال";
+                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                    lecon.Text = "";
+                }
+
+                //Desgin
+                qstrep.Orientation = Orientation.Horizontal;
+                qstrep.Children.Add(questiontxt);
+
+                if (Int32.Parse(questionContent.Rows[0]["hasImage"].ToString()) == 1)
+                {
+                    imageQst.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + questionContent.Rows[0]["idImage"].ToString() + "_off.png", UriKind.RelativeOrAbsolute));
+                    qstrep.Children.Add(imageQst);
+                }
+
+                if(isItTrue == true)
+                {
+                    reponsetxt.Background = Brushes.GreenYellow;
+                }
+                else
+                {
+                    reponsetxt.Background = Brushes.LightSalmon;
+                }
+
+                qstrep.Children.Add(reponsetxt);
+
+                qstrep.Children.Add(lecon);
+
+                borderForStackrep.Child = qstrep;
+                borderForStackrep.Margin = new Thickness(10);
+            }
+            return borderForStackrep;
+        }
+
+
+        private void niv2thm234_Selected(object sender, RoutedEventArgs e)
+        {
+            string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
+            SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable temp = new DataTable(); ;
+
+            string querySelectTheme1Niv1;
+
+            int niveauSelected = 2;
+            int themeSelected = 0;
+
+            if (niv2thm2.IsSelected)
+            {
+                niveauSelected = 2;
+                themeSelected = 2;
+            }
+            if (niv2thm3.IsSelected)
+            {
+                niveauSelected = 2;
+                themeSelected = 3;
+            }
+            if (niv2thm4.IsSelected)
+            {
+                niveauSelected = 2;
+                themeSelected = 4;
+            }
+
+            if (niv3thm1.IsSelected)
+            {
+                niveauSelected = 3;
+                themeSelected = 1;
+            }
+            if (niv3thm2.IsSelected)
+            {
+                niveauSelected = 3;
+                themeSelected = 2;
+            }
+            if (niv3thm3.IsSelected)
+            {
+                niveauSelected = 3;
+                themeSelected = 3;
+            }
+
+            querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveauSelected.ToString() + "' AND Test = '" + themeSelected.ToString() + "' )";
+
+            try
+            {
+                if (saveConn.State == ConnectionState.Closed)
+                    saveConn.Open();
+
+                cmd = new SqlCommand(querySelectTheme1Niv1, saveConn);
+                adapter = new SqlDataAdapter(cmd);
+                _StatesTableReponse = new DataTable();
+                adapter.Fill(temp);
+                adapter.Dispose();
+
+                if (saveConn.State == ConnectionState.Open)
+                    saveConn.Close();
+            }
+            catch (Exception)
+            {
+                if (saveConn.State == ConnectionState.Open)
+                    saveConn.Close();
+                MessageBox.Show("Error states");
+            }
+            //Affichage des reponse de l'utilisateur
+            chartsGrid.Children.Clear();
+            StackPanel userReponses = new StackPanel();//pour toutes les questions
+            Border qstreponse; // pour une seul question
+            ScrollViewer scrollViewer = new ScrollViewer();
+            for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
+            {
+                qstreponse = new Border();
+                qstreponse = creatAnswerUserForLVL23(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString()));
+                userReponses.Children.Add(qstreponse);
+            }
+            scrollViewer.Content = userReponses;
+            chartsGrid.Children.Add(scrollViewer);
+        }
+
+        private Border creatAnswerUserForLVL23(int id, string reponse, string reponseAr, bool isItTrue) // id == Code
+        {
+            string connStringToPanneauxDB = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True";
+            SqlConnection connectToPanneauxDB = new SqlConnection(connStringToPanneauxDB);
+
+            string querySelect = "SELECT * FROM Question WHERE Id = '" + id.ToString() + "'";
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable questionContent = new DataTable();
+
+            if (connectToPanneauxDB.State == ConnectionState.Closed)
+                connectToPanneauxDB.Open();
+            using (connectToPanneauxDB)
+            {
+                try
+                {
+                    cmd = new SqlCommand(querySelect, connectToPanneauxDB);
+                    adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(questionContent);
+                    adapter.Dispose();
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+                catch (Exception)
+                {
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+            }
+
+            Border borderForStackrep = new Border();
+            borderForStackrep.CornerRadius = new CornerRadius(27);
+
+            SolidColorBrush lightBlack = new SolidColorBrush();
+            lightBlack.Color = Color.FromArgb(50, 0, 0, 0);
+
+            borderForStackrep.Background = lightBlack;
+
+            StackPanel qstrep = new StackPanel();
+            qstrep.Margin = new Thickness(3);
+
+            TextBlock questiontxt = new TextBlock();
+            questiontxt.Margin = new Thickness(10);
+            questiontxt.VerticalAlignment = VerticalAlignment.Center;
+
+            TextBlock reponsetxt = new TextBlock();
+            reponsetxt.Margin = new Thickness(10);
+            reponsetxt.VerticalAlignment = VerticalAlignment.Center;
+
+            TextBlock lecon = new TextBlock();
+            lecon.Margin = new Thickness(10);
+            lecon.VerticalAlignment = VerticalAlignment.Center;
+
+            Image imageQst = new Image();
+            imageQst.Height = 60;
+            imageQst.Width = 60;
+
+
+            if (questionContent.Rows.Count == 1)
+            {
+                if (MainWindow.langue == 0)
+                {
+                    questiontxt.Text = "La question : " + questionContent.Rows[0]["contenu"].ToString();
+                    reponsetxt.Text = "Votre réponse : " + questionContent.Rows[0][reponse].ToString();
+                    lecon.Text = "Voir : " + questionContent.Rows[0]["leson"].ToString();
+                }
+                else
+                {
+                    questiontxt.Text = questionContent.Rows[0]["contenuar"].ToString() + "السؤال";
+                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                    lecon.Text = "";
+                }
+
+                if (isItTrue == true)
+                {
+                    reponsetxt.Background = Brushes.GreenYellow;
+                }
+                else
+                {
+                    reponsetxt.Background = Brushes.LightSalmon;
+                }
+
+                //Desgin
+                qstrep.Orientation = Orientation.Horizontal;
+                qstrep.Children.Add(questiontxt);
+
+                qstrep.Children.Add(reponsetxt);
+
+                qstrep.Children.Add(lecon);
+
+                borderForStackrep.Child = qstrep;
+                borderForStackrep.Margin = new Thickness(10);
+            }
+            return borderForStackrep;
         }
     }
 }

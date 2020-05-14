@@ -40,20 +40,21 @@
                           Foreground="White">
 
                     <TreeViewItem x:Name="niveau1" Header="niveau 1" >
-                        <TreeViewItem x:Name="niv1thm1" Header="Signalisation"/>
+                        <TreeViewItem x:Name="niv1thm1" Header="Signalisation" Selected="niv1thm1Andniv2thm1_Selected"/>
                         <TreeViewItem x:Name="niv1thm2" Header="Intersection et priorité"/>
                     </TreeViewItem>
 
                     <TreeViewItem x:Name="niveau2" Header="niveau 2">
-                        <TreeViewItem x:Name="niv2thm1" Header="Signalisation 2"/>
-                        <TreeViewItem x:Name="niv2thm2" Header="Theme2"/>
-                        <TreeViewItem x:Name="niv2thm3" Header="Theme3"/>
+                        <TreeViewItem x:Name="niv2thm1" Header="Signalisation 2" Selected="niv1thm1Andniv2thm1_Selected"/>
+                        <TreeViewItem x:Name="niv2thm2" Header="Theme2" Selected="niv2thm234_Selected"/>
+                        <TreeViewItem x:Name="niv2thm3" Header="Theme3" Selected="niv2thm234_Selected"/>
+                        <TreeViewItem x:Name="niv2thm4" Header="Theme4" Selected="niv2thm234_Selected"/>
                     </TreeViewItem>
 
                     <TreeViewItem x:Name="niveau3" Header="niveau 3">
-                        <TreeViewItem Header="Theme1"/>
-                        <TreeViewItem Header="Theme2"/>
-                        <TreeViewItem Header="Theme3"/>
+                        <TreeViewItem x:Name="niv3thm1" Header="Theme1" Selected="niv2thm234_Selected"/>
+                        <TreeViewItem x:Name="niv3thm2" Header="Theme2" Selected="niv2thm234_Selected"/>
+                        <TreeViewItem x:Name="niv3thm3" Header="Theme3" Selected="niv2thm234_Selected"/>
                     </TreeViewItem>
                 </TreeView>
             </StackPanel>
