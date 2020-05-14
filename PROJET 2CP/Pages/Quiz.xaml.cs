@@ -59,6 +59,7 @@ namespace PROJET_2CP.Pages
             creerQuestion();
             afficherQuestion();
             Distimer();
+            initialiserLangue();
         }
         private void initialiserLangue()
         {
@@ -358,35 +359,49 @@ namespace PROJET_2CP.Pages
         private void repA_Click(object sender, RoutedEventArgs e)
         {
             sp.Stop();
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             //Calcul de stats
-                //sauvgarder la question et la bonne reponse et la reponse de l'utilisateur
+            //sauvgarder la question et la bonne reponse et la reponse de l'utilisateur
             if (propA==bonnRep)
             {
                 saveAnswer(true,_niveau,1,_codeQst, propAfr,propAar); // theme 1
                 repA.Foreground = Brushes.Green;
                 nbBonneReponse++;
 
-                if (MainWindow.langue == 0)
-                    reponseNext.Text = "Bonne reponse";
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
                 else
-                    reponseNext.Text = "اجابة صحيحة";
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
 
-                reponseNext.Foreground = Brushes.GreenYellow;
-
-                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
             }
             else
             {
                 saveAnswer(false, _niveau,1, _codeQst, propAfr, propAar);
 
-                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
-                if (MainWindow.langue == 0)
-                    reponseNext.Text = "Mauvaise reponse";
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + propA;
+                }
                 else
-                    reponseNext.Text = "اجابة خاطئة";
-
-                reponseNext.Foreground = Brushes.Red;
+                {
+                    votre_reponse.Text = "إجابتك:" + propA;
+                }
+                votre_reponse.Foreground = Brushes.Red;
 
                 repA.Foreground = Brushes.Red;
                 if (propB == bonnRep)
@@ -415,36 +430,47 @@ namespace PROJET_2CP.Pages
         private void repB_Click(object sender, RoutedEventArgs e)
         {
             sp.Stop();
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             if (propB == bonnRep)
             {
                 saveAnswer(true, _niveau, 1, _codeQst, propBfr, propBar) ;
 
-                if (MainWindow.langue == 0)
-                    reponseNext.Text = "Bonne reponse";
+
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
                 else
-                    reponseNext.Text = "اجابة صحيحة";
-                
-                reponseNext.Foreground = Brushes.GreenYellow;
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
 
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                repB.Foreground = Brushes.Green;
-
-                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
-
                 //Calcul de stats
             }
             else
             {
                 saveAnswer(false, _niveau,1, _codeQst, propBfr, propBar);
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
-                if (MainWindow.langue == 0)
-                    reponseNext.Text = "Mauvaise reponse";
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + propB;
+                }
                 else
-                    reponseNext.Text = "اجابة خاطئة";
-
-                reponseNext.Foreground = Brushes.Red;
-                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
-
+                {
+                    votre_reponse.Text = "إجابتك:" + propB;
+                }
+                votre_reponse.Foreground = Brushes.Red;
                 repB.Foreground = Brushes.Red;
                 if (propA == bonnRep)
                 {
@@ -471,34 +497,49 @@ namespace PROJET_2CP.Pages
 
         private void repC_Click(object sender, RoutedEventArgs e)
         {
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             sp.Stop();
             if (propC == bonnRep)
             {
                 saveAnswer(true, _niveau,1, _codeQst, propCfr, propCar);
 
-                if (MainWindow.langue == 0)
-                    reponseNext.Text = "Bonne reponse";
+
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
                 else
-                    reponseNext.Text = "اجابة صحيحة";
-                
-                reponseNext.Foreground = Brushes.GreenYellow;
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
 
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                repC.Foreground = Brushes.Green;
-
-                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
 
                 //Calcul de stats
             }
             else
             {
                 saveAnswer(false, _niveau,1, _codeQst, propCfr, propCar);
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
-                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
-
-                reponseNext.Text = "Mauvaise reponse";
-                reponseNext.Foreground = Brushes.Red;
-
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + propC;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + propC;
+                }
+                votre_reponse.Foreground = Brushes.Red;
                 repC.Foreground = Brushes.Red;
                 if (propA == bonnRep)
                 {
@@ -525,21 +566,31 @@ namespace PROJET_2CP.Pages
 
         private void repD_Click(object sender, RoutedEventArgs e)
         {
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             sp.Stop();
             if (propD == bonnRep)
             {
                 saveAnswer(true, _niveau,1, _codeQst, propDfr, propDar);
 
-                if (MainWindow.langue == 0)
-                    reponseNext.Text = "Bonne reponse";
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
                 else
-                    reponseNext.Text = "اجابة صحيحة";
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
 
-                reponseNext.Foreground = Brushes.GreenYellow;
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                repD.Foreground = Brushes.Green;
-
-                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
 
                 //Calcul de stats
             }
@@ -547,12 +598,17 @@ namespace PROJET_2CP.Pages
             {
                 saveAnswer(false, _niveau,1, _codeQst, propDfr, propDar);
 
-                nextimage.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
-                if (MainWindow.langue == 0)
-                    reponseNext.Text = "Mauvaise reponse";
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
+
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + propD;
+                }
                 else
-                    reponseNext.Text = "اجابة خاطئة";
-                reponseNext.Foreground = Brushes.Red;
+                {
+                    votre_reponse.Text = "إجابتك:" + propD;
+                }
+                votre_reponse.Foreground = Brushes.Red;
 
                 repD.Foreground = Brushes.Red;
                 if (propB == bonnRep)
