@@ -395,11 +395,11 @@ namespace PROJET_2CP.Pages
 
                 if (langue == 0)
                 {
-                    votre_reponse.Text = "Votre réponse : " + propA;
+                    votre_reponse.Text = "Votre réponse : " + repA.Content.ToString();
                 }
                 else
                 {
-                    votre_reponse.Text = "إجابتك:" + propA;
+                    votre_reponse.Text = "إجابتك:" + repA.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
 
@@ -464,11 +464,11 @@ namespace PROJET_2CP.Pages
 
                 if (langue == 0)
                 {
-                    votre_reponse.Text = "Votre réponse : " + propB;
+                    votre_reponse.Text = "Votre réponse : " + repB.Content.ToString();
                 }
                 else
                 {
-                    votre_reponse.Text = "إجابتك:" + propB;
+                    votre_reponse.Text = "إجابتك:" + repB.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
                 repB.Foreground = Brushes.Red;
@@ -533,11 +533,11 @@ namespace PROJET_2CP.Pages
 
                 if (langue == 0)
                 {
-                    votre_reponse.Text = "Votre réponse : " + propC;
+                    votre_reponse.Text = "Votre réponse : " + repC.Content.ToString();
                 }
                 else
                 {
-                    votre_reponse.Text = "إجابتك:" + propC;
+                    votre_reponse.Text = "إجابتك:" + repC.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
                 repC.Foreground = Brushes.Red;
@@ -602,11 +602,11 @@ namespace PROJET_2CP.Pages
 
                 if (langue == 0)
                 {
-                    votre_reponse.Text = "Votre réponse : " + propD;
+                    votre_reponse.Text = "Votre réponse : " + repD.Content.ToString();
                 }
                 else
                 {
-                    votre_reponse.Text = "إجابتك:" + propD;
+                    votre_reponse.Text = "إجابتك:" + repD.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
 

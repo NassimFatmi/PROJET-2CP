@@ -207,14 +207,14 @@ namespace PROJET_2CP
             if (MainWindow.langue == 0)
             {   //la langue français
                 loginbtn.Content = "Se connecter";
-                creercmpttxt.Content = "Créer comtpe";
+                creercmpttxt.Content = "Créer compte";
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(userIDtxt, "Utilisateur ID");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(nomtxt, "Nom");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(prenomtxt, "Prénom");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(passwordtxt, "Mot de passe");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(confirmepasswordtxt, "Confirmer le mot de passe");
                 imagebtn.Text = "Image";
-                creercompteconfirme.Content = "Créer comtpe";
+                creercompteconfirme.Content = "Créer compte";
                 proverbe1.Content = "Respecte le code de la route";
                 proverbe2.Content = "et le code de la route te respectera.";
                 pub1.Content = "Créer votre compte gratuitement et obtenir";

@@ -94,7 +94,28 @@
                     <Label Content="Clock" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Border>
-            <Button Grid.Column="1" x:Name="next" Click="Button_Click"
+            <Button x:Name="next" Click="Button_Click"
+                    materialDesign:ButtonAssist.CornerRadius="25" BorderBrush="{x:Null}" 
+                    HorizontalAlignment="Center"
+                    Height="260" Width="650" Visibility="Collapsed" Grid.Column="1" Margin="84.6,269,75.8,10.2">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.6"/>
+                </Button.Background>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Height="70" Width="600" TextWrapping="Wrap" FontSize="18" TextAlignment="Center" x:Name="votre_reponse" />
+                    <TextBlock Height="70" Width="600" TextWrapping="Wrap" FontSize="18" TextAlignment="Center" x:Name="bonne_reponse" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image x:Name="reaction" Height="100" Width="100"/>
+                        <StackPanel VerticalAlignment="Center" >
+                            <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="40" Height="40"
+                                             HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="suivant" Text="Suivant" HorizontalAlignment="Center"
+                               FontSize="15"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+            <!-- <Button Grid.Column="1" x:Name="next" Click="Button_Click"
                     materialDesign:ButtonAssist.CornerRadius="25" BorderBrush="{x:Null}" 
                     VerticalAlignment="Center" HorizontalAlignment="Center"
                     Height="150" Width="400" Visibility="Collapsed">
@@ -112,7 +133,7 @@
                                FontSize="20"/>
                     </StackPanel>
                 </StackPanel>
-            </Button>
+            </Button>-->
         </Grid>
 
     </Grid>

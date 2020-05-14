@@ -240,11 +240,27 @@ namespace PROJET_2CP.Pages
 
         private void p1_Click(object sender, RoutedEventArgs e)
         {
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png")));
-                p1.Foreground = Brushes.Green;
-                p1.BorderBrush = Brushes.Green;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
+
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
                 saveAnswer(true, 3, _codeQst, _themeQst);
 
@@ -253,9 +269,17 @@ namespace PROJET_2CP.Pages
             }
             else
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png")));
-                p1.Foreground = Brushes.Red;
-                p1.BorderBrush = Brushes.Red;
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
+
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + p1.Content.ToString();
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + p1.Content.ToString();
+                }
+                votre_reponse.Foreground = Brushes.Red;
                 saveAnswer(false, 3, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
@@ -272,11 +296,27 @@ namespace PROJET_2CP.Pages
 
         private void p2_Click(object sender, RoutedEventArgs e)
         {
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png")));
-                p2.Foreground = Brushes.Green;
-                p2.BorderBrush = Brushes.Green;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
+
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
                 saveAnswer(true, 3, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
@@ -284,9 +324,17 @@ namespace PROJET_2CP.Pages
             }
             else
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png")));
-                p2.Foreground = Brushes.Red;
-                p2.BorderBrush = Brushes.Red;
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
+
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + p2.Content.ToString();
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + p2.Content.ToString();
+                }
+                votre_reponse.Foreground = Brushes.Red;
                 saveAnswer(false, 3, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
@@ -303,11 +351,27 @@ namespace PROJET_2CP.Pages
 
         private void p4_Click(object sender, RoutedEventArgs e)
         {
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png")));
-                p4.Foreground = Brushes.Green;
-                p4.BorderBrush = Brushes.Green;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
+
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
                 saveAnswer(true, 3, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
@@ -316,9 +380,17 @@ namespace PROJET_2CP.Pages
             }
             else
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png")));
-                p4.Foreground = Brushes.Red;
-                p4.BorderBrush = Brushes.Red;
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
+
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + p4.Content.ToString();
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + p4.Content.ToString();
+                }
+                votre_reponse.Foreground = Brushes.Red;
                 saveAnswer(false, 3, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
@@ -335,11 +407,27 @@ namespace PROJET_2CP.Pages
 
         private void p3_Click(object sender, RoutedEventArgs e)
         {
+            if (langue == 0)
+            {
+                bonne_reponse.Text = "Bonne réponse : " + bonnRep;
+            }
+            else
+            {
+                bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
+            }
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png")));
-                p3.Foreground = Brushes.Green;
-                p3.BorderBrush = Brushes.Green;
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + bonnRep;
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + bonnRep;
+                }
+                votre_reponse.Foreground = Brushes.Green;
+
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
                 saveAnswer(true, 3, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
@@ -347,9 +435,17 @@ namespace PROJET_2CP.Pages
             }
             else
             {
-                reaction.Fill = new ImageBrush(new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png")));
-                p3.Foreground = Brushes.Red;
-                p3.BorderBrush = Brushes.Red;
+                reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
+
+                if (langue == 0)
+                {
+                    votre_reponse.Text = "Votre réponse : " + p3.Content.ToString();
+                }
+                else
+                {
+                    votre_reponse.Text = "إجابتك:" + p3.Content.ToString();
+                }
+                votre_reponse.Foreground = Brushes.Red;
                 saveAnswer(false, 3, _codeQst, _themeQst);
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
