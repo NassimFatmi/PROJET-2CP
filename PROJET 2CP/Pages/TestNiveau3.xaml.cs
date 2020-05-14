@@ -262,7 +262,7 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                saveAnswer(true, 3, _codeQst, _themeQst);
+                saveAnswer(true, 3, 0, 0, "TestNiv3", "");
 
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
@@ -280,7 +280,7 @@ namespace PROJET_2CP.Pages
                     votre_reponse.Text = "إجابتك:" + p1.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
-                saveAnswer(false, 3, _codeQst, _themeQst);
+                saveAnswer(false, 3, 0, 0, "TestNiv3", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
@@ -318,7 +318,7 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                saveAnswer(true, 3, _codeQst, _themeQst);
+                saveAnswer(true, 3, 0, 0, "TestNiv3", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
@@ -335,7 +335,7 @@ namespace PROJET_2CP.Pages
                     votre_reponse.Text = "إجابتك:" + p2.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
-                saveAnswer(false, 3, _codeQst, _themeQst);
+                saveAnswer(false, 3, 0, 0, "TestNiv3", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
@@ -373,7 +373,7 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                saveAnswer(true, 3, _codeQst, _themeQst);
+                saveAnswer(true, 3, 0, 0, "TestNiv3", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
 
@@ -391,7 +391,7 @@ namespace PROJET_2CP.Pages
                     votre_reponse.Text = "إجابتك:" + p4.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
-                saveAnswer(false, 3, _codeQst, _themeQst);
+                saveAnswer(false, 3, 0, 0, "TestNiv3", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
@@ -429,7 +429,7 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                saveAnswer(true, 3, _codeQst, _themeQst);
+                saveAnswer(true, 3, 0, 0, "TestNiv3", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
@@ -446,7 +446,7 @@ namespace PROJET_2CP.Pages
                     votre_reponse.Text = "إجابتك:" + p3.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
-                saveAnswer(false, 3, _codeQst, _themeQst);
+                saveAnswer(false, 3, 0, 0, "TestNiv3", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 _soundEffect.Play();
             }
@@ -560,15 +560,24 @@ namespace PROJET_2CP.Pages
             increment--;
         }
 
-
-        private void saveAnswer(bool reponse, int niveau, int code, string theme)
+        /// <summary>
+        /// Save the answer in the DATABASE Save.mdf
+        /// </summary>
+        /// <param name="reponse"></param> is the answer true ?
+        /// <param name="niveau"></param> level 
+        /// <param name="theme"></param> numero de theme dans la bdd theme == test
+        /// <param name="code"></param> Code  == Id
+        /// <param name="reponseText"></param> Answer in frensh
+        /// <param name="reponseTextAr"></param> answer in arabic
+        private void saveAnswer(bool reponse, int niveau, int theme, int code, string reponseText, string reponseTextAr)
         {
+            //pour les question des leçons
             // Code == ID //
             string connString = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf; Integrated Security = True";
 
             DataTable savedData = new DataTable();
 
-            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "' AND Test = '" + theme.ToString() + "'";
 
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -584,7 +593,7 @@ namespace PROJET_2CP.Pages
                 if (savedData.Rows.Count == 1)
                 {
                     // Si l'apprenant a répondu a cette question on fait la maj dans sa Table dans Save BDD
-                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' , ReponseText = '" + reponseText + "' , ReponseTextAr ='" + reponseTextAr + "'  WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
                     cmd = new SqlCommand(query, conn);
 
                     cmd.CommandType = CommandType.Text;
@@ -592,9 +601,8 @@ namespace PROJET_2CP.Pages
                 }
                 else
                 {
-
                     //Si l'apprenant n'a pas répondu a cette question on l'insert sa réponse
-                    query = "INSERT INTO " + LogIN.LoggedUser.UtilisateurID + "Trace(Niveau,Theme,Test,Code,Reponse) VALUES('" + niveau.ToString() + "','" + theme + "', '' ,'" + code.ToString() + "','" + reponse + "')";
+                    query = "INSERT INTO " + LogIN.LoggedUser.UtilisateurID + "Trace(Niveau,Test,Code,ReponseText,ReponseTextAr,Reponse) VALUES('" + niveau.ToString() + "', '" + theme.ToString() + "' ,'" + code.ToString() + "','" + reponseText + "','" + reponseTextAr + "','" + reponse + "')";
                     cmd = new SqlCommand(query, conn);
 
                     cmd.CommandType = CommandType.Text;
@@ -605,7 +613,7 @@ namespace PROJET_2CP.Pages
             catch (Exception)
             {
                 conn.Close();
-                MessageBox.Show("error save Db quiz Testniveau 3 ");
+                MessageBox.Show("error save Db quiz Testniveau 1 ");
             }
         }
     }

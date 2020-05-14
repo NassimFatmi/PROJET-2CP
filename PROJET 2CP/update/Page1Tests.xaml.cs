@@ -183,7 +183,7 @@ namespace PROJET_2CP.update
             }
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                saveAnswer(true,1,0,"Test1");
+                saveAnswer(true,1,0,0,"TestNiv1","");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory +"/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -202,7 +202,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, "Test1");
+                saveAnswer(false, 1, 0, 0, "TestNiv1", "");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory +"/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -241,7 +241,7 @@ namespace PROJET_2CP.update
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                saveAnswer(true, 1, 0, "Test1");
+                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory  + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -260,7 +260,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, "Test1");
+                saveAnswer(false, 1, 0, 0, "TestNiv1", "");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory  + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -298,7 +298,7 @@ namespace PROJET_2CP.update
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                saveAnswer(true, 1, 0, "Test1");
+                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory  + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -317,7 +317,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, "Test1");
+                saveAnswer(false, 1, 0, 0, "TestNiv1", "");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory  + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -355,7 +355,7 @@ namespace PROJET_2CP.update
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                saveAnswer(true, 1, 0, "Test1");
+                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory  + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -374,7 +374,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, "Test1");
+                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -490,20 +490,23 @@ namespace PROJET_2CP.update
             next.Visibility = Visibility.Collapsed;
         }
         /// <summary>
-        /// partie pour le sauvegrade des reponses pour construire les statistiques 
+        /// Save the answer in the DATABASE Save.mdf
         /// </summary>
-        /// <param name="reponse"></param> la reponse de l'apprenant
-        /// <param name="niveau"></param> niveau de la qst
-        /// <param name="code"></param> id ou le code pour la referance
-        /// <param name="theme"></param> le theme que la qst apartient
-        private void saveAnswer(bool reponse, int niveau, int code, string theme)
+        /// <param name="reponse"></param> is the answer true ?
+        /// <param name="niveau"></param> level 
+        /// <param name="theme"></param> numero de theme dans la bdd theme == test
+        /// <param name="code"></param> Code  == Id
+        /// <param name="reponseText"></param> Answer in frensh
+        /// <param name="reponseTextAr"></param> answer in arabic
+        private void saveAnswer(bool reponse, int niveau, int theme, int code, string reponseText, string reponseTextAr)
         {
+            //pour les question des leçons
             // Code == ID //
             string connString = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf; Integrated Security = True";
 
             DataTable savedData = new DataTable();
 
-            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "' AND Test = '" + theme.ToString() + "'";
 
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -519,7 +522,7 @@ namespace PROJET_2CP.update
                 if (savedData.Rows.Count == 1)
                 {
                     // Si l'apprenant a répondu a cette question on fait la maj dans sa Table dans Save BDD
-                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' , ReponseText = '" + reponseText + "' , ReponseTextAr ='" + reponseTextAr + "'  WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
                     cmd = new SqlCommand(query, conn);
 
                     cmd.CommandType = CommandType.Text;
@@ -527,9 +530,8 @@ namespace PROJET_2CP.update
                 }
                 else
                 {
-
                     //Si l'apprenant n'a pas répondu a cette question on l'insert sa réponse
-                    query = "INSERT INTO " + LogIN.LoggedUser.UtilisateurID + "Trace(Niveau,Theme,Test,Code,Reponse) VALUES('" + niveau.ToString() + "','" + theme + "', '' ,'" + code.ToString() + "','" + reponse + "')";
+                    query = "INSERT INTO " + LogIN.LoggedUser.UtilisateurID + "Trace(Niveau,Test,Code,ReponseText,ReponseTextAr,Reponse) VALUES('" + niveau.ToString() + "', '" + theme.ToString() + "' ,'" + code.ToString() + "','" + reponseText + "','" + reponseTextAr + "','" + reponse + "')";
                     cmd = new SqlCommand(query, conn);
 
                     cmd.CommandType = CommandType.Text;

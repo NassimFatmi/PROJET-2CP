@@ -153,14 +153,15 @@ namespace PROJET_2CP
                 }
         }
 
-        private void stateSelect_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void stateSelect_SelectedItemChanged(object sender, RoutedEventArgs e)
         {
+            choixChart.Visibility = Visibility.Visible;
             pieCheck.IsChecked = false;
             diagCheck.IsChecked = false;
             moyenneCheck.IsChecked = false;
             creeStates();
 
-            if (_nbReponses == 0 && (niveau1.IsSelected || niveau2.IsSelected || niveau3.IsSealed))
+            if (_nbReponses == 0 && (niveau1.IsSelected || niveau2.IsSelected || niveau3.IsSelected))
             {
                 if (MainWindow.langue == 0)
                     MessageBox.Show(" vous n'avez pas fait des testes ! ");
@@ -169,7 +170,7 @@ namespace PROJET_2CP
             }
             else
             {
-                if (niveau1.IsSelected || niveau2.IsSelected || niveau3.IsSealed)
+                if (niveau1.IsSelected || niveau2.IsSelected || niveau3.IsSelected)
                 {
                     choixChart.Visibility = Visibility.Visible;
                     if (MainWindow.langue == 0)
@@ -195,6 +196,19 @@ namespace PROJET_2CP
 
             // affichage un Piechart (cercle avec des pourcentage) 
             //avec live Charts
+            string falseAnswers;
+            string trueAnswers;
+            
+            if(MainWindow.langue == 0)
+            {
+                falseAnswers = "Nombre des réponses fausses";
+                trueAnswers = "Nombre des réponses vrais";
+            }
+            else
+            {
+                falseAnswers = "عدد الأجوبة الخاطئة";
+                trueAnswers = "عدد الأجوبة الصحيحة";
+            }
 
             chartsGrid.Children.Clear();
 
@@ -206,7 +220,7 @@ namespace PROJET_2CP
                     new PieSeries
                     {
                         Values = new ChartValues<int> {_nbRepFalse},
-                        Title ="RepFaux" ,
+                        Title =falseAnswers ,
                         DataLabels = true,
                         Stroke = Brushes.Red,
                         Fill = Brushes.Red
@@ -215,7 +229,7 @@ namespace PROJET_2CP
                     new PieSeries
                     {
                         Values = new ChartValues<int>{_nbRepTrue},
-                        Title = "RepVrais",
+                        Title = trueAnswers,
                         DataLabels = true,
                         Stroke = Brushes.GreenYellow,
                         Fill = Brushes.GreenYellow
@@ -239,6 +253,19 @@ namespace PROJET_2CP
 
             // affichage un diagramme des column
             //avec live Charts
+            string falseAnswers;
+            string trueAnswers;
+
+            if (MainWindow.langue == 0)
+            {
+                falseAnswers = "Nombre des réponses fausses";
+                trueAnswers = "Nombre des réponses vrais";
+            }
+            else
+            {
+                falseAnswers = "عدد الأجوبة الخاطئة";
+                trueAnswers = "عدد الأجوبة الصحيحة";
+            }
 
             chartsGrid.Children.Clear();
 
@@ -250,7 +277,7 @@ namespace PROJET_2CP
                     new ColumnSeries
                     {
                         Values = new ChartValues<int> {_nbRepFalse},
-                        Title = "reponse fausse",
+                        Title = falseAnswers,
                         DataLabels = true,
                         Stroke = Brushes.Red,
                         Fill = Brushes.Red
@@ -259,7 +286,7 @@ namespace PROJET_2CP
                     new ColumnSeries
                     {
                         Values = new ChartValues<int>{_nbRepTrue},
-                        Title = "reponse varis",
+                        Title = trueAnswers,
                         DataLabels = true,
                         Stroke = Brushes.GreenYellow,
                         Fill = Brushes.GreenYellow
@@ -329,10 +356,10 @@ namespace PROJET_2CP
 
             if (MainWindow.langue == 0)
                 moyenne.Content = "nombre des tests :" + _NbTests.ToString() +
-                              "\nnombre des questions : " + _nbReponses.ToString() +
-                              "\nnombre des reponses vrais : " + _nbRepTrue.ToString() +
-                              "\nnombre des reponses fausses : " + _nbRepFalse.ToString() +
-                              "\nMoyenne des tests : " + float.Parse(caluclerMoyenne().ToString());
+                                  "\nnombre des questions : " + _nbReponses.ToString() +
+                                  "\nnombre des reponses vrais : " + _nbRepTrue.ToString() +
+                                  "\nnombre des reponses fausses : " + _nbRepFalse.ToString() +
+                                  "\nMoyenne des tests : " + float.Parse(caluclerMoyenne().ToString());
             else
                 moyenne.Content = "عدد الامتحانات :" + _NbTests.ToString() +
                                               "\nعدد الأسئلة : " + _nbReponses.ToString() +
@@ -393,6 +420,8 @@ namespace PROJET_2CP
             StackPanel userReponses = new StackPanel();//pour toutes les questions
             Border qstreponse; // pour une seul question
             ScrollViewer scrollViewer = new ScrollViewer();
+            scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+            scrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
             for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
             {
                 qstreponse = new Border();
@@ -401,6 +430,7 @@ namespace PROJET_2CP
             }
             scrollViewer.Content = userReponses;
             chartsGrid.Children.Add(scrollViewer);
+            choixChart.Visibility = Visibility.Collapsed;
         }
 
         private Border creatAnswerUser(int id , string reponse, string reponseAr, bool isItTrue) // id == Code
@@ -497,9 +527,13 @@ namespace PROJET_2CP
 
                 qstrep.Children.Add(reponsetxt);
 
-                qstrep.Children.Add(lecon);
+                StackPanel fullStack = new StackPanel();
+                fullStack.Margin = new Thickness(5);
+                fullStack.Children.Add(qstrep);
+                lecon.HorizontalAlignment = HorizontalAlignment.Center;
+                fullStack.Children.Add(lecon);
 
-                borderForStackrep.Child = qstrep;
+                borderForStackrep.Child = fullStack;
                 borderForStackrep.Margin = new Thickness(10);
             }
             return borderForStackrep;
@@ -586,6 +620,7 @@ namespace PROJET_2CP
             }
             scrollViewer.Content = userReponses;
             chartsGrid.Children.Add(scrollViewer);
+            choixChart.Visibility = Visibility.Collapsed;
         }
 
         private Border creatAnswerUserForLVL23(int id, string reponse, string reponseAr, bool isItTrue) // id == Code
@@ -652,7 +687,7 @@ namespace PROJET_2CP
                 {
                     questiontxt.Text = "La question : " + questionContent.Rows[0]["contenu"].ToString();
                     reponsetxt.Text = "Votre réponse : " + questionContent.Rows[0][reponse].ToString();
-                    lecon.Text = "Voir : " + questionContent.Rows[0]["leson"].ToString();
+                    lecon.Text = "Voir Le cour : " + questionContent.Rows[0]["leson"].ToString();
                 }
                 else
                 {

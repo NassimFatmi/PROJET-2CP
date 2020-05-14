@@ -36,22 +36,22 @@
 
                 <Separator/>
 
-                <TreeView x:Name="stateSelect" SelectedItemChanged="stateSelect_SelectedItemChanged" 
+                <TreeView x:Name="stateSelect" 
                           Foreground="White">
 
-                    <TreeViewItem x:Name="niveau1" Header="niveau 1" >
+                    <TreeViewItem x:Name="niveau1" Header="niveau 1" Selected="stateSelect_SelectedItemChanged">
                         <TreeViewItem x:Name="niv1thm1" Header="Signalisation" Selected="niv1thm1Andniv2thm1_Selected"/>
                         <TreeViewItem x:Name="niv1thm2" Header="Intersection et priorité"/>
                     </TreeViewItem>
 
-                    <TreeViewItem x:Name="niveau2" Header="niveau 2">
+                    <TreeViewItem x:Name="niveau2" Header="niveau 2" Selected="stateSelect_SelectedItemChanged">
                         <TreeViewItem x:Name="niv2thm1" Header="Signalisation 2" Selected="niv1thm1Andniv2thm1_Selected"/>
                         <TreeViewItem x:Name="niv2thm2" Header="Theme2" Selected="niv2thm234_Selected"/>
                         <TreeViewItem x:Name="niv2thm3" Header="Theme3" Selected="niv2thm234_Selected"/>
                         <TreeViewItem x:Name="niv2thm4" Header="Theme4" Selected="niv2thm234_Selected"/>
                     </TreeViewItem>
 
-                    <TreeViewItem x:Name="niveau3" Header="niveau 3">
+                    <TreeViewItem x:Name="niveau3" Header="niveau 3" Selected="stateSelect_SelectedItemChanged">
                         <TreeViewItem x:Name="niv3thm1" Header="Theme1" Selected="niv2thm234_Selected"/>
                         <TreeViewItem x:Name="niv3thm2" Header="Theme2" Selected="niv2thm234_Selected"/>
                         <TreeViewItem x:Name="niv3thm3" Header="Theme3" Selected="niv2thm234_Selected"/>
@@ -60,7 +60,7 @@
             </StackPanel>
         </materialDesign:Card>
 
-        <Grid Grid.Column="1" VerticalAlignment="Top"
+        <Grid Grid.Column="1" VerticalAlignment="Top" 
               Height="50">
             <StackPanel x:Name="choixChart" Orientation="Horizontal" 
                         Visibility="Collapsed" HorizontalAlignment="Center">
@@ -135,7 +135,11 @@
             </Grid.RowDefinitions>
 
             <Grid x:Name="chartsGrid" VerticalAlignment="Center" HorizontalAlignment="Center" 
-                  Background="White" Height="481" Width="765" Margin="0,0,0,69.8" Grid.RowSpan="3"/>
+                  Height="481" Width="765" Margin="0,0,0,69.8" Grid.RowSpan="3">
+                <Grid.Background>
+                    <SolidColorBrush Color="White" Opacity="0.3"/>
+                </Grid.Background>
+            </Grid>
 
             <Label Grid.Row="2" x:Name="moyenneLbl" Content="Moyenne" Style="{StaticResource MaterialDesignLabel}" 
                    Height="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
