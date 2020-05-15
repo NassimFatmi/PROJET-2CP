@@ -85,7 +85,7 @@ namespace PROJET_2CP.Pages
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    _codeQst = Int32.Parse(dr["Id"].ToString());;
+                    _codeQst = Int32.Parse(dr["Id"].ToString());
 
                     //si bi < 50 niveau = 1
                     if (_codeQst <= 50)
@@ -716,7 +716,7 @@ namespace PROJET_2CP.Pages
 
             DataTable savedData = new DataTable();
 
-            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "' AND Test = '" + theme.ToString() + "'";
+            string query = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID + "Trace WHERE niveau = '" + niveau.ToString() + "' AND Code = '" + code.ToString() + "' AND Test = '" + theme.ToString() + "'";
 
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(query, conn);
