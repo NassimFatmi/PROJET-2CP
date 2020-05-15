@@ -16,13 +16,23 @@
                 <Button  Style="{StaticResource MaterialDesignIconButton}" BorderThickness="0" x:Name="precedent" Click="precedent_Click" Background="Transparent" Height="60" Width="60" HorizontalAlignment="Left"  >
                     <materialDesign:PackIcon Kind="ArrowLeft" Foreground="Black" Height="40" Width="40" />
                 </Button>
-                <Button x:Name="img"  Height="200" Width="200" HorizontalAlignment="Center" />
+                <Button x:Name="img" Background="Transparent"  Height="200" Width="200" HorizontalAlignment="Center" />
                 <Button Style="{StaticResource MaterialDesignIconButton}" BorderThickness="0" x:Name="suivant" Click="suivant_Click" Background="Transparent" Height="60" Width="60" HorizontalAlignment="Right" >
                     <materialDesign:PackIcon Kind="ArrowRight" Foreground="Black" Height="40" Width="40" />
                 </Button>
             </Grid>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label  Margin="100,0,0,0" x:Name="Explication" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="50" Width="500" Foreground="White" Background="#545d6a"  />
+                <StackPanel Margin="0,0,0,20" >
+                    <Border CornerRadius="25"
+                        Height="100" Width="750">
+                        <Border.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.2"/>
+                        </Border.Background>
+                        <TextBlock x:Name="Explication"  HorizontalAlignment="Center" Text="Question content"
+                               Foreground="White" TextWrapping="Wrap" FontSize="22"
+                               Margin="10" TextAlignment="Center"/>
+                    </Border>
+                </StackPanel>
                 <Button Style="{StaticResource MaterialDesignIconButton}" BorderThickness="0" Background="Transparent"  Name="son" Click="son_Click" Height="30" Margin="50,0,0,0"   >
                     <materialDesign:PackIcon Kind="Play" Foreground="Black" Height="40" Width="40"  />
                 </Button>

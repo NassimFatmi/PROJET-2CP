@@ -25,10 +25,15 @@ namespace PROJET_2CP
             InitializeComponent();
             language();
         }
+        private void backClick(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Pages.Leçons();
+        }
         public void language()
         {
             if (MainWindow.langue == 0)
             {
+
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/a.png", UriKind.RelativeOrAbsolute));
                 img1.Source = btm;
                 btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/b.png", UriKind.RelativeOrAbsolute));
@@ -50,12 +55,11 @@ namespace PROJET_2CP
 
             }
             if (MainWindow.langue == 1)
-            {
-            }
-        }
-        private void backClick(object sender, RoutedEventArgs e)
-        {
-            Home.mainFrame.Content = new Pages.Leçons();
+
+                back.Text = "رجوع";
         }
     }
+
 }
+
+

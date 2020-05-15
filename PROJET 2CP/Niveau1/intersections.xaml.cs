@@ -27,17 +27,22 @@ namespace PROJET_2CP
         private NLeçon lesson;
         public intersections()
         {
-        //    next.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/next.png", UriKind.RelativeOrAbsolute));
-         //   back.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/back.png", UriKind.RelativeOrAbsolute));
-          //  speaker.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/speaker.png", UriKind.RelativeOrAbsolute));
-
 
             lesson = new NLeçon();
             InitializeComponent();
             creerPanneau();
+            if (MainWindow.langue == 0)
+            {
+                Explication.Text = "Intersection sans panneaux ,priorité à droite - passes de voiture jaune ensuite rouge aprés bleu";
+            }
+            if (MainWindow.langue == 1)
+            {
+                back.Text = "رجوع";
+                Explication.Text = "تقاطع طرق ب وّدن إشاراة، الولوية لليمين - تمر السياراة الصفراء ثم الحمراء ثم الزرقاء";
+            }
             num = 1;
             img.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "/Img/1_7");
-            Explication.Content = "Intersection sans panneaux ,priorité à droite - passes de voiture jaune ensuite rouge aprés bleu";
+
         }
         private void creerPanneau()
         {
@@ -111,7 +116,16 @@ namespace PROJET_2CP
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Explication.Content = dr["Explication"].ToString();
+                    if (MainWindow.langue == 0)
+                    {
+                        Explication.Text = dr["Explication"].ToString();
+                    }
+                    if (MainWindow.langue == 1)
+                    {
+                        Explication.Text = dr["ExplicationAR"].ToString();
+
+                    }
+
                     img.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "/Img/" + dr["nom"].ToString());
 
                 }
@@ -142,7 +156,15 @@ namespace PROJET_2CP
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Explication.Content = dr["Explication"].ToString();
+                    if (MainWindow.langue == 0)
+                    {
+                        Explication.Text = dr["Explication"].ToString();
+                    }
+                    if (MainWindow.langue == 1)
+                    {
+                        Explication.Text = dr["ExplicationAR"].ToString();
+
+                    }
                     img.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "/Img/" + dr["nom"].ToString());
 
 
@@ -174,7 +196,15 @@ namespace PROJET_2CP
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Explication.Content = dr["Explication"].ToString();
+                    if (MainWindow.langue == 0)
+                    {
+                        Explication.Text = dr["Explication"].ToString();
+                    }
+                    if (MainWindow.langue == 1)
+                    {
+                        Explication.Text = dr["ExplicationAR"].ToString();
+
+                    }
                     img.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "/Img/" + dr["nom"].ToString());
 
 

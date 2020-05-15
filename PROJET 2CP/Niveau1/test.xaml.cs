@@ -49,6 +49,15 @@ namespace PROJET_2CP
         public test(int bi, int bs)
         {
             InitializeComponent();
+            if (MainWindow.langue == 0)
+            {
+                lbl.Content = "Note";
+            }
+            if (MainWindow.langue == 1)
+            {
+                lbl.Content = "النقاط";
+
+            }
             tmp = 0;
             tag = bi;
             tagMax = bs;
@@ -116,15 +125,15 @@ namespace PROJET_2CP
                     if (MainWindow.langue == 1)
                     {
                         //next.Content = "المرور الى السؤال الموالي";
-                        propA = dr["reponse" + Convert.ToString(arr[0]) + "ar"].ToString();
+                        propA = dr["proposition" + Convert.ToString(arr[0]) + "ar"].ToString();
 
-                        propB = dr["reponse" + Convert.ToString(arr[1]) + "ar"].ToString();
+                        propB = dr["proposition" + Convert.ToString(arr[1]) + "ar"].ToString();
 
-                        propC = dr["reponse" + Convert.ToString(arr[2]) + "ar"].ToString();
+                        propC = dr["proposition" + Convert.ToString(arr[2]) + "ar"].ToString();
 
-                        propD = dr["reponse" + Convert.ToString(arr[3]) + "ar"].ToString();
-                        quest = dr["contenuar"].ToString();
-                        bonnRep = dr["reponse1ar"].ToString();
+                        propD = dr["proposition" + Convert.ToString(arr[3]) + "ar"].ToString();
+                        quest = dr["ExplicationAR"].ToString();
+                        bonnRep = dr["ReponseAR"].ToString();
                     }
 
 
@@ -150,11 +159,7 @@ namespace PROJET_2CP
         {
             img.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/" + idImage, UriKind.RelativeOrAbsolute));
 
-            if (MainWindow.langue == 1)
-            {
-                SoundPlayer sp = new SoundPlayer(Convert.ToString(tab[tmp] + tag - 1) + "AR.wav");
-                sp.Play();
-            }
+            
 
             // definir la question
 
@@ -231,9 +236,14 @@ namespace PROJET_2CP
 
                 if (MainWindow.langue == 0)
                     remarque.Content = "Remarques";
-                else
-                    remarque.Content = "ملاحظات ";
 
+                else
+                {
+                    remarque.Content = "ملاحظات ";
+                    lbl.Content = "النقاط";
+                    quiter.Content = "خروج";
+
+                }
                 if (nbBonneReponse < 5)
                 {
                     if (MainWindow.langue == 0)

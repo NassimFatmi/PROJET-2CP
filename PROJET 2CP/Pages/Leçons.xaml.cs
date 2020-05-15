@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -21,6 +20,9 @@ namespace PROJET_2CP.Pages
             quiz2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
             quiz3.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
             quiz4.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
+            quiz6.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
+            quiz7.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
+            quiz8.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/quizicon.png", UriKind.RelativeOrAbsolute));
             lecon1.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/1_off.png", UriKind.RelativeOrAbsolute));
             lecon2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/40_off.png", UriKind.RelativeOrAbsolute));
             lecon3.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/theme1quiz14.png", UriKind.RelativeOrAbsolute));
@@ -45,20 +47,25 @@ namespace PROJET_2CP.Pages
 
                 thm1.Content = "Désignation";
                 thm2.Content = "Désignation";
+                quiz_1.Content = quiz_2.Content = quiz_3.Content = "أسئلة";
             }
             if (langue == 1)
             {
                 switch_lang.Content = "تغيير اللغة الى الفرنسية";
                 switch_lang.Margin = new Thickness(692, 82, 26, 558);
-                b0.Content = "قواعد عامة"; 
+                b0.Content = "قواعد عامة";
                 qst0.Text = "أسئلة";
                 qst1.Text = "أسئلة";
                 qst2.Text = "أسئلة";
                 qst3.Text = "أسئلة";
+                quiz_1.Content = quiz_2.Content = quiz_3.Content = "أسئلة";
 
                 h0.Content = "المستوى الأول: مواضيع";
                 thm1.Content = "حول الدرس";
                 thm2.Content = "حول الدرس";
+                lbl2.Content = "الدروس";
+                lbl2.HorizontalAlignment = HorizontalAlignment.Right;
+
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -99,20 +106,17 @@ namespace PROJET_2CP.Pages
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(7, 13);
-          //  Home.mainFrame.Content = new Quiz(1, 7);
+            Home.mainFrame.Content = new Quiz(1, 7);
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(13, 19);
-           // Home.mainFrame.Content = new Quiz(7, 13);
+            Home.mainFrame.Content = new Quiz(7, 13);
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(1, 7);
-           // Home.mainFrame.Content = new Quiz(13, 19);
+            Home.mainFrame.Content = new Quiz(13, 19);
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
@@ -154,6 +158,7 @@ namespace PROJET_2CP.Pages
                 singtxt.Text = "Signalisation";
                 intertxt.Text = "Intersection et priorité";
                 back.Text = "Retoure";
+
             }
             else
             {
@@ -162,6 +167,9 @@ namespace PROJET_2CP.Pages
                 singtxt.Text = "الاشارات";
                 intertxt.Text = "التقاطعات والأولوية";
                 back.Text = "عودة";
+                regle.Content = "قواعد الأولوية";
+                intersection.Content = "التقاطعات";
+                depassement.Content = "التجاوز والعبور";
             }
         }
         /*<<
@@ -213,11 +221,6 @@ namespace PROJET_2CP.Pages
         private void quiz_depassement(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new test(75, 84);
-        }
-
-        private void Button_Click_8(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

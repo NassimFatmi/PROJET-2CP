@@ -137,7 +137,7 @@
                         <Border Background="{DynamicResource MaterialDesignDivider}"
                         Height="1" HorizontalAlignment="Stretch"
                         SnapsToDevicePixels="True" />
-                      
+
                         <Expander HorizontalAlignment="Stretch"
                               Foreground="White"
                                   Name="themeinterspriot">
@@ -165,23 +165,23 @@
                                 <Label Name="lbl2" Content="Cours :" FontSize="25" Foreground="White" FontWeight="Bold" Margin="15,15,15,0" />
                                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40,0,40">
                                     <StackPanel Orientation="Horizontal" >
-                                        <Button x:Name="def" Content="Regle de priorité"  Style="{ StaticResource MaterialDesignFlatButton}" Click="Pdf_Click"  FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                        <Button x:Name="regle" Content="Regle de priorité"  Style="{ StaticResource MaterialDesignFlatButton}" Click="Pdf_Click"  FontSize="20"   Foreground="White" Height="100" Width="350"  >
                                             <Button.Background>
                                                 <SolidColorBrush Color="Black" Opacity="0.2"   />
                                             </Button.Background>
 
                                         </Button>
-                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00"    Height="100" Width="100" Margin="30,0,0,0" Click="Button_Click_8">
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00"    Height="100" Width="100" Margin="30,0,0,0">
                                             <StackPanel >
                                                 <Image x:Name="quiz6" Width="40" Height="40" HorizontalAlignment="Center"/>
-                                                <Label x:Name="quiz_defailance" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_1" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
 
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0"  >
-                                        <Button x:Name="dist" Content="Intersection" Click="Intersection_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                        <Button x:Name="intersection" Content="Intersection" Click="Intersection_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
                                             <Button.Background>
                                                 <SolidColorBrush Color="Black" Opacity="0.2"   />
                                             </Button.Background>
@@ -190,14 +190,14 @@
                                         <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00"   Click="quiz_intersection"   Height="100" Width="100" Margin="30,0,0,0">
                                             <StackPanel >
                                                 <Image x:Name="quiz7" Width="40" Height="40" HorizontalAlignment="Center"/>
-                                                <Label x:Name="quiz_distance" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_2" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
 
 
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
-                                        <Button x:Name="vit" Content="Depassement et Croisement" Click="Depassement_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
+                                        <Button x:Name="depassement" Content="Depassement et Croisement" Click="Depassement_Click" Style="{ StaticResource MaterialDesignFlatButton}"   FontSize="20"   Foreground="White" Height="100" Width="350"  >
                                             <Button.Background>
                                                 <SolidColorBrush Color="Black" Opacity="0.2"   />
                                             </Button.Background>
@@ -206,7 +206,7 @@
                                         <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00" Click="quiz_depassement"   Height="100" Width="100" Margin="30,0,0,0">
                                             <StackPanel >
                                                 <Image x:Name="quiz8" Width="40" Height="40" HorizontalAlignment="Center"/>
-                                                <Label x:Name="quiz_vitesse" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
+                                                <Label x:Name="quiz_3" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </Button>
 
@@ -223,7 +223,7 @@
                         SnapsToDevicePixels="True" />
 
                         <!-- هدا لكتحب دير وحدة اخرى-->
-                       
+
                         <Border Background="{DynamicResource MaterialDesignDivider}"
                         Height="1"
                         HorizontalAlignment="Stretch"
