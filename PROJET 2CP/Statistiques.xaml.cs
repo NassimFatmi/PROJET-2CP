@@ -382,8 +382,18 @@ namespace PROJET_2CP
 
         private void niv1thm1Andniv2thm1_Selected(object sender, RoutedEventArgs e)
         {
-            recuperer_QuestionReponse(1,"1");
+            int niveau = 1;
+            if(niv1thm1.IsSelected)
+            {
+                niveau = 1;
+            }
+          if(niv1thm2.IsSelected)
+            {
+                niveau=2;
+            }
+            recuperer_QuestionReponse(niveau,"1");
             creerstatLessonPerTheme();
+
           /* string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
              SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
              SqlCommand cmd;
