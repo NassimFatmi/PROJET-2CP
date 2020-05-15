@@ -18,6 +18,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
 using MaterialDesignThemes.Wpf;
+using PROJET_2CP.Noyau;
 
 namespace PROJET_2CP
 {
@@ -29,7 +30,9 @@ namespace PROJET_2CP
         private int _nbRepTrue;
         private int _nbRepFalse;
         private int _nbReponses;
-
+        private string[] lesson;
+        private int[] moyenne_lesson;
+        private List<string> tmp;
         private int _NbTests;
 
         private DataTable _StatesTableNote;
@@ -378,59 +381,62 @@ namespace PROJET_2CP
 
         private void niv1thm1Andniv2thm1_Selected(object sender, RoutedEventArgs e)
         {
-            string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
-            SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
-            SqlCommand cmd;
-            SqlDataAdapter adapter;
-            DataTable temp = new DataTable(); ;
+            recuperer_QuestionReponse(1);
+            creerstatLessonPerTheme();
+          /* string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
+             SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
+             SqlCommand cmd;
+             SqlDataAdapter adapter;
+             DataTable temp = new DataTable(); ;
 
-            string querySelectTheme1Niv1;
-            int niveauSelected = 1;
+             string querySelectTheme1Niv1;
+             int niveauSelected = 1;
 
-            if (niv1thm1.IsSelected)
-                niveauSelected = 1;
-            if (niv2thm1.IsSelected)
-                niveauSelected = 2;
+             if (niv1thm1.IsSelected)
+                 niveauSelected = 1;
+             if (niv2thm1.IsSelected)
+                 niveauSelected = 2;
 
-            querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveauSelected.ToString() + "' AND Test = '1' )";
+             querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveauSelected.ToString() + "' AND Test = '1' )";
 
-            try
-            {
-                if (saveConn.State == ConnectionState.Closed)
-                    saveConn.Open();
+             try
+             {
+                 if (saveConn.State == ConnectionState.Closed)
+                     saveConn.Open();
 
-                cmd = new SqlCommand(querySelectTheme1Niv1, saveConn);
-                adapter = new SqlDataAdapter(cmd);
-                _StatesTableReponse = new DataTable();
-                adapter.Fill(temp);
-                adapter.Dispose();
+                 cmd = new SqlCommand(querySelectTheme1Niv1, saveConn);
+                 adapter = new SqlDataAdapter(cmd);
+                 _StatesTableReponse = new DataTable();
+                 adapter.Fill(temp);
+                 adapter.Dispose();
 
-                if (saveConn.State == ConnectionState.Open)
-                    saveConn.Close();
-            }
-            catch (Exception)
-            {
-                if (saveConn.State == ConnectionState.Open)
-                    saveConn.Close();
-                MessageBox.Show("Error states");
-            }
+                 if (saveConn.State == ConnectionState.Open)
+                     saveConn.Close();
+             }
+             catch (Exception)
+             {
+                 if (saveConn.State == ConnectionState.Open)
+                     saveConn.Close();
+                 MessageBox.Show("Error states");
+             }
 
-            //Affichage des reponse de l'utilisateur
-            chartsGrid.Children.Clear();
-            StackPanel userReponses = new StackPanel();//pour toutes les questions
-            Border qstreponse; // pour une seul question
-            ScrollViewer scrollViewer = new ScrollViewer();
-            scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
-            scrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
-            for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
-            {
-                qstreponse = new Border();
-                qstreponse = creatAnswerUser(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString()));
-                userReponses.Children.Add(qstreponse);
-            }
-            scrollViewer.Content = userReponses;
-            chartsGrid.Children.Add(scrollViewer);
-            choixChart.Visibility = Visibility.Collapsed;
+             //Affichage des reponse de l'utilisateur
+             chartsGrid.Children.Clear();
+             StackPanel userReponses = new StackPanel();//pour toutes les questions
+             Border qstreponse; // pour une seul question
+             ScrollViewer scrollViewer = new ScrollViewer();
+             scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+             scrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+             for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
+             {
+                 qstreponse = new Border();
+                 qstreponse = creatAnswerUser(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString()));
+                 userReponses.Children.Add(qstreponse);
+             }
+             scrollViewer.Content = userReponses;
+             chartsGrid.Children.Add(scrollViewer);
+             choixChart.Visibility = Visibility.Collapsed;
+     */   
         }
 
         private Border creatAnswerUser(int id , string reponse, string reponseAr, bool isItTrue) // id == Code
@@ -717,6 +723,188 @@ namespace PROJET_2CP
                 borderForStackrep.Margin = new Thickness(10);
             }
             return borderForStackrep;
+        }
+        void recuperer_QuestionReponse(int niveau)
+        {
+            string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
+            SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable temp = new DataTable(); ;
+
+            string querySelectTheme1Niv1;
+
+            querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveau.ToString() + "' AND Test = '1' )";
+
+            try
+            {
+                if (saveConn.State == ConnectionState.Closed)
+                    saveConn.Open();
+
+                cmd = new SqlCommand(querySelectTheme1Niv1, saveConn);
+                adapter = new SqlDataAdapter(cmd);
+                _StatesTableReponse = new DataTable();
+                adapter.Fill(temp);
+                adapter.Dispose();
+
+                if (saveConn.State == ConnectionState.Open)
+                    saveConn.Close();
+            }
+            catch (Exception)
+            {
+                if (saveConn.State == ConnectionState.Open)
+                    saveConn.Close();
+                MessageBox.Show("Error states");
+            }
+            tmp = new List<string>(temp.Rows.Count);
+            List<statLesson> duplicated = new List<statLesson>(temp.Rows.Count);
+            string laleçon;
+            for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
+            {
+                laleçon = getlesson(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()));
+                duplicated.Add(new statLesson(laleçon, bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString())));
+
+
+            }
+            lesson = deleteDuplicateElements(tmp);
+            ClaclulerMoyenneDeChaqueLesson(duplicated);
+        }
+        private void ClaclulerMoyenneDeChaqueLesson(List<statLesson> L)
+        {
+            int moyenne;
+            for (int i = 0; i < lesson.Length; i++)
+            {
+                moyenne = 0;
+                for (int j = 0; j < L.Count; j++)
+                {
+                    if (L[j].Lesson == lesson[i])
+                    {
+                        if (L[j].IsGoodAnswer)
+                        {
+                            moyenne++;
+                        }
+                    }
+                }
+                moyenne_lesson[i] = moyenne;
+            }
+        }
+        private string[] deleteDuplicateElements(List<string> table)
+        {
+            int size = 0;
+            List<string> tmp = new List<string>();
+            for (int i = 0; i < table.Count; i++)
+            {
+                if(!tmp.Contains(table[i]))
+                {
+                    tmp.Add(table[i]);
+                    size++;
+                }
+               // table.RemoveAll(item => item == table[i]);
+            }
+            string[] _newTable = new string[tmp.Count];
+            moyenne_lesson = new int[tmp.Count];
+            lesson = new string[tmp.Count];
+            for (int j = 0; j < tmp.Count; j++)
+            {
+                _newTable[j] = tmp[j];
+            }
+            return _newTable;
+        }
+
+        private string getlesson(int id)
+        {
+            string lesson;
+            string connStringToPanneauxDB = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True";
+            SqlConnection connectToPanneauxDB = new SqlConnection(connStringToPanneauxDB);
+
+            string querySelect = "SELECT * FROM Quiz WHERE Id = '" + id.ToString() + "'";
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable questionContent = new DataTable();
+
+            if (connectToPanneauxDB.State == ConnectionState.Closed)
+                connectToPanneauxDB.Open();
+            using (connectToPanneauxDB)
+            {
+                try
+                {
+                    cmd = new SqlCommand(querySelect, connectToPanneauxDB);
+                    adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(questionContent);
+                    adapter.Dispose();
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+                catch (Exception)
+                {
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+            }
+            if (MainWindow.langue == 0)
+            {
+                lesson = questionContent.Rows[0]["leçon"].ToString();
+                tmp.Add(lesson);
+            }
+            else
+            {
+                lesson = questionContent.Rows[0]["leçonAr"].ToString();
+                tmp.Add(lesson);
+            }
+            return lesson;
+        }
+
+        private void creerstatLessonPerTheme()
+        {
+
+            // affichage un diagramme des column
+            //avec live Charts
+            chartsGrid.Children.Clear();
+
+            CartesianChart cartStates = new CartesianChart();
+            SeriesCollection cartSeriesCollection;
+            cartSeriesCollection = new SeriesCollection();
+            ColumnSeries b;
+            for (int i = 0; i < lesson.Length; i++)
+            {
+                b = new ColumnSeries();
+                b.Values = new ChartValues<int> { moyenne_lesson[i] };
+                b.Title = lesson[i];
+                b.DataLabels = true;
+                b.Stroke = Brushes.GreenYellow;
+                b.Fill = Brushes.GreenYellow;
+                cartSeriesCollection.Add(b);
+            }
+
+            cartStates.Series = cartSeriesCollection;
+            cartStates.DataContext = this;
+
+            cartStates.Height = 400;
+            cartStates.Width = 500;
+            cartStates.VerticalAlignment = VerticalAlignment.Center;
+            cartStates.HorizontalAlignment = HorizontalAlignment.Center;
+            cartStates.LegendLocation = LegendLocation.Right;
+
+            Axis axisx = new Axis();
+            axisx.Separator.Visibility = Visibility.Hidden;
+            Axis axisy = new Axis();
+
+            if (MainWindow.langue == 0)
+            {
+                axisy.Title = "moyenne du Quiz dans une leçon";
+                axisx.Title = "Leçons";
+            }
+
+            else
+            {
+                axisy.Title = "عدد الأسئلة";
+                axisx.Title = "الاجوبة";
+            }
+            axisy.Separator.Step = 1;
+            cartStates.AxisX.Add(axisx);
+            cartStates.AxisY.Add(axisy);
+
+            chartsGrid.Children.Add(cartStates);
         }
     }
 }
