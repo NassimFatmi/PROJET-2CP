@@ -32,7 +32,8 @@ namespace PROJET_2CP
         private int _nbReponses;
         private string[] lesson;
         private int[] moyenne_lesson;
-        private List<string> tmp;
+        //   private List<string> tmp;
+        private HashSet<string> cours;
         private int _NbTests;
 
         private DataTable _StatesTableNote;
@@ -381,7 +382,7 @@ namespace PROJET_2CP
 
         private void niv1thm1Andniv2thm1_Selected(object sender, RoutedEventArgs e)
         {
-            recuperer_QuestionReponse(1);
+            recuperer_QuestionReponse(1,"1");
             creerstatLessonPerTheme();
           /* string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
              SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
@@ -548,13 +549,6 @@ namespace PROJET_2CP
 
         private void niv2thm234_Selected(object sender, RoutedEventArgs e)
         {
-            string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
-            SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
-            SqlCommand cmd;
-            SqlDataAdapter adapter;
-            DataTable temp = new DataTable(); ;
-
-            string querySelectTheme1Niv1;
 
             int niveauSelected = 2;
             int themeSelected = 0;
@@ -590,6 +584,18 @@ namespace PROJET_2CP
                 niveauSelected = 3;
                 themeSelected = 3;
             }
+            recuperer_QuestionReponse(niveauSelected, themeSelected.ToString());
+            creerstatLessonPerTheme();
+            /*
+            string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
+            SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable temp = new DataTable(); ;
+
+            string querySelectTheme1Niv1;
+
+            
 
             querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveauSelected.ToString() + "' AND Test = '" + themeSelected.ToString() + "' )";
 
@@ -627,6 +633,7 @@ namespace PROJET_2CP
             scrollViewer.Content = userReponses;
             chartsGrid.Children.Add(scrollViewer);
             choixChart.Visibility = Visibility.Collapsed;
+       */
         }
 
         private Border creatAnswerUserForLVL23(int id, string reponse, string reponseAr, bool isItTrue) // id == Code
@@ -724,7 +731,7 @@ namespace PROJET_2CP
             }
             return borderForStackrep;
         }
-        void recuperer_QuestionReponse(int niveau)
+        void recuperer_QuestionReponse(int niveau,string theme)
         {
             string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
             SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
@@ -734,7 +741,7 @@ namespace PROJET_2CP
 
             string querySelectTheme1Niv1;
 
-            querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveau.ToString() + "' AND Test = '1' )";
+            querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveau.ToString() + "' AND Test = '"+ theme+"' )";
 
             try
             {
@@ -756,22 +763,76 @@ namespace PROJET_2CP
                     saveConn.Close();
                 MessageBox.Show("Error states");
             }
-            tmp = new List<string>(temp.Rows.Count);
+            //tmp = new List<string>(temp.Rows.Count);
+            cours = new HashSet<string>();
             List<statLesson> duplicated = new List<statLesson>(temp.Rows.Count);
             string laleçon;
             for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
             {
-                laleçon = getlesson(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()));
-                duplicated.Add(new statLesson(laleçon, bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString())));
-
-
+                if(niveau==1 && theme=="1")
+                {
+                    laleçon = getlesson(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()));
+                    duplicated.Add(new statLesson(laleçon, bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString())));
+                }
+                if(niveau == 2  && int.Parse(theme) >= 2)
+                {
+                    laleçon = getlessonforlvl2theme234(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()));
+                  //MessageBox.Show(temp.Rows[nbQuestion]["Code"].ToString() + " " + laleçon);
+                    duplicated.Add(new statLesson(laleçon, bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString())));
+                }
+               
             }
-            lesson = deleteDuplicateElements(tmp);
+            lesson = new string[cours.Count];
+            cours.CopyTo(lesson,0);
             ClaclulerMoyenneDeChaqueLesson(duplicated);
+        }
+        private string  getlessonforlvl2theme234( int id)
+        {
+            string lesson;
+            string connStringToPanneauxDB = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True";
+            SqlConnection connectToPanneauxDB = new SqlConnection(connStringToPanneauxDB);
+
+            string querySelect = "SELECT * FROM Question WHERE Id = '" + id.ToString() + "'";
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable questionContent = new DataTable();
+
+            if (connectToPanneauxDB.State == ConnectionState.Closed)
+                connectToPanneauxDB.Open();
+            using (connectToPanneauxDB)
+            {
+                try
+                {
+                    cmd = new SqlCommand(querySelect, connectToPanneauxDB);
+                    adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(questionContent);
+                    adapter.Dispose();
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+                catch (Exception)
+                {
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+            }
+            if (MainWindow.langue == 0)
+            {
+                lesson = questionContent.Rows[0]["leson"].ToString();
+                cours.Add(lesson);
+            }
+            else
+            {
+                lesson = questionContent.Rows[0]["leçonAr"].ToString();
+                cours.Add(lesson);
+            }
+            return lesson;
+
         }
         private void ClaclulerMoyenneDeChaqueLesson(List<statLesson> L)
         {
             int moyenne;
+            moyenne_lesson = new int[lesson.Length];
             for (int i = 0; i < lesson.Length; i++)
             {
                 moyenne = 0;
@@ -788,29 +849,6 @@ namespace PROJET_2CP
                 moyenne_lesson[i] = moyenne;
             }
         }
-        private string[] deleteDuplicateElements(List<string> table)
-        {
-            int size = 0;
-            List<string> tmp = new List<string>();
-            for (int i = 0; i < table.Count; i++)
-            {
-                if(!tmp.Contains(table[i]))
-                {
-                    tmp.Add(table[i]);
-                    size++;
-                }
-               // table.RemoveAll(item => item == table[i]);
-            }
-            string[] _newTable = new string[tmp.Count];
-            moyenne_lesson = new int[tmp.Count];
-            lesson = new string[tmp.Count];
-            for (int j = 0; j < tmp.Count; j++)
-            {
-                _newTable[j] = tmp[j];
-            }
-            return _newTable;
-        }
-
         private string getlesson(int id)
         {
             string lesson;
@@ -844,13 +882,14 @@ namespace PROJET_2CP
             if (MainWindow.langue == 0)
             {
                 lesson = questionContent.Rows[0]["leçon"].ToString();
-                tmp.Add(lesson);
+                cours.Add(lesson);
             }
             else
             {
                 lesson = questionContent.Rows[0]["leçonAr"].ToString();
-                tmp.Add(lesson);
+                cours.Add(lesson);
             }
+           
             return lesson;
         }
 
@@ -865,14 +904,29 @@ namespace PROJET_2CP
             SeriesCollection cartSeriesCollection;
             cartSeriesCollection = new SeriesCollection();
             ColumnSeries b;
+            byte r = 10;
+            byte g = 90;
+            byte blue = 160;
+            byte exp1 = 10;
+            byte exp2 = 20;
+            byte exp3 = 30;
+            SolidColorBrush c;
             for (int i = 0; i < lesson.Length; i++)
             {
                 b = new ColumnSeries();
                 b.Values = new ChartValues<int> { moyenne_lesson[i] };
                 b.Title = lesson[i];
                 b.DataLabels = true;
-                b.Stroke = Brushes.GreenYellow;
-                b.Fill = Brushes.GreenYellow;
+                c = new SolidColorBrush();
+                c.Color = Color.FromRgb(r,g, blue);
+                r += exp1;
+                g += exp2;
+                blue += exp3;
+                exp1 += 10;
+                exp2 += 10;
+                exp3 += 10;
+                b.Stroke = c ;
+                b.Fill = c;
                 cartSeriesCollection.Add(b);
             }
 
