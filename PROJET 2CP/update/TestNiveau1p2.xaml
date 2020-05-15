@@ -139,14 +139,14 @@
                         </StackPanel>
                     </Button>
                 </StackPanel>
-                <ScrollViewer>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <ScrollViewer Height="168">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="160">
                         <Expander x:Name="e1" Width="800" FontSize="20">
                             <Expander.Background >
                                 <SolidColorBrush Color="DeepSkyBlue" Opacity="0.4"/>
                             </Expander.Background>
                             <Expander.Header>
-                                <TextBlock x:Name="ex1"  TextAlignment="Center" TextWrapping="Wrap" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"
+                                <TextBlock x:Name="ex1" FontSize="24"  TextAlignment="Center" TextWrapping="Wrap" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"
                                    Margin="10"/>
                             </Expander.Header>
                             <Grid x:Name="g1">

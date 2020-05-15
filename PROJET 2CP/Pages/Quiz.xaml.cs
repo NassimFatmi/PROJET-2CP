@@ -37,7 +37,6 @@ namespace PROJET_2CP.Pages
         // partie pour sauvegarde 
         private int _codeQst;
         private int _niveau = 1;
-        private string _reponseContent;
 
         private string propAar;
         private string propBar;

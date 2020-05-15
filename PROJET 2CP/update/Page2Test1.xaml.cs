@@ -32,6 +32,18 @@ namespace PROJET_2CP.update
         private int bs3;
         private int[] tab;
 
+        private int _codeQst;
+
+        private string propAar;
+        private string propBar;
+        private string propCar;
+        private string propDar;
+
+        private string propAfr;
+        private string propBfr;
+        private string propCfr;
+        private string propDfr;
+
         public Page2Test1(int bi2, int bs2, int bi3, int bs3)
         {
             tagMax = bs2 - bi2;
@@ -65,6 +77,8 @@ namespace PROJET_2CP.update
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                    _codeQst = Int32.Parse(dr["Id"].ToString());
+
                     if (langue == 0)
                     {
                         Suivant.Text = "Passer à la question suivante";
@@ -82,6 +96,16 @@ namespace PROJET_2CP.update
                     propC = dr["propCFr"].ToString();
                     propD = dr["propDFr"].ToString();
                     bonnRep = dr["bonneRepFr"].ToString();
+
+                    propAfr = "propAFr";
+                    propBfr = "propBFr";
+                    propCfr = "propCFr";
+                    propDfr = "propDFr";
+
+                    propAar = "propAAr";
+                    propBar = "propBAr";
+                    propCar = "propCAr";
+                    propDar = "propDAr";
                 }
                 dr.Close();
             }
@@ -169,7 +193,7 @@ namespace PROJET_2CP.update
            
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(true, 1, 0, _codeQst, propAfr, propAar);
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -181,7 +205,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(false, 1, 0, _codeQst, propAfr, propAar);
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -206,7 +230,7 @@ namespace PROJET_2CP.update
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(true, 1, 0, _codeQst, propBfr, propBar);
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -218,7 +242,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(false, 1, 0, _codeQst, propBfr, propBar);
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -242,7 +266,8 @@ namespace PROJET_2CP.update
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(true, 1, 0, _codeQst, propCfr, propCar);
+
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -254,7 +279,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(false, 1, 0, _codeQst, propCfr, propCar);
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
@@ -278,7 +303,7 @@ namespace PROJET_2CP.update
             reaction.Visibility = Visibility.Visible;
             if ((string)((Button)sender).Tag == bonnRep)
             {
-                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(true, 1, 0, _codeQst, propDfr, propDar);
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;

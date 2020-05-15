@@ -44,6 +44,20 @@ namespace PROJET_2CP.Pages
         private int _codeQst;
         private string _themeQst;
 
+        private int _Code;//ID
+        private string _Reponse;
+        private string _ReponseAR;
+
+        private string _Reponse1;
+        private string _Reponse2;
+        private string _Reponse3;
+        private string _Reponse4;
+
+        private string _Reponse1AR;
+        private string _Reponse2AR;
+        private string _Reponse3AR;
+        private string _Reponse4AR;
+
         private SoundPlayer _soundEffect;
 
         public TestNiveau2(int b1, int b2, int b3)
@@ -105,6 +119,9 @@ namespace PROJET_2CP.Pages
                 {
                     _codeQst = Int32.Parse(dr["Id"].ToString());
                     _themeQst = "";
+
+                    _Code = Int32.Parse(dr["Id"].ToString());
+
                     int[] arr = new int[4];
                     Random aleatoire = new Random();
                     arr = initArray(4, 5);
@@ -135,6 +152,15 @@ namespace PROJET_2CP.Pages
                         quest = dr["contenuar"].ToString();
                         bonnRep = dr["reponse1ar"].ToString();
                     }
+                    _Reponse1 = "reponse" + Convert.ToString(arr[0]);
+                    _Reponse2 = "reponse" + Convert.ToString(arr[1]);
+                    _Reponse3 = "reponse" + Convert.ToString(arr[2]);
+                    _Reponse4 = "reponse" + Convert.ToString(arr[3]);
+
+                    _Reponse1AR = "reponse" + Convert.ToString(arr[0]) + "ar";
+                    _Reponse2AR = "reponse" + Convert.ToString(arr[1]) + "ar";
+                    _Reponse3AR = "reponse" + Convert.ToString(arr[2]) + "ar";
+                    _Reponse4AR = "reponse" + Convert.ToString(arr[3]) + "ar";
                 }
                 dr.Close();
             }
@@ -236,6 +262,8 @@ namespace PROJET_2CP.Pages
             }
             if ((string)((Button)sender).Tag == bonnRep)
             {
+                saveAnswer(true, 2, 0, _Code, _Reponse1, _Reponse1AR);
+
                 if (langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
@@ -248,7 +276,6 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                saveAnswer(true, 2, 0, 0, "TestNiv2", "");
 
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 try
@@ -262,6 +289,8 @@ namespace PROJET_2CP.Pages
             }
             else
             {
+                saveAnswer(false, 2, 0, _Code, _Reponse1, _Reponse1AR);
+
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
                 if (langue == 0)
@@ -273,7 +302,6 @@ namespace PROJET_2CP.Pages
                     votre_reponse.Text = "إجابتك:" + p1.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
-                saveAnswer(false, 2, 0, 0, "TestNiv2", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 try
                 {
@@ -306,6 +334,8 @@ namespace PROJET_2CP.Pages
             }
             if ((string)((Button)sender).Tag == bonnRep)
             {
+                saveAnswer(true, 2, 0, _Code, _Reponse2, _Reponse2AR);
+
                 if (langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
@@ -318,7 +348,6 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                saveAnswer(true, 2, 0, 0, "TestNiv2", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 try
                 {
@@ -331,6 +360,8 @@ namespace PROJET_2CP.Pages
             }
             else
             {
+                saveAnswer(false, 2, 0, _Code, _Reponse2, _Reponse2AR);
+
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
                 if (langue == 0)
@@ -342,7 +373,6 @@ namespace PROJET_2CP.Pages
                     votre_reponse.Text = "إجابتك:" + p2.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
-                saveAnswer(false, 2, 0, 0, "TestNiv2", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 try
                 {
@@ -375,6 +405,8 @@ namespace PROJET_2CP.Pages
             }
             if ((string)((Button)sender).Tag == bonnRep)
             {
+                saveAnswer(true, 2, 0, _Code, _Reponse4, _Reponse4AR);
+
                 if (langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
@@ -387,7 +419,6 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                saveAnswer(true, 2, 0, 0, "TestNiv2", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 try
                 {
@@ -401,6 +432,8 @@ namespace PROJET_2CP.Pages
             }
             else
             {
+                saveAnswer(false, 2, 0, _Code, _Reponse4, _Reponse4AR);
+
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
                 if (langue == 0)
@@ -412,7 +445,6 @@ namespace PROJET_2CP.Pages
                     votre_reponse.Text = "إجابتك:" + p4.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
-                saveAnswer(false, 2, 0, 0, "TestNiv2", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 try
                 {
@@ -445,6 +477,8 @@ namespace PROJET_2CP.Pages
             }
             if ((string)((Button)sender).Tag == bonnRep)
             {
+                saveAnswer(true, 2, 0, _Code, _Reponse3, _Reponse3AR);
+
                 if (langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
@@ -457,7 +491,6 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\happy.png"));
                 nbBonneReponse++;
-                saveAnswer(true, 2, 0, 0, "TestNiv2", "");
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 try
                 {
@@ -470,6 +503,8 @@ namespace PROJET_2CP.Pages
             }
             else
             {
+                saveAnswer(false, 2, 0, _Code, _Reponse3, _Reponse3AR);
+
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
                 if (langue == 0)
@@ -481,7 +516,7 @@ namespace PROJET_2CP.Pages
                     votre_reponse.Text = "إجابتك:" + p3.Content.ToString();
                 }
                 votre_reponse.Foreground = Brushes.Red;
-                saveAnswer(false, 2, 0, 0, "TestNiv2", "");
+
                 _soundEffect = new SoundPlayer($@"{System.IO.Directory.GetCurrentDirectory()}\SoundsEffects\correct_effect.wav");
                 try
                 {

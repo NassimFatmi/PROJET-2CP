@@ -42,6 +42,7 @@
                     <TreeViewItem x:Name="niveau1" Header="niveau 1" Selected="stateSelect_SelectedItemChanged">
                         <TreeViewItem x:Name="niv1thm1" Header="Signalisation" Selected="niv1thm1Andniv2thm1_Selected"/>
                         <TreeViewItem x:Name="niv1thm2" Header="Intersection et priorité"/>
+                        <TreeViewItem x:Name="testniv1" Header="Test 1 Réponses" Selected="testniv1_Selected"/>
                     </TreeViewItem>
 
                     <TreeViewItem x:Name="niveau2" Header="niveau 2" Selected="stateSelect_SelectedItemChanged">
@@ -49,12 +50,14 @@
                         <TreeViewItem x:Name="niv2thm2" Header="Theme2" Selected="niv2thm234_Selected"/>
                         <TreeViewItem x:Name="niv2thm3" Header="Theme3" Selected="niv2thm234_Selected"/>
                         <TreeViewItem x:Name="niv2thm4" Header="Theme4" Selected="niv2thm234_Selected"/>
+                        <TreeViewItem x:Name="testniv2" Header="Test 2 Réponses" Selected="testniv23_Selected"/>
                     </TreeViewItem>
 
                     <TreeViewItem x:Name="niveau3" Header="niveau 3" Selected="stateSelect_SelectedItemChanged">
                         <TreeViewItem x:Name="niv3thm1" Header="Theme1" Selected="niv2thm234_Selected"/>
                         <TreeViewItem x:Name="niv3thm2" Header="Theme2" Selected="niv2thm234_Selected"/>
                         <TreeViewItem x:Name="niv3thm3" Header="Theme3" Selected="niv2thm234_Selected"/>
+                        <TreeViewItem x:Name="testniv3" Header="Test 3 Réponses"  Selected="testniv23_Selected"/>
                     </TreeViewItem>
                 </TreeView>
             </StackPanel>
@@ -63,16 +66,13 @@
         <Grid Grid.Column="1" VerticalAlignment="Top" 
               Height="50">
             <StackPanel x:Name="choixChart" Orientation="Horizontal" 
-                        Visibility="Collapsed" HorizontalAlignment="Center">
+                        Visibility="Visible" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Margin="4">
                     <RadioButton x:Name="pieCheck" Style="{StaticResource MaterialDesignTabRadioButton}"
                                  Margin="4" IsChecked="False" BorderBrush="#FF59F940" Checked="pieCheck_Checked">
                         <StackPanel>
                             <materialDesign:PackIcon Kind="ChartPie" Foreground="White"
                                                      HorizontalAlignment="Center"/>
-                            <TextBlock Text="ChartArc" Foreground="White" 
-                                       FontSize="5"
-                                       HorizontalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
                     
@@ -93,9 +93,6 @@
                         <StackPanel>
                             <materialDesign:PackIcon Kind="ChartBar" Foreground="White"
                                                      HorizontalAlignment="Center"/>
-                            <TextBlock Text="BarChart" Foreground="White" 
-                                       FontSize="5"
-                                       HorizontalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
 
@@ -116,12 +113,8 @@
                         <StackPanel>
                             <materialDesign:PackIcon Kind="Numbers" Foreground="White"
                                                      HorizontalAlignment="Center"/>
-                            <TextBlock Text="States" Foreground="White" 
-                                       FontSize="5"
-                                       HorizontalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
-
                 </StackPanel>
             </StackPanel>
         </Grid>

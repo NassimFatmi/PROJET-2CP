@@ -484,7 +484,7 @@ namespace PROJET_2CP
             borderForStackrep.CornerRadius = new CornerRadius(27);
 
             SolidColorBrush lightBlack = new SolidColorBrush();
-            lightBlack.Color = Color.FromArgb(60,0,0,0);
+            lightBlack.Color = Color.FromArgb(80,0,0,0);
 
             borderForStackrep.Background = lightBlack;
 
@@ -494,14 +494,20 @@ namespace PROJET_2CP
             TextBlock questiontxt = new TextBlock();
             questiontxt.Margin = new Thickness(10);
             questiontxt.VerticalAlignment = VerticalAlignment.Center;
+            questiontxt.FontWeight = FontWeights.SemiBold;
+            questiontxt.Foreground = Brushes.White;
 
             TextBlock reponsetxt = new TextBlock();
             reponsetxt.Margin = new Thickness(10);
             reponsetxt.VerticalAlignment = VerticalAlignment.Center;
+            reponsetxt.FontWeight = FontWeights.SemiBold;
+            reponsetxt.Foreground = Brushes.White;
 
             TextBlock lecon = new TextBlock();
             lecon.Margin = new Thickness(10);
             lecon.VerticalAlignment = VerticalAlignment.Center;
+            lecon.FontWeight = FontWeights.SemiBold;
+            lecon.Foreground = Brushes.White;
 
             Image imageQst = new Image();
             imageQst.Height = 60;
@@ -527,10 +533,17 @@ namespace PROJET_2CP
                 qstrep.Orientation = Orientation.Horizontal;
                 qstrep.Children.Add(questiontxt);
 
-                if (Int32.Parse(questionContent.Rows[0]["hasImage"].ToString()) == 1)
+                try
                 {
-                    imageQst.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + questionContent.Rows[0]["idImage"].ToString() + "_off.png", UriKind.RelativeOrAbsolute));
-                    qstrep.Children.Add(imageQst);
+                    if (int.Parse(questionContent.Rows[0]["hasImage"].ToString()) == 1)
+                    {
+                        imageQst.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + questionContent.Rows[0]["idImage"].ToString() + "_off.png", UriKind.RelativeOrAbsolute));
+                        qstrep.Children.Add(imageQst);
+                    }
+                }
+                catch(Exception)
+                {
+
                 }
 
                 if(isItTrue == true)
@@ -680,7 +693,7 @@ namespace PROJET_2CP
             borderForStackrep.CornerRadius = new CornerRadius(27);
 
             SolidColorBrush lightBlack = new SolidColorBrush();
-            lightBlack.Color = Color.FromArgb(50, 0, 0, 0);
+            lightBlack.Color = Color.FromArgb(80, 0, 0, 0);
 
             borderForStackrep.Background = lightBlack;
 
@@ -690,14 +703,20 @@ namespace PROJET_2CP
             TextBlock questiontxt = new TextBlock();
             questiontxt.Margin = new Thickness(10);
             questiontxt.VerticalAlignment = VerticalAlignment.Center;
+            questiontxt.FontWeight = FontWeights.SemiBold;
+            questiontxt.Foreground = Brushes.White;
 
             TextBlock reponsetxt = new TextBlock();
             reponsetxt.Margin = new Thickness(10);
             reponsetxt.VerticalAlignment = VerticalAlignment.Center;
+            reponsetxt.FontWeight = FontWeights.SemiBold;
+            reponsetxt.Foreground = Brushes.White;
 
             TextBlock lecon = new TextBlock();
             lecon.Margin = new Thickness(10);
             lecon.VerticalAlignment = VerticalAlignment.Center;
+            lecon.FontWeight = FontWeights.SemiBold;
+            lecon.Foreground = Brushes.White;
 
             Image imageQst = new Image();
             imageQst.Height = 60;
@@ -732,11 +751,37 @@ namespace PROJET_2CP
                 qstrep.Orientation = Orientation.Horizontal;
                 qstrep.Children.Add(questiontxt);
 
+                try
+                {
+                    if (int.Parse(questionContent.Rows[0]["hasImage"].ToString()) == 1)
+                    {
+                        imageQst.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + questionContent.Rows[0]["idImage"].ToString() + "_off.png", UriKind.RelativeOrAbsolute));
+                        qstrep.Children.Add(imageQst);
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+
+                if (isItTrue == true)
+                {
+                    reponsetxt.Background = Brushes.GreenYellow;
+                }
+                else
+                {
+                    reponsetxt.Background = Brushes.LightSalmon;
+                }
+
                 qstrep.Children.Add(reponsetxt);
 
-                qstrep.Children.Add(lecon);
+                StackPanel fullStack = new StackPanel();
+                fullStack.Margin = new Thickness(5);
+                fullStack.Children.Add(qstrep);
+                lecon.HorizontalAlignment = HorizontalAlignment.Center;
+                fullStack.Children.Add(lecon);
 
-                borderForStackrep.Child = qstrep;
+                borderForStackrep.Child = fullStack;
                 borderForStackrep.Margin = new Thickness(10);
             }
             return borderForStackrep;
@@ -970,5 +1015,125 @@ namespace PROJET_2CP
 
             chartsGrid.Children.Add(cartStates);
         }
+
+        private void testniv1_Selected(object sender, RoutedEventArgs e)
+        {
+            int niveauSelected = 1;
+
+            if (niveau1.IsSelected)
+            {
+                niveauSelected = 1;
+            }
+            
+            string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
+             SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
+             SqlCommand cmd;
+             SqlDataAdapter adapter;
+             DataTable temp = new DataTable(); ;
+
+             string querySelectTests;
+
+             querySelectTests = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveauSelected.ToString() + "' AND Test = '0' )";
+
+             try
+             {
+                 if (saveConn.State == ConnectionState.Closed)
+                     saveConn.Open();
+
+                 cmd = new SqlCommand(querySelectTests, saveConn);
+                 adapter = new SqlDataAdapter(cmd);
+                 _StatesTableReponse = new DataTable();
+                 adapter.Fill(temp);
+                 adapter.Dispose();
+
+                 if (saveConn.State == ConnectionState.Open)
+                     saveConn.Close();
+             }
+             catch (Exception)
+             {
+                 if (saveConn.State == ConnectionState.Open)
+                     saveConn.Close();
+                 MessageBox.Show("Error states");
+             }
+
+            //Affichage des reponse de l'utilisateur
+            chartsGrid.Children.Clear();
+            StackPanel userReponses = new StackPanel();//pour toutes les questions
+            Border qstreponse; // pour une seul question
+            ScrollViewer scrollViewer = new ScrollViewer();
+            scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+            scrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+            for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
+            {
+                qstreponse = new Border();
+                qstreponse = creatAnswerUser(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString()));
+                userReponses.Children.Add(qstreponse);
+            }
+            scrollViewer.Content = userReponses;
+            chartsGrid.Children.Add(scrollViewer);
+        }
+
+        private void testniv23_Selected(object sender, RoutedEventArgs e)
+        {
+            int niveauSelected = 2;
+            int themeSelected = 0;
+
+            if (niveau2.IsSelected)
+            {
+                niveauSelected = 2;
+            }
+            if (niveau3.IsSelected)
+            {
+                niveauSelected = 3;
+            }
+
+            string connectionStringtoSaveDB = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf;Integrated Security=True";
+            SqlConnection saveConn = new SqlConnection(connectionStringtoSaveDB);
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable temp = new DataTable(); ;
+
+            string querySelectTheme1Niv1;
+
+
+
+            querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveauSelected.ToString() + "' AND Test = '" + themeSelected.ToString() + "' )";
+
+            try
+            {
+                if (saveConn.State == ConnectionState.Closed)
+                    saveConn.Open();
+
+                cmd = new SqlCommand(querySelectTheme1Niv1, saveConn);
+                adapter = new SqlDataAdapter(cmd);
+                _StatesTableReponse = new DataTable();
+                adapter.Fill(temp);
+                adapter.Dispose();
+
+                if (saveConn.State == ConnectionState.Open)
+                    saveConn.Close();
+            }
+            catch (Exception)
+            {
+                if (saveConn.State == ConnectionState.Open)
+                    saveConn.Close();
+                MessageBox.Show("Error states");
+            }
+            //Affichage des reponse de l'utilisateur
+            chartsGrid.Children.Clear();
+            StackPanel userReponses = new StackPanel();//pour toutes les questions
+            Border qstreponse; // pour une seul question
+            ScrollViewer scrollViewer = new ScrollViewer();
+            for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
+            {
+                qstreponse = new Border();
+                qstreponse = creatAnswerUserForLVL23(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString()));
+                userReponses.Children.Add(qstreponse);
+            }
+            scrollViewer.Content = userReponses;
+            chartsGrid.Children.Add(scrollViewer);
+            choixChart.Visibility = Visibility.Collapsed;
+        }
     }
 }
+ 
