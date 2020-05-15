@@ -244,9 +244,6 @@
     <Compile Include="update\Page1Tests.xaml.cs" />
     <Compile Include="update\Page2Test1.xaml.cs" />
     <Compile Include="update\TestNiveau1p2.xaml.cs" />
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
-    </Compile>
     <Page Include="Aide.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -484,10 +481,6 @@
     <Page Include="update\TestNiveau1p2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Window1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
