@@ -18,7 +18,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Label x:Name="click" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center"
-               Content="Clicker sur le panneau pour la description : "
+               Content="Cliquez sur le panneau pour la description : "
                FontSize="18" FontWeight="DemiBold"
                Foreground="White"
                Margin="20,10,10,10"/>
@@ -39,7 +39,7 @@
         <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="BackClick" >
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18"/>
-                <TextBlock Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                <TextBlock Text="Retour" x:Name="back" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
             </StackPanel>
         </Button>
 

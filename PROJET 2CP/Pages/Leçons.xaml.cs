@@ -101,23 +101,27 @@ namespace PROJET_2CP.Pages
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //Home.mainFrame.Content = new Quiz(1, 7);
+            Quiz._lastPageQuiz = 0;
             Home.mainFrame.Content = new Quiz(7, 13);
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             //Home.mainFrame.Content = new Quiz(7, 13);
+            Quiz._lastPageQuiz = 0;
             Home.mainFrame.Content = new Quiz(13, 19);
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             // Home.mainFrame.Content = new Quiz(13, 19);
+            Quiz._lastPageQuiz = 0;
             Home.mainFrame.Content = new Quiz(1, 7);
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
+            Quiz._lastPageQuiz = 0;
             Home.mainFrame.Content = new Quiz(19, 25);
         }
         private void switch_lang_Click(object sender, RoutedEventArgs e)

@@ -48,8 +48,6 @@ namespace PROJET_2CP.Niveau2
             {
                 play.ToolTip = "تشغيل";
                 stop.ToolTip = "إيقاف";
-                backtxt.Text = "قبل";
-                nexttxt.Text = "بعد";
                 description.Text = "الخط الذي يحدد الحافة اليمنى للطريق هو خط الحافة. يبلغ طول الخط 3 أمتار وفاصل 3.5 متر. يمكنني عبور خط الشاطئ هذا لإيقاف السيارة أو التوقف على الجانب. يؤكد خط الحافة المستمر على يسار الممر أننا نسير في اتجاه واحد.";
             }
 
@@ -57,8 +55,6 @@ namespace PROJET_2CP.Niveau2
             {
                 stop.ToolTip = "Stop";
                 play.ToolTip = "Play";
-                backtxt.Text = "precedent";
-                nexttxt.Text = "suivant";
                 description.Text = "La ligne délimitant le bord droit de la chaussée est une ligne de rive. La ligne a une distance de 3 mètres et un intervalle de 3.5 mètres. Je peux franchir cette ligne de rive pour me stationner ou m'arrêter sur le bas côté. La ligne de rive continue  sur la gauche de la voie confirme que nous circulons en sens unique.";
             }
         }
@@ -225,6 +221,11 @@ namespace PROJET_2CP.Niveau2
                     connection.Close();
                 }
             }
+        }
+
+        private void BackClick(object sender, RoutedEventArgs e)
+        {
+            Home.mainFrame.Content = new Lesson();
         }
     }
 }

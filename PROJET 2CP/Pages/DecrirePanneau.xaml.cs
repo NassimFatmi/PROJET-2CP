@@ -250,6 +250,18 @@ namespace PROJET_2CP.Pages
                 Home.mainFrame.Content = new PanneauxInterdiction();
             if (lastPage == 3)
                 Home.mainFrame.Content = new PanneauxObligation();
+            if (lastPage == 4)
+                Home.mainFrame.Content = new LessonContent(95, 128);
+            if (lastPage == 5)
+                Home.mainFrame.Content = new LessonContent(129, 172);
+            if (lastPage == 6)
+                Home.mainFrame.Content = new LessonContent(173, 184);
+            if (lastPage == 7)
+                Home.mainFrame.Content = new LessonContent(185, 212);
+            if (lastPage == 8)
+                Home.mainFrame.Content = new LessonContent(213, 228);
+            if (lastPage == 9)
+                Home.mainFrame.Content = new MarquageAuSol(229, 254);
         }
     }
 }

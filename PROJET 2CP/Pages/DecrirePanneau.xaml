@@ -65,7 +65,6 @@
                     <materialDesign:PackIcon Kind="ArrowLeftBoldCircle"
                                              Width="30" Height="30"
                                              HorizontalAlignment="Center"/>
-                    <TextBlock Text="Back" FontSize="10" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
 
@@ -76,7 +75,6 @@
                     <materialDesign:PackIcon Kind="ArrowRightBoldCircle"
                                              Width="30" Height="30"
                                              HorizontalAlignment="Center"/>
-                    <TextBlock Text="Next" FontSize="10" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
 
@@ -84,7 +82,7 @@
         <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="backClickTopanneau" Margin="0,0,848.4,0" >
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18"/>
-                <TextBlock Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                <TextBlock Text="Retour" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
             </StackPanel>
         </Button>
     </Grid>

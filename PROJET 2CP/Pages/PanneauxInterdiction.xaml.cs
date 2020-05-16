@@ -111,10 +111,12 @@ namespace PROJET_2CP.Pages
             if (MainWindow.langue == 0)
             {
                 click.Content = "Cliquez sur le panneau pour la description ";
+                back.Text = "Retour";
             }
             else
             {
                 click.Content = "انقر على الافتة للشرح";
+                back.Text = "عودة";
             }
         }
     }

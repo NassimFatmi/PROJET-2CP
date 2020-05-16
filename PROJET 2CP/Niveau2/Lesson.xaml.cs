@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROJET_2CP.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -122,62 +123,74 @@ namespace PROJET_2CP.Niveau2
         }
         private void l1_Click(object sender, RoutedEventArgs e)
         {
+            DecrirePanneau.lastPage = 4;
             Home.mainFrame.Content = new LessonContent(95, 128);
         }
 
         private void l2_Click(object sender, RoutedEventArgs e)
         {
+            DecrirePanneau.lastPage = 5;
             Home.mainFrame.Content = new LessonContent(129, 172);
         }
 
         private void l3_Click(object sender, RoutedEventArgs e)
         {
+            DecrirePanneau.lastPage = 6;
             Home.mainFrame.Content = new LessonContent(173, 184);
         }
 
         private void l4_Click(object sender, RoutedEventArgs e)
         {
+            DecrirePanneau.lastPage = 7;
             Home.mainFrame.Content = new LessonContent(185, 212);
         }
 
         private void l5_Click(object sender, RoutedEventArgs e)
         {
+            DecrirePanneau.lastPage = 8;
             Home.mainFrame.Content = new LessonContent(213, 228);
         }
 
         private void l6_Click(object sender, RoutedEventArgs e)
         {
+            DecrirePanneau.lastPage = 9;
             Home.mainFrame.Content = new MarquageAuSol(229, 254);
         }
 
         private void q1_Click(object sender, RoutedEventArgs e)
         {
+            Pages.Quiz._lastPageQuiz = 1;
             Home.mainFrame.Content = new Pages.Quiz(50, 56);
         }
 
         private void q2_Click(object sender, RoutedEventArgs e)
         {
+            Pages.Quiz._lastPageQuiz = 1;
             Home.mainFrame.Content = new Pages.Quiz(56, 62);
         }
 
         private void q3_Click(object sender, RoutedEventArgs e)
         {
+            Pages.Quiz._lastPageQuiz = 1;
             Home.mainFrame.Content = new Pages.Quiz(62, 68);
         }
 
         private void q4_Click(object sender, RoutedEventArgs e)
         {
+            Pages.Quiz._lastPageQuiz = 1;
             Home.mainFrame.Content = new Pages.Quiz(68, 74);
 
         }
 
         private void q5_Click(object sender, RoutedEventArgs e)
         {
+            Pages.Quiz._lastPageQuiz = 1;
             Home.mainFrame.Content = new Pages.Quiz(74, 80);
         }
 
         private void q6_Click(object sender, RoutedEventArgs e)
         {
+            Pages.Quiz._lastPageQuiz = 1;
             Home.mainFrame.Content = new Pages.Quiz(80, 86);
         }
 
