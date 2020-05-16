@@ -807,7 +807,7 @@ namespace PROJET_2CP
             }
             else
             {
-                lesson = questionContent.Rows[0]["leçonAr"].ToString();
+                lesson = questionContent.Rows[0]["lesonAr"].ToString();
                 cours.Add(lesson);
             }
             return lesson;
