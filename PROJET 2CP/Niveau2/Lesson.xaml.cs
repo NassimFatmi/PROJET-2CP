@@ -270,8 +270,76 @@ namespace PROJET_2CP.Niveau2
         private void thm1_Click(object sender, RoutedEventArgs e)
         {
             designationGrid.Visibility = Visibility.Visible;
-            //content of designation !
-            designatiotxt.Text = "designation";
+            if (MainWindow.langue == 0)
+            {
+                designatiotxt.TextAlignment = TextAlignment.Left;
+                designatiotxt.Text = "      La circulation routière est la thématique la plus dense du code de la route\n" +
+                                     "      La signalisation routière :\n\n" +
+                                     "          *inclut les marquages au sol, les panneaux directionnels, les indications \n" +
+                                     "           diverses et les indications utiles";
+            }
+            else
+            {
+                designatiotxt.TextAlignment = TextAlignment.Right;
+                designatiotxt.Text = "      حركة المرور على الطرق تمثل الموضوع الأكثر أهمية في قانون المرور\n" +
+                                     "          *يشمل العلامات الموجودة على الأرض، إشارات الاتجاه، وإشارات الإرشاد.";
+
+            }
+        }
+
+        private void thm2_Click(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Visible;
+            if (MainWindow.langue == 0)
+            {
+                designatiotxt.TextAlignment = TextAlignment.Left;
+                designatiotxt.Text = "          Le thème du conducteur explore les bonnes pratiques pour conduire en toute sécurité et les facteurs de\n" +
+                    "        risques.Cette thématique comprend donc les notions liées à comment conduire, au fait de savoir si un usager\n" +
+                    "        est ou non dans un bon état pour conduire et à comment adapter sa conduite à certains comportements. Elle\n" +
+                    "        regroupe les différents sous - thèmes :\n" +
+                    "           * Utilisation des rétroviseurs.\n" +
+                    "           *Vitesses et distances.\n" +
+                    "           *Distances en conduite.\n" +
+                    "           *Défaillances du conducteur.\n" +
+                    "           *Principes d’une conduite sure.";
+            }
+            else
+            {
+                designatiotxt.TextAlignment = TextAlignment.Right;
+                designatiotxt.Text = "      يعرض هذا الموضوع عوامل الخطر وأفضل السلوكيات للقيادة الآمنة. وبالتالي، فإنه يتضمن المفاهيم المتعلقة بكيفية القيادة، ما إذا كان\n" +
+                                     "          المستخدم في حالة جيدة للقيادة أم لا وكيفية تكييف سلوكه مع مختلف الوضعيات والظروف من خلال دروس التالية:\n" +
+                                     "          *استخدام المرايا.\n" +
+                                     "          *السرعات والمسافات.\n" +
+                                     "          *مسافات القيادة.\n" +
+                                     "          *فشل السائق.\n" +
+                                     "          *مبادئ القيادة الآمنة.";
+
+            }
+        }
+
+        private void thm3_Click(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Visible;
+            if (MainWindow.langue == 0)
+            {
+                designatiotxt.TextAlignment = TextAlignment.Left;
+                designatiotxt.Text = "          Ce thème regroupe l’ensemble des notions liées à l’administration et aux règles administratives, comme :\n" +
+                                     "          *Les documents administratifs, et ceci qu’ils soient obligatoires ou facultatifs.\n" +
+                                     "          *Le chargement des véhicules en fonctions de leurs PTAC.\n" +
+                                     "          *Le permis de conduire à points, et la façon dont les points peuvent être retirées ou récupérées.\n" +
+                                     "          *Les infractions et les délits commises à l’encontre du code de la route et les sanctions associées";
+            }
+            else
+            {
+                designatiotxt.TextAlignment = TextAlignment.Right;
+                designatiotxt.Text = "      يغطي هذا الموضوع كل ما يتعلق بميكانيك المركبات وتشغيل معداتها. يتضمن المواضيع الفرعية التالية:\n" +
+                    "           أضواء السيارة واستخداماتها.\n" +
+                    "           السلامة في السيارة.\n" +
+                    "           التعرف على كيفية استخدام علبة السرعة.\n" +
+                    "           التعرف على كيفية الانطلاق والتوقف.\n" +
+                    "           التعرف على المركبة.";
+
+            }
         }
     }
 }

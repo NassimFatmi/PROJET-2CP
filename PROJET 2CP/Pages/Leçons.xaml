@@ -31,7 +31,7 @@
                                 <Grid >
                                     <TextBlock x:Name="singtxt" Text="Signalisation"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-                                    <Button x:Name="thm1" Content="Désignation"
+                                    <Button x:Name="thm1" Content="Désignation" Click="thm1_Click"
                                             Background="{x:Null}"
                                             VerticalAlignment="Center" HorizontalAlignment="Right"
                                             BorderBrush="{x:Null}"/>
@@ -150,7 +150,7 @@
                                     </Grid.ColumnDefinitions>
                                     <TextBlock x:Name="intertxt" Text="Intersection et priorité"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="295,0,1.2,0" Height="32" VerticalAlignment="Top"/>
-                                    <Button x:Name="thm2" Content="Désignation"
+                                    <Button x:Name="thm2" Content="Désignation" Click="thm2_Click"
                                             Background="{x:Null}"
                                             VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="{x:Null}" Grid.Column="1" Margin="0,0,-0.4,0"/>
                                 </Grid>
@@ -255,7 +255,7 @@
                     <Grid Margin="15">
                         <TextBlock x:Name="designatiotxt" Text="Désignation" FontSize="15"
                                    VerticalAlignment="Center" HorizontalAlignment="Center"
-                                   FontWeight="DemiBold"/>
+                                   FontWeight="DemiBold" Margin="10" TextAlignment="Center"/>
                     </Grid>
                 </ScrollViewer>
             </Border>

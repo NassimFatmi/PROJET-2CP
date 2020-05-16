@@ -157,7 +157,7 @@ namespace PROJET_2CP.Pages
                 h0.Content = "Niveau 1 : themes";
                 singtxt.Text = "Signalisation";
                 intertxt.Text = "Intersection et priorité";
-                back.Text = "Retoure";
+                back.Text = "Retour";
 
             }
             else
@@ -221,6 +221,52 @@ namespace PROJET_2CP.Pages
         private void quiz_depassement(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new test(75, 84);
+        }
+
+        private void thm1_Click(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Visible;
+            if (MainWindow.langue == 0)
+            {
+                designatiotxt.TextAlignment = TextAlignment.Left;
+                designatiotxt.Text = "       La circulation routière est la thématique la plus dense du code de la route\n" +
+                                     "       La signalisation routière : divisé en :\n\n" +
+                                     "            *les règles générales de la signalisation routière (verticale et horizontale)\n" +
+                                     "            *les panneaux d’interdictions, d’obligations et de dangers";
+            }
+            else
+            {
+                designatiotxt.TextAlignment = TextAlignment.Right;
+                designatiotxt.Text = "      حركة المرور على الطرق تمثل الموضوع الأكثر أهمية في قانون المرور والذي يشمل:\n" +
+                                     "      إشارات الطريق: مقسمة على\n\n" +
+                                     "            *يجمع القواعد العامة لإشارات الطرق )العمودية والأفقية(.\n" +
+                                     "            *يشمل إشارات المنع، إشارات الإجبار وإشارات الخطر.";
+
+            }
+        }
+
+        private void thm2_Click(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Visible;
+            if (MainWindow.langue == 0)
+            {
+                designatiotxt.TextAlignment = TextAlignment.Left;
+                designatiotxt.Text = "      Les règles de priorité.\n\n" +
+                                     "           *Les placements de conduite (les vois de stockage et d’insertion, les changements\n" +
+                                     "            de direction, les sens uniques et les sens giratoires).\n" +
+                                     "           *Autres règles de circulation (Les intersections, le stationnement et l’arrêt, \n" +
+                                     "            les croisements et dépassements, la vitesse).";
+            }
+            else
+            {
+                designatiotxt.TextAlignment = TextAlignment.Right;
+                designatiotxt.Text = "      قواعد الأولوية\n\n" +
+                                     "    *مواضع القيادة )مسارات التخزين والإدخال، تغييرات الاتجاه،\n" +
+                                     "      الطرق ذات الاتجاه الواحد والتقاطع الدائري(.\n" +
+                                     "    *قواعد المرور الأخرى )التقاطعات، الوقوف والتوقف، العبور والتجاوز،\n" +
+                                     "     السرعة(.";
+
+            }
         }
     }
 }

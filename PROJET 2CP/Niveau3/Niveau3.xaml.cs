@@ -157,5 +157,31 @@ namespace PROJET_2CP.Niveau3
         {
             designationGrid.Visibility = Visibility.Collapsed;
         }
+
+        private void thm1_Click(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Visible;
+            if (MainWindow.langue == 0)
+            {
+                designatiotxt.TextAlignment = TextAlignment.Left;
+                designatiotxt.Text = "      Ce thème fait le point sur les différents types de route, les zones et conditions de conduite difficiles.\n" +
+                                     "        C’est donc dans cette section que les candidats peuvent retrouver l’ensemble des règles liées :\n" +
+                                     "              *A l’usage des feux.\n" +
+                                     "              *Aux risques de la conduite sous les intempéries et comportements.\n" +
+                                     "              *Aux tunnels et passage à niveau.\n" +
+                                     "              *Aux règles de circulation sur l’autoroute.";
+            }
+            else
+            {
+                designatiotxt.TextAlignment = TextAlignment.Right;
+                designatiotxt.Text = "      يستعرض هذا الموضوع الأنواع المختلفة من الطرق، المناطق الصعبة وظروف القيادة. لذلك في هذا القسم يمكن للمرشحين العثور على\n" +
+                    "       جميع القواعد ذات صلة:\n" +
+                    "       *باستخدام الأضواء.\n" +
+                    "       *خطر القيادة في الطقس السيئ والسلوكيات الواجب اعتمادها.\n" +
+                    "       *• الأنفاق ومعابر المستوى.\n" +
+                    "       *قواعد المرور على الطريق السريع.";
+
+            }
+        }
     }
 }
