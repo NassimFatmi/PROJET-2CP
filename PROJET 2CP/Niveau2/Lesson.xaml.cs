@@ -44,6 +44,10 @@ namespace PROJET_2CP.Niveau2
         {
             if (langue == 0)
             {
+                txt1.Text = "Le Conducteur";
+                txt2.Text = "Le Véhicule";
+                txt3.Text = "Les situations particulieres de conduite";
+
                 l1.Content = "Les indications diverses";
                 l2.Content = "Les indications utiles";
                 l3.Content = "La signalisation temporaire";
@@ -80,6 +84,9 @@ namespace PROJET_2CP.Niveau2
             }
             if (langue == 1)
             {
+                txt1.Text = "السائق";
+                txt2.Text = "المركبة";
+                txt3.Text = "حالات القيادة الخاصة";
 
                 l1.Content = "مؤشرات مختلفة";
                 l2.Content = "مؤشرات مفيدة";
