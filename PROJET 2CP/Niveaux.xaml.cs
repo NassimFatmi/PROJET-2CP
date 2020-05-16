@@ -22,6 +22,8 @@ namespace PROJET_2CP
     /// </summary>
     public partial class Niveaux : Page
     {
+        private int _LevelsPoints = 0;
+
         public Niveaux()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace PROJET_2CP
             lvl2icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl2icon.png", UriKind.RelativeOrAbsolute));
             lvl3icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl3icon.png", UriKind.RelativeOrAbsolute));
             if (!LogIN.LoggedUser.UtilisateurID.Equals("Guest"))
-             //   progressLevels();
+                progressLevelsFinal();
             initialiserLangue();
             guestMode();
         }
@@ -112,15 +114,15 @@ namespace PROJET_2CP
             button.Width = 200;
         }
 
-        private void mouseEnterLocked(object sender, MouseEventArgs e)
+        private void mouseEnterLockedLevel2(object sender, MouseEventArgs e)
         {
             var button = sender as Button;
             button.Height = 340;
             button.Width = 240;
             if (MainWindow.langue == 0)
-                lockmessage.Content = "Pour débloquer se niveau il faut compléter les tests de niveau précedent";
+                lockmessage.Content = "Pour débloquer ce niveau il faut obtenir 60 points ";
             else
-                lockmessage.Content = "يجب عليك انهاء امتحانات المستوى السابق لفتح هدا المستوى";
+                lockmessage.Content = "يجب عليك تجميع 60 نقطة لفتح هدا المستوى";
         }
 
         private void mouseLeaveLocked(object sender, MouseEventArgs e)
@@ -130,73 +132,78 @@ namespace PROJET_2CP
             button.Width = 200;
             lockmessage.Content = "";
         }
-        private void progressLevels()
+        private void mouseEnterLockedLevel3(object sender, MouseEventArgs e)
         {
-            // Code == ID //
-            string connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={System.IO.Directory.GetCurrentDirectory()}\UtilisateurBDD.mdf;Integrated Security=True";
-            DataTable savedData = new DataTable();
-            SqlConnection connectToUtilisateur = new SqlConnection(connString);
-
+            var button = sender as Button;
+            button.Height = 340;
+            button.Width = 240;
+            if (MainWindow.langue == 0)
+                lockmessage.Content = "Pour débloquer ce niveau il faut obtenir 90 points ";
+            else
+                lockmessage.Content = "يجب عليك تجميع 90 نقطة لفتح هدا المستوى";
+        }
+       
+        private void progressLevelsFinal()
+        {
+            string connStringToSave = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename ={ System.IO.Directory.GetCurrentDirectory()}\Trace\Save.mdf; Integrated Security = True";
+            SqlConnection saveConn = new SqlConnection(connStringToSave);
             SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable temp = new DataTable();
+            string querySelect = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Test = '0' AND Reponse = 'True')";
 
-            string query = "SELECT * FROM Utilisateur WHERE UtilisateurID = '" + LogIN.LoggedUser.UtilisateurID + "'";
-
-            if (connectToUtilisateur.State == ConnectionState.Closed)
-                connectToUtilisateur.Open();
-
-            using (connectToUtilisateur)
+            try
             {
-                try
-                {
-                    cmd = new SqlCommand(query, connectToUtilisateur);
+                if (saveConn.State == ConnectionState.Closed)
+                    saveConn.Open();
 
-                    // create data adapter
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                cmd = new SqlCommand(querySelect, saveConn);
+                adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(temp);
+                adapter.Dispose();
 
-                    da.Fill(savedData);
-                    da.Dispose();
+                _LevelsPoints = temp.Rows.Count;
 
-                    if (savedData.Rows[0]["Test1"].ToString().Equals(""))
-                    {
-                        lvl2lock.Visibility = Visibility.Visible;
-                        lvl3lock.Visibility = Visibility.Visible;
-                        niv2.MouseEnter += new MouseEventHandler(this.mouseEnterLocked);
-                        niv2.MouseLeave += new MouseEventHandler(this.mouseLeaveLocked);
-                        niv3.MouseEnter += new MouseEventHandler(this.mouseEnterLocked);
-                        niv3.MouseLeave += new MouseEventHandler(this.mouseLeaveLocked);
-                    }
-                    else
-                    {
-                        if (Int32.Parse(savedData.Rows[0]["Test1"].ToString()) == 10)
-                        {
-                            lvl2lock.Visibility = Visibility.Collapsed;
-                            niv2.Click += new RoutedEventHandler(this.niv2_Click);
-                            niv2.MouseEnter += new MouseEventHandler(this.mouseEnter);
-                            niv2.MouseLeave += new MouseEventHandler(this.mouseLeave);
-                            niv3.MouseEnter += new MouseEventHandler(this.mouseEnterLocked);
-                            niv3.MouseLeave += new MouseEventHandler(this.mouseLeaveLocked);
-                        }
-                    }
-                    if (!savedData.Rows[0]["Test2"].ToString().Equals(""))
-                    {
-                        if (Int32.Parse(savedData.Rows[0]["Test2"].ToString()) == 7)
-                        {
-                            lvl3lock.Visibility = Visibility.Collapsed;
-                            niv3.Click += new RoutedEventHandler(this.niv3_Click);
-                            niv3.MouseEnter += new MouseEventHandler(this.mouseEnter);
-                            niv3.MouseLeave += new MouseEventHandler(this.mouseLeave);
-                        }
-                    }
-                    if (connectToUtilisateur.State == ConnectionState.Open)
-                        connectToUtilisateur.Close();
-                }
-                catch (Exception)
-                {
-                    if (connectToUtilisateur.State == ConnectionState.Open)
-                        connectToUtilisateur.Close();
+                if (saveConn.State == ConnectionState.Open)
+                    saveConn.Close();
+            }
+            catch (Exception)
+            {
+                if (saveConn.State == ConnectionState.Open)
+                    saveConn.Close();
+                MessageBox.Show("Error Niveaux progressFinal");
+            }
 
-                    MessageBox.Show("error Get LastTest Niveaux ");
-                }
+            pointsLbl.Content = _LevelsPoints.ToString();
+            if (MainWindow.langue == 0)
+                pointsMsg.Content = "Vos points";
+            else
+                pointsMsg.Content = "نقاطك";
+
+            if(_LevelsPoints < 60)
+            {
+                lvl2lock.Visibility = Visibility.Visible;
+                lvl3lock.Visibility = Visibility.Visible;
+                niv2.MouseEnter += new MouseEventHandler(this.mouseEnterLockedLevel2);
+                niv2.MouseLeave += new MouseEventHandler(this.mouseLeaveLocked);
+                niv3.MouseEnter += new MouseEventHandler(this.mouseEnterLockedLevel3);
+                niv3.MouseLeave += new MouseEventHandler(this.mouseLeaveLocked);
+            }
+            if(_LevelsPoints >= 60)
+            {
+                lvl2lock.Visibility = Visibility.Collapsed;
+                niv2.Click += new RoutedEventHandler(this.niv2_Click);
+                niv2.MouseEnter += new MouseEventHandler(this.mouseEnter);
+                niv2.MouseLeave += new MouseEventHandler(this.mouseLeave);
+                niv3.MouseEnter += new MouseEventHandler(this.mouseEnterLockedLevel3);
+                niv3.MouseLeave += new MouseEventHandler(this.mouseLeaveLocked);
+            }
+            if(_LevelsPoints >= 90)
+            {
+                lvl3lock.Visibility = Visibility.Collapsed;
+                niv3.Click += new RoutedEventHandler(this.niv3_Click);
+                niv3.MouseEnter += new MouseEventHandler(this.mouseEnter);
+                niv3.MouseLeave += new MouseEventHandler(this.mouseLeave);
             }
         }
     }
