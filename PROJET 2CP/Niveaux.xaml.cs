@@ -22,7 +22,7 @@ namespace PROJET_2CP
     /// </summary>
     public partial class Niveaux : Page
     {
-        private int _LevelsPoints = 60;
+        private int _LevelsPoints = 0;
 
         public Niveaux()
         {
@@ -162,7 +162,7 @@ namespace PROJET_2CP
                 adapter.Fill(temp);
                 adapter.Dispose();
 
-                 _LevelsPoints = temp.Rows.Count;
+                _LevelsPoints = temp.Rows.Count;
 
                 if (saveConn.State == ConnectionState.Open)
                     saveConn.Close();

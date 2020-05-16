@@ -41,7 +41,7 @@
                 </StackPanel>
             </Button>
 
-            <Button HorizontalAlignment="Center" Click="niv2_Click" x:Name="niv2" Height="300" Width="200" BorderThickness="0" Margin="80,0,80,0" 
+            <Button HorizontalAlignment="Center" x:Name="niv2" Height="300" Width="200" BorderThickness="0" Margin="80,0,80,0" 
                     Background="#FFFFAB12">
                 <StackPanel>
                     <Image x:Name="lvl2icon"  Height="60" Width="60" Margin="0,0,0,20"/>
@@ -50,7 +50,7 @@
                 </StackPanel>
             </Button>
 
-            <Button HorizontalAlignment="Right" Click="niv3_Click" x:Name="niv3" Height="300" Width="200" BorderThickness="0" 
+            <Button HorizontalAlignment="Right" x:Name="niv3" Height="300" Width="200" BorderThickness="0" 
                     Background="#FFFF5B5B"
                     Margin="0,0,20,0">
                 <StackPanel>
