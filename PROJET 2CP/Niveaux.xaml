@@ -28,16 +28,16 @@
                 </StackPanel>
             </Button>
 
-            <Button HorizontalAlignment="Center" x:Name="niv2" Height="300" Width="200" BorderThickness="0" Margin="80,0,80,0" 
+            <Button HorizontalAlignment="Center" Click="niv2_Click" x:Name="niv2" Height="300" Width="200" BorderThickness="0" Margin="80,0,80,0" 
                     Background="#FFFFAB12">
                 <StackPanel>
-                    <Image x:Name="lvl2icon" Height="60" Width="60" Margin="0,0,0,20"/>
+                    <Image x:Name="lvl2icon"  Height="60" Width="60" Margin="0,0,0,20"/>
                     <TextBlock x:Name="l1" Text="Niveau II" TextAlignment="Center" FontSize="20"/>
                     <materialDesign:PackIcon x:Name="lvl2lock" Kind="Lock" Width="30" Height="30" HorizontalAlignment="Center" Margin="0,50,0,0"/>
                 </StackPanel>
             </Button>
 
-            <Button HorizontalAlignment="Right" x:Name="niv3" Height="300" Width="200" BorderThickness="0" 
+            <Button HorizontalAlignment="Right" Click="niv3_Click" x:Name="niv3" Height="300" Width="200" BorderThickness="0" 
                     Background="#FFFF5B5B"
                     Margin="0,0,20,0">
                 <StackPanel>

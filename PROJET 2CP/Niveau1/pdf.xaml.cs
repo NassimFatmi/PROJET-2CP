@@ -55,29 +55,29 @@ namespace PROJET_2CP
 
             }
             if (MainWindow.langue == 1)
-            { 
-             BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg1.png", UriKind.RelativeOrAbsolute));
-            img1.Source = btm;
-            btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg2.png", UriKind.RelativeOrAbsolute));
-            img2.Source = btm;
-            btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg3.png", UriKind.RelativeOrAbsolute));
-            img3.Source = btm;
-            btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg4.png", UriKind.RelativeOrAbsolute));
-            img4.Source = btm;
-            btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg5.png", UriKind.RelativeOrAbsolute));
-            img5.Source = btm;
-            btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg6.png", UriKind.RelativeOrAbsolute));
-            img6.Source = btm;
-            btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg7.png", UriKind.RelativeOrAbsolute));
-            img7.Source = btm;
-            btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg8.png", UriKind.RelativeOrAbsolute));
-            img8.Source = btm;
-            btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg9.png", UriKind.RelativeOrAbsolute));
-            img9.Source = btm;
-            back.Text = "رجوع";
+            {
+                BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg1.png", UriKind.RelativeOrAbsolute));
+                img1.Source = btm;
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg2.png", UriKind.RelativeOrAbsolute));
+                img2.Source = btm;
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg3.png", UriKind.RelativeOrAbsolute));
+                img3.Source = btm;
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg4.png", UriKind.RelativeOrAbsolute));
+                img4.Source = btm;
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg5.png", UriKind.RelativeOrAbsolute));
+                img5.Source = btm;
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg6.png", UriKind.RelativeOrAbsolute));
+                img6.Source = btm;
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg7.png", UriKind.RelativeOrAbsolute));
+                img7.Source = btm;
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg8.png", UriKind.RelativeOrAbsolute));
+                img8.Source = btm;
+                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/reg9.png", UriKind.RelativeOrAbsolute));
+                img9.Source = btm;
+                back.Text = "رجوع";
+            }
         }
+
     }
-
 }
-
 
