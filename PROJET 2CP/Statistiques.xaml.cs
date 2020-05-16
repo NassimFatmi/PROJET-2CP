@@ -56,6 +56,18 @@ namespace PROJET_2CP
                 niveau2.Header = "Niveau 2";
                 niveau3.Header = "Niveau 3";
                 moyenneLbl.Content = "Moyenne";
+                niv1thm1.Header = "Signalisation 1";
+                niv1thm2.Header = "Régles de priorités";
+                niv2thm1.Header = "Signalisation 2";
+                niv2thm2.Header = "Le conducteur 1";
+                niv2thm3.Header = "Le véhicule 1";
+                niv2thm4.Header = "Les situations particulières de conduite";
+                niv3thm1.Header = "Le conducteur 2";
+                niv3thm2.Header = "Les documents et les infractions";
+                niv3thm3.Header = "Le véhicule 2";
+                testniv1.Header = "Tests";
+                testniv2.Header = "Tests";
+                testniv3.Header = "Tests";
             }
             else
             {
@@ -66,6 +78,18 @@ namespace PROJET_2CP
                 niveau2.Header = "المستوى 2";
                 niveau3.Header = "المستوى 3";
                 moyenneLbl.Content = "المعدلات";
+                niv1thm1.Header = "1 لافتات";
+                niv1thm2.Header = "قواعد الأولوية";
+                niv2thm1.Header = "لافتات 2";
+                niv2thm2.Header = "السائق 1";
+                niv2thm3.Header = "المركبة 1";
+                niv2thm4.Header = "حالات القيادة الخاصة";
+                niv3thm1.Header = "السائق 2";
+                niv3thm2.Header = "المستندات والمخالفات";
+                niv3thm3.Header = "المركبة 2";
+                testniv1.Header = "الاختبارات";
+                testniv2.Header = "الاختبارات";
+                testniv3.Header = "الاختبارات";
             }
         }
         private void creeStates()
@@ -807,7 +831,7 @@ namespace PROJET_2CP
             }
             else
             {
-                lesson = questionContent.Rows[0]["leçonAr"].ToString();
+                lesson = questionContent.Rows[0]["lesonAr"].ToString();
                 cours.Add(lesson);
             }
             return lesson;
