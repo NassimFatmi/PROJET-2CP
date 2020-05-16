@@ -31,7 +31,7 @@
                             Non
                         </Button>
                         <Button  Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center"
-                                Foreground="Red">
+                                Foreground="Red" Click="Back_Click">
                             Oui
                         </Button>
                     </StackPanel>

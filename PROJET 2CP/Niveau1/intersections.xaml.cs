@@ -25,6 +25,8 @@ namespace PROJET_2CP
     {
         public static int num;
         private NLeçon lesson;
+        private SoundPlayer sp = null;
+
         public intersections()
         {
 
@@ -224,13 +226,20 @@ namespace PROJET_2CP
 
         private void son_Click(object sender, RoutedEventArgs e)
         {
-            SoundPlayer sp = new SoundPlayer(Convert.ToString(num) + ".wav");
-            try { sp.Play(); } catch (Exception) { }
-           
+            if (MainWindow.langue == 0)
+            {
+                sp = new SoundPlayer(@"audio_intr\" + Convert.ToString(num) + ".wav");
+            }
+            if (MainWindow.langue == 1)
+            {
+                sp = new SoundPlayer(@"audio_intr\" + Convert.ToString(num) + "ar.wav");
+
+            }
+            sp.Play();
         }
         private void pause_Click(object sender, RoutedEventArgs e)
         {
-            SoundPlayer sp = new SoundPlayer(Convert.ToString(num) + ".wav");
+
             sp.Stop();
         }
         private void backClick(object sender, RoutedEventArgs e)

@@ -104,6 +104,9 @@
     <Compile Include="Niveau1\pdf.xaml.cs">
       <DependentUpon>pdf.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Niveau1\signalisation_gen.xaml.cs">
+      <DependentUpon>signalisation_gen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Niveau1\test.xaml.cs">
       <DependentUpon>test.xaml</DependentUpon>
     </Compile>
@@ -287,6 +290,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Niveau1\pdf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Niveau1\signalisation_gen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

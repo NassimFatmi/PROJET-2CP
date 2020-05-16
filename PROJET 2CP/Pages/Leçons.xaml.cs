@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using PROJET_2CP.Niveau1;
 using PROJET_2CP.Noyau;
 
 namespace PROJET_2CP.Pages
@@ -47,7 +48,7 @@ namespace PROJET_2CP.Pages
 
                 thm1.Content = "Désignation";
                 thm2.Content = "Désignation";
-                quiz_1.Content = quiz_2.Content = quiz_3.Content = "أسئلة";
+                quiz_1.Content = quiz_2.Content = quiz_3.Content = "Questions";
             }
             if (langue == 1)
             {
@@ -70,17 +71,10 @@ namespace PROJET_2CP.Pages
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (langue == 0)
-            {
-                //Home.mainFrame.Content = new Signalisation();
-            }
-            if (langue == 1)
-            {
-                //Home.mainFrame.Content = new SignalisationAr();
-            }
-            Panneaux.panneau = 0;
-            PanneauxInterdiction.panneau = 0;
-            PanneauxObligation.panneau = 0;
+
+            Home.mainFrame.Content = new signalisation_gen();
+
+            
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
