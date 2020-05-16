@@ -132,8 +132,8 @@
                 <Grid.Background>
                     <SolidColorBrush Color="White" Opacity="0.3"/>
                 </Grid.Background>
+               
             </Grid>
-
             <Label Grid.Row="2" x:Name="moyenneLbl" Content="Moyenne" Style="{StaticResource MaterialDesignLabel}" 
                    Height="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                    VerticalAlignment="Center" HorizontalAlignment="Right"
