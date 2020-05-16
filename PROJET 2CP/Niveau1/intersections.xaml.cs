@@ -64,10 +64,11 @@ namespace PROJET_2CP
                     {
                         btn.HorizontalAlignment = HorizontalAlignment.Left;
                         btn.FontSize = 24;
-                        btn.Width = 90;
-                        btn.Height = 90;
+                        btn.Width = 150;
+                        btn.Height = 150;
                         btn.Margin = new Thickness(20, 20, 20, 20);
                         btn.Background = Brushes.Transparent;
+                        btn.BorderBrush = Brushes.Transparent;
                         //btn.MouseEnter += button_MouseEnter;
                         //btn.MouseLeave += button_MouseLeave;
                         btn.Click += button_Click;
@@ -75,7 +76,7 @@ namespace PROJET_2CP
                         btn.Content = lesson.ajouterImage(AppDomain.CurrentDomain.BaseDirectory + "/Img/" + dr["nom"].ToString());
 
                         sp.Children.Add(btn);
-                        if (k == 5)
+                        if (k == 4)
                         {
                             k = 0;
                             stk.Children.Add(sp);
@@ -225,6 +226,11 @@ namespace PROJET_2CP
         {
             SoundPlayer sp = new SoundPlayer(Convert.ToString(num) + ".wav");
             sp.Play();
+        }
+        private void pause_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer sp = new SoundPlayer(Convert.ToString(num) + ".wav");
+            sp.Stop();
         }
         private void backClick(object sender, RoutedEventArgs e)
         {
