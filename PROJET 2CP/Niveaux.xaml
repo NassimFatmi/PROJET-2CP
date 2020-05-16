@@ -17,6 +17,19 @@
             </StackPanel>
         </Button>
 
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Top" HorizontalAlignment="Center"
+                    Margin="0,25,160,0">
+            <Label x:Name="pointsMsg" Content="Vos points "
+                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                   Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="0,0,20,0"/>
+            <Border Height="100" Width="100" BorderThickness="6" BorderBrush="White"
+                    CornerRadius="20" Background="#FF3188A8">
+                <Label x:Name="pointsLbl" Content="101"
+                       HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                       Foreground="White" FontSize="40" FontWeight="Bold"/>
+            </Border>
+        </StackPanel>
         <Grid Width="800" VerticalAlignment="Center" HorizontalAlignment="Center">
 
             <Button HorizontalAlignment="Left" x:Name="niv1" Height="300" Width="200" BorderThickness="0" Background="#FF19CAA0" Click="niveau1Click" 
