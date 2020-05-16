@@ -422,7 +422,7 @@ namespace PROJET_2CP
             {
                 niveauSelected = 1;
             }
-          if(niv1thm2.IsSelected)
+          if(niv2thm1.IsSelected)
             {
                 niveauSelected = 2;
             }
