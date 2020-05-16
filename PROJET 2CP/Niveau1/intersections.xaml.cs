@@ -224,7 +224,8 @@ namespace PROJET_2CP
         private void son_Click(object sender, RoutedEventArgs e)
         {
             SoundPlayer sp = new SoundPlayer(Convert.ToString(num) + ".wav");
-            sp.Play();
+            try { sp.Play(); } catch (Exception) { }
+           
         }
         private void backClick(object sender, RoutedEventArgs e)
         {

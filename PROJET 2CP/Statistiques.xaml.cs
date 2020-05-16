@@ -552,7 +552,9 @@ namespace PROJET_2CP
         private void niv2thm234_Selected(object sender, RoutedEventArgs e)
         {
             //ThemeStat.Visibility = Visibility.Visible;
+            chartsGrid.Children.Clear();
             creerBouttonPourStat();
+
             if (niv2thm2.IsSelected)
             {
                 niveauSelected = 2;
@@ -751,7 +753,7 @@ namespace PROJET_2CP
             string laleçon;
             for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
             {
-                if(niveau==1 && theme=="1")
+                if(niveau==1 && theme=="1" || niveau==2 && theme=="1")
                 {
                     laleçon = getlesson(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()));
                     duplicated.Add(new statLesson(laleçon, bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString())));

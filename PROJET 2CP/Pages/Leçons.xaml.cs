@@ -106,17 +106,20 @@ namespace PROJET_2CP.Pages
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(1, 7);
+            //Home.mainFrame.Content = new Quiz(1, 7);
+            Home.mainFrame.Content = new Quiz(7, 13);
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(7, 13);
+            //Home.mainFrame.Content = new Quiz(7, 13);
+            Home.mainFrame.Content = new Quiz(13, 19);
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Quiz(13, 19);
+            // Home.mainFrame.Content = new Quiz(13, 19);
+            Home.mainFrame.Content = new Quiz(1, 7);
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
