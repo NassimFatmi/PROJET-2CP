@@ -175,7 +175,7 @@
                                 <Grid >
                                     <TextBlock x:Name="txt1" Text="Theme 2"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-                                    <Button x:Name="thm2" Content="Désignation"
+                                    <Button x:Name="thm2" Content="Désignation" Click="thm2_Click"
                                             Background="{x:Null}"
                                             VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="{x:Null}"/>
                                 </Grid>
@@ -254,7 +254,7 @@
                                 <Grid>
                                     <TextBlock x:Name="txt2" Text="Theme 4"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-                                    <Button x:Name="thm3" Content="Désignation"
+                                    <Button x:Name="thm3" Content="Désignation" Click="thm3_Click"
                                             Background="{x:Null}"
                                             VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="{x:Null}"/>
                                 </Grid>
@@ -315,7 +315,7 @@
                                 <Grid >
                                     <TextBlock x:Name="txt3" Text="Theme 5"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-                                    <Button x:Name="thm4" Content="Désignation"
+                                    <Button x:Name="thm4" Content="Désignation" Click="thm3_Click"
                                             Background="{x:Null}"
                                             VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="{x:Null}"/>
                                 </Grid>
@@ -388,7 +388,7 @@
                    Foreground="White" FontSize="45"
                    VerticalAlignment="Top" HorizontalAlignment="Center"
                    Margin="20"/>
-            <Border Height="300" Width="650"
+            <Border Height="300" Width="850"
                     CornerRadius="27">
                 <Border.Background>
                     <SolidColorBrush Color="White" Opacity="0.7"/>
@@ -403,7 +403,7 @@
             </Border>
             <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
                     VerticalAlignment="Top" HorizontalAlignment="Right"
-                    Margin="0,80,110,0" Click="quitdesignationClick">
+                    Margin="0,40,110,0" Click="quitdesignationClick">
                 <materialDesign:PackIcon Foreground="Red" Kind="Close"/>
             </Button>
         </Grid>
