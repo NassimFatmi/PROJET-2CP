@@ -414,6 +414,7 @@ namespace PROJET_2CP
         }
         private void niv1thm1Andniv2thm1_Selected(object sender, RoutedEventArgs e)
         {
+            choixChart.Visibility = Visibility.Collapsed;
             // ThemeStat.Visibility = Visibility.Visible;
             chartsGrid.Children.Clear();
             creerBouttonPourStat();
@@ -422,7 +423,7 @@ namespace PROJET_2CP
             {
                 niveauSelected = 1;
             }
-          if(niv1thm2.IsSelected)
+          if(niv2thm1.IsSelected)
             {
                 niveauSelected = 2;
             }
@@ -1082,14 +1083,7 @@ namespace PROJET_2CP
             DataTable temp = new DataTable(); ;
 
             string querySelectTheme1Niv1;
-            int niveauSelected = 1;
-
-            if (niv1thm1.IsSelected)
-                niveauSelected = 1;
-            if (niv2thm1.IsSelected)
-                niveauSelected = 2;
-
-            querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveauSelected.ToString() + "' AND Test = '1' )";
+            querySelectTheme1Niv1 = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '" + niveauSelected.ToString() + "' AND Test = '"+ themeSelected.ToString()+ "' )";
 
             try
             {
@@ -1111,7 +1105,6 @@ namespace PROJET_2CP
                     saveConn.Close();
                 MessageBox.Show("Error states");
             }
-
             //Affichage des reponse de l'utilisateur
             chartsGrid.Children.Clear();
             StackPanel userReponses = new StackPanel();//pour toutes les questions
@@ -1119,6 +1112,7 @@ namespace PROJET_2CP
             ScrollViewer scrollViewer = new ScrollViewer();
             scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             scrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+         //   MessageBox.Show(niveauSelected.ToString() + " " + themeSelected.ToString());
             for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
             {
                 qstreponse = new Border();
@@ -1126,8 +1120,10 @@ namespace PROJET_2CP
                 {
                     qstreponse = creatAnswerUser(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString()));
                 }
-                if(niveauSelected==2 && themeSelected >= 2 || niveauSelected ==3)
+             //   MessageBox.Show(niveauSelected.ToString()+" "+ themeSelected.ToString());
+                if ((niveauSelected==2 && themeSelected >=2) || (niveauSelected ==3))
                 {
+                   // MessageBox.Show("hello there");
                     qstreponse = creatAnswerUserForLVL23(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString()));
                 }
                 userReponses.Children.Add(qstreponse);

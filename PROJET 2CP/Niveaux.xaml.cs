@@ -29,7 +29,7 @@ namespace PROJET_2CP
             lvl2icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl2icon.png", UriKind.RelativeOrAbsolute));
             lvl3icon.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/icons/Lvl3icon.png", UriKind.RelativeOrAbsolute));
             if (!LogIN.LoggedUser.UtilisateurID.Equals("Guest"))
-                progressLevels();
+             //   progressLevels();
             initialiserLangue();
             guestMode();
         }
