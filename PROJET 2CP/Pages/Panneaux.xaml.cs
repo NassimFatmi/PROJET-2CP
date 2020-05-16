@@ -107,7 +107,7 @@ namespace PROJET_2CP
             {   //la langue français
                 h0.Content = "Niveau 1 : Panneaux de danger";
                 h1.Content = "Cliquez sur le panneau pour la description ";
-                back.Text = "Retoure";
+                back.Text = "Retour";
             }
             else
             {

@@ -27,10 +27,10 @@
                         </TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
-                        <Button x:Name="dhoui" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
+                        <Button x:Name="dhnon" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
                             Non
                         </Button>
-                        <Button  x:Name="dhnon" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center"
+                        <Button  x:Name="dhoui" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center"
                                 Foreground="Red" Click="Back_Click">
                             Oui
                         </Button>

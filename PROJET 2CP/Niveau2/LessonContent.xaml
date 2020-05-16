@@ -37,7 +37,7 @@
         <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="BackClick" >
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18"/>
-                <TextBlock Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+                <TextBlock x:Name="back" Text="Retour" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
             </StackPanel>
         </Button>
 

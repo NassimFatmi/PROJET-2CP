@@ -35,8 +35,6 @@ namespace PROJET_2CP.Niveau2
         //private  string repInteractive;
 
         private int _Code;//ID
-        private string _Reponse;
-        private string _ReponseAR;
 
         private string _Reponse1;
         private string _Reponse2;
@@ -634,7 +632,7 @@ namespace PROJET_2CP.Niveau2
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Niveau2.Niv2Main();
+            Home.mainFrame.Content = new Lesson();
         }
         private void lbl_Click(object sender, RoutedEventArgs e)
         {
