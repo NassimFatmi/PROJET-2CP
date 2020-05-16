@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PROJET_2CP"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="610" d:DesignWidth="950"
+      d:DesignHeight="610" d:DesignWidth="951"
       Title="depassement">
     <Grid>
         <Grid.Background>
