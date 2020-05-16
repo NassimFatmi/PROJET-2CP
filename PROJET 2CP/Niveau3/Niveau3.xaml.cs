@@ -51,6 +51,9 @@ namespace PROJET_2CP.Niveau3
         {
             if (MainWindow.langue == 0)
             {
+                txt1.Text = "Le Conducteur 2";
+                txt2.Text = "Les Documents et les Infractions";
+                txt3.Text = "Le Vehicule 2";
                 principe.Content = "principe d une conduite sûre";
                 quiz_principe.Content = "Quiz1";
                 document.Content = "document et équipement";
@@ -70,9 +73,9 @@ namespace PROJET_2CP.Niveau3
             }
             if (MainWindow.langue == 1)
             {
-                txt1.Text = "الموضوع 2";
-                txt2.Text = "الموضوع 3";
-                txt3.Text = "الموضوع 4";
+                txt1.Text = "السائق 2";
+                txt2.Text = "المستندات والمخالفات";
+                txt3.Text = "المركبة 2";
                 lbl1.Content = lbl.Content = lbl2.Content = "الدروس";
                 lbl.HorizontalAlignment =lbl1.HorizontalAlignment= lbl2.HorizontalAlignment= HorizontalAlignment.Right;
                 principe.Content = "مبدأ القيادة الآمنة";
