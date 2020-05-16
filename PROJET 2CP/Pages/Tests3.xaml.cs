@@ -29,7 +29,7 @@ namespace PROJET_2CP.Pages
 
         // lire cette donnée à partir de la base de donnée de l'utilisateur
         public static int testActuel { get; set; } = 1;
-
+        public static int[] testDejaPasse = new int[10];
         public static int _testChoisi { get; set; }
         public Tests3()
         {
@@ -42,6 +42,10 @@ namespace PROJET_2CP.Pages
             b5.Tag = 5;
             b6.Tag = 6;
             langue();
+            for (int i = 0; i < testActuel - 1; i++)
+            {
+                testDejaPasse[i] = i + 1;
+            }
             getLastTest();
 
 

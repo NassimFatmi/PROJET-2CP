@@ -69,8 +69,20 @@ namespace PROJET_2CP.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            bool incrementer = true;
             Home.mainFrame.Content = new Tests2();
-            Tests2.testActuel++;
+            for (int i = 0; i < Tests2.testDejaPasse.Length; i++)
+            {
+                if (Tests2._testChoisi == Tests2.testDejaPasse[i])
+                {
+                    incrementer = false;
+                }
+            }
+
+            if (incrementer)
+            {
+                Tests2.testActuel++;
+            }
         }
         /// <summary>
         /// partie pour le sauvegrade des reponses pour construire les statistiques 
