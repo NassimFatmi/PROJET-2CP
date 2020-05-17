@@ -82,7 +82,7 @@
                         <Grid>
                             <TextBlock x:Name="txt2" Text="Theme 3"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-                            <Button x:Name="thm2" Content="Désignation" Click="thm1_Click"
+                            <Button x:Name="thm2" Content="Désignation" Click="thm2_Click"
                                             Background="{x:Null}"
                                             VerticalAlignment="Center" HorizontalAlignment="Right"
                                             BorderBrush="{x:Null}"/>
@@ -144,7 +144,7 @@
                         <Grid >
                             <TextBlock x:Name="txt3" Text="Theme4"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-                            <Button x:Name="thm3" Content="Désignation"  Click="thm1_Click"
+                            <Button x:Name="thm3" Content="Désignation"  Click="thm3_Click"
                                             Background="{x:Null}"
                                             VerticalAlignment="Center" HorizontalAlignment="Right"
                                             BorderBrush="{x:Null}"/>

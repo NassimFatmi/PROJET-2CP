@@ -29,7 +29,7 @@
                               Foreground="White">
                             <Expander.Header>
                                 <Grid>
-                                    <TextBlock Text="Signalisation 2"
+                                    <TextBlock x:Name="signalisation" Text="Signalisation 2"
                                        FontSize="24" FontWeight="Bold"
                                                VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Button x:Name="thm1" Content="Désignation"
@@ -315,7 +315,7 @@
                                 <Grid >
                                     <TextBlock x:Name="txt3" Text="Theme 5"
                                        FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-                                    <Button x:Name="thm4" Content="Désignation" Click="thm3_Click"
+                                    <Button x:Name="thm4" Content="Désignation" Click="thm4_Click"
                                             Background="{x:Null}"
                                             VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="{x:Null}"/>
                                 </Grid>
@@ -397,7 +397,7 @@
                     <Grid Margin="15">
                         <TextBlock x:Name="designatiotxt" Text="Désignation" FontSize="15"
                                    VerticalAlignment="Center" HorizontalAlignment="Center"
-                                   FontWeight="DemiBold"/>
+                                   FontWeight="DemiBold" TextWrapping="Wrap"/>
                     </Grid>
                 </ScrollViewer>
             </Border>
