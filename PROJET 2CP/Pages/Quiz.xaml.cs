@@ -48,6 +48,7 @@ namespace PROJET_2CP.Pages
         private string propCfr;
         private string propDfr;
 
+        public static int _lastPageQuiz;
 
         public Quiz(int bi,int bs)
         {
@@ -695,7 +696,10 @@ namespace PROJET_2CP.Pages
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Pages.Leçons();
+            if (Pages.Quiz._lastPageQuiz == 0)
+                Home.mainFrame.Content = new Pages.Leçons();
+            else
+                Home.mainFrame.Content = new Niveau2.Lesson();
         }
 
         /// <summary>

@@ -61,12 +61,11 @@
                     <materialDesign:PackIcon Kind="ArrowLeftBoldCircle"
                                              Width="30" Height="30"
                                              HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="backtxt" Text="Back" FontSize="10" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
             <Image x:Name="marquage" Grid.Row="0" Grid.Column="1" Width="180"
                    Source="/Images/235_off.png" Margin="0,5,0,5"/>
-            
+
             <Button x:Name="next" Grid.Column="2" Grid.Row="0" 
                     Background="{x:Null}" BorderBrush="{x:Null}"
                     Width="70" Height="60"
@@ -75,7 +74,6 @@
                     <materialDesign:PackIcon Kind="ArrowRightBoldCircle"
                                              Width="30" Height="30"
                                              HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="nexttxt" Text="Next" FontSize="10" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
 
@@ -91,7 +89,13 @@
                        Text="Marquage au sol"
                        VerticalAlignment="Top" HorizontalAlignment="Left"
                        FontSize="24" FontWeight="Bold" Foreground="White"
-                       Margin="10"/>
+                       Margin="25,0,0,0"/>
         </Grid>
+        <Button Grid.Row="0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Click="BackClick" Margin="0,0,904,0" >
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ArrowBackCircle" VerticalAlignment="Center" Height="18" Width="18"/>
+                <TextBlock Visibility="Collapsed" x:Name="retour" Text="Retour" Foreground="White" FontSize="12" Margin="10,0,0,0"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>

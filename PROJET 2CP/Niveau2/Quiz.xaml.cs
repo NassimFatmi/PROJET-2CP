@@ -35,8 +35,6 @@ namespace PROJET_2CP.Niveau2
         //private  string repInteractive;
 
         private int _Code;//ID
-        private string _Reponse;
-        private string _ReponseAR;
 
         private string _Reponse1;
         private string _Reponse2;
@@ -634,7 +632,7 @@ namespace PROJET_2CP.Niveau2
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Niveau2.Niv2Main();
+            Home.mainFrame.Content = new Lesson();
         }
         private void lbl_Click(object sender, RoutedEventArgs e)
         {
@@ -692,7 +690,7 @@ namespace PROJET_2CP.Niveau2
                 if (savedData.Rows.Count == 1)
                 {
                     // Si l'apprenant a répondu a cette question on fait la maj dans sa Table dans Save BDD
-                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' , ReponseText = '" + reponseText + "' , ReponseTextAr ='" + reponseTextAr + "'  WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' , ReponseText = '" + reponseText + "' , ReponseTextAr ='" + reponseTextAr + "'  WHERE niveau = '" + niveau.ToString() + "' AND Code = '" + code.ToString() + "'";
                     cmd = new SqlCommand(query, conn);
 
                     cmd.CommandType = CommandType.Text;

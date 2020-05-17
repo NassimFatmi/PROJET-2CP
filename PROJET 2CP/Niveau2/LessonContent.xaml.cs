@@ -26,7 +26,7 @@ namespace PROJET_2CP.Niveau2
         private NLeçon lesson;
         private int bi = 0;
         private int bs = 0;
-        private int langue = 0;
+        private int langue = MainWindow.langue;
 
         public LessonContent(int a, int b)
         {
@@ -35,6 +35,10 @@ namespace PROJET_2CP.Niveau2
             bi = a;
             bs = b;
             creerPanneau();
+            if (langue == 0)
+                back.Text = "Retour";
+            else
+                back.Text = "عودة";
         }
         // creation dynamic des boutton contenant les panneaux
         private void creerPanneau()
