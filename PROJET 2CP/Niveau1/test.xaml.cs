@@ -241,17 +241,8 @@ namespace PROJET_2CP
                 repD.Visibility = Visibility.Collapsed;
                 img.Visibility = Visibility.Collapsed;
 
-                Label lbl = new Label();
-                lbl.HorizontalAlignment = HorizontalAlignment.Center;
-                lbl.VerticalAlignment = VerticalAlignment.Center;
-                lbl.Foreground = Brushes.Black;
-                lbl.HorizontalContentAlignment = HorizontalAlignment.Center;
-                lbl.VerticalContentAlignment = VerticalAlignment.Center;
-                lbl.FontSize = 24;
-               
-                gd.Children.Add(lbl);
 
-
+                               
                 bilanQuiz.Visibility = Visibility.Visible;
                 lbl.Content = nbBonneReponse.ToString() + " / 9";
 

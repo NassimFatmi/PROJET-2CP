@@ -1474,14 +1474,62 @@ namespace PROJET_2CP
                 //Desgin
                 qstrep.Orientation = Orientation.Horizontal;
                 qstrep.Children.Add(questiontxt);
-
-                try
-                {                        
-                    imageQst.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\img\\" + questionContent.Rows[0]["Test"].ToString() + "_"+ questionContent.Rows[0]["Code"].ToString() + ".png", UriKind.RelativeOrAbsolute));
-                    qstrep.Children.Add(imageQst);
-                }
-                catch (Exception)
+                if (questionContent.Rows[0]["Test"].ToString() != "0")
                 {
+                    try
+                    {
+
+                        imageQst.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\img\\" + questionContent.Rows[0]["Test"].ToString() + "_" + questionContent.Rows[0]["Code"].ToString() + ".png", UriKind.RelativeOrAbsolute));
+
+                        qstrep.Children.Add(imageQst);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                else
+                {
+                    borderForStackrep = new Border();
+                    borderForStackrep.CornerRadius = new CornerRadius(27);
+
+                    lightBlack = new SolidColorBrush();
+                    lightBlack.Color = Color.FromArgb(80, 0, 0, 0);
+
+                    borderForStackrep.Background = lightBlack;
+
+                    qstrep = new StackPanel();
+                    qstrep.Margin = new Thickness(3);
+
+                    questiontxt = new TextBlock();
+                    questiontxt.Margin = new Thickness(10);
+                    questiontxt.VerticalAlignment = VerticalAlignment.Center;
+                    questiontxt.FontWeight = FontWeights.SemiBold;
+                    questiontxt.Foreground = Brushes.White;
+                    if (MainWindow.langue == 0)
+                {
+                    questiontxt.Text = "La question : " + questionContent.Rows[0]["Explication"].ToString();
+                    reponsetxt.Text = "Votre réponse : " + questionContent.Rows[0][reponse].ToString();
+                }
+                else
+                {
+                    questiontxt.Text = questionContent.Rows[0]["ExplicationAR"].ToString() + "السؤال";
+                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                    lecon.Text = "";
+                }
+
+                if (isItTrue == true)
+                {
+                    reponsetxt.Background = Brushes.GreenYellow;
+                }
+                else
+                {
+                    reponsetxt.Background = Brushes.LightSalmon;
+                }
+
+                //Desgin
+                qstrep.Orientation = Orientation.Horizontal;
+                qstrep.Children.Add(questiontxt);
 
                 }
 

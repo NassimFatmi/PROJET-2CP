@@ -277,9 +277,11 @@ namespace PROJET_2CP.Pages
 
         private void quiz_regle(object sender, RoutedEventArgs e)
         {
-            Niveau2.Quiz.niv = 1;
+            // Niveau2.Quiz.niv = 1;
 
-            Home.mainFrame.Content = new Niveau2.Quiz(85, 91);
+            // Home.mainFrame.Content = new Niveau2.Quiz(85, 91);
+            Home.mainFrame.Content = new test_reg(85, 91);
+
 
         }
     }

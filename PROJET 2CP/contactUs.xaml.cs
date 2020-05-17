@@ -73,7 +73,7 @@ namespace PROJET_2CP
                 userstate = "يتم الإرسال";
             }
             smtp.SendAsync(mail, userstate);
-           /* try { 
+           /* try{ 
                 smtp.Send(mail);
                 MessageBox.Show("Email sent", "Email sent", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -153,6 +153,7 @@ namespace PROJET_2CP
             message.FontSize = 20;
             message.TextWrapping = TextWrapping.Wrap;
             message.Foreground = Brushes.White;
+            message.AcceptsReturn = true;
             //passwordbox settings
             pass.Height = 40;
             pass.Width = 500;
