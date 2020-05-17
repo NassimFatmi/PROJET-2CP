@@ -145,6 +145,7 @@ namespace PROJET_2CP.Niveau2
         {
             if (index >= 230)
             {
+                try { splayer.Stop(); } catch (Exception) { }
                 index--;
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString(index) + "_off.png", UriKind.RelativeOrAbsolute));
                 marquage.Source = btm;
@@ -186,6 +187,7 @@ namespace PROJET_2CP.Niveau2
         {
             if(index < 254)
             {
+                try { splayer.Stop(); } catch (Exception) { }
                 index++;
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Images/" + Convert.ToString(index) + "_off.png", UriKind.RelativeOrAbsolute));
                 marquage.Source = btm;
@@ -226,6 +228,7 @@ namespace PROJET_2CP.Niveau2
         private void BackClick(object sender, RoutedEventArgs e)
         {
             Home.mainFrame.Content = new Lesson();
+            try { splayer.Stop(); } catch (Exception) { }
         }
     }
 }
