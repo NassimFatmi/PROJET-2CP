@@ -179,7 +179,7 @@
             <Button Visibility="Collapsed" x:Name="b5" Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto" Margin="821,33,0,505" Click="b5_Click">
                 <StackPanel Orientation="Vertical">
                     <materialDesign:PackIcon HorizontalAlignment="Center" Kind="ArrowUp" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
-                    <TextBlock x:Name="moreshortcuts" Text="more shortcuts" FontSize="20"
+                    <TextBlock x:Name="moreshortcuts" Text="more shortcuts" FontSize="18"
                                HorizontalAlignment="Center"/>
                 </StackPanel>
             </Button>
