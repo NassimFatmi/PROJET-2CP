@@ -149,6 +149,7 @@ namespace PROJET_2CP
                     statesLV.Background = null;
                     settingsLV.Background = null;
                     helpLV.Background = null;
+                    contactUs.Background = null;
                     break;
 
                 case 1:
@@ -157,6 +158,7 @@ namespace PROJET_2CP
                     settingsLV.Background = null;
                     helpLV.Background = null;
                     bonusLV.Background = null;
+                    contactUs.Background = null;
                     break;
 
                 case 2:
@@ -165,6 +167,7 @@ namespace PROJET_2CP
                     settingsLV.Background = Brushes.MediumPurple;
                     helpLV.Background = null;
                     bonusLV.Background = null;
+                    contactUs.Background = null;
                     break;
 
                 case 3:
@@ -173,13 +176,25 @@ namespace PROJET_2CP
                     settingsLV.Background = null;
                     helpLV.Background = null;
                     bonusLV.Background = Brushes.DeepSkyBlue;
+                    contactUs.Background = null;
                     break;
+
                 case 4:
+                    mainFrame.Content = new contactUs();
+                    statesLV.Background = null;
+                    settingsLV.Background = null;
+                    contactUs.Background = Brushes.Turquoise;
+                    helpLV.Background = null;
+                    bonusLV.Background = null;
+                    break;
+
+                case 5:
                     mainFrame.Content = new Aide();
                     statesLV.Background = null;
                     settingsLV.Background = null;
                     helpLV.Background = Brushes.LightGreen;
                     bonusLV.Background = null;
+                    contactUs.Background = null;
                     break;
             }
         }
@@ -267,7 +282,7 @@ namespace PROJET_2CP
                 lvitem2.Text = "Paramètre";
                 lvitem3.Text = "Aide";
                 lvitem4.Text = "Questions réponses";
-
+                lvitem5.Text = "Contacter Nous";
                 popup1.Content = "Paramètre";
                 popup2.Content = "Aide";
                 popup3.Content = "Déconnecter";
@@ -292,7 +307,7 @@ namespace PROJET_2CP
                 lvitem2.Text = "اعدادات";
                 lvitem3.Text = "مساعدة";
                 lvitem4.Text = "سؤال جواب";
-
+                lvitem5.Text = "تواصل معنا";
                 popup1.Content = "اعدادات";
                 popup2.Content = "مساعدة";
                 popup3.Content = "تسجيل الخروج";

@@ -41,7 +41,7 @@
 
                     <TreeViewItem x:Name="niveau1" Header="niveau 1" Selected="stateSelect_SelectedItemChanged">
                         <TreeViewItem x:Name="niv1thm1" Header="Signalisation" Selected="niv1thm1Andniv2thm1_Selected"/>
-                        <TreeViewItem x:Name="niv1thm2" Header="Intersection et priorité"/>
+                        <TreeViewItem x:Name="niv1thm2" Header="Intersection et priorité" Selected="niv1thm1Andniv2thm1_Selected"/>
                         <TreeViewItem x:Name="testniv1" Header="Test 1 Réponses" Selected="testniv1_Selected"/>
                     </TreeViewItem>
 

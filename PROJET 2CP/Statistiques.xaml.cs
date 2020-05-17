@@ -445,13 +445,22 @@ namespace PROJET_2CP
            
             if (niv1thm1.IsSelected)
             {
+                themeSelected = 1;
+
                 niveauSelected = 1;
             }
-          if(niv2thm1.IsSelected)
+            if(niv2thm1.IsSelected)
             {
+                themeSelected = 1;
+
                 niveauSelected = 2;
             }
-            themeSelected = 1;
+            if(niv1thm2.IsSelected)
+            {
+                themeSelected = 2;
+
+                niveauSelected = 1;
+            }
         }
 
         private Border creatAnswerUser(int id , string reponse, string reponseAr, bool isItTrue) // id == Code
@@ -791,10 +800,57 @@ namespace PROJET_2CP
                   //MessageBox.Show(temp.Rows[nbQuestion]["Code"].ToString() + " " + laleçon);
                     duplicated.Add(new statLesson(laleçon, bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString())));
                 }
+                if(niveau == 1 && theme == "2")
+                {
+                    laleçon = getlessonforlevl1theme2(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()));
+                    duplicated.Add(new statLesson(laleçon, bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString())));
+                }
             }
             lesson = new string[cours.Count];
             cours.CopyTo(lesson,0);
             ClaclulerMoyenneDeChaqueLesson(duplicated);
+        }
+        private string getlessonforlevl1theme2(int id)
+        {
+            string lesson;
+            string connStringToPanneauxDB = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True";
+            SqlConnection connectToPanneauxDB = new SqlConnection(connStringToPanneauxDB);
+
+            string querySelect = "SELECT * FROM IntersectionsQst WHERE Id = '" + id.ToString() + "'";
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable questionContent = new DataTable();
+
+            if (connectToPanneauxDB.State == ConnectionState.Closed)
+                connectToPanneauxDB.Open();
+            using (connectToPanneauxDB)
+            {
+                try
+                {
+                    cmd = new SqlCommand(querySelect, connectToPanneauxDB);
+                    adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(questionContent);
+                    adapter.Dispose();
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+                catch (Exception)
+                {
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+            }
+            if (MainWindow.langue == 0)
+            {
+                lesson = questionContent.Rows[0]["leçon"].ToString();
+                cours.Add(lesson);
+            }
+            else
+            {
+                lesson = questionContent.Rows[0]["leçonAr"].ToString();
+                cours.Add(lesson);
+            }
+            return lesson;
         }
         private string  getlessonforlvl2theme234( int id)
         {
@@ -1190,6 +1246,10 @@ namespace PROJET_2CP
                    // MessageBox.Show("hello there");
                     qstreponse = creatAnswerUserForLVL23(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString()));
                 }
+                if(niveauSelected == 1 && themeSelected == 2)
+                {
+                    qstreponse = creatAnswerUserLVL1Thm2(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString())); 
+                }
                 userReponses.Children.Add(qstreponse);
             }
             scrollViewer.Content = userReponses;
@@ -1333,6 +1393,120 @@ namespace PROJET_2CP
             }
             return borderForStackrep;
         }
+
+        private Border creatAnswerUserLVL1Thm2(int id, string reponse, string reponseAr, bool isItTrue) // id == Code
+        {
+            string connStringToPanneauxDB = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True";
+            SqlConnection connectToPanneauxDB = new SqlConnection(connStringToPanneauxDB);
+
+            string querySelect = "SELECT * FROM IntersectionsQst WHERE Id = '" + id.ToString() + "'";
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable questionContent = new DataTable();
+
+            if (connectToPanneauxDB.State == ConnectionState.Closed)
+                connectToPanneauxDB.Open();
+            using (connectToPanneauxDB)
+            {
+                try
+                {
+                    cmd = new SqlCommand(querySelect, connectToPanneauxDB);
+                    adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(questionContent);
+                    adapter.Dispose();
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+                catch (Exception)
+                {
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+            }
+
+            Border borderForStackrep = new Border();
+            borderForStackrep.CornerRadius = new CornerRadius(27);
+
+            SolidColorBrush lightBlack = new SolidColorBrush();
+            lightBlack.Color = Color.FromArgb(80, 0, 0, 0);
+
+            borderForStackrep.Background = lightBlack;
+
+            StackPanel qstrep = new StackPanel();
+            qstrep.Margin = new Thickness(3);
+
+            TextBlock questiontxt = new TextBlock();
+            questiontxt.Margin = new Thickness(10);
+            questiontxt.VerticalAlignment = VerticalAlignment.Center;
+            questiontxt.FontWeight = FontWeights.SemiBold;
+            questiontxt.Foreground = Brushes.White;
+
+            TextBlock reponsetxt = new TextBlock();
+            reponsetxt.Margin = new Thickness(10);
+            reponsetxt.VerticalAlignment = VerticalAlignment.Center;
+            reponsetxt.FontWeight = FontWeights.SemiBold;
+            reponsetxt.Foreground = Brushes.White;
+
+            TextBlock lecon = new TextBlock();
+            lecon.Margin = new Thickness(10);
+            lecon.VerticalAlignment = VerticalAlignment.Center;
+            lecon.FontWeight = FontWeights.SemiBold;
+            lecon.Foreground = Brushes.White;
+
+            Image imageQst = new Image();
+            imageQst.Height = 60;
+            imageQst.Width = 80;
+
+            imageQst.MouseEnter += new MouseEventHandler(this.mouseEnter);
+            imageQst.MouseLeave += new MouseEventHandler(this.mouseLeave);
+
+            if (questionContent.Rows.Count == 1)
+            {
+                if (MainWindow.langue == 0)
+                {
+                    reponsetxt.Text = "Votre réponse : " + questionContent.Rows[0][reponse].ToString();
+                }
+                else
+                {
+                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                }
+
+                //Desgin
+                qstrep.Orientation = Orientation.Horizontal;
+                qstrep.Children.Add(questiontxt);
+
+                try
+                {                        
+                    imageQst.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\img\\" + questionContent.Rows[0]["Test"].ToString() + "_"+ questionContent.Rows[0]["Code"].ToString() + ".png", UriKind.RelativeOrAbsolute));
+                    qstrep.Children.Add(imageQst);
+                }
+                catch (Exception)
+                {
+
+                }
+
+                if (isItTrue == true)
+                {
+                    reponsetxt.Background = Brushes.GreenYellow;
+                }
+                else
+                {
+                    reponsetxt.Background = Brushes.LightSalmon;
+                }
+
+                qstrep.Children.Add(reponsetxt);
+
+                StackPanel fullStack = new StackPanel();
+                fullStack.Margin = new Thickness(5);
+                fullStack.Children.Add(qstrep);
+                lecon.HorizontalAlignment = HorizontalAlignment.Center;
+
+                borderForStackrep.Child = fullStack;
+                borderForStackrep.Margin = new Thickness(10);
+            }
+            return borderForStackrep;
+        }
+
         private void mouseEnter(object sender, MouseEventArgs e)
         {
             var image = sender as Image;
@@ -1346,6 +1520,7 @@ namespace PROJET_2CP
             image.Height = 60;
             image.Width = 80;
         }
+
     }
 }
 /*
