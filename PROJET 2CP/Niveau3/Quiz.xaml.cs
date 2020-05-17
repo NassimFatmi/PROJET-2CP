@@ -675,7 +675,7 @@ namespace PROJET_2CP.Niveau3
                 if (savedData.Rows.Count == 1)
                 {
                     // Si l'apprenant a répondu a cette question on fait la maj dans sa Table dans Save BDD
-                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' , ReponseText = '" + reponseText + "' , ReponseTextAr ='" + reponseTextAr + "'  WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' , ReponseText = '" + reponseText + "' , ReponseTextAr ='" + reponseTextAr + "'  WHERE niveau = '" + niveau.ToString() + "' AND Code = '" + code.ToString() + "'";
                     cmd = new SqlCommand(query, conn);
 
                     cmd.CommandType = CommandType.Text;

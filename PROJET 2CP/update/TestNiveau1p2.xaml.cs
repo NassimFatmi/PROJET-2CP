@@ -36,6 +36,20 @@ namespace PROJET_2CP.update
         private int idImage;
         private bool tempEcoulé = true;
         private bool CanGoToNextQuestion = true;
+
+
+        private int _codeQst;
+
+        private string propAar;
+        private string propBar;
+        private string propCar;
+        private string propDar;
+
+        private string propAfr;
+        private string propBfr;
+        private string propCfr;
+        private string propDfr;
+
         public TestNiveau1p2(int a,int b)
         {
             InitializeComponent();
@@ -73,7 +87,9 @@ namespace PROJET_2CP.update
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                        hasImage = Convert.ToInt32(dr["hasImg"].ToString());
+                    _codeQst = Int32.Parse(dr["Id"].ToString());
+
+                    hasImage = Convert.ToInt32(dr["hasImg"].ToString());
                         if (hasImage == 1)
                         {
                             idImage = Convert.ToInt32(dr["idImg"].ToString());
@@ -108,6 +124,16 @@ namespace PROJET_2CP.update
                         bonnRep = dr["bonneRep1Ar"].ToString();
                         bonnRep2 = dr["bonneRep2Ar"].ToString();
                     }
+
+                    propAfr = "propA1Fr";
+                    propBfr = "propB1Fr";
+                    propCfr = "propA2Fr";
+                    propDfr = "propB2Fr";
+
+                    propAar = "propA1Ar";
+                    propBar = "propB1Ar";
+                    propCar = "propA2Ar";
+                    propDar = "propB2Ar";
                 }
                 dr.Close();
             }
@@ -147,7 +173,7 @@ namespace PROJET_2CP.update
             }
             if ((string) ((Button)sender).Content==bonnRep)
             {
-                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(true, 0, 0, _codeQst, propAfr, propAar);
                 Page1Tests.nbBonneReponse++;
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
@@ -164,7 +190,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(false, 0, 0, _codeQst, propAfr, propAar);
 
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
@@ -236,7 +262,7 @@ namespace PROJET_2CP.update
             Page1Tests.total++;
             if ((string)((Button)sender).Content == bonnRep)
             {
-                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(true, 0, 0, _codeQst, propBfr, propBar);
 
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
@@ -254,7 +280,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(false, 0, 0, _codeQst, propBfr, propBar);
 
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
@@ -322,7 +348,7 @@ namespace PROJET_2CP.update
             }
             if ((string)((Button)sender).Content == bonnRep2)
             {
-                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(true, 0, 0, _codeQst, propCfr, propCar);
 
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
@@ -340,7 +366,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(false, 0, 0, _codeQst, propCfr, propCar);
 
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
@@ -390,7 +416,7 @@ namespace PROJET_2CP.update
             }
             if ((string)((Button)sender).Content == bonnRep2)
             {
-                saveAnswer(true, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(true, 0, 0, _codeQst, propDfr, propDar);
 
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
@@ -408,7 +434,7 @@ namespace PROJET_2CP.update
             }
             else
             {
-                saveAnswer(false, 1, 0, 0, "TestNiv1", "");
+                saveAnswer(false, 0, 0, _codeQst, propDfr, propDar);
 
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
@@ -627,7 +653,7 @@ namespace PROJET_2CP.update
                 if (savedData.Rows.Count == 1)
                 {
                     // Si l'apprenant a répondu a cette question on fait la maj dans sa Table dans Save BDD
-                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' , ReponseText = '" + reponseText + "' , ReponseTextAr ='" + reponseTextAr + "'  WHERE niveau = '" + niveau.ToString() + "' AND ID = '" + code.ToString() + "'";
+                    query = "UPDATE " + LogIN.LoggedUser.UtilisateurID + "Trace SET Reponse='" + reponse + "' , ReponseText = '" + reponseText + "' , ReponseTextAr ='" + reponseTextAr + "'  WHERE niveau = '" + niveau.ToString() + "' AND Code = '" + code.ToString() + "'";
                     cmd = new SqlCommand(query, conn);
 
                     cmd.CommandType = CommandType.Text;
