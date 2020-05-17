@@ -110,6 +110,9 @@
     <Compile Include="Niveau1\test.xaml.cs">
       <DependentUpon>test.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Niveau1\test_reg.xaml.cs">
+      <DependentUpon>test_reg.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Niveau2\defailance.xaml.cs">
       <DependentUpon>defailance.xaml</DependentUpon>
     </Compile>
@@ -298,6 +301,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Niveau1\test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Niveau1\test_reg.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
