@@ -517,6 +517,8 @@ namespace PROJET_2CP
             imageQst.Height = 60;
             imageQst.Width = 60;
 
+            imageQst.MouseEnter += new MouseEventHandler(this.mouseEnter);
+            imageQst.MouseLeave += new MouseEventHandler(this.mouseLeave);
 
             if (questionContent.Rows.Count == 1)
             {
@@ -1021,6 +1023,44 @@ namespace PROJET_2CP
             }
             scrollViewer.Content = userReponses;
             chartsGrid.Children.Add(scrollViewer);
+
+            //Creat answers for second partie
+
+            querySelectTests = "SELECT * FROM " + LogIN.LoggedUser.UtilisateurID.ToString() + "Trace WHERE ( Niveau = '0' AND Test = '0' )";
+            temp = new DataTable();
+            if (saveConn.State == ConnectionState.Closed)
+                saveConn.Open();
+
+            using (saveConn)
+            {
+                try
+                {
+                    if (saveConn.State == ConnectionState.Closed)
+                        saveConn.Open();
+
+                    cmd = new SqlCommand(querySelectTests, saveConn);
+                    adapter = new SqlDataAdapter(cmd);
+                    _StatesTableReponse = new DataTable();
+                    adapter.Fill(temp);
+                    adapter.Dispose();
+
+                    if (saveConn.State == ConnectionState.Open)
+                        saveConn.Close();
+                }
+                catch (Exception)
+                {
+                    if (saveConn.State == ConnectionState.Open)
+                        saveConn.Close();
+                    MessageBox.Show("Error states");
+                }
+            }
+
+            for (int nbQuestion = 0; nbQuestion < temp.Rows.Count; nbQuestion++)
+            {
+                qstreponse = new Border();
+                qstreponse = creatAnswerUserPartie2Level1(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()), temp.Rows[nbQuestion]["ReponseText"].ToString(), temp.Rows[nbQuestion]["ReponseTextAr"].ToString(), bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString()));
+                userReponses.Children.Add(qstreponse);
+            }
         }
 
         private void testniv23_Selected(object sender, RoutedEventArgs e)
@@ -1156,6 +1196,155 @@ namespace PROJET_2CP
             scrollViewer.Margin = new Thickness(0,60,0,0);
             chartsGrid.Children.Add(scrollViewer);
             choixChart.Visibility = Visibility.Collapsed;
+        }
+
+        private Border creatAnswerUserPartie2Level1(int id, string reponse, string reponseAr, bool isItTrue) // id == Code
+        {
+            string connStringToPanneauxDB = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True";
+            SqlConnection connectToPanneauxDB = new SqlConnection(connStringToPanneauxDB);
+
+            string querySelect = "SELECT * FROM QuizTheme2 WHERE Id = '" + id.ToString() + "'";
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable questionContent = new DataTable();
+
+            if (connectToPanneauxDB.State == ConnectionState.Closed)
+                connectToPanneauxDB.Open();
+            using (connectToPanneauxDB)
+            {
+                try
+                {
+                    cmd = new SqlCommand(querySelect, connectToPanneauxDB);
+                    adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(questionContent);
+                    adapter.Dispose();
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+                catch (Exception)
+                {
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+            }
+
+            Border borderForStackrep = new Border();
+            borderForStackrep.CornerRadius = new CornerRadius(27);
+
+            SolidColorBrush lightBlack = new SolidColorBrush();
+            lightBlack.Color = Color.FromArgb(80, 0, 0, 0);
+
+            borderForStackrep.Background = lightBlack;
+
+            StackPanel qstrep = new StackPanel();
+            qstrep.Margin = new Thickness(3);
+
+            TextBlock questiontxt = new TextBlock();
+            questiontxt.Margin = new Thickness(10);
+            questiontxt.VerticalAlignment = VerticalAlignment.Center;
+            questiontxt.FontWeight = FontWeights.SemiBold;
+            questiontxt.Foreground = Brushes.White;
+
+            TextBlock reponsetxt = new TextBlock();
+            reponsetxt.Margin = new Thickness(10);
+            reponsetxt.VerticalAlignment = VerticalAlignment.Center;
+            reponsetxt.FontWeight = FontWeights.SemiBold;
+            reponsetxt.Foreground = Brushes.White;
+
+            TextBlock lecon = new TextBlock();
+            lecon.Margin = new Thickness(10);
+            lecon.VerticalAlignment = VerticalAlignment.Center;
+            lecon.FontWeight = FontWeights.SemiBold;
+            lecon.Foreground = Brushes.White;
+
+            Image imageQst = new Image();
+            imageQst.Height = 60;
+            imageQst.Width = 80;
+
+            imageQst.MouseEnter += new MouseEventHandler(this.mouseEnter);
+            imageQst.MouseLeave += new MouseEventHandler(this.mouseLeave);
+
+            if (questionContent.Rows.Count == 1)
+            {
+                if (reponse.Equals("propA1Fr") || reponse.Equals("propB1Fr"))
+                {
+                    if (MainWindow.langue == 0)
+                    {
+                        questiontxt.Text = "La question : " + questionContent.Rows[0]["qst1Fr"].ToString();
+                        reponsetxt.Text = "Votre réponse : " + questionContent.Rows[0][reponse].ToString();
+                    }
+                    else
+                    {
+                        questiontxt.Text = questionContent.Rows[0]["qst1Ar"].ToString() + "السؤال";
+                        reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                        lecon.Text = "";
+                    }
+                }
+                else
+                {
+                    if (MainWindow.langue == 0)
+                    {
+                        questiontxt.Text = "La question : " + questionContent.Rows[0]["qst2Fr"].ToString();
+                        reponsetxt.Text = "Votre réponse : " + questionContent.Rows[0][reponse].ToString();
+                    }
+                    else
+                    {
+                        questiontxt.Text = questionContent.Rows[0]["qst2Ar"].ToString() + "السؤال";
+                        reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                        lecon.Text = "";
+                    }
+                }
+
+                //Desgin
+                qstrep.Orientation = Orientation.Horizontal;
+                qstrep.Children.Add(questiontxt);
+
+                try
+                {
+                    if (int.Parse(questionContent.Rows[0]["hasImg"].ToString()) == 1)
+                    {
+                        imageQst.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + questionContent.Rows[0]["IdImg"].ToString() + "_2.png", UriKind.RelativeOrAbsolute));
+                        qstrep.Children.Add(imageQst);
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+
+                if (isItTrue == true)
+                {
+                    reponsetxt.Background = Brushes.GreenYellow;
+                }
+                else
+                {
+                    reponsetxt.Background = Brushes.LightSalmon;
+                }
+
+                qstrep.Children.Add(reponsetxt);
+
+                StackPanel fullStack = new StackPanel();
+                fullStack.Margin = new Thickness(5);
+                fullStack.Children.Add(qstrep);
+                lecon.HorizontalAlignment = HorizontalAlignment.Center;
+
+                borderForStackrep.Child = fullStack;
+                borderForStackrep.Margin = new Thickness(10);
+            }
+            return borderForStackrep;
+        }
+        private void mouseEnter(object sender, MouseEventArgs e)
+        {
+            var image = sender as Image;
+            image.Height = 240;
+            image.Width = 280;
+        }
+
+        private void mouseLeave(object sender, MouseEventArgs e)
+        {
+            var image = sender as Image;
+            image.Height = 60;
+            image.Width = 80;
         }
     }
 }

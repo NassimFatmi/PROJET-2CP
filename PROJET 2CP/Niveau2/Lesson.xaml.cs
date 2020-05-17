@@ -45,10 +45,10 @@ namespace PROJET_2CP.Niveau2
         {
             if (langue == 0)
             {
-                txt1.Text = "Le Conducteur";
-                txt2.Text = "Le Véhicule";
+                txt1.Text = "Le Conducteur 1";
+                txt2.Text = "Le Véhicule 1";
                 txt3.Text = "Les situations particulieres de conduite";
-
+                signalisation.Text = "Signalisation 2";
                 l1.Content = "Les indications diverses";
                 l2.Content = "Les indications utiles";
                 l3.Content = "La signalisation temporaire";
@@ -85,9 +85,10 @@ namespace PROJET_2CP.Niveau2
             }
             if (langue == 1)
             {
-                txt1.Text = "السائق";
-                txt2.Text = "المركبة";
+                txt1.Text = "1 السائق";
+                txt2.Text = "1 المركبة";
                 txt3.Text = "حالات القيادة الخاصة";
+                signalisation.Text = "2 لافتات";
 
                 l1.Content = "مؤشرات مختلفة";
                 l2.Content = "مؤشرات مفيدة";
@@ -102,9 +103,6 @@ namespace PROJET_2CP.Niveau2
                 q4txt.Text = "الأسئلة";
                 q5txt.Text = "الأسئلة";
                 q6txt.Text = "الأسئلة";
-                txt1.Text = "الموضوع 2";
-                txt2.Text = "الموضوع 4";
-                txt3.Text = "الموضوع 5";
                 lbl1.Content = lbl.Content = lbl2.Content = ": الدروس";
                 lbl.HorizontalAlignment = lbl1.HorizontalAlignment = lbl2.HorizontalAlignment = HorizontalAlignment.Right;
                 def.Content = "فشل السائق";
@@ -293,7 +291,7 @@ namespace PROJET_2CP.Niveau2
             if (MainWindow.langue == 0)
             {
                 designatiotxt.TextAlignment = TextAlignment.Left;
-                designatiotxt.Text = "      La circulation routière est la thématique la plus dense du code de la route\n" +
+                designatiotxt.Text = "      La circulation routière est la thématique la plus dense du code de la route" +
                                      "      La signalisation routière :\n\n" +
                                      "          *inclut les marquages au sol, les panneaux directionnels, les indications \n" +
                                      "           diverses et les indications utiles";
@@ -317,22 +315,22 @@ namespace PROJET_2CP.Niveau2
                     "        risques.Cette thématique comprend donc les notions liées à comment conduire, au fait de savoir si un usager\n" +
                     "        est ou non dans un bon état pour conduire et à comment adapter sa conduite à certains comportements. Elle\n" +
                     "        regroupe les différents sous - thèmes :\n" +
-                    "           * Utilisation des rétroviseurs.\n" +
+                   /* "           * Utilisation des rétroviseurs.\n" +*/
                     "           *Vitesses et distances.\n" +
                     "           *Distances en conduite.\n" +
-                    "           *Défaillances du conducteur.\n" +
-                    "           *Principes d’une conduite sure.";
+                    "           *Défaillances du conducteur.\n" /* +
+                   "           *Principes d’une conduite sure."*/;
             }
             else
             {
                 designatiotxt.TextAlignment = TextAlignment.Right;
-                designatiotxt.Text = "      يعرض هذا الموضوع عوامل الخطر وأفضل السلوكيات للقيادة الآمنة. وبالتالي، فإنه يتضمن المفاهيم المتعلقة بكيفية القيادة، ما إذا كان\n" +
+                designatiotxt.Text = "      يعرض هذا الموضوع عوامل الخطر وأفضل السلوكيات للقيادة الآمنة. وبالتالي، فإنه يتضمن المفاهيم المتعلقة بكيفية القيادة، ما إذا كان" +
                                      "          المستخدم في حالة جيدة للقيادة أم لا وكيفية تكييف سلوكه مع مختلف الوضعيات والظروف من خلال دروس التالية:\n" +
-                                     "          *استخدام المرايا.\n" +
+                                     /*  "          *استخدام المرايا.\n" +*/
                                      "          *السرعات والمسافات.\n" +
                                      "          *مسافات القيادة.\n" +
-                                     "          *فشل السائق.\n" +
-                                     "          *مبادئ القيادة الآمنة.";
+                                     "          *فشل السائق.\n"/* +
+                                     "          *مبادئ القيادة الآمنة."*/;
 
             }
         }
@@ -343,23 +341,49 @@ namespace PROJET_2CP.Niveau2
             if (MainWindow.langue == 0)
             {
                 designatiotxt.TextAlignment = TextAlignment.Left;
-                designatiotxt.Text = "          Ce thème regroupe l’ensemble des notions liées à l’administration et aux règles administratives, comme :\n" +
-                                     "          *Les documents administratifs, et ceci qu’ils soient obligatoires ou facultatifs.\n" +
-                                     "          *Le chargement des véhicules en fonctions de leurs PTAC.\n" +
-                                     "          *Le permis de conduire à points, et la façon dont les points peuvent être retirées ou récupérées.\n" +
-                                     "          *Les infractions et les délits commises à l’encontre du code de la route et les sanctions associées";
+                designatiotxt.Text = "Ce thème aborde tout ce qui concerne la mécanique du véhicule et le fonctionnement de ses équipements" +
+                  "Il comprend les sous-thèmes suivants:\n" +
+                "Les feux de véhicule et leurs usages\n" +
+                  "La sécurité en voiture\n";
+                //"Savoir utiliser sa boite de vitesse\n" +
+                 //"Savoir démarrer et s’arrêter\n" +
+                  //"Connaître son véhicule";
+
             }
             else
             {
                 designatiotxt.TextAlignment = TextAlignment.Right;
-                designatiotxt.Text = "      يغطي هذا الموضوع كل ما يتعلق بميكانيك المركبات وتشغيل معداتها. يتضمن المواضيع الفرعية التالية:\n" +
+                designatiotxt.Text = "      يغطي هذا الموضوع كل ما يتعلق بميكانيك المركبات وتشغيل معداتها. يتضمن المواضيع الفرعية التالية" +
                     "           أضواء السيارة واستخداماتها.\n" +
-                    "           السلامة في السيارة.\n" +
-                    "           التعرف على كيفية استخدام علبة السرعة.\n" +
-                    "           التعرف على كيفية الانطلاق والتوقف.\n" +
-                    "           التعرف على المركبة.";
+                    "           السلامة في السيارة.\n";
+                  //  "           التعرف على كيفية استخدام علبة السرعة.\n" +
+                    //"           التعرف على كيفية الانطلاق والتوقف.\n" +
+                    //"           التعرف على المركبة.";
 
             }
+            
+        }
+
+        private void thm4_Click(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Visible;
+            if (MainWindow.langue == 0)
+            {
+                designatiotxt.TextAlignment = TextAlignment.Left;
+                designatiotxt.Text = "Ce thème nous permet de regarder les différentes utilisations des feux selon leurs utilités et la situation de conduite , il nous enseigne les risques de la conduite et comment l'usager doit se comporter devant ces dangers" +
+                 "Il comprend les sous - thèmes suivants:\n" +
+                 "Utilisation des feux \n"+
+                "Risques de la conduite sous les intempéries";
+            }
+            else
+            {
+                designatiotxt.TextAlignment = TextAlignment.Right;
+                designatiotxt.Text = "يسمح لنا هذا الموضوع بالنظر إلى الاستخدامات المختلفة للأضواء وفقًا لاستخداماتها وحالة القيادة ، وهو يعلمنا مخاطر القيادة وكيف يجب على المستخدم أن يتصرف أمام هذه المخاطر" +
+                "يتضمن المواضيع الفرعية التالية\n" +
+                "استخدام الأضواء\n" +
+                "مخاطر القيادة في الأحوال الجوية السيئة";
+
+              }
         }
     }
 }

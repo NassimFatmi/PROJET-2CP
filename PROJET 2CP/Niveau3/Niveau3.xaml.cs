@@ -167,22 +167,82 @@ namespace PROJET_2CP.Niveau3
             if (MainWindow.langue == 0)
             {
                 designatiotxt.TextAlignment = TextAlignment.Left;
-                designatiotxt.Text = "      Ce thème fait le point sur les différents types de route, les zones et conditions de conduite difficiles.\n" +
+                designatiotxt.Text = "          Le thème du conducteur explore les bonnes pratiques pour conduire en toute sécurité et les facteurs de\n" +
+                    "        risques.Cette thématique comprend donc les notions liées à comment conduire, au fait de savoir si un usager\n" +
+                    "        est ou non dans un bon état pour conduire et à comment adapter sa conduite à certains comportements. Elle\n" +
+                    "        regroupe les différents sous - thèmes :\n" +
+                    "             * Principe d une conduite sûre .";
+                
+
+                /*"      Ce thème fait le point sur les différents types de route, les zones et conditions de conduite difficiles.\n" +
                                      "        C’est donc dans cette section que les candidats peuvent retrouver l’ensemble des règles liées :\n" +
                                      "              *A l’usage des feux.\n" +
                                      "              *Aux risques de la conduite sous les intempéries et comportements.\n" +
                                      "              *Aux tunnels et passage à niveau.\n" +
-                                     "              *Aux règles de circulation sur l’autoroute.";
+                                     "              *Aux règles de circulation sur l’autoroute.";*/
             }
             else
             {
                 designatiotxt.TextAlignment = TextAlignment.Right;
-                designatiotxt.Text = "      يستعرض هذا الموضوع الأنواع المختلفة من الطرق، المناطق الصعبة وظروف القيادة. لذلك في هذا القسم يمكن للمرشحين العثور على\n" +
+                designatiotxt.Text = "      يعرض هذا الموضوع عوامل الخطر وأفضل السلوكيات للقيادة الآمنة. وبالتالي، فإنه يتضمن المفاهيم المتعلقة بكيفية القيادة، ما إذا كان\n" +
+                                     "          المستخدم في حالة جيدة للقيادة أم لا وكيفية تكييف سلوكه مع مختلف الوضعيات والظروف من خلال دروس التالية:\n" +
+                                     "مبدأ القيادة الآمنة";
+
+                                     /*"      يستعرض هذا الموضوع الأنواع المختلفة من الطرق، المناطق الصعبة وظروف القيادة. لذلك في هذا القسم يمكن للمرشحين العثور على\n" +
                     "       جميع القواعد ذات صلة:\n" +
                     "       *باستخدام الأضواء.\n" +
                     "       *خطر القيادة في الطقس السيئ والسلوكيات الواجب اعتمادها.\n" +
                     "       *• الأنفاق ومعابر المستوى.\n" +
-                    "       *قواعد المرور على الطريق السريع.";
+                    "       *قواعد المرور على الطريق السريع.";*/
+
+            }
+        }
+
+        private void thm2_Click(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Visible;
+            if (MainWindow.langue == 0)
+            {
+                designatiotxt.TextAlignment = TextAlignment.Left;
+                designatiotxt.Text = "          Ce thème regroupe l’ensemble des notions liées à l’administration et aux règles administratives, comme :\n" +
+                                     "          *Les documents administratifs, et ceci qu’ils soient obligatoires ou facultatifs.\n" +
+                                     "          *Le chargement des véhicules en fonctions de leurs PTAC.\n" +
+                                     "          *Le permis de conduire à points, et la façon dont les points peuvent être retirées ou récupérées.\n" +
+                                     "          *Les infractions et les délits commises à l’encontre du code de la route et les sanctions associées";
+            }
+            else
+            {
+                designatiotxt.TextAlignment = TextAlignment.Right;
+                designatiotxt.Text = "  يجمع هذا الموضوع جميع المفاهيم المتعلقة بالإدارة والقواعد الإدارية, مثل\n" +
+                                    "الوثائق الإدارية إلزامية كانت أو اختيارية\n"+
+                                   " تحميل المركبات حسب أقصى وزن حمولة مسموح به\n"+
+                                   "رخصة القيادة بمنهجية النقاط وكيف يمكن فقدان النقاط أو جمعها";
+            }
+        }
+
+        private void thm3_Click(object sender, RoutedEventArgs e)
+        {
+            designationGrid.Visibility = Visibility.Visible;
+            if (MainWindow.langue==0)
+            {
+                designatiotxt.TextAlignment = TextAlignment.Left;
+                designatiotxt.Text = "Ce thème aborde tout ce qui concerne la mécanique du véhicule et le fonctionnement de ses équipements.\n" +
+                    "Il comprend les sous-thèmes suivants:\n"+
+                 // "Les feux de véhicule et leurs usages\n"+
+               //  "La sécurité en voiture\n"+
+                  "Savoir utiliser sa boite de vitesse\n"+
+                   "Savoir démarrer et s’arrêter\n"+
+                    "Connaître son véhicule";
+            }
+            else
+            {
+                designatiotxt.TextAlignment = TextAlignment.Right;
+                designatiotxt.Text = "      يغطي هذا الموضوع كل ما يتعلق بميكانيك المركبات وتشغيل معداتها. يتضمن المواضيع الفرعية التالية:\n" +
+                    //"           أضواء السيارة واستخداماتها.\n" +
+                   // "           السلامة في السيارة.\n" +
+                    "           التعرف على كيفية استخدام علبة السرعة.\n" +
+                    "           التعرف على كيفية الانطلاق والتوقف.\n" +
+                    "           التعرف على المركبة.";
 
             }
         }
