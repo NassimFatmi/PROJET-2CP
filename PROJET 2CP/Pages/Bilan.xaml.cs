@@ -88,7 +88,7 @@ namespace PROJET_2CP.Pages
             {
                 Tests1.testActuel++;
             }
-            
+            try { soundPlayer.Stop(); } catch (Exception) { }
         }
         /// <summary>
         /// partie pour le sauvegrade des reponses pour construire les statistiques 

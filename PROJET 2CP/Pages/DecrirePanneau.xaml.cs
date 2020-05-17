@@ -151,6 +151,7 @@ namespace PROJET_2CP.Pages
         {
             if (i >= (_bi+1))
             {
+                try { sp.Stop(); } catch (Exception) { }
                 i--;
                 //Afficher l'image du panneau
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + Convert.ToString(i) + "_off.png", UriKind.RelativeOrAbsolute));
@@ -196,6 +197,7 @@ namespace PROJET_2CP.Pages
         {
             if (i <= (_bs-1))
             {
+                try { sp.Stop(); } catch (Exception) { }
                 i++;
                 //Afficher l'image du panneau
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Images\\" + Convert.ToString(i) + "_off.png", UriKind.RelativeOrAbsolute));
@@ -244,6 +246,7 @@ namespace PROJET_2CP.Pages
 
         private void backClickTopanneau(object sender, RoutedEventArgs e)
         {
+            try { sp.Stop(); } catch (Exception) { }
             if (lastPage == 1)
                 Home.mainFrame.Content = new Panneaux();
             if (lastPage == 2)
