@@ -25,7 +25,7 @@ namespace PROJET_2CP
     {
         public static int num;
         private NLeçon lesson;
-        private SoundPlayer sp = null;
+        private SoundPlayer sp = new SoundPlayer(@"audio_intr\1.wav");
 
         public intersections()
         {
@@ -119,6 +119,15 @@ namespace PROJET_2CP
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                    try
+                    {
+                        sp.Stop();
+
+                    }
+                    catch(Exception)
+                    {
+
+                    }
                     if (MainWindow.langue == 0)
                     {
                         Explication.Text = dr["Explication"].ToString();
@@ -146,7 +155,7 @@ namespace PROJET_2CP
         private void suivant_Click(object sender, RoutedEventArgs e)
         {
 
-
+            sp.Stop();
             num++;
             if (num == 21)
                 num = 1;
@@ -186,7 +195,7 @@ namespace PROJET_2CP
         private void precedent_Click(object sender, RoutedEventArgs e)
         {
 
-
+            sp.Stop();
             num--;
             if (num == 0)
                 num = 20;
@@ -244,6 +253,8 @@ namespace PROJET_2CP
         }
         private void backClick(object sender, RoutedEventArgs e)
         {
+            try { sp.Stop(); } catch (Exception) {}
+                     
             Home.mainFrame.Content = new Pages.Leçons();
         }
     }
