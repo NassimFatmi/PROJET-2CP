@@ -73,7 +73,7 @@ namespace PROJET_2CP
                 userstate = "يتم الإرسال";
             }
             smtp.SendAsync(mail, userstate);
-           /* try { 
+           /* try{ 
                 smtp.Send(mail);
                 MessageBox.Show("Email sent", "Email sent", MessageBoxButton.OK, MessageBoxImage.Information);
             }
