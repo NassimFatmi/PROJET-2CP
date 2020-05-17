@@ -89,6 +89,9 @@
     <Compile Include="Aide.xaml.cs">
       <DependentUpon>Aide.xaml</DependentUpon>
     </Compile>
+    <Compile Include="contactUs.xaml.cs">
+      <DependentUpon>contactUs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -248,6 +251,10 @@
     <Compile Include="update\Page2Test1.xaml.cs" />
     <Compile Include="update\TestNiveau1p2.xaml.cs" />
     <Page Include="Aide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="contactUs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
