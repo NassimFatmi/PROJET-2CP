@@ -53,8 +53,6 @@ namespace PROJET_2CP.Niveau1
                 img2.Source = btm;
                 btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/sigar3.png", UriKind.RelativeOrAbsolute));
                 img3.Source = btm;
-                btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/img/sigar4.png", UriKind.RelativeOrAbsolute));
-                img4.Source = btm;
                
                 back.Text = "رجوع";
             }

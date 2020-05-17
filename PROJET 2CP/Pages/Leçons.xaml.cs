@@ -37,36 +37,11 @@ namespace PROJET_2CP.Pages
 
             if (langue == 0)
             {
-                b0.Content = "règles générales";
-                switch_lang.Content = "changer la langue en arabe";
-                switch_lang.Margin = new Thickness(26, 82, 692, 558);
-                qst0.Text = "Questions";
-                qst1.Text = "Questions";
-                qst2.Text = "Questions";
-                qst3.Text = "Questions";
-                h0.Content = "NIVEAU I : Thèmes";
-
-                thm1.Content = "Désignation";
-                thm2.Content = "Désignation";
-                quiz_1.Content = quiz_2.Content = quiz_3.Content = "Questions";
+                
             }
             if (langue == 1)
             {
-                switch_lang.Content = "تغيير اللغة الى الفرنسية";
-                switch_lang.Margin = new Thickness(692, 82, 26, 558);
-                b0.Content = "قواعد عامة";
-                qst0.Text = "أسئلة";
-                qst1.Text = "أسئلة";
-                qst2.Text = "أسئلة";
-                qst3.Text = "أسئلة";
-                quiz_1.Content = quiz_2.Content = quiz_3.Content = "أسئلة";
-
-                h0.Content = "المستوى الأول: مواضيع";
-                thm1.Content = "حول الدرس";
-                thm2.Content = "حول الدرس";
-                lbl2.Content = "الدروس";
-                lbl2.HorizontalAlignment = HorizontalAlignment.Right;
-
+               
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -159,6 +134,19 @@ namespace PROJET_2CP.Pages
                 singtxt.Text = "Signalisation";
                 intertxt.Text = "Intersection et priorité";
                 back.Text = "Retour";
+                quiz_1.Content = quiz_2.Content = quiz_3.Content = "Questions";
+                b0.Content = "règles générales";
+                switch_lang.Content = "changer la langue en arabe";
+                switch_lang.Margin = new Thickness(26, 82, 692, 558);
+                qst0.Text = "Questions";
+                qst1.Text = "Questions";
+                qst2.Text = "Questions";
+                qst3.Text = "Questions";
+                h0.Content = "NIVEAU I : Thèmes";
+
+                thm1.Content = "Désignation";
+                thm2.Content = "Désignation";
+
 
             }
             else
@@ -171,6 +159,23 @@ namespace PROJET_2CP.Pages
                 regle.Content = "قواعد الأولوية";
                 intersection.Content = "التقاطعات";
                 depassement.Content = "التجاوز والعبور";
+                quiz_1.Content = quiz_2.Content = quiz_3.Content = "أسئلة";
+                switch_lang.Content = "تغيير اللغة الى الفرنسية";
+                switch_lang.Margin = new Thickness(692, 82, 26, 558);
+                b0.Content = "قواعد عامة";
+                qst0.Text = "أسئلة";
+                qst1.Text = "أسئلة";
+                qst2.Text = "أسئلة";
+                qst3.Text = "أسئلة";
+
+                h0.Content = "المستوى الأول: مواضيع";
+                thm1.Content = "حول الدرس";
+                thm2.Content = "حول الدرس";
+                lbl2.Content = "الدروس";
+                lbl2.HorizontalAlignment = HorizontalAlignment.Right;
+
+
+
             }
         }
         /*<<
@@ -268,6 +273,14 @@ namespace PROJET_2CP.Pages
                                      "     السرعة(.";
 
             }
+        }
+
+        private void quiz_regle(object sender, RoutedEventArgs e)
+        {
+            Niveau2.Quiz.niv = 1;
+
+            Home.mainFrame.Content = new Niveau2.Quiz(85, 91);
+
         }
     }
 }

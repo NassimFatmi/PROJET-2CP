@@ -171,7 +171,7 @@
                                             </Button.Background>
 
                                         </Button>
-                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00"    Height="100" Width="100" Margin="30,0,0,0">
+                                        <Button  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="#FFFF00"    Height="100" Width="100" Margin="30,0,0,0" Click="quiz_regle">
                                             <StackPanel >
                                                 <Image x:Name="quiz6" Width="40" Height="40" HorizontalAlignment="Center"/>
                                                 <Label x:Name="quiz_1" Foreground="White" Content="quiz" HorizontalAlignment="Center"/>

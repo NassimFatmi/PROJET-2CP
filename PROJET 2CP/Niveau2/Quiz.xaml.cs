@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROJET_2CP.Pages;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Media;
@@ -32,6 +33,7 @@ namespace PROJET_2CP.Niveau2
         private DispatcherTimer dt;
         private int nbBonneReponse = 0;
         private bool tempEcoulé = true;
+        public static int niv=0;
         //private  string repInteractive;
 
         private int _Code;//ID
@@ -632,11 +634,28 @@ namespace PROJET_2CP.Niveau2
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Lesson();
+            if (niv == 0)
+            {
+                Home.mainFrame.Content = new Lesson();
+            }
+            else
+            {
+                Home.mainFrame.Content = new Leçons();
+
+            }
+
         }
         private void lbl_Click(object sender, RoutedEventArgs e)
         {
-            Home.mainFrame.Content = new Lesson();
+            if (niv == 0)
+            {
+                Home.mainFrame.Content = new Lesson();
+            }
+            else
+            {
+                Home.mainFrame.Content = new Leçons();
+
+            }
         }
         private void conlangue()
         {
