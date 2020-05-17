@@ -11,7 +11,7 @@
     <Grid>
         <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}">
             <materialDesign:DialogHost.DialogContent>
-                <Grid Width="350" Height="250" HorizontalAlignment="Center">
+                <Grid Width="350" Height="300" HorizontalAlignment="Center">
                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                         <StackPanel Orientation="Horizontal" Margin="15">
                             <materialDesign:PackIcon Kind="Login" Foreground="{StaticResource PrimaryHueMidBrush}" Width="50" Height="50"/>
@@ -29,6 +29,15 @@
                             />
                         </StackPanel>
                         <Label x:Name="dherrpass" Foreground="Red" FontSize="10" HorizontalAlignment="Right" Margin="5"/>
+                        <Button Height="20" HorizontalAlignment="Right" 
+                            Background="{x:Null}" BorderBrush="{x:Null}"
+                            VerticalAlignment="Bottom"
+                            Margin="0,0,0,10" Click="forgetPasswordClick">
+                            <StackPanel>
+                                <TextBlock x:Name="forgetPass" Text="Forget my Password" 
+                                           FontSize="9" Foreground="#FF3082F9" TextDecorations="Underline"/>
+                            </StackPanel>
+                        </Button>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
                             <Button x:Name="dhretoure" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
                                 Retoure

@@ -15,6 +15,7 @@ namespace PROJET_2CP.Classes
         private string _Password;
         private string _Image;
         private bool _theme;
+        private string _Email;
 
         public Apprenant(int iD, string utilisateurID, string nom, string prenom , string password , string image )
         {
@@ -33,5 +34,6 @@ namespace PROJET_2CP.Classes
         public string Password { get => _Password; set => _Password = value; }
         public string Image { get => _Image; set => _Image = value; }
         public bool Theme { get => _theme; set => _theme = value; }
+        public string Email { get => _Email; set => _Email = value; }
     }
 }

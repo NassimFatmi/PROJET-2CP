@@ -16,6 +16,7 @@ using PROJET_2CP.Classes;
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.Win32;
+using System.Text.RegularExpressions;
 
 namespace PROJET_2CP
 {
@@ -77,6 +78,35 @@ namespace PROJET_2CP
                     errLbl.Content = "الاسم اجباري";
                 }
                 return;
+            }else if(emailtxt.Text.Equals(""))
+            {
+                if (MainWindow.langue == 0)
+                {
+                    errLbl.Content = "email est obligatoire !";
+                }
+                else
+                {
+                    errLbl.Content = "البريد الالكتروني اجباري";
+                }
+                return;
+            }
+
+            string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            if(Regex.IsMatch(emailtxt.Text,pattern))
+            {
+
+            }
+            else
+            {
+                if (MainWindow.langue == 0)
+                {
+                    errLbl.Content = "Vérifiez votre email !";
+                }
+                else
+                {
+                    errLbl.Content = "تأكد من البريد الألكتروني";
+                }
+                return;
             }
 
             if (!passwordtxt.Password.Equals(""))
@@ -96,7 +126,7 @@ namespace PROJET_2CP
             }
 
             Apprenant apprenant = new Apprenant(1, userIDtxt.Text, nomtxt.Text,prenomtxt.Text,passwordtxt.Password,imagepathtxt.Text);
-
+            apprenant.Email = emailtxt.Text;
             DataTable selectTable = new DataTable();
 
             try
@@ -106,7 +136,10 @@ namespace PROJET_2CP
 
                 if (selectTable.Rows.Count == 1 )
                 {
-                    MessageBox.Show("Utilisateur est déja exister !");                    
+                    if (MainWindow.langue == 0)
+                        MessageBox.Show("Utilisateur est déja exister !");
+                    else
+                        MessageBox.Show("هدا المستخدم موجود");
                 }
                 else
                 {
@@ -122,7 +155,36 @@ namespace PROJET_2CP
                     int row = _connectBDD.executeQuery(insert_Command);
                     _connectBDD.closeConn();
 
+                    ///New part add email to user
+                    ///
+
+                    string queryUpdateEmail = "UPDATE Utilisateur SET Email = '" + apprenant.Email + "' WHERE UtilisateurID = '" + apprenant.UtilisateurID + "'";
+                    SqlConnection connectToUtilisateurs = new SqlConnection(_connString);
+                    SqlCommand cmdAddMail;
+
+                    if (connectToUtilisateurs.State == ConnectionState.Closed)
+                        connectToUtilisateurs.Open();
+
+                    using(connectToUtilisateurs)
+                    {
+                        try
+                        {
+                            cmdAddMail = new SqlCommand(queryUpdateEmail,connectToUtilisateurs);
+                            cmdAddMail.CommandType = CommandType.Text;
+                            cmdAddMail.ExecuteNonQuery();
+
+                            if (connectToUtilisateurs.State == ConnectionState.Open)
+                                connectToUtilisateurs.Close();
+                        }
+                        catch(Exception)
+                        {
+                            if (connectToUtilisateurs.State == ConnectionState.Open)
+                                connectToUtilisateurs.Close();
+                        }
+                    }
+
                     int tblCreat = CreatTraceTable(apprenant.UtilisateurID);
+
 
                     if (row == 1 && tblCreat == 1)
                     {
@@ -211,6 +273,7 @@ namespace PROJET_2CP
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(userIDtxt, "Utilisateur ID");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(nomtxt, "Nom");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(prenomtxt, "Prénom");
+                MaterialDesignThemes.Wpf.HintAssist.SetHint(emailtxt, "E-mail");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(passwordtxt, "Mot de passe");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(confirmepasswordtxt, "Confirmer le mot de passe");
                 imagebtn.Text = "Image";
@@ -219,6 +282,7 @@ namespace PROJET_2CP
                 proverbe2.Content = "et le code de la route te respectera.";
                 pub1.Content = "Créer votre compte gratuitement et obtenir";
                 pub2.Content = "toutes les fonctionalités";
+                langueComboText.Text = "langue";
             }
             else
             {
@@ -228,6 +292,7 @@ namespace PROJET_2CP
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(userIDtxt, "اسم الحساب");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(nomtxt, "اللقب");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(prenomtxt, "الاسم");
+                MaterialDesignThemes.Wpf.HintAssist.SetHint(emailtxt, "البريد الالكتروني");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(passwordtxt, "كلمة المرور");
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(confirmepasswordtxt, "تأكيد كلمة المرور");
                 imagebtn.Text = "صورة";
@@ -236,6 +301,7 @@ namespace PROJET_2CP
                 proverbe2.Content = "و هو بدلك سيحترمك ";
                 pub1.Content = "افنح حسابك مجانا";
                 pub2.Content = "واحصل على جميع الميزات";
+                langueComboText.Text = "اللغة";
             }
         }
         private void langueCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)

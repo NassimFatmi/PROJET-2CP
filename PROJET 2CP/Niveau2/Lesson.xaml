@@ -16,7 +16,7 @@
         <Grid.Background>
             <SolidColorBrush Color="Black" Opacity="0.2"/>
         </Grid.Background>
-        <Label Grid.Row="0" Content="NIVEAU II : Themes"
+        <Label x:Name="h0" Grid.Row="0" Content="NIVEAU II : Themes"
                    VerticalAlignment="Center" HorizontalAlignment="Center" 
                    Foreground="White" FontSize="25" FontWeight="Bold"/>
 

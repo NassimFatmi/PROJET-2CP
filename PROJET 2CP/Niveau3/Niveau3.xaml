@@ -16,7 +16,7 @@
         <Grid.Background>
             <SolidColorBrush Color="Black" Opacity="0.2"/>
         </Grid.Background>
-        <Label Grid.Row="0" Content="NIVEAU III : Themes"
+        <Label x:Name="h0" Grid.Row="0" Content="NIVEAU III : Themes"
                    VerticalAlignment="Center" HorizontalAlignment="Center" 
                    Foreground="White" FontSize="25" FontWeight="Bold"/>
         <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Click="BackClick" >

@@ -287,6 +287,9 @@ namespace PROJET_2CP
                 popup2.Content = "Aide";
                 popup3.Content = "Déconnecter";
                 profilebtn.ToolTip = "Voir profile";
+                dhdcnct.Text = "Voulez vous vraiment déconnecter ?";
+                dhdback.Content = "Retour";
+                dhconfrm.Content = "Confirmer";
 
                 //tutorial partie
                 moreInfo.Content = "Pour plus d'information voir le guide d'utilisation !";
@@ -298,6 +301,7 @@ namespace PROJET_2CP
                 helptuto.Text = "Ouvrire le guide d'utilisation";
                 moreshortcuts.Text = "Plus de raccourci";
                 commencertuto.Text = "Commencer a apprendre";
+                contactUstuto.Text = "Contactez nous";
             }
             else
             {
@@ -312,6 +316,9 @@ namespace PROJET_2CP
                 popup2.Content = "مساعدة";
                 popup3.Content = "تسجيل الخروج";
                 profilebtn.ToolTip = "حسابي";
+                dhdcnct.Text = "هل انت متأكد من تسجيل الخروج ؟";
+                dhdback.Content = "عودة";
+                dhconfrm.Content = "تأكيد";
 
                 //tutorial partie
                 //tutorial partie
@@ -324,6 +331,7 @@ namespace PROJET_2CP
                 helptuto.Text = "افتح دليل الاستعمال";
                 moreshortcuts.Text = "المزيد من الاختصارات";
                 commencertuto.Text = "ابدأ التعلم الان";
+                contactUstuto.Text = "تواصل معنا";
             }
         }
 
@@ -363,7 +371,7 @@ namespace PROJET_2CP
 
         private void b5_Click(object sender, RoutedEventArgs e)
         {
-            b6.Visibility = Visibility.Visible;
+            b7.Visibility = Visibility.Visible;
             b5.Visibility = Visibility.Collapsed;
         }
         public static Grid getinstanceTuto()
@@ -389,6 +397,12 @@ namespace PROJET_2CP
         public static Ellipse getProfilepic()
         {
             return profile_pic;
+        }
+
+        private void b7_Click(object sender, RoutedEventArgs e)
+        {
+            b7.Visibility = Visibility.Collapsed;
+            b6.Visibility = Visibility.Visible;
         }
     }
 }

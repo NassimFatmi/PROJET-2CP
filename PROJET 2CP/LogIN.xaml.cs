@@ -16,6 +16,8 @@ using System.Data;
 using System.Data.SqlClient;
 using PROJET_2CP.Classes;
 using System.Xml;
+using System.Net.Mail;
+using System.ComponentModel;
 
 namespace PROJET_2CP
 {
@@ -85,6 +87,8 @@ namespace PROJET_2CP
                     userBtn.Content = _Utilisateurs.Rows[nbUsers]["UtilisateurID"].ToString();
 
                     userBtn.Tag = new Apprenant(Int32.Parse(_Utilisateurs.Rows[nbUsers]["Id"].ToString()), _Utilisateurs.Rows[nbUsers]["UtilisateurID"].ToString(), _Utilisateurs.Rows[nbUsers]["Nom"].ToString(), _Utilisateurs.Rows[nbUsers]["Prenom"].ToString(), _Utilisateurs.Rows[nbUsers]["Password"].ToString(), _Utilisateurs.Rows[nbUsers]["Image"].ToString());
+                    ((Apprenant)userBtn.Tag).Email = _Utilisateurs.Rows[nbUsers]["Email"].ToString();
+
                     userBtn.Height = 50;
                     userBtn.Width = 150;
                     userBtn.VerticalAlignment = VerticalAlignment.Bottom;
@@ -154,11 +158,12 @@ namespace PROJET_2CP
                 slogantxt.Content = "qui révolutionne le permis !";
                 guestMode.Content = "Mode invité";
                 guestMode.ToolTip = "Dans ce mode vous avez moin d'avantages";
-                dhMsg.Text = "Se compte est sécurisé";
+                dhMsg.Text = "ce compte est sécurisé";
                 dhconfirme.Content = "Confirmer";
-                dhretoure.Content = "Retoure";
+                dhretoure.Content = "Retour";
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(passwordtxt, "Mot de passe");
                 langueComboText.Text = "langue";
+                forgetPass.Text = "mot de passe oublié ?";
             }
             else
             {
@@ -174,6 +179,7 @@ namespace PROJET_2CP
                 dhretoure.Content = "عودة";
                 MaterialDesignThemes.Wpf.HintAssist.SetHint(passwordtxt, "كلمة المرور");
                 langueComboText.Text = "اللغة";
+                forgetPass.Text = "نسيت كلمة المرور؟";
             }
         }
 
@@ -183,7 +189,7 @@ namespace PROJET_2CP
             _LoggedUser.Theme = true;
             SignIN._Commencer = 1;
             MainWindow.quizFrame.Content = new Home();
-            
+
         }
 
         private void connectWithPassword(object sender, RoutedEventArgs e)
@@ -289,7 +295,97 @@ namespace PROJET_2CP
             else
             {
                 MainWindow.getAproposArab().Visibility = Visibility.Visible;
-            } 
+            }
+        }
+
+        private void forgetPasswordClick(object sender, RoutedEventArgs e)
+        {
+            sendMail();
+        }
+
+        private void sendMail()
+        {
+            MailMessage mail = new MailMessage();
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+
+            string sender = "edcodedelaroute@gmail.com";
+            string password = "projet7equipe32";
+
+            string emailSubject;
+            string body;
+
+            if (MainWindow.langue == 0)
+            {
+                emailSubject = "Récupération du mot de passe <<EDcodeDeLaRoute compte>>";
+                body = "Salut " + _LoggedUser.Nom + " " + _LoggedUser.Prenom + ",\n\n Votre mot de passe est : " + _LoggedUser.Password + "\n\nMerci pour votre confiance.\n\n Team EDcodeDeLaRoute";
+            }
+            else
+            {
+                emailSubject = "استرجاع كلمة المرور";
+                body = "مرحبا " + _LoggedUser.Nom + " " + _LoggedUser.Prenom + " ,\n\n كلمة المرور الخاصة بحسابك هي : " + _LoggedUser.Password + "\n\nشكرا لثقتك بنا \n\n فريق عمل EDcodeDeLaRoute";
+            }
+            smtp.Port = 587;
+            smtp.Credentials = new System.Net.NetworkCredential(sender, password);
+            smtp.EnableSsl = true;
+            try
+            {
+                mail.From = new MailAddress(sender);
+                mail.To.Add(new MailAddress(_LoggedUser.Email));
+                mail.Subject = emailSubject;
+                mail.Body = body;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            mail.BodyEncoding = Encoding.UTF8;
+            mail.Priority = MailPriority.Normal;
+            mail.IsBodyHtml = true;
+            mail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+
+            smtp.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
+            string userstate;
+            if (MainWindow.langue == 0)
+            {
+                userstate = "En cours d'envoie ...";
+            }
+            else
+            {
+                userstate = "يتم الإرسال";
+            }
+            smtp.SendAsync(mail, userstate);
+        }
+
+        private void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
+        {
+            string m;
+            string note;
+            string terminer;
+            if (MainWindow.langue == 0)
+            {
+                m = "Message";
+                note = "envoie annulé";
+                terminer = "Consultez votre compte gmail";
+            }
+            else
+            {
+                m = "رسالة";
+                note = "إلغاء الإرسال";
+                terminer = "تفحص حسابك في الجيميل";
+            }
+            if (e.Cancelled)
+            {
+                MessageBox.Show(string.Format("{0}" + note, e.UserState), m, MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            if (e.Error != null)
+            {
+                MessageBox.Show(string.Format("{0} {1}", e.UserState, e.Error), m, MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show(terminer, m, MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

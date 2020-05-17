@@ -115,7 +115,21 @@
                          materialDesign:TextFieldAssist.UnderlineBrush="White"
                          />
                 </StackPanel>
-
+                
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <materialDesign:PackIcon Kind="Email" Foreground="White"
+                                             Height="20" Width="20" VerticalAlignment="Bottom"
+                                             Margin="0,0,10,3"/>
+                    <TextBox x:Name="emailtxt"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"                            
+                         Foreground="White"
+                         materialDesign:HintAssist.Hint="E-mail"
+                         Width="250" 
+                         CaretBrush="White"
+                         materialDesign:HintAssist.Foreground="White"
+                         materialDesign:TextFieldAssist.UnderlineBrush="White"
+                         />
+                </StackPanel>
+                
                 <StackPanel Orientation="Horizontal" Margin="10">
                     <materialDesign:PackIcon Kind="Key" Foreground="White"
                                              Height="20" Width="20" VerticalAlignment="Bottom"

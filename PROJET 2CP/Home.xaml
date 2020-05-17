@@ -43,15 +43,15 @@
                 <Grid Width="300" Height="150" HorizontalAlignment="Center">
                     <StackPanel Orientation="Horizontal" Margin="15">
                         <materialDesign:PackIcon Kind="Logout" Foreground="{StaticResource PrimaryHueMidBrush}" Width="50" Height="50"/>
-                        <TextBlock Foreground="Gray" Width="200" Margin="15 5" TextWrapping="Wrap">
+                        <TextBlock x:Name="dhdcnct" Foreground="Gray" Width="200" Margin="15 5" TextWrapping="Wrap">
                            Déconnection ?
                         </TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
-                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
-                            Retoure
+                        <Button x:Name="dhdback"  Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
+                            Retour
                         </Button>
-                        <Button Click="logout_Click" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
+                        <Button x:Name="dhconfrm" Click="logout_Click" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
                             Confirmer
                         </Button>
                     </StackPanel>
@@ -213,12 +213,18 @@
                     <TextBlock x:Name="qstreptuto" VerticalAlignment="Center" Text="Test your knowledge" FontSize="20"/>
                 </StackPanel>
             </Button>
+            <Button Visibility="Collapsed" x:Name="b7" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,391,674,237" Click="b7_Click" Height="Auto">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="ArrowLeft" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
+                    <TextBlock x:Name="contactUstuto" VerticalAlignment="Center" Text="Contact Us" FontSize="20" Width="177"/>
+                </StackPanel>
+            </Button>
             <Button Visibility="Collapsed" x:Name="b3a" Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto" Margin="680,375,135,110">
                 <StackPanel Orientation="Vertical" Width="53">
                     <materialDesign:PackIcon Kind="ArrowUp" Height="111" Width="117" Margin="0,0,-64.2,0" Background="#FF34EEA8"/>
                 </StackPanel>
             </Button>
-            <Button Visibility="Collapsed" x:Name="b4_Copy" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,405,636,223" Click="b4_Copy_Click" Height="Auto">
+            <Button Visibility="Collapsed" x:Name="b4_Copy" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,458,636,170" Click="b4_Copy_Click" Height="Auto">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="ArrowLeft" Height="40" Width="40" Margin="0,0,10,0" Background="#FF34EEA8"/>
                     <TextBlock x:Name="helptuto" VerticalAlignment="Center" Text="Open the user guide" FontSize="20"/>
