@@ -130,9 +130,11 @@
                                 </Ellipse.Fill>
                             </Ellipse>
                             <Button x:Name="addimage" Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-                                    Height="20" Width="20"
+                                    Height="30" Width="30"
                                     VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                                    Margin="130,0,0,20"
+                                    Margin="120,0,0,30"
+                                    BorderThickness="2"
+                                    BorderBrush="White"
                                     ToolTip="change Image"
                                     Click="changeImage_Click">
                                 <materialDesign:PackIcon Kind="Plus"/>
@@ -169,18 +171,15 @@
                              materialDesign:TextFieldAssist.UnderlineBrush="White" 
                                          TextChanged="infoHasChanged"/>
                             </StackPanel>
-                            <Button Height="50" Margin="10" BorderBrush="{x:Null}" Click="changePassClick"
-                                    Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}">
-                                <Button.Background>
-                                    <SolidColorBrush Color="Black" Opacity="0.4"/>
-                                </Button.Background>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="ForgotPassword" 
-                                                             VerticalAlignment="Center"
-                                                             Margin="0,0,10,0"/>
-                                    <TextBlock x:Name="mdpss" Text="ajouter/changer mot de pass"/>
-                                </StackPanel>
-                            </Button>
+                            <StackPanel Orientation="Horizontal" Margin="10">
+                                <TextBlock x:Name="email" Text="Email" Width="150"
+                               VerticalAlignment="Center" Margin="10"/>
+                                <TextBox x:Name="emailtxt" Width="150"
+                             BorderBrush="White"
+                             materialDesign:HintAssist.Foreground="White"
+                             materialDesign:TextFieldAssist.UnderlineBrush="White" 
+                                         TextChanged="infoHasChanged"/>
+                            </StackPanel>
                         </StackPanel>
                     </StackPanel>
                     <Button x:Name="saveBtn" Height="40"
@@ -204,6 +203,17 @@
                         <StackPanel>
                             <TextBlock x:Name="deleteAcc" Text="Delete my account" 
                                        FontSize="9" Foreground="#FFFF6969" TextDecorations="Underline"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Height="50" Width="300" BorderBrush="{x:Null}" Click="changePassClick"
+                            Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" 
+                            HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            Margin="0,10,0,45" Background="{x:Null}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ForgotPassword" 
+                                                             VerticalAlignment="Center"
+                                                             Margin="0,0,10,0"/>
+                            <TextBlock x:Name="mdpss" Text="ajouter/changer mot de pass"/>
                         </StackPanel>
                     </Button>
                 </Grid>

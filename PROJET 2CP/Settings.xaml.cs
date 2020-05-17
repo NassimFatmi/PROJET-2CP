@@ -18,6 +18,7 @@ using Microsoft.Win32;
 using System.Windows.Media.Animation;
 using MaterialDesignThemes.Wpf;
 using System.Windows.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace PROJET_2CP
 {
@@ -108,6 +109,7 @@ namespace PROJET_2CP
             userIDtxt.Text = LogIN.LoggedUser.UtilisateurID;
             nomTxt.Text = LogIN.LoggedUser.Nom;
             prenomtxt.Text = LogIN.LoggedUser.Prenom;
+            emailtxt.Text = LogIN.LoggedUser.Email;
 
             try
             {
@@ -129,10 +131,10 @@ namespace PROJET_2CP
         {
             //Enable the save button to give the possibility to save
             //The changes of user infos ! 
-            if (!nomTxt.Text.Equals(LogIN.LoggedUser.Nom) || !prenomtxt.Text.Equals(LogIN.LoggedUser.Prenom) || !userIDtxt.Text.Equals(LogIN.LoggedUser.UtilisateurID))
+            if (!nomTxt.Text.Equals(LogIN.LoggedUser.Nom) || !prenomtxt.Text.Equals(LogIN.LoggedUser.Prenom) || !userIDtxt.Text.Equals(LogIN.LoggedUser.UtilisateurID) || !emailtxt.Text.Equals(LogIN.LoggedUser.Email))
                 saveBtn.IsEnabled = true;
             else
-            if (nomTxt.Text.Equals(LogIN.LoggedUser.Nom) && prenomtxt.Text.Equals(LogIN.LoggedUser.Prenom) && userIDtxt.Text.Equals(LogIN.LoggedUser.UtilisateurID))
+            if (nomTxt.Text.Equals(LogIN.LoggedUser.Nom) && prenomtxt.Text.Equals(LogIN.LoggedUser.Prenom) && userIDtxt.Text.Equals(LogIN.LoggedUser.UtilisateurID) && emailtxt.Text.Equals(LogIN.LoggedUser.Email))
             {
                 saveBtn.IsEnabled = false;
             }
@@ -140,6 +142,26 @@ namespace PROJET_2CP
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
+
+            string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            if (Regex.IsMatch(emailtxt.Text, pattern))
+            {
+
+            }
+            else
+            {
+                if (MainWindow.langue == 0)
+                {
+                    MessageBox.Show("Vérifiez votre email !");
+                }
+                else
+                {
+                    MessageBox.Show("تأكد من البريد الألكتروني");
+                }
+                return;
+            }
+
+
             //Update Save DB to the current userID
             if (!userIDtxt.Text.Equals(LogIN.LoggedUser.UtilisateurID))
                 updateSaveDB();
@@ -155,7 +177,8 @@ namespace PROJET_2CP
 
                 string queryUpdate = "UPDATE Utilisateur SET UtilisateurID = '" + userIDtxt.Text + "'," +
                                      "Nom = '" + nomTxt.Text + "'," +
-                                     "Prenom = '" + prenomtxt.Text + "'" +
+                                     "Prenom = '" + prenomtxt.Text + "'," +
+                                     "Email = '" + emailtxt.Text+ "'" +
                                      "WHERE UtilisateurID = '" + LogIN.LoggedUser.UtilisateurID + "'";
 
                 cmdUpdate = new SqlCommand(queryUpdate, userDbConnection);
@@ -177,6 +200,7 @@ namespace PROJET_2CP
             LogIN.LoggedUser.UtilisateurID = userIDtxt.Text;
             LogIN.LoggedUser.Nom = nomTxt.Text;
             LogIN.LoggedUser.Prenom = prenomtxt.Text;
+            LogIN.LoggedUser.Email = emailtxt.Text;
             MainWindow.quizFrame.Content = new Home();
             Home.mainFrame.Content = new Settings();
         }

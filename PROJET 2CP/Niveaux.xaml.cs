@@ -80,8 +80,9 @@ namespace PROJET_2CP
             {
                 niv2.IsEnabled = false;
                 niv3.IsEnabled = false;
+                pointsLbl.Content = 0;
 
-                if(MainWindow.langue == 0)
+                if (MainWindow.langue == 0)
                 {   //la langue français
                     niv2.ToolTip = "Créer compte pour vous aurez le droit d'accée a le NIVEAU 2";
                     niv3.ToolTip = "Créer compte pour vous aurez le droit d'accée a le NIVEAU 3";
