@@ -124,13 +124,13 @@
             <Grid.Background>
                 <SolidColorBrush  Color="Black" Opacity="0.6"></SolidColorBrush>
             </Grid.Background>
-         
+
             <StackPanel Orientation="Vertical">
-                    <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
                     <TextBlock Height="80" Width="300" TextWrapping="Wrap"  FontSize="20" TextAlignment="Center" Text="hello" x:Name="votre_reponse" Foreground="White" />
                     <TextBlock Height="80" Width="300" TextWrapping="Wrap" FontSize="20" TextAlignment="Center" x:Name="bonne_reponse" Foreground="White"  />
                     <Image x:Name="reaction" Height="80" Width="90" Margin="20 0"/>
-                    <Button x:Name="next" Click=" next_Click" BorderBrush="{x:Null}" Height="70" Width="116" >
+                    <Button x:Name="next" Click=" next_Click" BorderBrush="{x:Null}" Height="70" Width="116" Background="{x:Null}" >
                         <StackPanel VerticalAlignment="Center" >
                             <materialDesign:PackIcon Kind="ArrowRightBoldCircle" Width="40" Height="40"
                                              HorizontalAlignment="Center"/>
@@ -139,32 +139,33 @@
                         </StackPanel>
                     </Button>
                 </StackPanel>
-                <ScrollViewer Height="168">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="160">
-                        <Expander x:Name="e1" Width="800" FontSize="20">
-                            <Expander.Background >
-                                <SolidColorBrush Color="DeepSkyBlue" Opacity="0.4"/>
-                            </Expander.Background>
-                            <Expander.Header>
-                                <TextBlock x:Name="ex1" FontSize="24"  TextAlignment="Center" TextWrapping="Wrap" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"
+                <ScrollViewer Height="168" VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Expander x:Name="e1" Width="800" FontSize="20">
+                                <Expander.Background >
+                                    <SolidColorBrush Color="DeepSkyBlue" Opacity="0.4"/>
+                                </Expander.Background>
+                                <Expander.Header>
+                                    <TextBlock x:Name="ex1" FontSize="24"  TextAlignment="Center" TextWrapping="Wrap" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"
                                    Margin="10"/>
-                            </Expander.Header>
-                            <Grid x:Name="g1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="83*"/>
-                                    <ColumnDefinition Width="17*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.Background>
-                                    <SolidColorBrush Color="SkyBlue" Opacity="0.2"/>
-                                </Grid.Background>
-                                <TextBlock x:Name="tb1" TextWrapping="Wrap" TextAlignment="Center" FontSize=" 16" Grid.ColumnSpan="2" Foreground="White"
+                                </Expander.Header>
+                                <Grid x:Name="g1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="83*"/>
+                                        <ColumnDefinition Width="17*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.Background>
+                                        <SolidColorBrush Color="SkyBlue" Opacity="0.2"/>
+                                    </Grid.Background>
+                                    <TextBlock x:Name="tb1" TextWrapping="Wrap" TextAlignment="Center" FontSize=" 16" Grid.ColumnSpan="2" Foreground="White"
                                    Margin="10" HorizontalAlignment="Center"/>
-                            </Grid>
-                        </Expander>
-                </StackPanel>
+                                </Grid>
+                            </Expander>
+                        </StackPanel>
+                    </Grid>
                 </ScrollViewer>
             </StackPanel>
-          
         </Grid>
     </Grid>
 </Page>
