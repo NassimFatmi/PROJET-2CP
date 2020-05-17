@@ -800,10 +800,57 @@ namespace PROJET_2CP
                   //MessageBox.Show(temp.Rows[nbQuestion]["Code"].ToString() + " " + laleçon);
                     duplicated.Add(new statLesson(laleçon, bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString())));
                 }
+                if(niveau == 1 && theme == "2")
+                {
+                    laleçon = getlessonforlevl1theme2(Int32.Parse(temp.Rows[nbQuestion]["Code"].ToString()));
+                    duplicated.Add(new statLesson(laleçon, bool.Parse(temp.Rows[nbQuestion]["Reponse"].ToString())));
+                }
             }
             lesson = new string[cours.Count];
             cours.CopyTo(lesson,0);
             ClaclulerMoyenneDeChaqueLesson(duplicated);
+        }
+        private string getlessonforlevl1theme2(int id)
+        {
+            string lesson;
+            string connStringToPanneauxDB = $@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {System.IO.Directory.GetCurrentDirectory()}\Panneaux.mdf; Integrated Security = True";
+            SqlConnection connectToPanneauxDB = new SqlConnection(connStringToPanneauxDB);
+
+            string querySelect = "SELECT * FROM IntersectionsQst WHERE Id = '" + id.ToString() + "'";
+            SqlCommand cmd;
+            SqlDataAdapter adapter;
+            DataTable questionContent = new DataTable();
+
+            if (connectToPanneauxDB.State == ConnectionState.Closed)
+                connectToPanneauxDB.Open();
+            using (connectToPanneauxDB)
+            {
+                try
+                {
+                    cmd = new SqlCommand(querySelect, connectToPanneauxDB);
+                    adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(questionContent);
+                    adapter.Dispose();
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+                catch (Exception)
+                {
+                    if (connectToPanneauxDB.State == ConnectionState.Open)
+                        connectToPanneauxDB.Close();
+                }
+            }
+            if (MainWindow.langue == 0)
+            {
+                lesson = questionContent.Rows[0]["leçon"].ToString();
+                cours.Add(lesson);
+            }
+            else
+            {
+                lesson = questionContent.Rows[0]["leçonAr"].ToString();
+                cours.Add(lesson);
+            }
+            return lesson;
         }
         private string  getlessonforlvl2theme234( int id)
         {
