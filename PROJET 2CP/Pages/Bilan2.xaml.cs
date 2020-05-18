@@ -28,8 +28,19 @@ namespace PROJET_2CP.Pages
         public Bilan2(int bonne, int mauvaise)
         {
             InitializeComponent();
-            Lbl1.Content = "Bonnes reponses : " + (TestNiveau2.nbBonneReponse).ToString();
-            lbl2.Content = "Mauvaises reponses : " + (6 - TestNiveau2.nbBonneReponse).ToString();
+            if (MainWindow.langue == 0)
+            {
+                Lbl1.Content = "Bonnes reponses : " + (TestNiveau3.nbBonneReponse).ToString();
+                lbl2.Content = "Mauvaises reponses : " + (6 - TestNiveau3.nbBonneReponse).ToString();
+            }
+            else
+            {
+                Lbl1.Content = (TestNiveau3.nbBonneReponse).ToString() + ": الاجابات الصحيحة";
+                lbl2.Content = (6 - TestNiveau3.nbBonneReponse).ToString() + ": الاجابات الخاطئة";
+                quiter.Content = "خروج";
+                remarque.Content = "ملاحظات";
+
+            }
             if (TestNiveau2.nbBonneReponse < 4)
             {
 

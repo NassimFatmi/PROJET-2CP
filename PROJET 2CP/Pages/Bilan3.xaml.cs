@@ -28,8 +28,19 @@ namespace PROJET_2CP.Pages
         public Bilan3(int bonne, int mauvaise)
         {
             InitializeComponent();
-            Lbl1.Content = "Bonnes reponses : " + (TestNiveau3.nbBonneReponse).ToString();
-            lbl2.Content = "Mauvaises reponses : " + (6 - TestNiveau3.nbBonneReponse).ToString();
+            if(MainWindow.langue==0)
+            {
+                Lbl1.Content = "Bonnes reponses : " + (TestNiveau3.nbBonneReponse).ToString();
+                lbl2.Content = "Mauvaises reponses : " + (6 - TestNiveau3.nbBonneReponse).ToString();
+            }
+            else
+            {
+                Lbl1.Content = (TestNiveau3.nbBonneReponse).ToString()+ ": الاجابات الصحيحة";
+                lbl2.Content = (6 - TestNiveau3.nbBonneReponse).ToString()+ ": الاجابات الخاطئة";
+                quitter.Content = "خروج";
+                remarque.Content = "ملاحظات";
+            }
+
             saveNote((TestNiveau3.nbBonneReponse), 3, Tests3._testChoisi, "Test 3");
             
             if (TestNiveau3.nbBonneReponse < 4)
@@ -138,5 +149,6 @@ namespace PROJET_2CP.Pages
                 MessageBox.Show("error save Db bilan Testniveau 3 ");
             }
         }
+     
     }
 }

@@ -39,7 +39,7 @@
         </Border>
 
 
-        <Button Content="Quitter" Click="Button_Click"
+        <Button Content="Quitter" Name="quiter" Click="Button_Click"
                     Width="150" Height="50"
                     VerticalAlignment="Bottom" HorizontalAlignment="Center"
                     Margin="0,0,0,50"/>

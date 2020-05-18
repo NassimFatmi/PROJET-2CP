@@ -68,7 +68,6 @@ namespace PROJET_2CP.Pages
             tab[3] = b2 + 1;
             tab[4] = b3;
             tab[5] = b3 + 1;
-            langue = 0;
             shufflearray(tab);
             InitializeComponent();
 
@@ -266,7 +265,7 @@ namespace PROJET_2CP.Pages
 
         private void p1_Click(object sender, RoutedEventArgs e)
         {
-            if (langue == 0)
+            if (MainWindow.langue == 0)
             {
                 bonne_reponse.Text = "Bonne réponse : " + bonnRep;
             }
@@ -278,7 +277,7 @@ namespace PROJET_2CP.Pages
             {
                 saveAnswer(true, 3, 0, _Code, _Reponse1, _Reponse1AR);
 
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
                 }
@@ -300,7 +299,7 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + p1.Content.ToString();
                 }
@@ -324,7 +323,7 @@ namespace PROJET_2CP.Pages
 
         private void p2_Click(object sender, RoutedEventArgs e)
         {
-            if (langue == 0)
+            if (MainWindow.langue == 0)
             {
                 bonne_reponse.Text = "Bonne réponse : " + bonnRep;
             }
@@ -336,7 +335,7 @@ namespace PROJET_2CP.Pages
             {
                 saveAnswer(true, 3, 0, _Code, _Reponse2, _Reponse2AR);
 
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
                 }
@@ -357,7 +356,7 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + p2.Content.ToString();
                 }
@@ -393,7 +392,7 @@ namespace PROJET_2CP.Pages
             {
                 saveAnswer(true, 3, 0, _Code, _Reponse4, _Reponse4AR);
 
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
                 }
@@ -413,7 +412,7 @@ namespace PROJET_2CP.Pages
             {
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + p4.Content.ToString();
                 }
@@ -438,7 +437,7 @@ namespace PROJET_2CP.Pages
 
         private void p3_Click(object sender, RoutedEventArgs e)
         {
-            if (langue == 0)
+            if (MainWindow.langue == 0)
             {
                 bonne_reponse.Text = "Bonne réponse : " + bonnRep;
             }
@@ -450,7 +449,7 @@ namespace PROJET_2CP.Pages
             {
                 saveAnswer(true, 3, 0, _Code, _Reponse3, _Reponse3AR);
 
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
                 }
@@ -471,7 +470,7 @@ namespace PROJET_2CP.Pages
 
                 reaction.Source = new BitmapImage(new Uri($@"{System.IO.Directory.GetCurrentDirectory()}\icons\sad.png"));
 
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + p3.Content.ToString();
                 }
