@@ -141,7 +141,8 @@
                 </StackPanel>
                 <ScrollViewer Height="168" VerticalScrollBarVisibility="Auto">
                     <Grid>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <StackPanel x:Name="ajouterRmq" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock x:Name="rmq" Visibility="Collapsed" Foreground="White" FontSize="18" TextAlignment="Center"></TextBlock>
                             <Expander x:Name="e1" Width="800" FontSize="20">
                                 <Expander.Background >
                                     <SolidColorBrush Color="DeepSkyBlue" Opacity="0.4"/>
