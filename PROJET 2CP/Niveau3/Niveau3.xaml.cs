@@ -71,8 +71,7 @@ namespace PROJET_2CP.Niveau3
                 thm2.Content = "Désignation";
                 thm3.Content = "Désignation";
                 h0.Content = "NIVEAU III : Thèmes";
-
-
+                designationTitle.Content = "Désignation";
             }
             if (MainWindow.langue == 1)
             {
@@ -98,6 +97,7 @@ namespace PROJET_2CP.Niveau3
                 thm2.Content = "حول الدرس";
                 thm3.Content = "حول الدرس";
                 h0.Content = "المستوى 3 : المواضيع";
+                designationTitle.Content = "حول الدرس";
             }
         }
         private void document_Click(object sender, RoutedEventArgs e)

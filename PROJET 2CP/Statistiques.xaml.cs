@@ -539,8 +539,8 @@ namespace PROJET_2CP
                 }
                 else
                 {
-                    questiontxt.Text = questionContent.Rows[0]["questionAr"].ToString() + "السؤال";
-                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                    questiontxt.Text = questionContent.Rows[0]["questionAr"].ToString() + "   السؤال   ";
+                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "  جوابك   ";
                     lecon.Text = "";
                 }
 
@@ -698,8 +698,8 @@ namespace PROJET_2CP
                 }
                 else
                 {
-                    questiontxt.Text = questionContent.Rows[0]["contenuar"].ToString() + "السؤال";
-                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                    questiontxt.Text = questionContent.Rows[0]["contenuar"].ToString() + "   السؤال   ";
+                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "  جوابك   ";
                     lecon.Text = "";
                 }
 
@@ -1335,8 +1335,8 @@ namespace PROJET_2CP
                     }
                     else
                     {
-                        questiontxt.Text = questionContent.Rows[0]["qst1Ar"].ToString() + "السؤال";
-                        reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                        questiontxt.Text = questionContent.Rows[0]["qst1Ar"].ToString() +  "   السؤال  ";
+                        reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "  جوابك   ";
                         lecon.Text = "";
                     }
                 }
@@ -1349,8 +1349,8 @@ namespace PROJET_2CP
                     }
                     else
                     {
-                        questiontxt.Text = questionContent.Rows[0]["qst2Ar"].ToString() + "السؤال";
-                        reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                        questiontxt.Text = questionContent.Rows[0]["qst2Ar"].ToString() + "    السؤال   ";
+                        reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "  جوابك   ";
                         lecon.Text = "";
                     }
                 }
@@ -1468,7 +1468,7 @@ namespace PROJET_2CP
                 }
                 else
                 {
-                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "  جوابك   ";
                 }
 
                 //Desgin
@@ -1513,8 +1513,8 @@ namespace PROJET_2CP
                 }
                 else
                 {
-                    questiontxt.Text = questionContent.Rows[0]["ExplicationAR"].ToString() + "السؤال";
-                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "جوابك ";
+                    questiontxt.Text = questionContent.Rows[0]["ExplicationAR"].ToString() + "   السؤال    ";
+                    reponsetxt.Text = questionContent.Rows[0][reponseAr].ToString() + "  جوابك  ";
                     lecon.Text = "";
                 }
 

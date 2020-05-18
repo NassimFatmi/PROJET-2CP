@@ -146,8 +146,7 @@ namespace PROJET_2CP.Pages
 
                 thm1.Content = "Désignation";
                 thm2.Content = "Désignation";
-
-
+                designationTitle.Content = "Désignation";
             }
             else
             {
@@ -173,9 +172,10 @@ namespace PROJET_2CP.Pages
                 thm2.Content = "حول الدرس";
                 lbl2.Content = "الدروس";
                 lbl2.HorizontalAlignment = HorizontalAlignment.Right;
-
-
-
+                b1.ToolTip = "لافتات الخطر";
+                b2.ToolTip = "لافتات المنع";
+                b3.ToolTip = "لافتات الالزام";
+                designationTitle.Content = "حول الدرس";
             }
         }
         /*<<
@@ -281,8 +281,6 @@ namespace PROJET_2CP.Pages
 
             // Home.mainFrame.Content = new Niveau2.Quiz(85, 91);
             Home.mainFrame.Content = new test_reg(85, 91);
-
-
         }
     }
 }
