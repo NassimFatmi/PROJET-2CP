@@ -16,7 +16,7 @@ namespace PROJET_2CP.Pages
     /// </summary> 
     public partial class Quiz : Page
     {
-        private SoundPlayer sp;
+        private SoundPlayer soundPlayer;
         private int hasImage;
         private string quest;
         private int idImage;
@@ -214,7 +214,7 @@ namespace PROJET_2CP.Pages
                 repD.Content = propD;
             }
                
-            if ( langue == 0 )
+          /*  if ( langue == 0 )
             {
                 sp = new SoundPlayer(@"QuizSounds\q" + Convert.ToString(tag) + "Fr.wav");
                 try
@@ -238,7 +238,7 @@ namespace PROJET_2CP.Pages
                 {
 
                 }
-            }
+            }*/
         }
         private void switch_lang_Click(object sender, RoutedEventArgs e)
         {
@@ -276,7 +276,7 @@ namespace PROJET_2CP.Pages
         }
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            SoundPlayer soundPlayer;
+           
             tag++;
             tempEcoulé = true;
             if (tag >= tagMax)
@@ -358,7 +358,7 @@ namespace PROJET_2CP.Pages
 
         private void repA_Click(object sender, RoutedEventArgs e)
         {
-            sp.Stop();
+          //  sp.Stop();
             if (langue == 0)
             {
                 bonne_reponse.Text = "Bonne réponse : " + bonnRep;
@@ -429,7 +429,7 @@ namespace PROJET_2CP.Pages
 
         private void repB_Click(object sender, RoutedEventArgs e)
         {
-            sp.Stop();
+         //   sp.Stop();
             if (langue == 0)
             {
                 bonne_reponse.Text = "Bonne réponse : " + bonnRep;
@@ -505,7 +505,7 @@ namespace PROJET_2CP.Pages
             {
                 bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
             }
-            sp.Stop();
+          //  sp.Stop();
             if (propC == bonnRep)
             {
                 saveAnswer(true, _niveau,1, _codeQst, propCfr, propCar);
@@ -574,7 +574,7 @@ namespace PROJET_2CP.Pages
             {
                 bonne_reponse.Text = " الإجابة الصحيحة : " + bonnRep;
             }
-            sp.Stop();
+          //  sp.Stop();
             if (propD == bonnRep)
             {
                 saveAnswer(true, _niveau,1, _codeQst, propDfr, propDar);
@@ -761,6 +761,7 @@ namespace PROJET_2CP.Pages
 
         private void lbl_Click(object sender, RoutedEventArgs e)
         {
+            try { soundPlayer.Stop(); } catch (Exception) { }
             Home.mainFrame.Content = new Leçons();
         }
     }

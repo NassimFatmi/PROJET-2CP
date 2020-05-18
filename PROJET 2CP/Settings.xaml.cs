@@ -65,7 +65,7 @@ namespace PROJET_2CP
                 addimage.ToolTip = "Changer l'image";
                 refresh.ToolTip = "تحديث";
                 refreshlbl.Content = "حدث التطبيق لتغيير اللغة";
-                themebtn.Text = "theme";
+                themebtn.Text = "thème";
                 deleteAcc.Text = "Supprimer le compte";
                 if (toggleTheme.IsChecked == true)
                     toggleTheme.ToolTip = "Theme blue";

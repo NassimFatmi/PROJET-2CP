@@ -26,7 +26,7 @@ namespace PROJET_2CP
     public partial class test : Page
     {
 
-        private SoundPlayer sp;
+        private SoundPlayer  soundPlayer;
         private string quest;
         private string propA;
         private string propB;
@@ -226,7 +226,7 @@ namespace PROJET_2CP
 
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            SoundPlayer soundPlayer;
+           
 
             tmp++;
 
@@ -680,6 +680,7 @@ namespace PROJET_2CP
         }
         private void lbl_Click(object sender, RoutedEventArgs e)
         {
+            try { soundPlayer.Stop(); } catch (Exception) { }
             Home.mainFrame.Content = new Leçons();
         }
         private void saveAnswer(bool reponse, int niveau, int theme, int code, string reponseText, string reponseTextAr)

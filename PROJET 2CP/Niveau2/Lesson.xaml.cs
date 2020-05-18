@@ -82,6 +82,7 @@ namespace PROJET_2CP.Niveau2
                 thm3.Content = "Désignation";
                 thm4.Content = "Désignation";
                 h0.Content = "NIVEAU II : Thèmes";
+                designationTitle.Content = "Désignation";
 
             }
             if (langue == 1)
@@ -120,12 +121,14 @@ namespace PROJET_2CP.Niveau2
                 risque.Content = "مخاطر القيادة في الأحوال  \n      الجوية السيئة";
                 quiz_utilisation.Content = "إمتحان 1";
                 quiz_risque.Content = "إمتحان 2";
+                designationTitle.Content = "حول الدرس";
 
                 thm1.Content = "حول الدرس";
                 thm2.Content = "حول الدرس";
                 thm3.Content = "حول الدرس";
                 thm4.Content = "حول الدرس";
                 h0.Content = "المستوى 2 : المواضيع";
+                designationTitle.Content = "حول الدرس";
             }
         }
         private void l1_Click(object sender, RoutedEventArgs e)

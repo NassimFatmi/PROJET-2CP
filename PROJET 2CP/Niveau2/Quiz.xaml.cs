@@ -16,7 +16,7 @@ namespace PROJET_2CP.Niveau2
     /// </summary> 
     public partial class Quiz : Page
     {
-        private SoundPlayer sp;
+        private SoundPlayer soundPlayer;
         private int langue = MainWindow.langue;
         private string quest;
         private string propA;
@@ -218,7 +218,7 @@ namespace PROJET_2CP.Niveau2
         
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            SoundPlayer soundPlayer;
+           
             tmp++;
            
             //tag++;
@@ -647,6 +647,7 @@ namespace PROJET_2CP.Niveau2
         }
         private void lbl_Click(object sender, RoutedEventArgs e)
         {
+            try { soundPlayer.Stop(); } catch (Exception) { }
             if (niv == 0)
             {
                 Home.mainFrame.Content = new Lesson();

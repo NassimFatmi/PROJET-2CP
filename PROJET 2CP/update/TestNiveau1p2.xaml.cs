@@ -68,10 +68,12 @@ namespace PROJET_2CP.update
             if(langue==0)
             {
                 ex1.Text = "Voir explication";
+                rmq.Text = "Répondre à la deuxième partie de cette question <<la prochaine question>> pour voir l'explication";
             }
             if(langue==1)
             {
                 ex1.Text = "أنظر للتفسير";
+                rmq.Text = "أجب على الجزء الثاني من  هذ السؤال <<السؤال القادم>> كي ترى التفسير";
             }
             Distimer();
         }
@@ -219,6 +221,7 @@ namespace PROJET_2CP.update
                 b1.Visibility = Visibility.Collapsed;
                 b2.Visibility = Visibility.Collapsed;
                 e1.Visibility = Visibility.Collapsed;
+                rmq.Visibility = Visibility.Visible;
                 b3.Visibility = Visibility.Visible;
                 b4.Visibility = Visibility.Visible;
                 q2.Text = quest2;
@@ -310,6 +313,7 @@ namespace PROJET_2CP.update
                 b4.Content = propD;
                 CanGoToNextQuestion = false;
                 e1.Visibility = Visibility.Collapsed;
+                rmq.Visibility = Visibility.Visible;
             }
             else
             {
@@ -472,6 +476,7 @@ namespace PROJET_2CP.update
         private void next_Click(object sender, RoutedEventArgs e)
         {
             e1.Visibility = Visibility.Visible;
+            rmq.Visibility = Visibility.Collapsed;
             if (CanGoToNextQuestion)
             {
                 tag++;
