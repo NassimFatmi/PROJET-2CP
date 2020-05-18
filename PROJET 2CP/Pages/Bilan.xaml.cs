@@ -30,8 +30,19 @@ namespace PROJET_2CP.Pages
           //  nb_bonne = bonne + Page1Tests.nbBonneReponse + Page2Test1.nbBonneReponse;
             
             InitializeComponent();
-            Lbl1.Content = "Bonnes reponses : " + (Page1Tests.nbBonneReponse).ToString();
-            lbl2.Content = "Mauvaises reponses : " + (Page1Tests.total - Page1Tests.nbBonneReponse).ToString();
+            if (MainWindow.langue == 0)
+            {
+                Lbl1.Content = "Bonnes reponses : " + (Page1Tests.nbBonneReponse).ToString();
+                lbl2.Content = "Mauvaises reponses : " + (Page1Tests.total - Page1Tests.nbBonneReponse).ToString();
+            }
+            else
+            {
+                Lbl1.Content = (Page1Tests.nbBonneReponse).ToString() + ": الاجابات الصحيحة";
+                lbl2.Content = (Page1Tests.total - Page1Tests.nbBonneReponse).ToString() + ": الاجابات الخاطئة";
+                quiter.Content = "خروج";
+                remarque.Content = "ملاحظات";
+
+            }
 
             if (Page1Tests.nbBonneReponse < (Page1Tests.total - Page1Tests.nbBonneReponse))
             {

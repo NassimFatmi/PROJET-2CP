@@ -65,12 +65,12 @@ namespace PROJET_2CP.update
             tab = Tests1.reorder(a, b);
             creerQuestion();
             afficherQuestion();
-            if(langue==0)
+            if(MainWindow.langue==0)
             {
                 ex1.Text = "Voir explication";
                 rmq.Text = "Répondre à la deuxième partie de cette question <<la prochaine question>> pour voir l'explication";
             }
-            if(langue==1)
+            if(MainWindow.langue == 1)
             {
                 ex1.Text = "أنظر للتفسير";
                 rmq.Text = "أجب على الجزء الثاني من  هذ السؤال <<السؤال القادم>> كي ترى التفسير";
@@ -97,7 +97,7 @@ namespace PROJET_2CP.update
                             idImage = Convert.ToInt32(dr["idImg"].ToString());
                         }
 
-                    if (langue == 0)
+                    if (MainWindow.langue == 0)
                     {
                          next.Content = "suivant";
                         //switch_lang.Content = "changer la langue en arabe";
@@ -112,7 +112,7 @@ namespace PROJET_2CP.update
                         bonnRep2 = dr["bonneRep2Fr"].ToString();
                        
                     }
-                    if (langue == 1)
+                    if (MainWindow.langue == 1)
                     {
                         next.Content = "التالي";
                         //  switch_lang.Content = "تغيير اللغة الى الفرنسية";
@@ -165,7 +165,7 @@ namespace PROJET_2CP.update
         private void b1_Click(object sender, RoutedEventArgs e)
         {
             Page1Tests.total++;
-            if (langue == 0)
+            if (MainWindow.langue == 0)
             {
                 bonne_reponse.Text = "Bonne réponse : " + bonnRep;
             }
@@ -180,7 +180,7 @@ namespace PROJET_2CP.update
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
                 }
@@ -197,7 +197,7 @@ namespace PROJET_2CP.update
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Content;
                 }
@@ -234,7 +234,7 @@ namespace PROJET_2CP.update
                 tempEcoulé = false;
                 if (tag == tagMax)
                 {
-                    if (langue == 0)
+                    if (MainWindow.langue == 0)
                     {
                         next.Content = "Voir le Bilan";
                     }
@@ -254,7 +254,7 @@ namespace PROJET_2CP.update
 
         private void b2_Click(object sender, RoutedEventArgs e)
         {
-            if (langue == 0)
+            if (MainWindow.langue == 0)
             {
                 bonne_reponse.Text = "Bonne réponse : " + bonnRep;
             }
@@ -270,7 +270,7 @@ namespace PROJET_2CP.update
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
                 }
@@ -288,7 +288,7 @@ namespace PROJET_2CP.update
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Content;
                 }
@@ -320,7 +320,7 @@ namespace PROJET_2CP.update
                 tempEcoulé = false;
                 if (tag == tagMax)
                 {
-                    if (langue == 0)
+                    if (MainWindow.langue == 0)
                     {
                         next.Content = "Voir le Bilan";
                     }
@@ -342,7 +342,7 @@ namespace PROJET_2CP.update
         {
             CanGoToNextQuestion = true;
             Page1Tests.total++;
-            if (langue == 0)
+            if (MainWindow.langue == 0)
             {
                 bonne_reponse.Text = "Bonne réponse : " + bonnRep;
             }
@@ -357,7 +357,7 @@ namespace PROJET_2CP.update
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
                 }
@@ -375,7 +375,7 @@ namespace PROJET_2CP.update
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Content;
                 }
@@ -394,7 +394,7 @@ namespace PROJET_2CP.update
             tempEcoulé = false;
             if (tag == tagMax)
             {
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     next.Content = "Voir le Bilan";
                 }
@@ -410,7 +410,7 @@ namespace PROJET_2CP.update
             CanGoToNextQuestion = true;
             Page1Tests.total++;
           
-            if (langue == 0)
+            if (MainWindow.langue == 0)
             {
                 bonne_reponse.Text = "Bonne réponse : " + bonnRep;
             }
@@ -425,7 +425,7 @@ namespace PROJET_2CP.update
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/happy.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + bonnRep;
                 }
@@ -443,7 +443,7 @@ namespace PROJET_2CP.update
                 BitmapImage btm = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Icons/sad.png", UriKind.RelativeOrAbsolute));
                 reaction.Source = btm;
                 reaction.Stretch = Stretch.Fill;
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     votre_reponse.Text = "Votre réponse : " + (string)((Button)sender).Content;
                 }
@@ -462,7 +462,7 @@ namespace PROJET_2CP.update
             tempEcoulé = false;
             if (tag == tagMax)
             {
-                if (langue == 0)
+                if (MainWindow.langue == 0)
                 {
                     next.Content = "Voir le Bilan";
                 }
@@ -612,7 +612,7 @@ namespace PROJET_2CP.update
                 tempEcoulé = false;
                 if (tag == tagMax)
                 {
-                    if (langue == 0)
+                    if (MainWindow.langue == 0)
                     {
                         next.Content = "Voir le Bilan";
                     }
